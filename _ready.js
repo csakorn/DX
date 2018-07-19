@@ -102,7 +102,7 @@ var startFNJS = function() {
             chkSite()?couponBrussels():console.log("couponBrussels")
 
             subscribe.sbbAdd();
-            skyscanner.add();
+            skyscanner.add(); 
             tripAdvisor.add();
             runWidget();
         break;
