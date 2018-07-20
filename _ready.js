@@ -83,7 +83,7 @@ var startFNJS = function() {
 
             // Step 3 CONFIRMED BOOKING
             updateHTML.remove_content.servicesbreakdown('CONF');
-            updateHTML.remove_content.additional_services();
+            // updateHTML.remove_content.additional_services();
             goodservice_india.AddData();
 
             if ((/\b^[IT_]{3}/).test(eBaDataLayer.external_id) === true) {  addScript('fbpixel_it', "main-layout-bottom", "footer#main-layout-bottom");    }
@@ -103,7 +103,7 @@ var startFNJS = function() {
 
             subscribe.sbbAdd();
             skyscanner.add(); 
-            tripAdvisor.add();
+            tripadvisor.add();
             runWidget();
         break;
         
