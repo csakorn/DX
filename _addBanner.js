@@ -24,12 +24,17 @@ function runWidget(){
 // }
 var teaserDisplay = {
 	objData:bannerTG,
-	addTeaser:function(){		
+	addTeaser:function(){
+	
            implibdx.core.updateDom("div.TGINSBanner", function() {		
 			for(keys in teaserDisplay.objData){
+
 				if( teaserDisplay.check(keys) === true){
-					console.log('add',keys);					
-					$("#TGINSBannerMenu").append("<aside class=\""+teaserDisplay.objData[keys].class+"\"><a href=\""+teaserDisplay.objData[keys].image.linkURL[eBaDataLayer.language]+teaserDisplay.param_obj(teaserDisplay.objData[keys].param)+"\" target=\""+teaserDisplay.objData[keys].target+"\" "+teaserDisplay.objData[keys].onClick[eBaDataLayer.page_code]+"><img src=\""+teaserDisplay.objData[keys].image.URL[eBaDataLayer.language]+"\" alt=\""+teaserDisplay.objData[keys].image.alt+"\"></a></aside>");
+					let href = (teaserDisplay.objData[keys].image.linkURL[eBaDataLayer.language] !== undefined)	?teaserDisplay.objData[keys].image.linkURL[eBaDataLayer.language]:teaserDisplay.objData[keys].image.linkURL['GB'];
+					let img = (teaserDisplay.objData[keys].image.URL[eBaDataLayer.language] !== undefined)? teaserDisplay.objData[keys].image.URL[eBaDataLayer.language]:teaserDisplay.objData[keys].image.URL['GB'];
+					// console.log('add',keys);
+					// console.log(href,img);
+					$("#TGINSBannerMenu").append("<aside class=\""+teaserDisplay.objData[keys].class+"\"><a href=\""+href+teaserDisplay.param_obj(teaserDisplay.objData[keys].param)+"\" target=\""+teaserDisplay.objData[keys].target+"\" "+teaserDisplay.objData[keys].onClick[eBaDataLayer.page_code]+"><img src=\""+img+"\" alt=\""+teaserDisplay.objData[keys].image.alt+"\"></a></aside>");
 				// $("#TGINSBannerMenu").append("<aside class=\""+bannerTG[keys].class+"\"><a href=\""+bannerTG[keys].image.linkURL+bannerTG[keys].param+"\" target=\""+bannerTG[keys].target+"\" "+bannerTG[keys].onClick[eBaDataLayer.page_code]+"><img src=\""+bannerTG[keys].image.URL[eBaDataLayer.language]+"\" alt=\""+bannerTG[keys].image.alt+"\"></a></aside>");
 				}
 			}
@@ -67,70 +72,6 @@ var teaserDisplay = {
 		// console.log($.param(result));
 		return '?'+$.param(result)
 	}
-}
-
-var addBanner = function(objName,market,param,lang){
-
-	if(eBaDataLayer.external_id.match(market) && eBaDataLayer.language == lang){
-		implibdx.core.updateDom("div#TGINSBanner", function(){
-			
-			$("#TGINSBannerMenu").append(addTGBanner.creHTML(objName,param));			
-		},1000,5);
-	}else return false;
-
-
-	implibdx.core.updateDom("div#TGINSBanner", function(){
-
-
-		// switch(eBaDataLayer.language){
-		// 	case "CN":
-		// 	break;
-		// 	case "DE":
-		// 	break;
-		// 	case "ES":
-		// 	break;
-		// 	case "FR":
-		// 	break;
-		// 	case "GB":
-		// 		$("#TGINSBannerMenu").append(addTGBanner.creHTML("eServe_GB","?pnr="+eBaDataLayer.pnr_nbr,'NORMAL'));
-		// 		$("#TGINSBannerMenu").append(addTGBanner.creHTML("eServe_GB","?pnr="+eBaDataLayer.pnr_nbr,'DOMESTIC'));
-		// 		$("#TGINSBannerMenu").append(addTGBanner.creHTML("HotelsBestOffers_GB","",'DOMESTIC'));
-		// 		$("#TGINSBannerMenu").append(addTGBanner.creHTML("HotelsBestOffers_GB","",'NORMAL'));
-		// 		if(["DPS"].indexOf(eBaDataLayer.bound[0].arr_city) == 0 ){$("#TGINSBannerMenu").append(addTGBanner.creHTML("BaliTreat",""))}
-
-		// 		wt_Takeme.add();
-		// 		rentalCar.add()
-		// 		wt_booking.add();
-       			
-		// 	break;
-		// 	case "IT":
-		// 	break;
-		// 	case "JP":
-		// 	break;
-		// 	case "KO":
-		// 	break;
-		// 	case "RU":
-		// 	break;
-		// 	case "TH":
-		// 		$("#TGINSBannerMenu").append(addTGBanner.creHTML("eServe_TH","?pnr="+eBaDataLayer.pnr_nbr,'NORMAL'));
-		// 		$("#TGINSBannerMenu").append(addTGBanner.creHTML("eServe_TH","?pnr="+eBaDataLayer.pnr_nbr,'DOMESTIC'));
-		// 		$("#TGINSBannerMenu").append(addTGBanner.creHTML("HotelsBestOffers_TH","",'DOMESTIC'));
-		// 		$("#TGINSBannerMenu").append(addTGBanner.creHTML("HotelsBestOffers_TH","",'NORMAL'));
-
-
-		// 		if(["DPS"].indexOf(eBaDataLayer.bound[0].arr_city) == 0 ){
-		// 			$("#TGINSBannerMenu").append(addTGBanner.creHTML("BaliTreat",""));
-		// 		}
-		// 		wt_Takeme.add();
-		// 		rentalCar.add()
-		// 		wt_booking.add();
-		// 	break;
-		// 	case "TW":
-		// 	break;
-		// 	case "SE":
-		// 	break;
-		// }
-	},1000,5);
 }
 
 
