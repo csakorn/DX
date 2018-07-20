@@ -165,10 +165,7 @@ var objNamescript ={
             }
         }
     }
-
 }
-
-
 var addScript = function(objName,elmID,updateID,fn){
     var anchor = document.getElementById(elmID);
 
@@ -180,9 +177,7 @@ var addScript = function(objName,elmID,updateID,fn){
         }
         fn;
     },1000,5);
-
 }
-
 var skyscanner  ={ // skyscanner
     add:function(){
 
@@ -215,9 +210,6 @@ var tripadvisor   ={ // tripadvisor
         },1000,5);       
     }
 }
-
-
-
 var pathData =function(obj,url){
     var path = {};
     for(keys in obj){
