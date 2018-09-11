@@ -9,6 +9,7 @@ var startFNJS = function() {
                 chkSite() ? addScript("pixel_SG_FPOW", "main-layout-bottom", "footer#main-layout-bottom") : console.log('pixel_SG_FPOW');
                 chkSite() ? addScript("fbpixel_sg_pageview", "main-layout-bottom", "footer#main-layout-bottom") : console.log('fbpixel_sg_pageview');
             }
+            knorex.add();
             break;
         case "FDCS":
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
@@ -23,8 +24,8 @@ var startFNJS = function() {
         case "FDFF":
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
             // Step 1 COMPARISON
+            chkSite() ? addScript("everymundo_FareNet", "main-layout-bottom", "footer#main-layout-bottom") : console.log('everymundo_FareNet');
             if ((/\b^[SG_]{3}/).test(eBaDataLayer.external_id) === true) {
-                chkSite() ? addScript("everymundo_FareNet", "main-layout-bottom", "footer#main-layout-bottom") : console.log('everymundo_FareNet');
                 chkSite() ? addScript("fbpixel_sg_pageview", "main-layout-bottom", "footer#main-layout-bottom") : console.log('fbpixel_sg_pageview');
             }
             break;
@@ -37,6 +38,8 @@ var startFNJS = function() {
                 chkSite() ? addScript("fbpixel_sg_pageview", "main-layout-bottom", "footer#main-layout-bottom") : console.log('fbpixel_sg_pageview');
 
             }
+            // if ((/\b^[CN_]{3}/).test(eBaDataLayer.external_id) === true) { addScript('CheeseMobile_FARE', "main-layout-bottom", "footer#main-layout-bottom"); }
+
 
             break;
         case "ALPI":
@@ -73,24 +76,27 @@ var startFNJS = function() {
                 chkSite() ? addScript("pixel_SG_PURC", "main-layout-bottom", "footer#main-layout-bottom") : console.log('pixel_SG_PURC');
                 chkSite() ? addScript("fbpixel_sg_pageview", "main-layout-bottom", "footer#main-layout-bottom") : console.log('fbpixel_sg_pageview');
             }
+            // if ((/\b^[CN_]{3}/).test(eBaDataLayer.external_id) === true) { addScript('CheeseMobile_PURC', "main-layout-bottom", "footer#main-layout-bottom"); }
+
             updateHTML.clickConfirm();
             abandon_consent.add();
             goodservice_india.AddData();
+            knorex.add();
+
             break;
-
         case "CONF":
-
-
             // Step 3 CONFIRMED BOOKING
             updateHTML.remove_content.servicesbreakdown('CONF');
             // updateHTML.remove_content.additional_services();
             goodservice_india.AddData();
-
-            if ((/\b^[IT_]{3}/).test(eBaDataLayer.external_id) === true) {  addScript('fbpixel_it', "main-layout-bottom", "footer#main-layout-bottom");    }
-            if ((/\b^[SG_]{3}/).test(eBaDataLayer.external_id) === true) {   
+            if ((/\b^[IT_]{3}/).test(eBaDataLayer.external_id) === true) { addScript('fbpixel_it', "main-layout-bottom", "footer#main-layout-bottom"); }
+            if ((/\b^[SG_]{3}/).test(eBaDataLayer.external_id) === true) {
                 chkSite() ? addScript("pixel_SG_CONF", "main-layout-bottom", "footer#main-layout-bottom") : console.log('pixel_SG_CONF');
                 chkSite() ? addScript("fbpixel_sg_purchase", "main-layout-bottom", "footer#main-layout-bottom") : console.log('fbpixel_sg_purchase');
             }
+            // if ((/\b^[CN_]{3}/).test(eBaDataLayer.external_id) === true) { addScript('CheeseMobile_CONF', "main-layout-bottom", "footer#main-layout-bottom"); }
+            if ((/\b^[CN_]{3}/).test(eBaDataLayer.external_id) === true) {  chkSite() ? couponChina():console.log('couponChina') }
+
             if (dataTransfer["EXTERNAL_ID#4"] == 'JETRADAR') {
                 addScript('jetradar', "main-layout-bottom", "footer#main-layout-bottom")
             } else { console.log('Run JETRADAR'); }
@@ -98,33 +104,36 @@ var startFNJS = function() {
             addScript('acom', "main-layout-bottom", "footer#main-layout-bottom", acom_adddata());
             Addwebtrends();
             sendProCode();
-            (dataTransfer["EXTERNAL_ID#4"] === "mastercard") ? mastercard(): false;
-            chkSite()?couponBrussels():console.log("couponBrussels")
-
+            (dataTransfer["EXTERNAL_ID#4"] === "mastercard") ? mastercard(): console.log("mastercard");
+            chkSite() ? couponBrussels() : console.log("couponBrussels")
+            knorex.add();
             subscribe.sbbAdd();
-            skyscanner.add(); 
+            skyscanner.add();
             tripadvisor.add();
+            fbpixel_SE.add();
+            (eBaDataLayer.language == "GB") ? xbagSet.set(): console.log("xbagSet");
+            chkSite() ? sotw.senddata() : console.log("surpriseontheways");
             runWidget();
-        break;
-        
-    case "RTPL":
-        console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code);
-        // Step 3
-        updateHTML.service.travellerAlert_RTPL()
-        updateHTML.remove_content.price_RTPL()
-        updateHTML.remove_content.servicesbreakdown('RTPL')
-        Addwebtrends();
-        subscribe.sbbAdd();
+            break;
 
-        runWidget();
+        case "RTPL":
+            console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code);
+            // Step 3
+            updateHTML.service.travellerAlert_RTPL()
+            updateHTML.remove_content.price_RTPL()
+            updateHTML.remove_content.servicesbreakdown('RTPL')
+            Addwebtrends();
+            subscribe.sbbAdd();
+            (eBaDataLayer.language == "GB") ? xbagSet.set(): console.log("xbagSet");
+            runWidget();
 
-        break;
-    case "MDFSR":
-        console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
-        // extraService
-        updateHTML.extraService('div.catalogServices-teaser-SIT', 'div.catalogServices-teaser-MEA', 'div.catalogServices-teaser-BAG', 'div.catalogServices-teasers-container');
-        break;
-}
+            break;
+        case "MDFSR":
+            console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
+            // extraService
+            updateHTML.extraService('div.catalogServices-teaser-SIT', 'div.catalogServices-teaser-MEA', 'div.catalogServices-teaser-BAG', 'div.catalogServices-teasers-container');
+            break;
+    }
 
 }
 
