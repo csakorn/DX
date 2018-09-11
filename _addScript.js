@@ -1,4 +1,3 @@
-
 var objNamescript ={
     jetradar :{ //Request by S9P
         elm1:{
@@ -164,37 +163,37 @@ var objNamescript ={
 
             }
         }
+    },
+    CheeseMobile_FARE:{
+        elm:{
+            tag:"img",
+            txt:"https://track.cdn-ads.com/TG/?",
+            case:"1",
+            paramData:{
+                cu:"TG.FARE"
+            }
+        }
+    },
+    CheeseMobile_PURC:{
+        elm:{
+            tag:"img",
+            txt:"https://track.cdn-ads.com/TG/?",
+            case:"1",
+            paramData:{
+                cu:"TG.PAYMENT"
+            }
+        }
+    },
+    CheeseMobile_CONF:{
+        elm:{
+            tag:"script",
+            txt:"https://track.cdn-ads.com/TG/?",
+            case:"1",
+            paramData:{
+                cu:"TG.COMPLETE"
+            }
+        }
     }
-    // CheeseMobile_FARE:{
-    //     elm:{
-    //         tag:"script",
-    //         txt:"https://track.cdn-ads.com/JScript.js?",
-    //         case:"1",
-    //         paramData:{
-    //             cu:"TG.PH1.FARE"
-    //         }
-    //     }
-    // },
-    // CheeseMobile_PURC:{
-    //     elm:{
-    //         tag:"script",
-    //         txt:"https://track.cdn-ads.com/JScript.js?",
-    //         case:"1",
-    //         paramData:{
-    //             cu:"TG.PH1.PAYMENT"
-    //         }
-    //     }
-    // },
-    // CheeseMobile_CONF:{
-    //     elm:{
-    //         tag:"script",
-    //         txt:"https://track.cdn-ads.com/JScript.js?",
-    //         case:"1",
-    //         paramData:{
-    //             cu:"TG.PH1.COMPLETE"
-    //         }
-    //     }
-    // }
 }
 var addScript = function(objName,elmID,updateID,fn){
     var anchor = document.getElementById(elmID);
