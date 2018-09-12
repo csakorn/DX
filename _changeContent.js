@@ -52,7 +52,7 @@ var _extraServiceOBJ = {
 }
 var dialog_baggage ={
 	CN:"<p class=\"box_service-dialog\">\u4e58\u5ba2\u53ef\u5728\u822a\u73ed\u8d77\u98de\u65f6\u95f4\u63d0\u524d24\u5c0f\u65f6\u5728\u7ebf\u8d2d\u4e70\u989d\u5916\u6258\u8fd0\u884c\u674e\u914d\u989d <a target=\"_blank\"href=\"https://www.thaiairways.com/booking/baggage_con_CN.html\">More information </a></p>",
-	DE:"<p class=\"box_service-dialog\">Zusatzgep\u00e4ck kann online nur bis 24 Stunden vor Abflug des jeweiligen Fluges gebucht und bezahlt werden.<a target=\"_blank\"href=\"https://www.thaiairways.com/booking/baggage_con_GB.html\">More information </a></p>",
+	DE:"<p class=\"box_service-dialog\">Zusatzgep\u00e4ck kann online nur bis 24 Stunden vor Abflug des jeweiligen Fluges gebucht und bezahlt werden.<a target=\"_blank\"href=\"https://www.thaiairways.com/booking/baggage_con_DE.html\">More information </a></p>",
 	ES:"",
 	FR:"<p class=\"box_service-dialog\">L\u2019achat en ligne de bagage suppl\u00e9mentaire, peut \u00eatre effectu\u00e9 jusqu\u2019\u00e0 24 heures avant le d\u00e9part du vol. <a target=\"_blank\"href=\"https://www.thaiairways.com/booking/baggage_con_FR.html\">More information </a></p>",
 	GB:"<p class=\"box_service-dialog\">Online Additional baggage purchase is possible on international flights operated until 24 hours before departure of TG 3 digits flight only. <a target=\"_blank\"href=\"https://www.thaiairways.com/booking/baggage_con_GB.html\">More information </a></p>",
@@ -251,6 +251,7 @@ var xbagSet = {
 			$("#link_baggage").attr('href','')
 			$("#link_baggage").attr('atdelegate',xbagSet.getService())
 			$("#link_car").attr('href','https://www.thaiairways.com/CarController?LANGUAGE='+eBaDataLayer.language)
+			$("#link_insure").attr('href''https://www.thaiairways.com/en_TH/book/moreservices.page?#insurance')
 		},1000,6);
 	},
 	getService:function(){
