@@ -91,17 +91,17 @@ var updateHTML = {
 			},1000,5);
 		}
 	},
-	service:{
-		travellerAlert_RTPL:function(){
-			implibdx.core.updateDom("section#services-breakdown", function(){
-				if(eBaDataLayer.language == "GB" || eBaDataLayer.language == "FR" || eBaDataLayer.language == "TH"){
-					$(".servicesbreakdown-panel-body").after(travellerAlert[eBaDataLayer.language]);
-				}else{
-					$(".servicesbreakdown-panel-body").after(travellerAlert["GB"]);
-				}
-			},1000,3);
-		}
-	},
+	// service:{
+	// 	travellerAlert_RTPL:function(){
+	// 		implibdx.core.updateDom("section#services-breakdown", function(){
+	// 			if(eBaDataLayer.language == "GB" || eBaDataLayer.language == "FR" || eBaDataLayer.language == "TH"){
+	// 				$(".servicesbreakdown-panel-body").after(travellerAlert[eBaDataLayer.language]);
+	// 			}else{
+	// 				$(".servicesbreakdown-panel-body").after(travellerAlert["GB"]);
+	// 			}
+	// 		},1000,3);
+	// 	}
+	// },
 	extraService:function(SIT,MEA,BAG,idbox){
 		// this.SIT  = SIT;
 		// this.BAG  = BAG;
@@ -164,6 +164,9 @@ var updateHTML = {
 				$("label[for $=\"_YTH-IDEN_FirstName\"]").html("First / Given name & Middle name *(as in passport)");
 				$("label[for $=\"_YTH-IDEN_LastName\"]").html("Last Name / Family Name / Surname *(as in passport)");
 
+
+
+
 			},1000,5);
 		}
 	},
@@ -185,6 +188,33 @@ var updateHTML = {
 			},1000,6);
 		}
 	}
+}
+
+function expanded_adult(){
+	implibdx.core.updateDom("section.traveller-form",function(){
+		for(i=0;i<=$("a[aria-labelledby*='_cardTravellerADT']").length-1;i++){
+			//console.log(i,"----expanded_adult")
+			if(i !== 0){
+				$("a[aria-labelledby*='_cardTravellerADT']")[i].click();
+			}
+		}
+		for(i=0;i<=$("a[aria-labelledby*='_cardTravellerINF']").length-1;i++){
+			//console.log(i,"----expanded_adult")			
+			$("a[aria-labelledby*='_cardTravellerINF']")[i].click();			
+		}
+		for(i=0;i<=$("a[aria-labelledby*='_cardTravellerCHD']").length-1;i++){
+			//console.log(i,"----expanded_adult")			
+			$("a[aria-labelledby*='_cardTravellerCHD']")[i].click();			
+		}
+		for(i=0;i<=$("a[aria-labelledby*='_cardTravellerYTH']").length-1;i++){
+			//console.log(i,"----expanded_adult")			
+			$("a[aria-labelledby*='_cardTravellerYTH']")[i].click();			
+		}
+		for(i=0;i<=$("a[aria-labelledby*='_cardTravellerB15']").length-1;i++){
+			//console.log(i,"----expanded_adult")			
+			$("a[aria-labelledby*='_cardTravellerB15']")[i].click();			
+		}		
+	},1000,6);	
 }
 
 function setTimeoutBAG(){
@@ -251,11 +281,95 @@ var xbagSet = {
 			$("#link_baggage").attr('href','')
 			$("#link_baggage").attr('atdelegate',xbagSet.getService())
 			$("#link_car").attr('href','https://www.thaiairways.com/CarController?LANGUAGE='+eBaDataLayer.language)
-			$("#link_insure").attr('href''https://www.thaiairways.com/en_TH/book/moreservices.page?#insurance')
+			$("#link_insure").attr('href','https://www.thaiairways.com/en_TH/book/moreservices.page?#insurance')
+				
 		},1000,6);
 	},
 	getService:function(){
 		return $("#services-breakdown footer>button").attr('atdelegate');
 	}
 
+}
+
+var GOV = function(){
+	implibdx.core.updateDom(".fop-menu-wrapper",function(){
+
+		$("li[id $='_li_CON'],label[for $='_radio_CON'],input[id $='_radio_CON'],.fop-icon icon-office").on('click', function(event) {
+			if(eBaDataLayer.language === "GB" ){
+				window.setTimeout(function(){
+					(dataTransfer['EXTERNAL_ID#4'] === 'GOV')?$("div[id $='_fopTemplate_custom-pickup']").html('Contact at THAI ticket office in the country where the journey'):console.log('no')
+				},200)
+			}
+			if(eBaDataLayer.language === "TH" ){
+				window.setTimeout(function(){
+				(dataTransfer['EXTERNAL_ID#4'] === 'GOV')?$("div[id $='_fopTemplate_custom-pickup']").html('\u0e15\u0e34\u0e14\u0e15\u0e48\u0e2d \u0e2a\u0e33\u0e19\u0e31\u0e01\u0e07\u0e32\u0e19\u0e1a\u0e31\u0e15\u0e23\u0e42\u0e14\u0e22\u0e2a\u0e32\u0e23 \u0e43\u0e19\u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e17\u0e35\u0e48\u0e40\u0e23\u0e34\u0e48\u0e21\u0e15\u0e49\u0e19\u0e40\u0e14\u0e34\u0e19\u0e17\u0e32\u0e07'):console.log('no')
+				},200)
+
+			}
+		})
+	},1000,6)
+}
+
+
+
+var govApim = function(){
+	if(eBaDataLayer.page_code === 'APIM'){
+		implibdx.core.updateDom("section.traveller-panel-body.panel-body",function(){
+			if(eBaDataLayer.language === "GB"){
+				$("label[for $=\"PSPT_DocumentNumber\"]").html("Document number* (Please fill in the form as following pattern, 001/2517 as 0012517)");
+				$("label[for $=\"PSPT_DocumentType\"]").html("Document type:<br>&nbsp");
+			}
+			if(eBaDataLayer.language === "TH"){
+				$("label[for $=\"PSPT_DocumentNumber\"]").html("\u0e2b\u0e21\u0e32\u0e22\u0e40\u0e25\u0e02\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23* (\u0e01\u0e23\u0e38\u0e13\u0e32\u0e43\u0e2a\u0e48\u0e15\u0e32\u0e21\u0e15\u0e31\u0e27\u0e2d\u0e22\u0e48\u0e32\u0e07 \u0e14\u0e31\u0e07\u0e19\u0e35\u0e49 001\x2F2517 - 0012517)");
+				$("label[for $=\"PSPT_DocumentType\"]").html("\u0e1b\u0e23\u0e30\u0e40\u0e20\u0e17\u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23:<br>&nbsp");
+
+			}
+
+		},1000,5);
+	}
+}
+
+// hide Contact Information #Home Phone:|Business Phone
+
+var contactInfo = {
+	phone:function(){
+		for(i=0;i<$(".phoneCode").length;i++){
+			if(i !== 0 && i !== 3 ){
+				console.log(i)
+				$(".phoneCode")[i].style.display = "none";
+				$(".phoneNumber")[i].style.display = "none";
+			}
+		}
+	},
+	click_phone:function(){
+		implibdx.core.updateDom("section.traveller-contact-information-panel",function(){
+			contactInfo.add_idPhone();
+			contactInfo.phone();
+			$('#BusinessPhone').on('click',function(){
+				$('.traveller-contact-information-panel-body .phoneNumber')[2].style.display = "block"
+				$('.traveller-contact-information-panel-body .phoneCode')[2].style.display = "block"
+			})
+
+			$('#HomePhone').on('click',function(){
+				$('.traveller-contact-information-panel-body .phoneNumber')[1].style.display = "block"
+				$('.traveller-contact-information-panel-body .phoneCode')[1].style.display = "block"
+			})
+		},1000,7);
+	},
+	add_idPhone:function(){
+		$(".traveller-contact-information-panel-body .control-label")[8].setAttribute("id", "BusinessPhone");
+		$(".traveller-contact-information-panel-body .control-label")[5].setAttribute("id", "HomePhone");
+
+	}
+}
+
+var removeXbag ={
+	check:function(){
+		return (eBaDataLayer.contact_information.email === undefined)?true:false;
+	},
+	remove:function(r){
+		
+		if(r === true) $("#PinkBanner_3")[0].parentElement.remove();
+			else return false;
+	}
 }
