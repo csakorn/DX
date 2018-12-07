@@ -9,12 +9,12 @@ var createEM ={
 			let txtNode = '';
 
 			switch(this.status){
-				case '0' : 	
+				case '0' :
 				txtNode = document.createTextNode(this.content);
 				anchor.appendChild(txtNode);
 				break;
 				case '1': anchor.src = this.content;
-				break;			
+				break;
 			}
 			return anchor;
 		}else return false;
@@ -22,7 +22,7 @@ var createEM ={
 }
 
 var widgetScript = {
-    destination:function(objName,idName,elmName,attrName,src){         
+    destination:function(objName,idName,elmName,attrName,src){
        this._Anchor = objName[idName];
        this._Elm = objName[elmName];
        this._Attr = objName[attrName];
@@ -37,10 +37,33 @@ var widgetScript = {
            createAttr.setAttribute(key,this._Attr[key]);
            console.log('--------------------------------->Run2')
         }
-        console.log('widgetScript');       
-        _anchor.appendChild(createAttr);            
+        console.log('widgetScript');
+        _anchor.appendChild(createAttr);
     }
 }
+
+var xBound = function(xb){
+	var bound = '';
+	for(k in xb){
+		bound += xb[k].route+'-';
+	}
+	return bound;
+}
+
+var _Bound = function(b,o){
+	this.arr = o;
+	this.bound = b;
+
+	for(k in this.bound){
+		if( k === this.arr ) return this.bound[k];
+	}
+
+}
+
+var checkRBD = function(reg,rbd){
+	return  reg.test(rbd);
+}
+
 function ExpandCarSearch (argument) {
-	
+
 }
