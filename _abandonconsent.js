@@ -5,16 +5,17 @@ var abandon_consent = {
         tagHTML.setAttribute('id','boxAbandon');
 
         // if($("div.title-text").length != 0){
-            implibdx.core.updateDom(".terms-and-conditions",function(){
+            implibdx.core.updateDom("#terms-and-conditions",function(){
                 console.log('-------------------------->Add Abandon');
 
-                $("div.title-text").append(tagHTML);
-
+                // $("div.title-text").append(tagHTML);
+                // $("div#w17_termsAndConditions").before(tagHTML);
+                $('div[id $= \'_termsAndConditions\']').before(tagHTML);
                 $("div#boxAbandon").html( (abandon_consent.txtCheckbox[eBaDataLayer.language] !== "" ? abandon_consent.txtCheckbox[eBaDataLayer.language] : abandon_consent.txtCheckbox['GB']) );
 
                 abandon_consent.watch();
 
-            },1000,5);
+            },1000,5); 
 
         // }else{
         //     implibdx.core.updateDom("div.terms-conditions-container",function(){
@@ -24,7 +25,7 @@ var abandon_consent = {
 
         //     },1000,5);
         // }
-        
+
         abandon_consent.createOBJ();
     },
     txtCheckbox:{
@@ -58,7 +59,7 @@ var abandon_consent = {
          $('button.tripSummary-btn-continue,button#bottom-continue-button').on('click', function(event) {
              event.preventDefault();
              /* Act on the event */
-              console.log('-------------------------------->watch')           
+              console.log('-------------------------------->watch')
             if($('#abandon').prop("checked") === true && $('input[id $="-input-purchaseForm-termsConditionsForm-termsAndCondition"]').prop("checked") === true && ($("input[id $='_radio_EXT']").prop("checked") === true || $("input[id $='_radio_EXT']").prop("checked") == undefined) ){
                 console.log('-------------------------------->save data')
                 abandon_consent.obj["data7"] = "Y";
@@ -68,10 +69,10 @@ var abandon_consent = {
             //    console.log('-------------------------------->save data N');
             //    abandon_consent.obj["data7"] = "N";
             //    abandon_consent.save_data();
-            // }       
+            // }
          });
-                  
-         $("li[id $='_li_CON'],label[for $='_radio_CON'],input[id $='_radio_CON'],#tpl5_radio_PLCC,li[id $='_li_PLCC'],label[for $='_radio_PLCC'],input[id $='_radio_PLCC']").on('click', function(event) {            
+
+         $("li[id $='_li_CON'],label[for $='_radio_CON'],input[id $='_radio_CON'],#tpl5_radio_PLCC,li[id $='_li_PLCC'],label[for $='_radio_PLCC'],input[id $='_radio_PLCC']").on('click', function(event) {
              event.preventDefault();
              abandon_consent.remove();
              console.log('-------------------------------->remove')
