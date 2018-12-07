@@ -1,12 +1,12 @@
 function runWidget(){
 	implibdx.core.updateDom("div#TGINSBanner", function(){
-		
-		wt_Takeme.add();
+
+		// wt_Takeme.add();
 		rentalCar.add()
 		wt_booking.add();
         teaserDisplay.addTeaser();
 		ROH.sendData();
-        
+
 	},1000,5)
 }
 
@@ -20,13 +20,13 @@ function runWidget(){
 // 				// $("#TGINSBannerMenu").append("<aside class=\""+bannerTG[keys].class+"\"><a href=\""+bannerTG[keys].image.linkURL+bannerTG[keys].param+"\" target=\""+bannerTG[keys].target+"\" "+bannerTG[keys].onClick[eBaDataLayer.page_code]+"><img src=\""+bannerTG[keys].image.URL[eBaDataLayer.language]+"\" alt=\""+bannerTG[keys].image.alt+"\"></a></aside>");
 // 			}
 // 		}
-	
+
 // }
 var teaserDisplay = {
 	objData:bannerTG,
 	addTeaser:function(){
-	
-           implibdx.core.updateDom("div.TGINSBanner", function() {		
+
+           implibdx.core.updateDom("div.TGINSBanner", function() {
 			for(keys in teaserDisplay.objData){
 
 				if( teaserDisplay.check(keys) === true){
@@ -44,10 +44,10 @@ var teaserDisplay = {
 		if(	(teaserDisplay.objData[n].condition.pagecode).indexOf(eBaDataLayer.page_code) >= 0 && teaserEXP(n) === true ){
 			if(teaserDisplay.objData[n].condition.chk === null){
 				return true;
-			}else{ 
+			}else{
 				console.log(eBaDataLayer[teaserDisplay.objData[n].condition.chk.data[0]][teaserDisplay.objData[n].condition.chk.data[1]])
 				// if( (/teaserDisplay.objData[n].condition.chk.rex/).test(eBaDataLayer[teaserDisplay.objData[n].condition.chk.data[0]][teaserDisplay.objData[n].condition.chk.data[1]][teaserDisplay.objData[n].condition.chk.data[2]]) ){
-				// 	return true;				
+				// 	return true;
 				// }
 			}
 		}else{
