@@ -102,8 +102,6 @@ var startFNJS = function() {
         case "CONF":
             // Step 3 CONFIRMED BOOKING
             // updateHTML.remove_content.servicesbreakdown('CONF');
-
-
             // updateHTML.remove_content.additional_services();
             goodservice_india.AddData();
             if ((/\b^[IT_]{3}/).test(eBaDataLayer.external_id) === true) { addScript('fbpixel_it', "main-layout-bottom", "footer#main-layout-bottom"); }
@@ -116,7 +114,6 @@ var startFNJS = function() {
                 // chkSite() ? couponChina():console.log('couponChina');
                 addScript('CheeseMobile_CONF', "main-layout-bottom", "footer#main-layout-bottom");
             }
-
             if (dataTransfer["EXTERNAL_ID#4"] == 'JETRADAR') {
                 addScript('jetradar', "main-layout-bottom", "footer#main-layout-bottom")
             } else { console.log('Run JETRADAR'); }
