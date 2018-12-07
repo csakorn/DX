@@ -163,10 +163,6 @@ var updateHTML = {
 
 				$("label[for $=\"_YTH-IDEN_FirstName\"]").html("First / Given name & Middle name *(as in passport)");
 				$("label[for $=\"_YTH-IDEN_LastName\"]").html("Last Name / Family Name / Surname *(as in passport)");
-
-
-
-
 			},1000,5);
 		}
 	},
@@ -281,7 +277,7 @@ var xbagSet = {
 			$("#link_baggage").attr('href','')
 			$("#link_baggage").attr('atdelegate',xbagSet.getService())
 			$("#link_car").attr('href','https://www.thaiairways.com/CarController?LANGUAGE='+eBaDataLayer.language)
-			$("#link_insure").attr('href','https://www.thaiairways.com/en_TH/book/moreservices.page?#insurance')
+			$("#link_insure").attr('href','https://www.thaiairways.com/'+siteLang(eBaDataLayer.language)+'/book/moreservices.page?#insurance')
 				
 		},1000,6);
 	},
@@ -368,8 +364,10 @@ var removeXbag ={
 		return (eBaDataLayer.contact_information.email === undefined)?true:false;
 	},
 	remove:function(r){
-		
-		if(r === true) $("#PinkBanner_3")[0].parentElement.remove();
+		implibdx.core.updateDom("#pinkbanner",function(){
+
+			if(r === true) $("#PinkBanner_3")[0].parentElement.remove();
 			else return false;
+		},1000,5);
 	}
 }
