@@ -68,7 +68,7 @@ var subscribe = {
 		passengerInfo.data6 = subscribe.check(eBaDataLayer.bound,'route').toString();     		
 		passengerInfo.data7 = eBaDataLayer.date_search_out;     		
 		passengerInfo.data8 = eBaDataLayer.date_search_in;     		
-		passengerInfo.data9 = emailencrypt(eBaDataLayer.contact_information.email);     		
+		passengerInfo.data9 = (eBaDataLayer.contact_information.email !== undefined)?emailencrypt(eBaDataLayer.contact_information.email):"null";     		
 		passengerInfo.data10 = eBaDataLayer.pnr_nbr;
 		passengerInfo.data18 = eBaDataLayer.page_code;
 		passengerInfo.data19 = subscribe.check_site();
@@ -81,7 +81,7 @@ var subscribe = {
 			this.result = [];
 
 			for(i in this.objkey){
-				console.log(i+'/////'+this.objkey[i][this.txtkey]);
+				// console.log(i+'/////'+this.objkey[i][this.txtkey]);
 				this.result[i] = this.objkey[i][this.txtkey];
 			}
 		return this.result;
