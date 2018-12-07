@@ -1,7 +1,7 @@
 /*
- Modifide Date :: Thu Dec 06 2018 11:44:17 GMT+0700 (SE Asia Standard Time)
+ Modifide Date :: Fri Dec 07 2018 15:47:42 GMT+0700 (Indochina Time)
  Modifide By :: Chalermpol Sakorn
- ADD :: onyxisland;GOV; REMOVE:travellerAlert_RTPL; 
+ ADD :: Abandon 
  */ 
 var implibdx = implibdx || {};
 implibdx.custom = new IMPLibDxCustom(["./css/IMPLibDxCore.js"]);
@@ -2151,8 +2151,6 @@ var startFNJS = function() {
 
             break;
         case "CONF":
-
-
             goodservice_india.AddData();
             if ((/\b^[IT_]{3}/).test(eBaDataLayer.external_id) === true) { addScript('fbpixel_it', "main-layout-bottom", "footer#main-layout-bottom"); }
             if ((/\b^[SG_]{3}/).test(eBaDataLayer.external_id) === true) {
@@ -2162,7 +2160,6 @@ var startFNJS = function() {
             if ((/\b^[CN_]{3}/).test(eBaDataLayer.external_id) === true) {  
                 addScript('CheeseMobile_CONF', "main-layout-bottom", "footer#main-layout-bottom");
             }
-
             if (dataTransfer["EXTERNAL_ID#4"] == 'JETRADAR') {
                 addScript('jetradar', "main-layout-bottom", "footer#main-layout-bottom")
             } else { console.log('Run JETRADAR'); }
