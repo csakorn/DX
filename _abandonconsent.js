@@ -1,12 +1,12 @@
 var abandon_consent = {
     add:function(){
-        console.log('-------------------------->Add Abandon1')
+        // console.log('-------------------------->Add Abandon1')
         let tagHTML = document.createElement("div");
         tagHTML.setAttribute('id','boxAbandon');
 
         // if($("div.title-text").length != 0){
             implibdx.core.updateDom("#terms-and-conditions",function(){
-                console.log('-------------------------->Add Abandon');
+                // console.log('-------------------------->Add Abandon');
 
                 // $("div.title-text").append(tagHTML);
                 // $("div#w17_termsAndConditions").before(tagHTML);
@@ -59,9 +59,9 @@ var abandon_consent = {
          $('button.tripSummary-btn-continue,button#bottom-continue-button').on('click', function(event) {
              event.preventDefault();
              /* Act on the event */
-              console.log('-------------------------------->watch')
+              // console.log('-------------------------------->watch')
             if($('#abandon').prop("checked") === true && $('input[id $="-input-purchaseForm-termsConditionsForm-termsAndCondition"]').prop("checked") === true && ($("input[id $='_radio_EXT']").prop("checked") === true || $("input[id $='_radio_EXT']").prop("checked") == undefined) ){
-                console.log('-------------------------------->save data')
+                // console.log('-------------------------------->save data')
                 abandon_consent.obj["data7"] = "Y";
                 abandon_consent.save_data();
             }
@@ -75,13 +75,13 @@ var abandon_consent = {
          $("li[id $='_li_CON'],label[for $='_radio_CON'],input[id $='_radio_CON'],#tpl5_radio_PLCC,li[id $='_li_PLCC'],label[for $='_radio_PLCC'],input[id $='_radio_PLCC']").on('click', function(event) {
              event.preventDefault();
              abandon_consent.remove();
-             console.log('-------------------------------->remove')
+             // console.log('-------------------------------->remove')
          });
 
          $("li[id $='_li_EXT'],label[for $='_radio_EXT'],input[id $='_radio_EXT'],#tpl5_radio_EXT, label[for='tpl5_radio_EXT'], li#tpl5_li_EXT").on('click', function(event) {
              event.preventDefault();
              $("div#boxAbandon").html( (abandon_consent.txtCheckbox[eBaDataLayer.language] !== "" ? abandon_consent.txtCheckbox[eBaDataLayer.language] : abandon_consent.txtCheckbox['GB']) );
-             console.log('-------------------------------->add')
+             // console.log('-------------------------------->add')
 
          });
     },
