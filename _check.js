@@ -4,7 +4,7 @@ var checkDate = function(tdate,expdate){
 	this.expdate = expdate.split("/");
 	this.travel = new Date(this.tdate[2],(this.tdate[1]-1),this.tdate[0]);  // YYYY/MM/DD/H:M:S
 	this.expEnd = new Date(this.expdate[2],(this.expdate[1]-1),this.expdate[0])
-	console.log( this.travel + "----"+ this.expEnd);
+	// console.log( this.travel + "----"+ this.expEnd);
 
 	if (this.travel <= this.expEnd) return true;
 	else return false;
@@ -65,28 +65,28 @@ var checkEXP = function(name){
 			this.eBaDateIn =  setDatef([this.dIn[2],this.dIn[1]-1,this.dIn[0]]);
 
 			if(this.expStart <= this.eBaDateOut && this.eBaDateOut <= this.expEnd && this.expStart <= this.eBaDateIn && this.eBaDateIn <= this.expEnd){
-				console.log(name+"=>OK"+"---date"+this.eBaDateOut+"---"+this.eBaDateIn)
+				// console.log(name+"=>OK"+"---date"+this.eBaDateOut+"---"+this.eBaDateIn)
 				return true;
 			}else{
-				console.log(name+"=>exp"+"---date"+this.eBaDateOut+"---"+this.eBaDateIn);
+				// console.log(name+"=>exp"+"---date"+this.eBaDateOut+"---"+this.eBaDateIn);
 				return false;
 			}
 		}
 		if(bannerTG[name].exp.condition == "ticketing") {
 			this.toDay = new Date();
-			console.log(this.expStart+'-------------'+this.expEnd);
+			// console.log(this.expStart+'-------------'+this.expEnd);
 			if(this.toDay <= this.expEnd &&  this.expStart <= this.toDay){
-				console.log(name+"=>OK"+"---date"+this.toDay+"---"+this.expEnd)
+				// console.log(name+"=>OK"+"---date"+this.toDay+"---"+this.expEnd)
 				return true;
 			}else{
-				console.log(name+"=>exp"+"---date"+this.toDay+"---"+this.expEnd);
+				// console.log(name+"=>exp"+"---date"+this.toDay+"---"+this.expEnd);
 				return false;
 			}
 		}
 
 
 	}else{
-		console.log(name+"=>no exp"+"---date"+this.eBaDateOut+"---"+this.eBaDateIn)
+		// console.log(name+"=>no exp"+"---date"+this.eBaDateOut+"---"+this.eBaDateIn)
 		return true;
 	}
 }
@@ -150,7 +150,7 @@ var check = {
 		this.d = d;
 		this.spl ;
 		this.spl = this.d.split("/");
-		console.log(this.spl);
+		// console.log(this.spl);
 		return this.spl[2]+"-"+this.spl[1]+"-"+this.spl[0];
 	},
 	date_travel:function(d){
@@ -160,10 +160,10 @@ var check = {
 	trip_type:function(t){
 		this.t = t;
 		this.vDate ;
-		if(this.t == "OW"){
+		if(this.t == "OW" || this.t === undefined){
 			this.vDate = check.chkdate(eBaDataLayer.bound[0].arr_date).split("-");
 			this.vDate[2] = parseInt(this.vDate[2])+1;
-			console.log(this.vDate);
+			// console.log(this.vDate);
 			return this.vDate[0]+"-"+this.vDate[1]+"-"+this.vDate[2];
 		}else return check.chkdate(eBaDataLayer.bound[1].dep_date);
 	},
@@ -212,4 +212,35 @@ function chkSite(x){
 		return true;
 	}
 	return false;
+}
+
+var siteLang = function(l){
+
+	switch (eBaDataLayer.language){
+		case "CN": return "zh_CN";
+				break;
+		case "DE": return "de_DE";
+				break;
+		case "ES": return "en";
+				break;
+		case "FR": return "fr_FR";
+				break;
+		case "GB": return "en";
+				break;
+		case "IT": return "it_IT";
+				break;
+		case "JP": return "ja_JP";
+				break;
+		case "KO": return "ko_KR";
+				break;
+		case "RU": return "en";
+				break;
+		case "SE": return "en";
+				break;
+		case "TH": return "en_TH";
+				break;
+		case "TW": return "zh_TW";
+				break;
+		default: return "en";
+	}
 }
