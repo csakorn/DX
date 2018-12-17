@@ -120,7 +120,7 @@ var startFNJS = function() {
 
             chkSite()?fbpixel_acom.add():console.log('fbpixel_acom');
             addScript('acom', "main-layout-bottom", "footer#main-layout-bottom", acom_adddata());
-            Addwebtrends();
+            // Addwebtrends();
             sendProCode();
             // (dataTransfer["EXTERNAL_ID#4"] === "mastercard") ? mastercard(): console.log("mastercard");
             (dataTransfer["EXTERNAL_ID#4"] === "UK00022") ? eMailTrigger.ukBlackFriday.send(): console.log("ukBlackFriday");
@@ -142,7 +142,7 @@ var startFNJS = function() {
             // updateHTML.service.travellerAlert_RTPL()
             updateHTML.remove_content.price_RTPL()
             // updateHTML.remove_content.servicesbreakdown('RTPL')
-            Addwebtrends();
+            // Addwebtrends();
             subscribe.sbbAdd();
             // (eBaDataLayer.language == "GB") ? xbagSet.set(): console.log("xbagSet");
             (eBaDataLayer.language == "GB" || eBaDataLayer.language == "FR") ? xbagSet.set(): console.log("xbagSet");
