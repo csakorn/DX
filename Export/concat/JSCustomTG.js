@@ -1,7 +1,7 @@
 /*
- Modifide Date :: Fri Dec 07 2018 15:47:42 GMT+0700 (Indochina Time)
+ Modifide Date :: Mon Dec 17 2018 10:07:04 GMT+0700 (SE Asia Standard Time)
  Modifide By :: Chalermpol Sakorn
- ADD :: Abandon 
+ ADD :: onyxisland;GOV; REMOVE:travellerAlert_RTPL; 
  */ 
 var implibdx = implibdx || {};
 implibdx.custom = new IMPLibDxCustom(["./css/IMPLibDxCore.js"]);
@@ -291,7 +291,7 @@ var teaserDisplay = {
 			if(teaserDisplay.objData[n].condition.chk === null){
 				return true;
 			}else{
-				console.log(eBaDataLayer[teaserDisplay.objData[n].condition.chk.data[0]][teaserDisplay.objData[n].condition.chk.data[1]])
+				console.log('EXPDATE');
 			}
 		}else{
 			console.log('NO');
@@ -1227,7 +1227,6 @@ var fbpixel_SE = {
                 }else if(eBaDataLayer.page_code == "PURC"){
                     content  = "!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n; n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '270700370143865');fbq('track', 'PageView');fbq('track', 'AddToCart', { value: "+eBaDataLayer.total_price+",currency:'"+eBaDataLayer.currency+"'})";
                 }
-                console.log(content);
                 txtNode = document.createTextNode(content)
                 createAttr.appendChild(txtNode);
                 addTo.appendChild(createAttr);
@@ -1301,7 +1300,6 @@ var fbpixel_acom = {
                     content  = "!function(f,b,e,v,n,t,s) {if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)}(window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '624510897705215'); fbq('track', 'PageView');";
 
                 }
-                console.log(content);
                 txtNode = document.createTextNode(content)
                 createAttr.appendChild(txtNode);
                 addTo.appendChild(createAttr);
@@ -1337,117 +1335,12 @@ var pathData =function(obj,url){
    return url+jQuery.param(path);
 }
 
-function Addwebtrends(){
-    if (eBaDataLayer.page_code == "CONF") {
-        implibdx.core.updateDom("footer#main-layout-bottom", function(){
-            $("#datatransferForm>input").serializeArray().forEach(datatransferForm);
-            $("#main-layout-bottom").append(webtrendsCreate.createElements("script",webtrendsCreate.add(""),"0"));
-            $("#main-layout-bottom").append(webtrendsCreate.createElements("script","https://www.thaiairways.com/static/common/js/webtrends.load.js","1"));
-            $("#main-layout-bottom").append(webtrendsCreate.createElements("noscript","<img alt='dcsimg' id='dcsimg' width='1' height='1' src='//statse.webtrendslive.com/dcs0s1to5100004va4434tphe_5i8v/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=10.2.55&amp;dcssip=www.thaiairways.com'>","0"));
-        },1000,3);
-    }else if(eBaDataLayer.page_code == "RTPL"){
-        $("#main-layout-bottom").append(webtrendsCreate.createElements("script","https://www.thaiairways.com/static/common/js/webtrends.load.js","1"));
-        $("#main-layout-bottom").append(webtrendsCreate.createElements("noscript","<img alt='dcsimg' id='dcsimg' width='1' height='1' src='//statse.webtrendslive.com/dcs0s1to5100004va4434tphe_5i8v/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=10.2.55&amp;dcssip=www.thaiairways.com'>","0"));
-    }
-}
-var twCreate = {
-    createElements:function(elm,txt,n){
-        var addTo = document.getElementById("main-layout-bottom");
-        var createScr = document.createElement(elm);
-        var txt_Code = "";
-        this.content = txt;
-        if(n == "1"){
-            createScr.src = this.content;
-        }else{
-            txt_Code = document.createTextNode(this.content);
-            createScr.appendChild(txt_Code);
-        }
-        return createScr;
-    },
-    add : function(name){
-        var twLoad ="";
 
-        if(eBaDataLayer.page_code == "CONF"){
-            return  twLoad = "window.webtrendsAsyncLoad = function(dcs){"+twCreate.dcs_TW+";}";}
-        if(eBaDataLayer.page_code == "RTPL"){
-            return twLoad = "window.webtrendsAsyncLoad = function(dcs){"+twCreate.dcs_ad(name)+"}";}
 
-    },
-    bound : function(){
-        var res = eBaDataLayer.bound[0].route;
-        $.each(eBaDataLayer.bound,function(index,value){
-            if(index != 0){
-                res += "-"+value.route;
-            }
-        })
-        return res;
-    },
-    dcs_ad : function(name){
-        this.proName = name;
-        if(this.proName != ""){
-            var Name_ad = name.split("/");
-            var ad = "dcs.WT.ad=\"";
-            for(var i = 0; i< Name_ad.length; i++){
-                if(checkEXP(Name_ad[i]) == true) ad += bannerTG[Name_ad[i]].ad+";";
-                else ad += "";
-            }
-            return ad+"\"";
-        }else{
-            return "";
-        }
 
-    },
-    dcs_TW :"dcs.WT.totalamount = eBaDataLayer.total_price;dcs.WT.currcode = eBaDataLayer.currency;dcs.WT.paytype = eBaDataLayer.payment_method;dcs.WT.site = eBaDataLayer.site_code;dcs.WT.bookfromcity = eBaDataLayer.bound[0].dep_city;dcs.WT.booktocity = eBaDataLayer.bound[0].arr_city;dcs.WT.triptype = eBaDataLayer.trip_type;dcs.WT.rloc = eBaDataLayer.pnr_number;dcs.WT.thaicountry = eBaDataLayer.market;dcs.WT.bcabin = dataTransfer[\"AIR#1_ITINERARY#1_SEGMENT#1_CABIN#1\"];dcs.WT.ceco = dataTransfer[\"AIR#1_PNR#1_RBD#1\"];dcs.WT.flight_numbers = eBaDataLayer.bound[0].flight_numbers;dcs.WT.route = twCreate.bound();dcs.WT.office_id = eBaDataLayer.office_id;dcs.WT.external_id = eBaDataLayer.external_id;dcs.WT.depdate = eBaDataLayer.bound[0].dep_date;dcs.WT.bookconfirm  = \"Confirmed\""
-}
-var webtrendsCreate = {
-    createElements:function(elm,txt,n){
-        var addTo = document.getElementById("main-layout-bottom");
-        var createScr = document.createElement(elm);
-        var txt_Code = "";
-        this.content = txt;
-        if(n == "1"){
-            createScr.src = this.content;
-        }else{
-            txt_Code = document.createTextNode(this.content);
-            createScr.appendChild(txt_Code);
-        }
-        return createScr;
-    },
-    add : function(name){
-        var twLoad ="";
 
-        if(eBaDataLayer.page_code == "CONF"){
-            return  twLoad = "window.webtrendsAsyncLoad = function(dcs){"+twCreate.dcs_TW+";}";}
-        if(eBaDataLayer.page_code == "RTPL"){
-            return twLoad = "window.webtrendsAsyncLoad = function(dcs){"+twCreate.dcs_ad(name)+"}";}
 
-    },
-    bound : function(){
-        var res = eBaDataLayer.bound[0].route;
-        $.each(eBaDataLayer.bound,function(index,value){
-            if(index != 0){
-                res += "-"+value.route;
-            }
-        })
-        return res;
-    },
-    dcs_ad : function(name){
-        this.proName = name;
-        if(this.proName != ""){
-            var Name_ad = name.split("/");
-            var ad = "dcs.WT.ad=\"";
-            for(var i = 0; i< Name_ad.length; i++){
-                if(checkEXP(Name_ad[i]) == true) ad += bannerTG[Name_ad[i]].ad+";";
-                else ad += "";
-            }
-            return ad+"\"";
-        }else{
-            return "";
-        }
 
-    },
-    dcs_TW :"dcs.WT.totalamount = eBaDataLayer.total_price;dcs.WT.currcode = eBaDataLayer.currency;dcs.WT.paytype = eBaDataLayer.payment_method;dcs.WT.site = eBaDataLayer.site_code;dcs.WT.bookfromcity = eBaDataLayer.bound[0].dep_city;dcs.WT.booktocity = eBaDataLayer.bound[0].arr_city;dcs.WT.triptype = eBaDataLayer.trip_type;dcs.WT.rloc = eBaDataLayer.pnr_number;dcs.WT.thaicountry = eBaDataLayer.market;dcs.WT.bcabin = dataTransfer[\"AIR#1_ITINERARY#1_SEGMENT#1_CABIN#1\"];dcs.WT.ceco = dataTransfer[\"AIR#1_PNR#1_RBD#1\"];dcs.WT.flight_numbers = eBaDataLayer.bound[0].flight_numbers;dcs.WT.route = twCreate.bound();dcs.WT.office_id = eBaDataLayer.office_id;dcs.WT.external_id = eBaDataLayer.external_id;dcs.WT.depdate = eBaDataLayer.bound[0].dep_date;dcs.WT.bookconfirm  = \"Confirmed\""
-}
 
 function acom_adddata(){
     window.uetq = window.uetq || [];
@@ -1916,12 +1809,10 @@ var jumper = function(){
 }
 var abandon_consent = {
     add:function(){
-        console.log('-------------------------->Add Abandon1')
         let tagHTML = document.createElement("div");
         tagHTML.setAttribute('id','boxAbandon');
 
             implibdx.core.updateDom("#terms-and-conditions",function(){
-                console.log('-------------------------->Add Abandon');
 
                 $('div[id $= \'_termsAndConditions\']').before(tagHTML);
                 $("div#boxAbandon").html( (abandon_consent.txtCheckbox[eBaDataLayer.language] !== "" ? abandon_consent.txtCheckbox[eBaDataLayer.language] : abandon_consent.txtCheckbox['GB']) );
@@ -1964,9 +1855,7 @@ var abandon_consent = {
     watch:function(){
          $('button.tripSummary-btn-continue,button#bottom-continue-button').on('click', function(event) {
              event.preventDefault();
-              console.log('-------------------------------->watch')
             if($('#abandon').prop("checked") === true && $('input[id $="-input-purchaseForm-termsConditionsForm-termsAndCondition"]').prop("checked") === true && ($("input[id $='_radio_EXT']").prop("checked") === true || $("input[id $='_radio_EXT']").prop("checked") == undefined) ){
-                console.log('-------------------------------->save data')
                 abandon_consent.obj["data7"] = "Y";
                 abandon_consent.save_data();
             }
@@ -1975,13 +1864,11 @@ var abandon_consent = {
          $("li[id $='_li_CON'],label[for $='_radio_CON'],input[id $='_radio_CON'],#tpl5_radio_PLCC,li[id $='_li_PLCC'],label[for $='_radio_PLCC'],input[id $='_radio_PLCC']").on('click', function(event) {
              event.preventDefault();
              abandon_consent.remove();
-             console.log('-------------------------------->remove')
          });
 
          $("li[id $='_li_EXT'],label[for $='_radio_EXT'],input[id $='_radio_EXT'],#tpl5_radio_EXT, label[for='tpl5_radio_EXT'], li#tpl5_li_EXT").on('click', function(event) {
              event.preventDefault();
              $("div#boxAbandon").html( (abandon_consent.txtCheckbox[eBaDataLayer.language] !== "" ? abandon_consent.txtCheckbox[eBaDataLayer.language] : abandon_consent.txtCheckbox['GB']) );
-             console.log('-------------------------------->add')
 
          });
     },
@@ -2166,7 +2053,6 @@ var startFNJS = function() {
 
             chkSite()?fbpixel_acom.add():console.log('fbpixel_acom');
             addScript('acom', "main-layout-bottom", "footer#main-layout-bottom", acom_adddata());
-            Addwebtrends();
             sendProCode();
             (dataTransfer["EXTERNAL_ID#4"] === "UK00022") ? eMailTrigger.ukBlackFriday.send(): console.log("ukBlackFriday");
             eMailTrigger.dusit.send()
@@ -2182,7 +2068,6 @@ var startFNJS = function() {
         case "RTPL":
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code);
             updateHTML.remove_content.price_RTPL()
-            Addwebtrends();
             subscribe.sbbAdd();
             (eBaDataLayer.language == "GB" || eBaDataLayer.language == "FR") ? xbagSet.set(): console.log("xbagSet");
             runWidget();            
