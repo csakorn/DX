@@ -354,117 +354,117 @@ var pathData =function(obj,url){
    return url+jQuery.param(path);
 }
 
-function Addwebtrends(){
-    if (eBaDataLayer.page_code == "CONF") {
-        implibdx.core.updateDom("footer#main-layout-bottom", function(){
-            $("#datatransferForm>input").serializeArray().forEach(datatransferForm);
-            $("#main-layout-bottom").append(webtrendsCreate.createElements("script",webtrendsCreate.add(""),"0"));
-            $("#main-layout-bottom").append(webtrendsCreate.createElements("script","https://www.thaiairways.com/static/common/js/webtrends.load.js","1"));
-            $("#main-layout-bottom").append(webtrendsCreate.createElements("noscript","<img alt='dcsimg' id='dcsimg' width='1' height='1' src='//statse.webtrendslive.com/dcs0s1to5100004va4434tphe_5i8v/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=10.2.55&amp;dcssip=www.thaiairways.com'>","0"));
-        },1000,3);
-    }else if(eBaDataLayer.page_code == "RTPL"){
-        $("#main-layout-bottom").append(webtrendsCreate.createElements("script","https://www.thaiairways.com/static/common/js/webtrends.load.js","1"));
-        $("#main-layout-bottom").append(webtrendsCreate.createElements("noscript","<img alt='dcsimg' id='dcsimg' width='1' height='1' src='//statse.webtrendslive.com/dcs0s1to5100004va4434tphe_5i8v/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=10.2.55&amp;dcssip=www.thaiairways.com'>","0"));
-    }
-}
-var twCreate = {
-    createElements:function(elm,txt,n){
-        var addTo = document.getElementById("main-layout-bottom");
-        var createScr = document.createElement(elm);
-        var txt_Code = "";
-        this.content = txt;
-        if(n == "1"){
-            createScr.src = this.content;
-        }else{
-            txt_Code = document.createTextNode(this.content);
-            createScr.appendChild(txt_Code);
-        }
-        return createScr;
-    },
-    add : function(name){
-        var twLoad ="";
+// function Addwebtrends(){
+//     if (eBaDataLayer.page_code == "CONF") {
+//         implibdx.core.updateDom("footer#main-layout-bottom", function(){
+//             $("#datatransferForm>input").serializeArray().forEach(datatransferForm);
+//             $("#main-layout-bottom").append(webtrendsCreate.createElements("script",webtrendsCreate.add(""),"0"));
+//             $("#main-layout-bottom").append(webtrendsCreate.createElements("script","https://www.thaiairways.com/static/common/js/webtrends.load.js","1"));
+//             $("#main-layout-bottom").append(webtrendsCreate.createElements("noscript","<img alt='dcsimg' id='dcsimg' width='1' height='1' src='//statse.webtrendslive.com/dcs0s1to5100004va4434tphe_5i8v/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=10.2.55&amp;dcssip=www.thaiairways.com'>","0"));
+//         },1000,3);
+//     }else if(eBaDataLayer.page_code == "RTPL"){
+//         $("#main-layout-bottom").append(webtrendsCreate.createElements("script","https://www.thaiairways.com/static/common/js/webtrends.load.js","1"));
+//         $("#main-layout-bottom").append(webtrendsCreate.createElements("noscript","<img alt='dcsimg' id='dcsimg' width='1' height='1' src='//statse.webtrendslive.com/dcs0s1to5100004va4434tphe_5i8v/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=10.2.55&amp;dcssip=www.thaiairways.com'>","0"));
+//     }
+// }
+// var twCreate = {
+//     createElements:function(elm,txt,n){
+//         var addTo = document.getElementById("main-layout-bottom");
+//         var createScr = document.createElement(elm);
+//         var txt_Code = "";
+//         this.content = txt;
+//         if(n == "1"){
+//             createScr.src = this.content;
+//         }else{
+//             txt_Code = document.createTextNode(this.content);
+//             createScr.appendChild(txt_Code);
+//         }
+//         return createScr;
+//     },
+//     add : function(name){
+//         var twLoad ="";
 
-        if(eBaDataLayer.page_code == "CONF"){
-            return  twLoad = "window.webtrendsAsyncLoad = function(dcs){"+twCreate.dcs_TW+";}";}
-        if(eBaDataLayer.page_code == "RTPL"){
-            return twLoad = "window.webtrendsAsyncLoad = function(dcs){"+twCreate.dcs_ad(name)+"}";}
+//         if(eBaDataLayer.page_code == "CONF"){
+//             return  twLoad = "window.webtrendsAsyncLoad = function(dcs){"+twCreate.dcs_TW+";}";}
+//         if(eBaDataLayer.page_code == "RTPL"){
+//             return twLoad = "window.webtrendsAsyncLoad = function(dcs){"+twCreate.dcs_ad(name)+"}";}
 
-    },
-    bound : function(){
-        var res = eBaDataLayer.bound[0].route;
-        $.each(eBaDataLayer.bound,function(index,value){
-            if(index != 0){
-                res += "-"+value.route;
-            }
-        })
-        return res;
-    },
-    dcs_ad : function(name){
-        this.proName = name;
-        if(this.proName != ""){
-            var Name_ad = name.split("/");
-            var ad = "dcs.WT.ad=\"";
-            for(var i = 0; i< Name_ad.length; i++){
-                if(checkEXP(Name_ad[i]) == true) ad += bannerTG[Name_ad[i]].ad+";";
-                else ad += "";
-            }
-            return ad+"\"";
-        }else{
-            return "";
-        }
+//     },
+//     bound : function(){
+//         var res = eBaDataLayer.bound[0].route;
+//         $.each(eBaDataLayer.bound,function(index,value){
+//             if(index != 0){
+//                 res += "-"+value.route;
+//             }
+//         })
+//         return res;
+//     },
+//     dcs_ad : function(name){
+//         this.proName = name;
+//         if(this.proName != ""){
+//             var Name_ad = name.split("/");
+//             var ad = "dcs.WT.ad=\"";
+//             for(var i = 0; i< Name_ad.length; i++){
+//                 if(checkEXP(Name_ad[i]) == true) ad += bannerTG[Name_ad[i]].ad+";";
+//                 else ad += "";
+//             }
+//             return ad+"\"";
+//         }else{
+//             return "";
+//         }
 
-    },
-    dcs_TW :"dcs.WT.totalamount = eBaDataLayer.total_price;dcs.WT.currcode = eBaDataLayer.currency;dcs.WT.paytype = eBaDataLayer.payment_method;dcs.WT.site = eBaDataLayer.site_code;dcs.WT.bookfromcity = eBaDataLayer.bound[0].dep_city;dcs.WT.booktocity = eBaDataLayer.bound[0].arr_city;dcs.WT.triptype = eBaDataLayer.trip_type;dcs.WT.rloc = eBaDataLayer.pnr_number;dcs.WT.thaicountry = eBaDataLayer.market;dcs.WT.bcabin = dataTransfer[\"AIR#1_ITINERARY#1_SEGMENT#1_CABIN#1\"];dcs.WT.ceco = dataTransfer[\"AIR#1_PNR#1_RBD#1\"];dcs.WT.flight_numbers = eBaDataLayer.bound[0].flight_numbers;dcs.WT.route = twCreate.bound();dcs.WT.office_id = eBaDataLayer.office_id;dcs.WT.external_id = eBaDataLayer.external_id;dcs.WT.depdate = eBaDataLayer.bound[0].dep_date;dcs.WT.bookconfirm  = \"Confirmed\""
-}
-var webtrendsCreate = {
-    createElements:function(elm,txt,n){
-        var addTo = document.getElementById("main-layout-bottom");
-        var createScr = document.createElement(elm);
-        var txt_Code = "";
-        this.content = txt;
-        if(n == "1"){
-            createScr.src = this.content;
-        }else{
-            txt_Code = document.createTextNode(this.content);
-            createScr.appendChild(txt_Code);
-        }
-        return createScr;
-    },
-    add : function(name){
-        var twLoad ="";
+//     },
+//     dcs_TW :"dcs.WT.totalamount = eBaDataLayer.total_price;dcs.WT.currcode = eBaDataLayer.currency;dcs.WT.paytype = eBaDataLayer.payment_method;dcs.WT.site = eBaDataLayer.site_code;dcs.WT.bookfromcity = eBaDataLayer.bound[0].dep_city;dcs.WT.booktocity = eBaDataLayer.bound[0].arr_city;dcs.WT.triptype = eBaDataLayer.trip_type;dcs.WT.rloc = eBaDataLayer.pnr_number;dcs.WT.thaicountry = eBaDataLayer.market;dcs.WT.bcabin = dataTransfer[\"AIR#1_ITINERARY#1_SEGMENT#1_CABIN#1\"];dcs.WT.ceco = dataTransfer[\"AIR#1_PNR#1_RBD#1\"];dcs.WT.flight_numbers = eBaDataLayer.bound[0].flight_numbers;dcs.WT.route = twCreate.bound();dcs.WT.office_id = eBaDataLayer.office_id;dcs.WT.external_id = eBaDataLayer.external_id;dcs.WT.depdate = eBaDataLayer.bound[0].dep_date;dcs.WT.bookconfirm  = \"Confirmed\""
+// }
+// var webtrendsCreate = {
+//     createElements:function(elm,txt,n){
+//         var addTo = document.getElementById("main-layout-bottom");
+//         var createScr = document.createElement(elm);
+//         var txt_Code = "";
+//         this.content = txt;
+//         if(n == "1"){
+//             createScr.src = this.content;
+//         }else{
+//             txt_Code = document.createTextNode(this.content);
+//             createScr.appendChild(txt_Code);
+//         }
+//         return createScr;
+//     },
+//     add : function(name){
+//         var twLoad ="";
 
-        if(eBaDataLayer.page_code == "CONF"){
-            return  twLoad = "window.webtrendsAsyncLoad = function(dcs){"+twCreate.dcs_TW+";}";}
-        if(eBaDataLayer.page_code == "RTPL"){
-            return twLoad = "window.webtrendsAsyncLoad = function(dcs){"+twCreate.dcs_ad(name)+"}";}
+//         if(eBaDataLayer.page_code == "CONF"){
+//             return  twLoad = "window.webtrendsAsyncLoad = function(dcs){"+twCreate.dcs_TW+";}";}
+//         if(eBaDataLayer.page_code == "RTPL"){
+//             return twLoad = "window.webtrendsAsyncLoad = function(dcs){"+twCreate.dcs_ad(name)+"}";}
 
-    },
-    bound : function(){
-        var res = eBaDataLayer.bound[0].route;
-        $.each(eBaDataLayer.bound,function(index,value){
-            if(index != 0){
-                res += "-"+value.route;
-            }
-        })
-        return res;
-    },
-    dcs_ad : function(name){
-        this.proName = name;
-        if(this.proName != ""){
-            var Name_ad = name.split("/");
-            var ad = "dcs.WT.ad=\"";
-            for(var i = 0; i< Name_ad.length; i++){
-                if(checkEXP(Name_ad[i]) == true) ad += bannerTG[Name_ad[i]].ad+";";
-                else ad += "";
-            }
-            return ad+"\"";
-        }else{
-            return "";
-        }
+//     },
+//     bound : function(){
+//         var res = eBaDataLayer.bound[0].route;
+//         $.each(eBaDataLayer.bound,function(index,value){
+//             if(index != 0){
+//                 res += "-"+value.route;
+//             }
+//         })
+//         return res;
+//     },
+//     dcs_ad : function(name){
+//         this.proName = name;
+//         if(this.proName != ""){
+//             var Name_ad = name.split("/");
+//             var ad = "dcs.WT.ad=\"";
+//             for(var i = 0; i< Name_ad.length; i++){
+//                 if(checkEXP(Name_ad[i]) == true) ad += bannerTG[Name_ad[i]].ad+";";
+//                 else ad += "";
+//             }
+//             return ad+"\"";
+//         }else{
+//             return "";
+//         }
 
-    },
-    dcs_TW :"dcs.WT.totalamount = eBaDataLayer.total_price;dcs.WT.currcode = eBaDataLayer.currency;dcs.WT.paytype = eBaDataLayer.payment_method;dcs.WT.site = eBaDataLayer.site_code;dcs.WT.bookfromcity = eBaDataLayer.bound[0].dep_city;dcs.WT.booktocity = eBaDataLayer.bound[0].arr_city;dcs.WT.triptype = eBaDataLayer.trip_type;dcs.WT.rloc = eBaDataLayer.pnr_number;dcs.WT.thaicountry = eBaDataLayer.market;dcs.WT.bcabin = dataTransfer[\"AIR#1_ITINERARY#1_SEGMENT#1_CABIN#1\"];dcs.WT.ceco = dataTransfer[\"AIR#1_PNR#1_RBD#1\"];dcs.WT.flight_numbers = eBaDataLayer.bound[0].flight_numbers;dcs.WT.route = twCreate.bound();dcs.WT.office_id = eBaDataLayer.office_id;dcs.WT.external_id = eBaDataLayer.external_id;dcs.WT.depdate = eBaDataLayer.bound[0].dep_date;dcs.WT.bookconfirm  = \"Confirmed\""
-}
+//     },
+//     dcs_TW :"dcs.WT.totalamount = eBaDataLayer.total_price;dcs.WT.currcode = eBaDataLayer.currency;dcs.WT.paytype = eBaDataLayer.payment_method;dcs.WT.site = eBaDataLayer.site_code;dcs.WT.bookfromcity = eBaDataLayer.bound[0].dep_city;dcs.WT.booktocity = eBaDataLayer.bound[0].arr_city;dcs.WT.triptype = eBaDataLayer.trip_type;dcs.WT.rloc = eBaDataLayer.pnr_number;dcs.WT.thaicountry = eBaDataLayer.market;dcs.WT.bcabin = dataTransfer[\"AIR#1_ITINERARY#1_SEGMENT#1_CABIN#1\"];dcs.WT.ceco = dataTransfer[\"AIR#1_PNR#1_RBD#1\"];dcs.WT.flight_numbers = eBaDataLayer.bound[0].flight_numbers;dcs.WT.route = twCreate.bound();dcs.WT.office_id = eBaDataLayer.office_id;dcs.WT.external_id = eBaDataLayer.external_id;dcs.WT.depdate = eBaDataLayer.bound[0].dep_date;dcs.WT.bookconfirm  = \"Confirmed\""
+// }
 
 function acom_adddata(){
     window.uetq = window.uetq || [];
