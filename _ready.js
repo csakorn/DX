@@ -133,7 +133,7 @@ var startFNJS = function() {
             // Addwebtrends();
             sendProCode();
             // (dataTransfer["EXTERNAL_ID#4"] === "mastercard") ? mastercard(): console.log("mastercard");
-            (dataTransfer["EXTERNAL_ID#4"] === "UK00022") ? eMailTrigger.ukBlackFriday.send(): console.log("ukBlackFriday");
+            //(dataTransfer["EXTERNAL_ID#4"] === "UK00022") ? eMailTrigger.ukBlackFriday.send(): console.log("ukBlackFriday");
             eMailTrigger.dusit.send()
             // chkSite() ? couponBrussels() : console.log("couponBrussels")
             knorex.add();
