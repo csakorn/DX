@@ -4,6 +4,7 @@ var startFNJS = function() {
         case "FPOW":
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
             // Step 1
+            addScript("insider", "main-layout-bottom", "footer#main-layout-bottom")
             chkSite() ? addScript("everymundo_FareNet", "main-layout-bottom", "footer#main-layout-bottom") : console.log('everymundo_FareNet');
             if ((/\b^[SG_]{3}/).test(eBaDataLayer.external_id) === true) {
                 chkSite() ? addScript("pixel_SG_FPOW", "main-layout-bottom", "footer#main-layout-bottom") : console.log('pixel_SG_FPOW');
@@ -14,17 +15,20 @@ var startFNJS = function() {
             break;
         case "FDCS":
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
+            addScript("insider", "main-layout-bottom", "footer#main-layout-bottom")
             // Step 1 Calendar matrix
             lowest();
             _addClass('main-layout-header', 'page-template-section');
             break;
         case "SDAI":
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
+            addScript("insider", "main-layout-bottom", "footer#main-layout-bottom")
             chkSite()?fbpixel_acom.add():console.log('fbpixel_acom');
             // Step 1 Multi City
             break;
         case "FDFF":
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
+            addScript("insider", "main-layout-bottom", "footer#main-layout-bottom")
             // Step 1 COMPARISON
             chkSite() ? addScript("everymundo_FareNet", "main-layout-bottom", "footer#main-layout-bottom") : console.log('everymundo_FareNet');
             if ((/\b^[SG_]{3}/).test(eBaDataLayer.external_id) === true) {
@@ -35,6 +39,7 @@ var startFNJS = function() {
             break;
         case "FARE":
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
+            addScript("insider", "main-layout-bottom", "footer#main-layout-bottom")
             // Step 2 DETAILS
             updateHTML.hilight_Content.content_FARE()           
 
@@ -47,6 +52,7 @@ var startFNJS = function() {
             break;
         case "ALPI":
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
+            addScript("insider", "main-layout-bottom", "footer#main-layout-bottom")
             // Step 2 FILL IN DETAILS
             updateHTML.Passengerinfo()
             // updateHTML.extraService('#tpl7_SIT>article', '#tpl7_MEA>article', '#tpl7_BAG>article', 'a#tpl7_SIT');
@@ -60,6 +66,7 @@ var startFNJS = function() {
 
         case "APIM":
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
+            addScript("insider", "main-layout-bottom", "footer#main-layout-bottom")
             // Step 2 PASSENGER INFORMATION
             updateHTML.Passengerinfo()
             // updateHTML.extraService('#tpl7_SIT>article', '#tpl7_MEA>article', '#tpl7_BAG>article', 'a#tpl7_SIT');
@@ -77,12 +84,14 @@ var startFNJS = function() {
             break;
         case "AAS":
             // Step 2 CHOOSE SERVICES
+            addScript("insider", "main-layout-bottom", "footer#main-layout-bottom")
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
             updateHTML.extraService('#tpl7_SIT', '#tpl7_MEA', '#tpl7_BAG', 'catalogServices-teasers-container');
             chkSite()?fbpixel_acom.add():console.log('fbpixel_acom');
             break;
         case "PURC":
             // Step 3 PAYMENT
+            addScript("insider", "main-layout-bottom", "footer#main-layout-bottom")
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
             if ((/\b^[SG_]{3}/).test(eBaDataLayer.external_id) === true) {
                 chkSite() ? addScript("pixel_SG_PURC", "main-layout-bottom", "footer#main-layout-bottom") : console.log('pixel_SG_PURC');
@@ -101,6 +110,7 @@ var startFNJS = function() {
             break;
         case "CONF":
             // Step 3 CONFIRMED BOOKING
+            addScript("insider", "main-layout-bottom", "footer#main-layout-bottom")
             // updateHTML.remove_content.servicesbreakdown('CONF');
             // updateHTML.remove_content.additional_services();
             goodservice_india.AddData();
@@ -138,6 +148,7 @@ var startFNJS = function() {
 
         case "RTPL":
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code);
+            addScript("insider", "main-layout-bottom", "footer#main-layout-bottom")
             // Step 3
             // updateHTML.service.travellerAlert_RTPL()
             updateHTML.remove_content.price_RTPL()
@@ -152,6 +163,7 @@ var startFNJS = function() {
             break;
         case "MDFSR":
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
+            addScript("insider", "main-layout-bottom", "footer#main-layout-bottom")
             // extraService
             updateHTML.extraService('div.catalogServices-teaser-SIT', 'div.catalogServices-teaser-MEA', 'div.catalogServices-teaser-BAG', 'div.catalogServices-teasers-container');
             break;
