@@ -193,6 +193,16 @@ var objNamescript ={
                 cu:"TG.COMPLETE"
             }
         }
+    },
+    insider:{
+        elm:{
+            tag:"script",
+            txt:"//thaiairways.api.useinsider.com/ins.js",
+            case:"1",
+            paramData:{
+                id:"10002369"
+            }
+        }
     }
 }
 var addScript = function(objName,elmID,updateID,fn){
