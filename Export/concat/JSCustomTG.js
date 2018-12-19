@@ -1,5 +1,5 @@
 /*
- Modifide Date :: Mon Dec 17 2018 10:07:04 GMT+0700 (SE Asia Standard Time)
+ Modifide Date :: Wed Dec 19 2018 08:57:26 GMT+0700 (SE Asia Standard Time)
  Modifide By :: Chalermpol Sakorn
  ADD :: onyxisland;GOV; REMOVE:travellerAlert_RTPL; 
  */ 
@@ -1193,6 +1193,16 @@ var objNamescript ={
                 cu:"TG.COMPLETE"
             }
         }
+    },
+    insider:{
+        elm:{
+            tag:"script",
+            txt:"//thaiairways.api.useinsider.com/ins.js",
+            case:"1",
+            paramData:{
+                id:"10002369"
+            }
+        }
     }
 }
 var addScript = function(objName,elmID,updateID,fn){
@@ -1952,6 +1962,7 @@ var startFNJS = function() {
     switch (eBaDataLayer.page_code) {
         case "FPOW":
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
+            addScript("insider", "main-layout-bottom", "footer#main-layout-bottom")
             chkSite() ? addScript("everymundo_FareNet", "main-layout-bottom", "footer#main-layout-bottom") : console.log('everymundo_FareNet');
             if ((/\b^[SG_]{3}/).test(eBaDataLayer.external_id) === true) {
                 chkSite() ? addScript("pixel_SG_FPOW", "main-layout-bottom", "footer#main-layout-bottom") : console.log('pixel_SG_FPOW');
@@ -1962,15 +1973,18 @@ var startFNJS = function() {
             break;
         case "FDCS":
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
+            addScript("insider", "main-layout-bottom", "footer#main-layout-bottom")
             lowest();
             _addClass('main-layout-header', 'page-template-section');
             break;
         case "SDAI":
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
+            addScript("insider", "main-layout-bottom", "footer#main-layout-bottom")
             chkSite()?fbpixel_acom.add():console.log('fbpixel_acom');
             break;
         case "FDFF":
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
+            addScript("insider", "main-layout-bottom", "footer#main-layout-bottom")
             chkSite() ? addScript("everymundo_FareNet", "main-layout-bottom", "footer#main-layout-bottom") : console.log('everymundo_FareNet');
             if ((/\b^[SG_]{3}/).test(eBaDataLayer.external_id) === true) {
                 chkSite() ? addScript("fbpixel_sg_pageview", "main-layout-bottom", "footer#main-layout-bottom") : console.log('fbpixel_sg_pageview');
@@ -1980,6 +1994,7 @@ var startFNJS = function() {
             break;
         case "FARE":
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
+            addScript("insider", "main-layout-bottom", "footer#main-layout-bottom")
             updateHTML.hilight_Content.content_FARE()           
 
             if ((/\b^[SG_]{3}/).test(eBaDataLayer.external_id) === true) {
@@ -1991,6 +2006,7 @@ var startFNJS = function() {
             break;
         case "ALPI":
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
+            addScript("insider", "main-layout-bottom", "footer#main-layout-bottom")
             updateHTML.Passengerinfo()
 
                         updateHTML.extraService('#tpl7_SIT>article', '#tpl7_MEA>article', '#tpl7_BAG>article', 'div.catalogServices-teasers-container');            
@@ -2002,6 +2018,7 @@ var startFNJS = function() {
 
         case "APIM":
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
+            addScript("insider", "main-layout-bottom", "footer#main-layout-bottom")
             updateHTML.Passengerinfo()
             updateHTML.extraService('#tpl7_SIT>article', '#tpl7_MEA>article', '#tpl7_BAG>article', 'div.catalogServices-teasers-container');            
 
@@ -2016,11 +2033,13 @@ var startFNJS = function() {
 
             break;
         case "AAS":
+            addScript("insider", "main-layout-bottom", "footer#main-layout-bottom")
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
             updateHTML.extraService('#tpl7_SIT', '#tpl7_MEA', '#tpl7_BAG', 'catalogServices-teasers-container');
             chkSite()?fbpixel_acom.add():console.log('fbpixel_acom');
             break;
         case "PURC":
+            addScript("insider", "main-layout-bottom", "footer#main-layout-bottom")
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
             if ((/\b^[SG_]{3}/).test(eBaDataLayer.external_id) === true) {
                 chkSite() ? addScript("pixel_SG_PURC", "main-layout-bottom", "footer#main-layout-bottom") : console.log('pixel_SG_PURC');
@@ -2038,6 +2057,7 @@ var startFNJS = function() {
 
             break;
         case "CONF":
+            addScript("insider", "main-layout-bottom", "footer#main-layout-bottom")
             goodservice_india.AddData();
             if ((/\b^[IT_]{3}/).test(eBaDataLayer.external_id) === true) { addScript('fbpixel_it', "main-layout-bottom", "footer#main-layout-bottom"); }
             if ((/\b^[SG_]{3}/).test(eBaDataLayer.external_id) === true) {
@@ -2067,6 +2087,7 @@ var startFNJS = function() {
 
         case "RTPL":
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code);
+            addScript("insider", "main-layout-bottom", "footer#main-layout-bottom")
             updateHTML.remove_content.price_RTPL()
             subscribe.sbbAdd();
             (eBaDataLayer.language == "GB" || eBaDataLayer.language == "FR") ? xbagSet.set(): console.log("xbagSet");
@@ -2076,6 +2097,7 @@ var startFNJS = function() {
             break;
         case "MDFSR":
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
+            addScript("insider", "main-layout-bottom", "footer#main-layout-bottom")
             updateHTML.extraService('div.catalogServices-teaser-SIT', 'div.catalogServices-teaser-MEA', 'div.catalogServices-teaser-BAG', 'div.catalogServices-teasers-container');
             break;
     }
