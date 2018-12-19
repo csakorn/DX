@@ -2,10 +2,17 @@ function runWidget(){
 	implibdx.core.updateDom("div#TGINSBanner", function(){
 
 		// wt_Takeme.add();
-		rentalCar.add()
-		wt_booking.add();
+		if( ['IT'].indexOf(eBaDataLayer.bound[0].arr_country)>0 ){
+			console.log('NODISPLAY');
+		}else{
+			
+			rentalCar.add()
+			wt_booking.add();
+			ROH.sendData();
+		}
+		
         teaserDisplay.addTeaser();
-		ROH.sendData();
+		
 
 	},1000,5)
 }
@@ -46,7 +53,7 @@ var teaserDisplay = {
 				return true;
 			}else{
 				// console.log(eBaDataLayer[teaserDisplay.objData[n].condition.chk.data[0]][teaserDisplay.objData[n].condition.chk.data[1]])
-				console.log('EXPDATE');
+				//console.log('EXPDATE');
 				// if( (/teaserDisplay.objData[n].condition.chk.rex/).test(eBaDataLayer[teaserDisplay.objData[n].condition.chk.data[0]][teaserDisplay.objData[n].condition.chk.data[1]][teaserDisplay.objData[n].condition.chk.data[2]]) ){
 				// 	return true;
 				// }
