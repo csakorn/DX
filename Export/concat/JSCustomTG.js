@@ -1,5 +1,5 @@
 /*
- Modifide Date :: Wed Dec 19 2018 08:57:26 GMT+0700 (SE Asia Standard Time)
+ Modifide Date :: Thu Dec 20 2018 13:16:39 GMT+0700 (SE Asia Standard Time)
  Modifide By :: Chalermpol Sakorn
  ADD :: onyxisland;GOV; REMOVE:travellerAlert_RTPL; 
  */ 
@@ -261,10 +261,68 @@ var bannerTG = {
 function runWidget(){
 	implibdx.core.updateDom("div#TGINSBanner", function(){
 
-		rentalCar.add()
-		wt_booking.add();
-        teaserDisplay.addTeaser();
-		ROH.sendData();
+
+
+		switch (eBaDataLayer.bound[0].dep_country){
+			case "CN": 
+				rentalCar.add()
+				wt_booking.add();
+				ROH.sendData();
+			break;
+			case "DE": 
+				rentalCar.add()
+				wt_booking.add();
+				ROH.sendData();
+			break;
+			case "ES": 
+				rentalCar.add()
+				wt_booking.add();
+				ROH.sendData();
+			break;
+			case "FR": 
+				rentalCar.add()
+				wt_booking.add();
+				ROH.sendData();
+			break;
+			case "GB": 
+				rentalCar.add()
+				wt_booking.add();
+				ROH.sendData();
+			break;
+			case "IT": 				
+			break;
+			case "JP": 				
+			break;
+			case "KO": 
+				rentalCar.add()
+				wt_booking.add();
+				ROH.sendData();
+			break;
+			case "RU": 
+				rentalCar.add()
+				wt_booking.add();
+				ROH.sendData();
+			break;
+			case "SE": 
+				rentalCar.add()
+				wt_booking.add();
+				ROH.sendData();
+			break;
+			case "TH": 
+				wt_booking.add();
+				ROH.sendData();
+			break;
+			case "TW": 
+				wt_booking.add();
+				ROH.sendData();
+			break;
+			default: 
+				rentalCar.add()
+				wt_booking.add();
+				ROH.sendData();
+		}
+
+		        teaserDisplay.addTeaser();		
 
 	},1000,5)
 }
@@ -291,7 +349,6 @@ var teaserDisplay = {
 			if(teaserDisplay.objData[n].condition.chk === null){
 				return true;
 			}else{
-				console.log('EXPDATE');
 			}
 		}else{
 			console.log('NO');
@@ -344,7 +401,7 @@ var _extraServiceOBJ = {
 		ES:"",
 		FR:"<p class=\"box_service\">R\u00e9server votre si\u00e8ge en ligne jusqu\'\u00e0 48 heures avant le d\u00e9part de votre vol</p>",
 		GB:"<p class=\"box_service\">Online seat reservation is possible on international flights until 48 hours before departure of TG 3 digits flight only.</p>",
-		IT:"<p class=\"box_service\">La prenotazione online del posto, solo sui voli internazionali TG a 3 cifre,  \u00e8possibile fino a 48 ore prima della partenza.</p>",
+		IT:"<p class=\"box_service\">La prenotazione online del posto, solo sui voli internazionali TG a 3 cifre,  \u00e8 possibile fino a 48 ore prima della partenza.</p>",
 		JP:"<p class=\"box_service\">\u30bf\u30a4\u56fd\u969b\u822a\u7a7a\u904b\u822a\uff08TG3\u6841\u4fbf\uff09\u306e\u56fd\u969b\u7dda\u3067\u306f\u3001\u3054\u51fa\u767a48\u6642\u9593\u524d\u307e\u3067\u3001\u30aa\u30f3\u30e9\u30a4\u30f3\u306b\u3066\u5ea7\u5e2d\u3092\u3054\u6307\u5b9a\u3044\u305f\u3060\u3051\u307e\u3059\u3002\n</p>",
 		KO:"<p class=\"box_service\">\uc6f9\uc0ac\uc774\ud2b8\ub97c \ud1b5\ud55c \uc88c\uc11d \uc120\ud0dd\uc740 \ud0c0\uc774\ud56d\uacf5 \uc6b4\ud56d\ud3b8 TGxxx(3\uc790\ub9ac \uc22b\uc790 \ud3b8\uba85) \uad6d\uc81c\uc120\uc5d0 \ud55c\ud558\uc5ec \ucd9c\ubc1c 48\uc2dc\uac04 \uc804\uae4c\uc9c0\ub9cc \uac00\ub2a5\ud569\ub2c8\ub2e4.</p>",
 		RU:"",
@@ -359,7 +416,7 @@ var _extraServiceOBJ = {
 		ES:"",
 		FR:"<p class=\"box_service\">Le choix d\u2019un repas peut \u00eatre fait sur un vol international, 24 heures avant le d\u00e9part du vol</p>",
 		GB:"<p class=\"box_service\">Meal selection is possible on International flight until 24 hrs for outbound from Bangkok and 48hrs for inbound to Bangkok before departure of TG 3 digits flight only.</p>",
-		IT:"<p class=\"box_service\">La selezione online dei pasti, sui voli internazionali TG a 3 cifre, \u00e8 possibile fino a 48 ore prima della partenza per voli versoBangkok e fino a 24 ore prima della partenza per i voli da Bangkok.</p>",
+		IT:"<p class=\"box_service\">La selezione online dei pasti, sui voli internazionali TG a 3 cifre, \u00e8 possibile fino a 48 ore prima della partenza per voli verso Bangkok e fino a 24 ore prima della partenza per i voli da Bangkok.</p>",
 		JP:"<p class=\"box_service\">\u30bf\u30a4\u56fd\u969b\u822a\u7a7a\u904b\u822a\uff08TG3\u6841\u4fbf\uff09\u306e\u56fd\u969b\u7dda\u3067\u306f\u3001\u3054\u51fa\u767a48\u6642\u9593\u524d\u307e\u3067\uff08\u30d0\u30f3\u30b3\u30af\u767a\u306f24\u6642\u9593\u524d\u307e\u3067\uff09\u3001\u30aa\u30f3\u30e9\u30a4\u30f3\u306b\u3066\u7279\u5225\u6a5f\u5185\u98df\u3092\u304a\u7533\u3057\u8fbc\u307f\u3044\u305f\u3060\u3051\u307e\u3059\u3002\n</p>",
 		KO:"<p class=\"box_service\">\uae30\ub0b4\uc2dd \uc120\ud0dd\uc740 \ud0c0\uc774\ud56d\uacf5 \uc6b4\ud56d\ud3b8 TGxxx(3\uc790\ub9ac \uc22b\uc790 \ud3b8\uba85) \uad6d\uc81c\uc120\uc5d0 \ud55c\ud558\uc5ec \ubc29\ucf55 \ucd9c\ubc1c\uc758 \uacbd\uc6b0 \ucd9c\ubc1c 24\uc2dc\uac04 \uc804\uae4c\uc9c0 \uac00\ub2a5\ud558\uc9c0\ub9cc \uadf8\uc774\uc678 \uc9c0\uc5ed\uc5d0\uc11c \ucd9c\ubc1c\uc758 \uacbd\uc6b0 (\ub300\ud55c\ubbfc\uad6d \ud3ec\ud568) \ucd9c\ubc1c 48\uc2dc\uac04 \uc804\uae4c\uc9c0\ub9cc \uac00\ub2a5\ud569\ub2c8\ub2e4.</p>",
 		RU:"<p class=\"box_service\">\u0412\u044b\u0431\u043e\u0440 \u043f\u0438\u0442\u0430\u043d\u0438\u044f \u0432\u043e\u0437\u043c\u043e\u0436\u0435\u043d \u043d\u0430 \u043c\u0435\u0436\u0434\u0443\u043d\u0430\u0440\u043e\u0434\u043d\u044b\u0445 \u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u044f\u0445 \u0437\u0430 24 \u0447\u0430\u0441\u0430 \u0434\u043e \u0432\u044b\u043b\u0435\u0442\u0430 \u043d\u0430 \u0440\u0435\u0439\u0441\u0430\u0445 \u0438\u0437 \u0411\u0430\u043d\u0433\u043a\u043e\u043a\u0430 \u0438 \u0437\u0430 48 \u0447\u0430\u0441\u043e\u0432 \u0434\u043e \u0432\u044b\u043b\u0435\u0442\u0430 \u0432 \u0411\u0430\u043d\u0433\u043a\u043e\u043a \u0442\u043e\u043b\u044c\u043a\u043e \u0434\u043b\u044f \u0440\u0435\u0439\u0441\u043e\u0432 \u0441 \u0442\u0440\u0435\u0445\u0437\u043d\u0430\u0447\u043d\u044b\u043c\u0438 \u043d\u043e\u043c\u0435\u0440\u0430\u043c\u0438.</p>",
@@ -2074,7 +2131,6 @@ var startFNJS = function() {
             chkSite()?fbpixel_acom.add():console.log('fbpixel_acom');
             addScript('acom', "main-layout-bottom", "footer#main-layout-bottom", acom_adddata());
             sendProCode();
-            (dataTransfer["EXTERNAL_ID#4"] === "UK00022") ? eMailTrigger.ukBlackFriday.send(): console.log("ukBlackFriday");
             eMailTrigger.dusit.send()
             knorex.add();
             subscribe.sbbAdd();
