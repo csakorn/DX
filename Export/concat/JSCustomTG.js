@@ -1,5 +1,5 @@
 /*
- Modifide Date :: Thu Dec 20 2018 13:16:39 GMT+0700 (SE Asia Standard Time)
+ Modifide Date :: Thu Dec 20 2018 14:46:58 GMT+0700 (SE Asia Standard Time)
  Modifide By :: Chalermpol Sakorn
  ADD :: onyxisland;GOV; REMOVE:travellerAlert_RTPL; 
  */ 
@@ -1447,6 +1447,59 @@ var wt_booking ={
     }
 }
 
+var DMP_ControlTag_kxct = {
+    add:function(){
+        implibdx.core.updateDom("footer#main-layout-bottom",function(){
+                let addTo = document.getElementById('main-layout-bottom');
+                let createAttr =document.createElement("script");
+                let txtNode = ''
+                let content = ''
+                let lang = eBaDataLayer.language;
+                let exID = eBaDataLayer.external_id;
+
+                createAttr.setAttribute('class','kxct');
+                createAttr.setAttribute('data-id','ti1tqfxfv');
+                createAttr.setAttribute('data-timing','async');
+                createAttr.setAttribute('data-version','3.0');
+                createAttr.setAttribute('type','text/javascript');
+
+                let currency = eBaDataLayer.currency;
+
+                content = "window.Krux||((Krux=function(){Krux.q.push(arguments)}).q=[]); (function(){ var k=document.createElement('script');k.type='text/javascript';k.async=true; k.src=(location.protocol==='https:'?'https:':'http:')+'//cdn.krxd.net/controltag/ti1tqfxfv.js'; var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(k,s); }());";
+
+                txtNode = document.createTextNode(content)
+                createAttr.appendChild(txtNode);
+                addTo.appendChild(createAttr);
+        },1000,6);
+    }
+}
+
+
+var DMP_ControlTag_kxint = {
+    add:function(){
+        implibdx.core.updateDom("footer#main-layout-bottom",function(){
+                let addTo = document.getElementById('main-layout-bottom');
+                let createAttr =document.createElement("script");
+                let txtNode = ''
+                let content = ''
+                let lang = eBaDataLayer.language;
+                let exID = eBaDataLayer.external_id;
+
+                createAttr.setAttribute('class','kxint');
+                createAttr.setAttribute('data-namespace','thaiairways');                
+                createAttr.setAttribute('type','text/javascript');
+
+                let currency = eBaDataLayer.currency;
+
+                content = "window.Krux||((Krux=function(){Krux.q.push(arguments);}).q=[]); (function(){ function retrieve(n){ var k= 'kx'+'thaiairways_'+n, ls=(function(){ try { return window.localStorage; } catch(e) { return null; } })(); if (ls) { return ls[k] || ''; } else if (navigator.cookieEnabled) { var m = document.cookie.match(k+'=([^;]*)'); return (m && unescape(m[1])) || ''; } else { return ''; } } Krux.user = retrieve('user'); Krux.segments = retrieve('segs') ? retrieve('segs').split(',') : []; })();";
+
+                txtNode = document.createTextNode(content)
+                createAttr.appendChild(txtNode);
+                addTo.appendChild(createAttr);
+        },1000,6);
+    }
+}
+
 var rentalCar = {
     add:function(){
         let anchor = document.getElementById("reservation-details");
@@ -2027,17 +2080,23 @@ var startFNJS = function() {
             }            
             knorex.add();
             chkSite()?fbpixel_acom.add():console.log('fbpixel_acom');
+            chkSite()?console.log('DMP_ControlTag_kxct'):DMP_ControlTag_kxct.add();
+            chkSite()?console.log('DMP_ControlTag_kxint'):DMP_ControlTag_kxint.add();
             break;
         case "FDCS":
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
             addScript("insider", "main-layout-bottom", "footer#main-layout-bottom")
             lowest();
             _addClass('main-layout-header', 'page-template-section');
+            chkSite()?console.log('DMP_ControlTag_kxct'):DMP_ControlTag_kxct.add();
+            chkSite()?console.log('DMP_ControlTag_kxint'):DMP_ControlTag_kxint.add();
             break;
         case "SDAI":
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
             addScript("insider", "main-layout-bottom", "footer#main-layout-bottom")
             chkSite()?fbpixel_acom.add():console.log('fbpixel_acom');
+            chkSite()?console.log('DMP_ControlTag_kxct'):DMP_ControlTag_kxct.add();
+            chkSite()?console.log('DMP_ControlTag_kxint'):DMP_ControlTag_kxint.add();
             break;
         case "FDFF":
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
@@ -2048,6 +2107,8 @@ var startFNJS = function() {
             }
             chkSite()?fbpixel_acom.add():console.log('fbpixel_acom');
 
+            chkSite()?console.log('DMP_ControlTag_kxct'):DMP_ControlTag_kxct.add();
+            chkSite()?console.log('DMP_ControlTag_kxint'):DMP_ControlTag_kxint.add();
             break;
         case "FARE":
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
@@ -2060,6 +2121,8 @@ var startFNJS = function() {
             }
             if ((/\b^[CN_]{3}/).test(eBaDataLayer.external_id) === true) { addScript('CheeseMobile_FARE', "main-layout-bottom", "footer#main-layout-bottom"); }
             chkSite()?fbpixel_acom.add():console.log('fbpixel_acom');
+            chkSite()?console.log('DMP_ControlTag_kxct'):DMP_ControlTag_kxct.add();
+            chkSite()?console.log('DMP_ControlTag_kxint'):DMP_ControlTag_kxint.add();
             break;
         case "ALPI":
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
@@ -2071,6 +2134,8 @@ var startFNJS = function() {
                 chkSite() ? addScript("pixel_SG_ALPI", "main-layout-bottom", "footer#main-layout-bottom") : console.log('pixel_SG_ALPI');
                 chkSite() ? addScript("fbpixel_sg_pageview", "main-layout-bottom", "footer#main-layout-bottom") : console.log('fbpixel_sg_pageview');
             }
+            chkSite()?console.log('DMP_ControlTag_kxct'):DMP_ControlTag_kxct.add();
+            chkSite()?console.log('DMP_ControlTag_kxint'):DMP_ControlTag_kxint.add();
             break;
 
         case "APIM":
@@ -2088,12 +2153,16 @@ var startFNJS = function() {
             govApim();  
             contactInfo.click_phone();
 
+            chkSite()?console.log('DMP_ControlTag_kxct'):DMP_ControlTag_kxct.add();
+            chkSite()?console.log('DMP_ControlTag_kxint'):DMP_ControlTag_kxint.add();
             break;
         case "AAS":
             addScript("insider", "main-layout-bottom", "footer#main-layout-bottom")
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
             updateHTML.extraService('#tpl7_SIT', '#tpl7_MEA', '#tpl7_BAG', 'catalogServices-teasers-container');
             chkSite()?fbpixel_acom.add():console.log('fbpixel_acom');
+            chkSite()?console.log('DMP_ControlTag_kxct'):DMP_ControlTag_kxct.add();
+            chkSite()?console.log('DMP_ControlTag_kxint'):DMP_ControlTag_kxint.add();
             break;
         case "PURC":
             addScript("insider", "main-layout-bottom", "footer#main-layout-bottom")
@@ -2112,6 +2181,8 @@ var startFNJS = function() {
                 GOV();
             }
 
+            chkSite()?console.log('DMP_ControlTag_kxct'):DMP_ControlTag_kxct.add();
+            chkSite()?console.log('DMP_ControlTag_kxint'):DMP_ControlTag_kxint.add();
             break;
         case "CONF":
             addScript("insider", "main-layout-bottom", "footer#main-layout-bottom")
@@ -2139,6 +2210,8 @@ var startFNJS = function() {
             fbpixel_SE.add();
             (eBaDataLayer.language == "GB" || eBaDataLayer.language == "FR") ? xbagSet.set(): console.log("xbagSet");
             runWidget();
+            chkSite()?console.log('DMP_ControlTag_kxct'):DMP_ControlTag_kxct.add();
+            chkSite()?console.log('DMP_ControlTag_kxint'):DMP_ControlTag_kxint.add();
             break;
 
         case "RTPL":
@@ -2150,11 +2223,15 @@ var startFNJS = function() {
             runWidget();            
             removeXbag.remove(removeXbag.check())
 
+            chkSite()?console.log('DMP_ControlTag_kxct'):DMP_ControlTag_kxct.add();
+            chkSite()?console.log('DMP_ControlTag_kxint'):DMP_ControlTag_kxint.add();
             break;
         case "MDFSR":
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
             addScript("insider", "main-layout-bottom", "footer#main-layout-bottom")
             updateHTML.extraService('div.catalogServices-teaser-SIT', 'div.catalogServices-teaser-MEA', 'div.catalogServices-teaser-BAG', 'div.catalogServices-teasers-container');
+            chkSite()?console.log('DMP_ControlTag_kxct'):DMP_ControlTag_kxct.add();
+            chkSite()?console.log('DMP_ControlTag_kxint'):DMP_ControlTag_kxint.add();
             break;
     }
 
