@@ -544,6 +544,69 @@ var wt_booking ={
     }
 }
 
+var DMP_ControlTag_kxct = {
+    add:function(){
+        // console.log('fbpixel_acom');
+        implibdx.core.updateDom("footer#main-layout-bottom",function(){
+           // if( (/\b^[SE_]{3}/).test(eBaDataLayer.external_id) === true){
+                let addTo = document.getElementById('main-layout-bottom');
+                let createAttr =document.createElement("script");
+                let txtNode = ''
+                let content = ''
+                let lang = eBaDataLayer.language;
+                let exID = eBaDataLayer.external_id;
+
+                createAttr.setAttribute('class','kxct');
+                createAttr.setAttribute('data-id','ti1tqfxfv');
+                createAttr.setAttribute('data-timing','async');
+                createAttr.setAttribute('data-version','3.0');
+                createAttr.setAttribute('type','text/javascript');
+
+               // let pnr = (eBaDataLayer.page_code == "CONF")?modpnr(eBaDataLayer.pnr_nbr):"";
+                let currency = eBaDataLayer.currency;
+
+                content = "window.Krux||((Krux=function(){Krux.q.push(arguments)}).q=[]); (function(){ var k=document.createElement('script');k.type='text/javascript';k.async=true; k.src=(location.protocol==='https:'?'https:':'http:')+'//cdn.krxd.net/controltag/ti1tqfxfv.js'; var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(k,s); }());";
+
+                // console.log(content);
+                txtNode = document.createTextNode(content)
+                createAttr.appendChild(txtNode);
+                addTo.appendChild(createAttr);
+           // }else console.log('fbpixel_SE');
+        },1000,6);
+    }
+}
+
+
+var DMP_ControlTag_kxint = {
+    add:function(){
+        // console.log('fbpixel_acom');
+        implibdx.core.updateDom("footer#main-layout-bottom",function(){
+           // if( (/\b^[SE_]{3}/).test(eBaDataLayer.external_id) === true){
+                let addTo = document.getElementById('main-layout-bottom');
+                let createAttr =document.createElement("script");
+                let txtNode = ''
+                let content = ''
+                let lang = eBaDataLayer.language;
+                let exID = eBaDataLayer.external_id;
+
+                createAttr.setAttribute('class','kxint');
+                createAttr.setAttribute('data-namespace','thaiairways');                
+                createAttr.setAttribute('type','text/javascript');
+
+               // let pnr = (eBaDataLayer.page_code == "CONF")?modpnr(eBaDataLayer.pnr_nbr):"";
+                let currency = eBaDataLayer.currency;
+
+                content = "window.Krux||((Krux=function(){Krux.q.push(arguments);}).q=[]); (function(){ function retrieve(n){ var k= 'kx'+'thaiairways_'+n, ls=(function(){ try { return window.localStorage; } catch(e) { return null; } })(); if (ls) { return ls[k] || ''; } else if (navigator.cookieEnabled) { var m = document.cookie.match(k+'=([^;]*)'); return (m && unescape(m[1])) || ''; } else { return ''; } } Krux.user = retrieve('user'); Krux.segments = retrieve('segs') ? retrieve('segs').split(',') : []; })();";
+
+                // console.log(content);
+                txtNode = document.createTextNode(content)
+                createAttr.appendChild(txtNode);
+                addTo.appendChild(createAttr);
+           // }else console.log('fbpixel_SE');
+        },1000,6);
+    }
+}
+
 var rentalCar = {
     add:function(){
         let anchor = document.getElementById("reservation-details");
