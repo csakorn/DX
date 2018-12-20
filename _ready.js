@@ -12,6 +12,8 @@ var startFNJS = function() {
             }            
             knorex.add();
             chkSite()?fbpixel_acom.add():console.log('fbpixel_acom');
+            chkSite()?console.log('DMP_ControlTag_kxct'):DMP_ControlTag_kxct.add();
+            chkSite()?console.log('DMP_ControlTag_kxint'):DMP_ControlTag_kxint.add();
             break;
         case "FDCS":
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
@@ -19,12 +21,16 @@ var startFNJS = function() {
             // Step 1 Calendar matrix
             lowest();
             _addClass('main-layout-header', 'page-template-section');
+            chkSite()?console.log('DMP_ControlTag_kxct'):DMP_ControlTag_kxct.add();
+            chkSite()?console.log('DMP_ControlTag_kxint'):DMP_ControlTag_kxint.add();
             break;
         case "SDAI":
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
             addScript("insider", "main-layout-bottom", "footer#main-layout-bottom")
             chkSite()?fbpixel_acom.add():console.log('fbpixel_acom');
             // Step 1 Multi City
+            chkSite()?console.log('DMP_ControlTag_kxct'):DMP_ControlTag_kxct.add();
+            chkSite()?console.log('DMP_ControlTag_kxint'):DMP_ControlTag_kxint.add();
             break;
         case "FDFF":
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
@@ -36,6 +42,8 @@ var startFNJS = function() {
             }
             chkSite()?fbpixel_acom.add():console.log('fbpixel_acom');
 
+            chkSite()?console.log('DMP_ControlTag_kxct'):DMP_ControlTag_kxct.add();
+            chkSite()?console.log('DMP_ControlTag_kxint'):DMP_ControlTag_kxint.add();
             break;
         case "FARE":
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
@@ -49,6 +57,8 @@ var startFNJS = function() {
             }
             if ((/\b^[CN_]{3}/).test(eBaDataLayer.external_id) === true) { addScript('CheeseMobile_FARE', "main-layout-bottom", "footer#main-layout-bottom"); }
             chkSite()?fbpixel_acom.add():console.log('fbpixel_acom');
+            chkSite()?console.log('DMP_ControlTag_kxct'):DMP_ControlTag_kxct.add();
+            chkSite()?console.log('DMP_ControlTag_kxint'):DMP_ControlTag_kxint.add();
             break;
         case "ALPI":
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
@@ -62,6 +72,8 @@ var startFNJS = function() {
                 chkSite() ? addScript("pixel_SG_ALPI", "main-layout-bottom", "footer#main-layout-bottom") : console.log('pixel_SG_ALPI');
                 chkSite() ? addScript("fbpixel_sg_pageview", "main-layout-bottom", "footer#main-layout-bottom") : console.log('fbpixel_sg_pageview');
             }
+            chkSite()?console.log('DMP_ControlTag_kxct'):DMP_ControlTag_kxct.add();
+            chkSite()?console.log('DMP_ControlTag_kxint'):DMP_ControlTag_kxint.add();
             break;
 
         case "APIM":
@@ -81,6 +93,8 @@ var startFNJS = function() {
             govApim();  
             contactInfo.click_phone();
 
+            chkSite()?console.log('DMP_ControlTag_kxct'):DMP_ControlTag_kxct.add();
+            chkSite()?console.log('DMP_ControlTag_kxint'):DMP_ControlTag_kxint.add();
             break;
         case "AAS":
             // Step 2 CHOOSE SERVICES
@@ -88,6 +102,8 @@ var startFNJS = function() {
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
             updateHTML.extraService('#tpl7_SIT', '#tpl7_MEA', '#tpl7_BAG', 'catalogServices-teasers-container');
             chkSite()?fbpixel_acom.add():console.log('fbpixel_acom');
+            chkSite()?console.log('DMP_ControlTag_kxct'):DMP_ControlTag_kxct.add();
+            chkSite()?console.log('DMP_ControlTag_kxint'):DMP_ControlTag_kxint.add();
             break;
         case "PURC":
             // Step 3 PAYMENT
@@ -107,6 +123,8 @@ var startFNJS = function() {
                 GOV();
             }
 
+            chkSite()?console.log('DMP_ControlTag_kxct'):DMP_ControlTag_kxct.add();
+            chkSite()?console.log('DMP_ControlTag_kxint'):DMP_ControlTag_kxint.add();
             break;
         case "CONF":
             // Step 3 CONFIRMED BOOKING
@@ -144,6 +162,8 @@ var startFNJS = function() {
             (eBaDataLayer.language == "GB" || eBaDataLayer.language == "FR") ? xbagSet.set(): console.log("xbagSet");
             // chkSite() ? sotw.senddata() : console.log("surpriseontheways");
             runWidget();
+            chkSite()?console.log('DMP_ControlTag_kxct'):DMP_ControlTag_kxct.add();
+            chkSite()?console.log('DMP_ControlTag_kxint'):DMP_ControlTag_kxint.add();
             break;
 
         case "RTPL":
@@ -160,12 +180,16 @@ var startFNJS = function() {
             runWidget();            
             removeXbag.remove(removeXbag.check())
 
+            chkSite()?console.log('DMP_ControlTag_kxct'):DMP_ControlTag_kxct.add();
+            chkSite()?console.log('DMP_ControlTag_kxint'):DMP_ControlTag_kxint.add();
             break;
         case "MDFSR":
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
             addScript("insider", "main-layout-bottom", "footer#main-layout-bottom")
             // extraService
             updateHTML.extraService('div.catalogServices-teaser-SIT', 'div.catalogServices-teaser-MEA', 'div.catalogServices-teaser-BAG', 'div.catalogServices-teasers-container');
+            chkSite()?console.log('DMP_ControlTag_kxct'):DMP_ControlTag_kxct.add();
+            chkSite()?console.log('DMP_ControlTag_kxint'):DMP_ControlTag_kxint.add();
             break;
     }
 
