@@ -37,10 +37,7 @@ function runWidget(){
 				wt_booking.add();
 				ROH.sendData();
 			break;
-			case "IT": 
-				rentalCar.add()
-				wt_booking.add();
-				ROH.sendData();
+			case "IT": 				
 			break;
 			case "JP": 				
 			break;
