@@ -57,6 +57,7 @@ function runWidget(){
 				ROH.sendData();
 			break;
 			case "TH": 
+				rentalCar.add()			
 				wt_booking.add();
 				ROH.sendData();
 			break;
@@ -70,11 +71,132 @@ function runWidget(){
 				wt_booking.add();
 				ROH.sendData();
 		}
-		
-        teaserDisplay.addTeaser();		
+        // teaserDisplay.addTeaser();
+        displayTeaser.add();		
 
 	},1000,5)
 }
+
+
+
+var displayTeaser = {
+	add:function(){
+		let href = "";
+		let img ="";
+
+		for(keys in bannerTG){
+			// (keys != undefined)?console.log(keys):console.log("xxx")
+
+			implibdx.core.updateDom("div.TGINSBanner", function() {
+				$("#TGINSBannerMenu").append(displayTeaser.cHTML(keys));
+			},1000,5);
+
+				// console.log(displayTeaser.cHTML(keys))
+			// if((bannerTG[keys].condition.pagecode).indexOf(eBaDataLayer.page_code) >= 0 && displayTeaser.EXP(keys) == true){
+			// 	console.log("OK addTeaser",displayTeaser.EXP(keys))
+			// 	// href = (bannerTG[keys].image.linkURL[eBaDataLayer.language] !== undefined) ? bannerTG[keys].image.linkURL[eBaDataLayer.language]:bannerTG[keys].image.linkURL['GB'];
+			// 	// img = (bannerTG[keys].image.URL[eBaDataLayer.language] !== undefined)? bannerTG[keys].image.URL[eBaDataLayer.language]:bannerTG[keys].image.URL['GB'];
+			// 	// console.log('-------------------->',href,img);
+			// }
+		}
+	},
+	chkMarket:function(m){
+		console.log(m)
+		
+		for(keys in  m){
+		var s = new RegExp("["+m[keys]+"]{2}");
+		// console.log(m[keys])
+			if(m[keys] === 'All'){
+				console.log("All")
+				return true;
+			}else if(s.test(eBaDataLayer.market) == true){
+				console.log(m +"------"+ eBaDataLayer.market);
+				return true;
+			}else return false;
+		}
+	},
+	EXP:function(name){			
+		
+		if(bannerTG[name].condition.displaycon != ""){
+			console.log('displaycon != Null',name);
+			// return name;
+
+			if (bannerTG[name].condition.displaycon == "Departure") {
+				this.dOut = (eBaDataLayer.bound[0].dep_date).split("/");
+				this.dIn = (eBaDataLayer.bound[1].dep_date).split("/");
+				this.today = new Date();
+				this.eBaDateOut = setDatef([this.dOut[2], this.dOut[1] - 1, this.dOut[0]]);
+				this.eBaDateIn = setDatef([this.dIn[2], this.dIn[1] - 1, this.dIn[0]]);
+				if (this.expStart <= this.eBaDateOut && this.eBaDateOut <= this.expEnd && this.expStart <= this.eBaDateIn && this.eBaDateIn <= this.expEnd && chkMarket(bannerTG[name].condition.market) === true) {
+        			// console.log(name+"=>OK"+"---date"+this.eBaDateOut+"---"+this.eBaDateIn)
+       				if(displayTeaser.chkMarket(bannerTG[name].condition.market) == true){
+       					return true;
+       				}else return false;
+    			} else {
+    				console.log(name + "=>exp" + "---date" + this.eBaDateOut + "---" + this.eBaDateIn);
+    				return false;
+    			}
+			}
+			if (bannerTG[name].condition.displaycon == "ticketing") {
+			    this.toDay = new Date();
+			    // console.log(this.expStart+'-------------'+this.expEnd);
+			    if (this.toDay <= this.expEnd && this.expStart <= this.toDay && chkMarket(bannerTG[name].condition.market) === true) {
+			        // console.log(name+"=>OK"+"---date"+this.toDay+"---"+this.expEnd)
+			        if(displayTeaser.chkMarket(bannerTG[name].condition.market) == true){
+			        	return true;
+			        }else return false;
+			    } else {
+			        console.log(name + "=>exp" + "---date" + this.toDay + "---" + this.expEnd);
+			        return false;
+			    }
+			} else {
+			    // console.log(name+"=>no exp"+"---date"+this.eBaDateOut+"---"+this.eBaDateIn)
+			    // (chkMarket(bannerTG[name].condition.market) === true)? return true: return false;
+			    if (chkMarket(bannerTG[name].condition.market) === true) {
+			        return true;
+			    } else {
+			        return false;
+			    }
+			}
+        }else{
+			
+			if(displayTeaser.chkMarket(bannerTG[name].condition.market) == true){
+				console.log('displaycon == Null',name);
+				return true;
+            }else{
+				console.log('....')
+				return false;
+            }
+        }
+	},
+	cHTML:function(name){
+		let objname = name;
+		let href = "";
+		let img ="";
+		console.log("cHTML",name);
+		if((bannerTG[objname].condition.pagecode).indexOf(eBaDataLayer.page_code) >= 0 && displayTeaser.EXP(objname) == true){
+			 // console.log('-----cHTML-------->',displayTeaser.EXP(objname),(bannerTG[objname].condition.pagecode).indexOf(eBaDataLayer.page_code));
+			 href = (bannerTG[objname].image.linkURL[eBaDataLayer.language] !== undefined) ? bannerTG[objname].image.linkURL[eBaDataLayer.language]:bannerTG[objname].image.linkURL['GB'];
+			 img = (bannerTG[objname].image.URL[eBaDataLayer.language] !== undefined)? bannerTG[objname].image.URL[eBaDataLayer.language]:bannerTG[objname].image.URL['GB'];
+			 // console.log('-------------------->',href,img);
+			 return "<aside class=\""+bannerTG[objname].class+"\"><a href=\""+href+displayTeaser.param_obj(bannerTG[objname].param)+"\" target=\""+bannerTG[objname].target+"\" "+bannerTG[objname].onClick[eBaDataLayer.page_code]+"><img src=\""+img+"\" alt=\""+bannerTG[objname].image.alt+"\"></a></aside>";
+
+		}
+	},
+	param_obj:function(obj){
+		let result = {};
+		for(key in obj){
+				if(obj !== ''){
+					result[key] = eBaDataLayer[obj[key]];
+				}else{
+					return '';
+				}
+		}
+		return '?'+$.param(result)
+	}
+}
+
+
 
 // var addTeaser = function(){
 // 	//implibdx.core.updateDom("div#TGINSBanner", function(){
@@ -88,58 +210,58 @@ function runWidget(){
 // 		}
 
 // }
-var teaserDisplay = {
-	objData:bannerTG,
-	addTeaser:function(){
+// var teaserDisplay = {
+// 	objData:bannerTG,
+// 	addTeaser:function(){
 
-           implibdx.core.updateDom("div.TGINSBanner", function() {
-			for(keys in teaserDisplay.objData){
+//            implibdx.core.updateDom("div.TGINSBanner", function() {
+// 			for(keys in teaserDisplay.objData){
 
-				if( teaserDisplay.check(keys) === true){
-					let href = (teaserDisplay.objData[keys].image.linkURL[eBaDataLayer.language] !== undefined)	?teaserDisplay.objData[keys].image.linkURL[eBaDataLayer.language]:teaserDisplay.objData[keys].image.linkURL['GB'];
-					let img = (teaserDisplay.objData[keys].image.URL[eBaDataLayer.language] !== undefined)? teaserDisplay.objData[keys].image.URL[eBaDataLayer.language]:teaserDisplay.objData[keys].image.URL['GB'];
-					// console.log('add',keys);
-					// console.log(href,img);
-					$("#TGINSBannerMenu").append("<aside class=\""+teaserDisplay.objData[keys].class+"\"><a href=\""+href+teaserDisplay.param_obj(teaserDisplay.objData[keys].param)+"\" target=\""+teaserDisplay.objData[keys].target+"\" "+teaserDisplay.objData[keys].onClick[eBaDataLayer.page_code]+"><img src=\""+img+"\" alt=\""+teaserDisplay.objData[keys].image.alt+"\"></a></aside>");
-				// $("#TGINSBannerMenu").append("<aside class=\""+bannerTG[keys].class+"\"><a href=\""+bannerTG[keys].image.linkURL+bannerTG[keys].param+"\" target=\""+bannerTG[keys].target+"\" "+bannerTG[keys].onClick[eBaDataLayer.page_code]+"><img src=\""+bannerTG[keys].image.URL[eBaDataLayer.language]+"\" alt=\""+bannerTG[keys].image.alt+"\"></a></aside>");
-				}
-			}
-		},1000,5);
-	},
-	check:function(n){
-		if(	(teaserDisplay.objData[n].condition.pagecode).indexOf(eBaDataLayer.page_code) >= 0 && teaserEXP(n) === true ){
-			if(teaserDisplay.objData[n].condition.chk === null){
-				return true;
-			}else{
-				// console.log(eBaDataLayer[teaserDisplay.objData[n].condition.chk.data[0]][teaserDisplay.objData[n].condition.chk.data[1]])
-				//console.log('EXPDATE');
-				// if( (/teaserDisplay.objData[n].condition.chk.rex/).test(eBaDataLayer[teaserDisplay.objData[n].condition.chk.data[0]][teaserDisplay.objData[n].condition.chk.data[1]][teaserDisplay.objData[n].condition.chk.data[2]]) ){
-				// 	return true;
-				// }
-			}
-		}else{
-			console.log('NO');
-			return false;
-		}
-	},
-	param_obj:function(obj){
-		let result = {};
-		for(key in obj){
-			// if(typeof obj[key] === "object"){
-			// 	console.log('5555');
-			// }else{
-				// console.log(eBaDataLayer[obj[key]]);
-				if(obj !== ''){
-					result[key] = eBaDataLayer[obj[key]];
-				}else{
-					return '';
-				}
-			// }
-		}
-		// console.log($.param(result));
-		return '?'+$.param(result)
-	}
-}
+// 				if( teaserDisplay.check(keys) === true){
+// 					let href = (teaserDisplay.objData[keys].image.linkURL[eBaDataLayer.language] !== undefined)	?teaserDisplay.objData[keys].image.linkURL[eBaDataLayer.language]:teaserDisplay.objData[keys].image.linkURL['GB'];
+// 					let img = (teaserDisplay.objData[keys].image.URL[eBaDataLayer.language] !== undefined)? teaserDisplay.objData[keys].image.URL[eBaDataLayer.language]:teaserDisplay.objData[keys].image.URL['GB'];
+// 					// console.log('add',keys);
+// 					// console.log(href,img);
+// 					$("#TGINSBannerMenu").append("<aside class=\""+teaserDisplay.objData[keys].class+"\"><a href=\""+href+teaserDisplay.param_obj(teaserDisplay.objData[keys].param)+"\" target=\""+teaserDisplay.objData[keys].target+"\" "+teaserDisplay.objData[keys].onClick[eBaDataLayer.page_code]+"><img src=\""+img+"\" alt=\""+teaserDisplay.objData[keys].image.alt+"\"></a></aside>");
+// 				// $("#TGINSBannerMenu").append("<aside class=\""+bannerTG[keys].class+"\"><a href=\""+bannerTG[keys].image.linkURL+bannerTG[keys].param+"\" target=\""+bannerTG[keys].target+"\" "+bannerTG[keys].onClick[eBaDataLayer.page_code]+"><img src=\""+bannerTG[keys].image.URL[eBaDataLayer.language]+"\" alt=\""+bannerTG[keys].image.alt+"\"></a></aside>");
+// 				}
+// 			}
+// 		},1000,5);
+// 	},
+// 	check:function(n){
+// 		if(	(teaserDisplay.objData[n].condition.pagecode).indexOf(eBaDataLayer.page_code) >= 0 && teaserEXP(n) === true ){
+// 			if(teaserDisplay.objData[n].condition.chk === null){
+// 				return true;
+// 			}else{
+// 				// console.log(eBaDataLayer[teaserDisplay.objData[n].condition.chk.data[0]][teaserDisplay.objData[n].condition.chk.data[1]])
+// 				//console.log('EXPDATE');
+// 				// if( (/teaserDisplay.objData[n].condition.chk.rex/).test(eBaDataLayer[teaserDisplay.objData[n].condition.chk.data[0]][teaserDisplay.objData[n].condition.chk.data[1]][teaserDisplay.objData[n].condition.chk.data[2]]) ){
+// 				// 	return true;
+// 				// }
+// 			}
+// 		}else{
+// 			console.log('NO');
+// 			return false;
+// 		}
+// 	},
+// 	param_obj:function(obj){
+// 		let result = {};
+// 		for(key in obj){
+// 			// if(typeof obj[key] === "object"){
+// 			// 	console.log('5555');
+// 			// }else{
+// 				// console.log(eBaDataLayer[obj[key]]);
+// 				if(obj !== ''){
+// 					result[key] = eBaDataLayer[obj[key]];
+// 				}else{
+// 					return '';
+// 				}
+// 			// }
+// 		}
+// 		// console.log($.param(result));
+// 		return '?'+$.param(result)
+// 	}
+// }
 
 
 // $("#TGINSBannerMenu").append()
