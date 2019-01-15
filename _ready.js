@@ -184,7 +184,7 @@ var startFNJS = function() {
             chkSite() ? fbpixel_SE.add():console.log("fbpixel_SE");
             chkSite() ? star_allsite.add():console.log("star_tag");
 
-            xbagSet.set(): console.log("xbagSet");
+            xbagSet.set();
 
             // (eBaDataLayer.language == "GB" || eBaDataLayer.language == "FR") ? xbagSet.set(): console.log("xbagSet");
             // chkSite() ? sotw.senddata() : console.log("surpriseontheways");
