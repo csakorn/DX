@@ -1,5 +1,5 @@
 /*
- Modifide Date :: Tue Jan 15 2019 14:00:53 GMT+0700 (SE Asia Standard Time)
+ Modifide Date :: Tue Jan 15 2019 14:18:47 GMT+0700 (SE Asia Standard Time)
  Modifide By :: Chalermpol Sakorn
  ADD :: onyxisland;GOV; REMOVE:travellerAlert_RTPL; 
  */ 
@@ -2305,7 +2305,7 @@ var startFNJS = function() {
             chkSite() ? fbpixel_SE.add():console.log("fbpixel_SE");
             chkSite() ? star_allsite.add():console.log("star_tag");
 
-            xbagSet.set(): console.log("xbagSet");
+            xbagSet.set();
 
             runWidget();
             chkSite()?console.log('DMP_ControlTag_kxct'):DMP_ControlTag_kxct.add();
