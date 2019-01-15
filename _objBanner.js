@@ -27,7 +27,8 @@ var bannerTG = {
             end:"",
             displaycon:"",          
             chk:null,
-            pagecode:['CONF','RTPL']
+            pagecode:['CONF','RTPL'],
+            market:['All']
         }
     },
     HotelsBestOffers:{
@@ -55,7 +56,8 @@ var bannerTG = {
             end:"",
             displaycon:"",          
             chk:null,
-            pagecode:['CONF','RTPL']
+            pagecode:['CONF','RTPL'],
+            market:['TH']
         }
     },
     BaliTreat:{
@@ -77,14 +79,15 @@ var bannerTG = {
         },
         param:"",
         condition:{
-            start:"",
-            end:"",
-            displaycon:"",          
+            start:["2018","07","6"],
+            end:["2018","10","16"],
+            displaycon:"ticketing",          
             chk:{
                 rex:'[DPS]{3}',
                 data:['bound','0','route']
             },
-            pagecode:['CONF','RTPL']
+            pagecode:['CONF','RTPL'],
+            market:['TH']
         }
     },
     HolidayTaxis:{
@@ -112,7 +115,8 @@ var bannerTG = {
             end:"",
             displaycon:"",          
             chk:null,
-            pagecode:['CONF','RTPL']
+            pagecode:['CONF','RTPL'],
+            market:['TH']
         }
     },
     Bellugg:{
@@ -138,9 +142,10 @@ var bannerTG = {
         condition:{
             start:["2018","07","6"],
             end:["2018","10","16"],
-            displaycon:"",          
+            displaycon:"Departure",          
             chk:null,
-            pagecode:['CONF','RTPL']
+            pagecode:['CONF','RTPL'],
+            market:['TH']
         }
     }
 }
