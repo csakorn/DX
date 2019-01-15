@@ -276,7 +276,7 @@ var xbagSet = {
 		implibdx.core.updateDom("div#pinkbanner",function(){
 			$("#link_baggage").attr('href','')
 			$("#link_baggage").attr('atdelegate',xbagSet.getService())
-			$("#link_car").attr('href','https://www.thaiairways.com/CarController?LANGUAGE='+eBaDataLayer.language)
+			$("#link_car").attr('href','http://www.hertzasia.com/thaiairways/')
 			$("#link_insure").attr('href','https://www.thaiairways.com/'+siteLang(eBaDataLayer.language)+'/book/moreservices.page?#insurance')
 				
 		},1000,6);
