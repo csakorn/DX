@@ -23,9 +23,9 @@ function runWidget(){
 				ROH.sendData();
 			break;
 			case "ES": 
-				rentalCar.add()
-				wt_booking.add();
-				ROH.sendData();
+				// rentalCar.add()
+				// wt_booking.add();
+				// ROH.sendData();
 			break;
 			case "FR": 
 				rentalCar.add()
@@ -52,9 +52,9 @@ function runWidget(){
 				ROH.sendData();
 			break;
 			case "SE": 
-				rentalCar.add()
-				wt_booking.add();
-				ROH.sendData();
+				//rentalCar.add()
+				//wt_booking.add();
+				//ROH.sendData();
 			break;
 			case "TH": 
 				rentalCar.add()			
