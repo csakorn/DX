@@ -57,7 +57,7 @@ var bannerTG = {
             displaycon:"",          
             chk:null,
             pagecode:['CONF','RTPL'],
-            market:['TH']
+            market:['TH','XX','YY']
         }
     },
     BaliTreat:{
@@ -87,7 +87,7 @@ var bannerTG = {
                 data:['bound','0','route']
             },
             pagecode:['CONF','RTPL'],
-            market:['TH']
+            market:['TH','XX','YY']
         }
     },
     HolidayTaxis:{
@@ -116,7 +116,7 @@ var bannerTG = {
             displaycon:"",          
             chk:null,
             pagecode:['CONF','RTPL'],
-            market:['TH']
+            market:['TH','XX','YY']
         }
     },
     Bellugg:{
@@ -145,7 +145,7 @@ var bannerTG = {
             displaycon:"Departure",          
             chk:null,
             pagecode:['CONF','RTPL'],
-            market:['TH']
+            market:['TH','XX','YY']
         }
     }
 }
