@@ -40,13 +40,13 @@ var objNamescript ={
     //         case:'0'
     //     }
     // }, 
-    startax_allsite:{ // ACOM
-        elm1:{
-            tag:"noscript",
-            txt:'<img height="1" width="1" style="display:none"  src="https://www.facebook.com/tr?id=369060826977725&ev=PageView&noscript=1"/>',
-            case:'0'
-        }
-    },
+    // startax_allsite:{ // ACOM
+    //     elm1:{
+    //         tag:"noscript",
+    //         txt:'<img height="1" width="1" style="display:none"  src="https://www.facebook.com/tr?id=369060826977725&ev=PageView&noscript=1"/>',
+    //         case:'0'
+    //     }
+    // },
     fbpixel_sg_pageview:{
         elm1:{
             tag:"script",
@@ -97,7 +97,7 @@ var objNamescript ={
             txt:"//pixel.mathtag.com/event/js?",
             case:'1',
             paramData:{
-                mt_id:'1328164',
+                mt_id:'1328164',                
                 mt_adid:'211029',
                 mt_exem:'',
                 mt_excl:'',
@@ -257,7 +257,7 @@ var fbpixel_SE = {
 }
 
 
-var star_allsite = {
+var spa_allsite = {
     add:function(){
         // console.log('fbpixel_SE');
         implibdx.core.updateDom("footer#main-layout-bottom",function(){
@@ -315,7 +315,7 @@ var knorex = { // Knorex require by S9M
                     content = "(function() {  var encode = window.encodeURIComponent;  var ka = document.createElement('script');  ka.type = 'text/javascript';  ka.id = '665973e202b66e6c0667';  ka.async = true;  ka.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + '//cdn.brand-display.com/tr/knx15122/665973e202b66e6c06671f4a7ddac1d0b996186f.js?s=8dd22d23ce0fcb0063f1385225a08e12b3044292&v1="+eBaDataLayer.page_code+"&v2="+window.location.href+"&v3="+eBaDataLayer.city_search_out+"&v4="+eBaDataLayer.city_search_in+"&v5="+eBaDataLayer.date_search_in+"&v6="+_Bound(eBaDataLayer.bound[1],'dep_date')+"&v7="+eBaDataLayer.trip_type+"&v8=%%TICKET_CLASS%%&v9=%%ADULTS%%&v10=%%CHILDREN%%&v11=%%IS_MEMBER%%&v12=%%PROMO_CODE%%&v13="+eBaDataLayer.currency+"&v14="+eBaDataLayer.total_price+"&v15="+eBaDataLayer.language+"&v16="+eBaDataLayer.external_id+"&_t=' + new Date().getTime();  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ka, s);})();";
                 }
 
-
+                console.log(content)
                 txtNode = document.createTextNode(content)
                 createAttr.appendChild(txtNode);
                 addTo.appendChild(createAttr);
@@ -661,7 +661,7 @@ var rentalCar = {
 
         let frame = document.createElement("iframe");
 
-        frame.setAttribute("src", "https://widget.rentalcars.com/WidgetSearch.do?affiliateCode=thaiairways&preflang="+langx+"&pickupIATACode="+eBaDataLayer.bound[0].arr_airport+"&results=1&pickupMonth="+arrDate[1]+"&pickupDate="+arrDate[0]+"&pickupYear="+arrDate[2]+"&returnDate="+depDate[0]+"&returnMonth="+depDate[1]+"&returnYear="+depDate[2]+"&enabler=thaipromo5");
+        frame.setAttribute("src", "https://widget.rentalcars.com/WidgetSearch.do?affiliateCode=thaiairways&preflang="+langx+"&pickupIATACode="+eBaDataLayer.bound[0].arr_airport+"&results=2&pickupMonth="+arrDate[1]+"&pickupDate="+arrDate[0]+"&pickupYear="+arrDate[2]+"&returnDate="+depDate[0]+"&returnMonth="+depDate[1]+"&returnYear="+depDate[2]+"&enabler=thaipromo5");
         // frame.setAttribute("src", "https://secure.rentalcars.com/ELBanner.do?iataCode="+eBaDataLayer.bound[0].arr_city+"&display=city-night&affiliateCode=thaiairways&puDay="+arrDate[0]+"&puMonth="+arrDate[1]+"&puYear="+arrDate[2]+"&puHour=&puMinute=&doDay="+depDate[0]+"&doMonth="+depDate[1]+"&doYear="+depDate[2]+"&doHour=&doMinute=&driversAge=&preflang="+eBaDataLayer.language+"&serverName=www.rentalcars.com&prefcurrency=thb&adplat=elb");
 
         frame.setAttribute("name", "rentalCar");
