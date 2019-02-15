@@ -72,6 +72,7 @@ var labelPlstick ={
 	GB : "Please tick this box to accept and agree as following.",
 	KO : "\uc544\ub798 \uac1c\uc778\uc815\ubcf4 \uc218\uc9d1\uacfc \ud65c\uc6a9 \ubc0f \uae30\ud0c0 \uaddc\uc815\uc5d0 \ub300\ud55c \ucd94\uac00 \ub3d9\uc758\ub97c \uc704\ud558\uc5ec \uccb4\ud06c \ubc15\uc2a4\ub97c \ud074\ub9ad\ud558\uc5ec \uc8fc\uc2ed\uc2dc\uc624."
 }
+
 /* ------------------ FN ----------------- */
 var updateHTML = {
 	hilight_Content:{
@@ -249,7 +250,6 @@ function _addClass(x,y){
 		_Start.classList.add(_Desti);
 	},1000,5);
 }
-
 /*---------------------For Korean--------------------------*/
 
 var clickConfirm_KOR = function(){
@@ -376,4 +376,18 @@ var removePinkbanner = function(id){
 	implibdx.core.updateDom("#pinkbanner",function(){
 		$(this.pinkID)[0].parentElement.remove();
 	},1000,5);
+}
+
+// var pinkbanner_market = function(m){
+// 	// var eBaDataLayer.market
+// 	this.market = m;
+// 	var map1 = 	this.market.map(x => x == eBaDataLayer.market)
+// }
+
+function chkMarket(m){
+	var xMaket = m;
+	const _market = ['CH_NORMAL'];
+	for(i=0;i<= _market.length;i++){
+		return xMaket ==_market[i];
+	}
 }
