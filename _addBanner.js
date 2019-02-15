@@ -55,6 +55,11 @@ function runWidget(){
 				//rentalCar.add()
 				//wt_booking.add();
 				//ROH.sendData();
+				if(chkMarket(eBaDataLayer.market) == true){
+					removePinkbanner('#PinkBanner_1');
+					removePinkbanner('#PinkBanner_4');
+				}
+				
 			break;
 			case "TH": 
 				rentalCar.add()			
@@ -77,7 +82,22 @@ function runWidget(){
 	},1000,5)
 }
 
+function pinkbanner_remove(){
 
+	var market = {
+		CH_NORMAL:{
+			r_pinkbanner:['#PinkBanner_1','#PinkBanner_4']
+		}
+	}
+
+	implibdx.core.updateDom("div#pinkbanner", function(){
+		if(chkMarket(eBaDataLayer.market) == true){
+			for(x in market.CH_NORMAL.r_pinkbanner){
+				removePinkbanner(market.CH_NORMAL.r_pinkbanner[x]);
+			}
+		}else console.log(eBaDataLayer.market);
+	},1000,5)
+}
 
 var displayTeaser = {
 	add:function(){
