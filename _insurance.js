@@ -195,39 +195,40 @@ let objInsurance = (c,l)=>{
 }
 
 
-var addinsurance = function(xcountry){
-	let langx = "";
-	for(x in _objInsurance){
-		if(x == xcountry){
-			langx = [x,eBaDataLayer.language]
-        }
-    }
-return langx;
-}
+// var addinsurance = function(xcountry){
+// 	let langx = "";
+// 	for(x in _objInsurance){
+// 		if(x == xcountry){
+// 			langx = [x,eBaDataLayer.language]
+//         }
+//     }
+// return langx;
+// }
 
 function insurance(xcountry,xlanguage){
 	//objInsurance();
-	let [country,language] = [xcountry,xlanguage]
+	let lc = (objInsurance(xcountry,xlanguage) != undefined)?objInsurance(xcountry,xlanguage):objInsurance(xcountry,'GB')
 
-	let lc = objInsurance(country,language);
-	if(lc != "" && lc != undefined){	
-		implibdx.core.updateDom("#insurance-select",function(){
-			
-			$(".title-panel-text").html("<i class=\"icon-aid title-icon\" aria-hidden=\"true\"></i>"+_objInsurance[lc[0]][lc[1]].titlepanel);
-			$(".box-insurance").html(_objInsurance[lc[0]][lc[1]].insurance_txt);
-			$('label[for="tpl3_widget-input-purchaseForm-insuranceForm-insuranceRadioGroup-insuranceRadioGroup1"]>span.bold').html(_objInsurance[lc[0]][lc[1]].radio_1.txt_1);
-			$("label[for='tpl3_widget-input-purchaseForm-insuranceForm-insuranceRadioGroup-insuranceRadioGroup1']")[0].childNodes[2].textContent=_objInsurance[lc[0]][lc[1]].radio_1.txt_2;
-			$('label[for="tpl3_widget-input-purchaseForm-insuranceForm-insuranceRadioGroup-insuranceRadioGroup1"]>a').html(_objInsurance[lc[0]][lc[1]].radio_1.txtPolicy);
-			$('label[for="tpl3_widget-input-purchaseForm-insuranceForm-insuranceRadioGroup-insuranceRadioGroup1"]>a').attr('href',_objInsurance[lc[0]][lc[1]].radio_1.linkPolicy);
-			$('label[for="tpl3_widget-input-purchaseForm-insuranceForm-insuranceRadioGroup-insuranceRadioGroup2"]').html(_objInsurance[lc[0]][lc[1]].radio_2.txt_1+" "+_objInsurance[lc[0]][lc[1]].radio_2.txt_2);
+	// let lc = (objInsurance(country,language) != undefined)?
+	// if(lc != "" && lc != undefined){	
+		implibdx.core.updateDom("#insurance-select",function(){			
+			// $(".title-panel-text").html("<i class=\"icon-aid title-icon\" aria-hidden=\"true\"></i>"+_objInsurance[lc[0]][lc[1]].titlepanel);
+			// $(".box-insurance").html(_objInsurance[lc[0]][lc[1]].insurance_txt);
+			// $('label[for="tpl3_widget-input-purchaseForm-insuranceForm-insuranceRadioGroup-insuranceRadioGroup1"]>span.bold').html(_objInsurance[lc[0]][lc[1]].radio_1.txt_1);
+			// $("label[for='tpl3_widget-input-purchaseForm-insuranceForm-insuranceRadioGroup-insuranceRadioGroup1']")[0].childNodes[2].textContent=_objInsurance[lc[0]][lc[1]].radio_1.txt_2;
+			// $('label[for="tpl3_widget-input-purchaseForm-insuranceForm-insuranceRadioGroup-insuranceRadioGroup1"]>a').html(_objInsurance[lc[0]][lc[1]].radio_1.txtPolicy);
+			// $('label[for="tpl3_widget-input-purchaseForm-insuranceForm-insuranceRadioGroup-insuranceRadioGroup1"]>a').attr('href',_objInsurance[lc[0]][lc[1]].radio_1.linkPolicy);
+			// $('label[for="tpl3_widget-input-purchaseForm-insuranceForm-insuranceRadioGroup-insuranceRadioGroup2"]').html(_objInsurance[lc[0]][lc[1]].radio_2.txt_1+" "+_objInsurance[lc[0]][lc[1]].radio_2.txt_2);
 
 			$(".title-panel-text").html("<i class=\"icon-aid title-icon\" aria-hidden=\"true\"></i>"+lc.titlepanel)
 			$(".box-insurance").html(lc.insurance_txt)
 			$('label[for="tpl3_widget-input-purchaseForm-insuranceForm-insuranceRadioGroup-insuranceRadioGroup1"]>span.bold').html(lc.radio_1.txt_1)
 			$("label[for='tpl3_widget-input-purchaseForm-insuranceForm-insuranceRadioGroup-insuranceRadioGroup1']")[0].childNodes[2].textContent = lc.radio_1.txt_2;
 			$('label[for="tpl3_widget-input-purchaseForm-insuranceForm-insuranceRadioGroup-insuranceRadioGroup1"]>a').html(lc.radio_1.txtPolicy)
+			$('label[for="tpl3_widget-input-purchaseForm-insuranceForm-insuranceRadioGroup-insuranceRadioGroup1"]>a').attr('href',lc.radio_1.linkPolicy);
+			$('label[for="tpl3_widget-input-purchaseForm-insuranceForm-insuranceRadioGroup-insuranceRadioGroup2"]').html(lc.radio_2.txt_1+" "+lc.radio_2.txt_2);
 		},1000,5);
-	}else{
-		console.log('...')
-	}
+	// }else{
+	// 	console.log('...')
+	// }
 }
