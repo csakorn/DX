@@ -372,9 +372,9 @@ var removeXbag ={
 	}
 }
 var removePinkbanner = function(id){
-	this.pinkID = id;
+	let pinkID = id;
 	implibdx.core.updateDom("#pinkbanner",function(){
-		$(this.pinkID)[0].parentElement.remove();
+		$(pinkID)[0].parentElement.remove();
 	},1000,5);
 }
 
