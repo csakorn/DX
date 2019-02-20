@@ -1,4 +1,8 @@
 function runWidget(){
+
+
+
+
 	implibdx.core.updateDom("div#TGINSBanner", function(){
 
 		// wt_Takeme.add();
@@ -10,6 +14,8 @@ function runWidget(){
 		// 	wt_booking.add();
 		// 	ROH.sendData();
 		// }
+
+
 
 		switch (eBaDataLayer.bound[0].dep_country){
 			case "CN": 
@@ -58,6 +64,9 @@ function runWidget(){
 				if(chkMarket(eBaDataLayer.market) == true){
 					removePinkbanner('#PinkBanner_1');
 					removePinkbanner('#PinkBanner_4');
+				}else{
+					removePinkbanner('#PinkBanner_1');
+					removePinkbanner('#PinkBanner_4');
 				}
 				
 			break;
@@ -82,6 +91,370 @@ function runWidget(){
 	},1000,5)
 }
 
+let xrunWidget = (x)=>{
+	let mkt = (x !== "")?x:"DD";
+	const market = {
+		AU_NORMAL:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			rentalCar.add()
+			wt_booking.add();
+			ROH.sendData();
+			displayTeaser.add();
+			},1000,5)
+		},
+		AT_NORMAL:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			rentalCar.add()
+			wt_booking.add();
+			ROH.sendData();
+			displayTeaser.add();
+			},1000,5)
+		},
+		BE_NORMAL:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			rentalCar.add()
+			wt_booking.add();
+			ROH.sendData();
+			displayTeaser.add();
+			},1000,5)
+		},
+		KH_NORMAL:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			rentalCar.add()
+			wt_booking.add();
+			ROH.sendData();
+			displayTeaser.add();
+			},1000,5)
+		},
+		CA_NORMAL:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			rentalCar.add()
+			wt_booking.add();
+			ROH.sendData();
+			displayTeaser.add();
+			},1000,5)
+		},
+		CN_NORMAL:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			rentalCar.add()
+			wt_booking.add();
+			ROH.sendData();
+			displayTeaser.add();
+			},1000,5)
+		},
+		DK_NORMAL:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			rentalCar.add()
+			wt_booking.add();
+			ROH.sendData();
+			displayTeaser.add();
+			},1000,5)
+		},
+		FR_NORMAL:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			rentalCar.add()
+			wt_booking.add();
+			ROH.sendData();
+			displayTeaser.add();
+			},1000,5)
+		},
+		DE_NORMAL:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			rentalCar.add()
+			wt_booking.add();
+			ROH.sendData();
+			displayTeaser.add();
+			},1000,5)
+		},
+		HK_NORMAL:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			rentalCar.add()
+			wt_booking.add();
+			ROH.sendData();
+			displayTeaser.add();
+			},1000,5)
+		},
+		IN_NORMAL:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			rentalCar.add()
+			wt_booking.add();
+			ROH.sendData();
+			displayTeaser.add();
+			},1000,5)
+		},
+		ID_NORMAL:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			rentalCar.add()
+			wt_booking.add();
+			ROH.sendData();
+			displayTeaser.add();
+			},1000,5)
+		},
+		IE_NORMAL:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			rentalCar.add()
+			wt_booking.add();
+			ROH.sendData();
+			displayTeaser.add();
+			},1000,5)
+		},
+		IT_NORMAL:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			// rentalCar.add()
+			// 	wt_booking.add();
+			// 	ROH.sendData();
+			displayTeaser.add();
+			console.log('NO-Widget')
+			},1000,5)
+		},
+		JP_NORMAL:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			// rentalCar.add()
+			// 	wt_booking.add();
+			// 	ROH.sendData();
+			displayTeaser.add();
+			console.log('NO-Widget')
+			},1000,5)
+		},
+		KR_NORMAL:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			rentalCar.add()
+			wt_booking.add();
+			ROH.sendData();
+			displayTeaser.add();
+			},1000,5)
+		},
+		LA_NORMAL:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			rentalCar.add()
+			wt_booking.add();
+			ROH.sendData();
+			displayTeaser.add();
+			},1000,5)
+		},
+		MY_NORMAL:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			rentalCar.add()
+			wt_booking.add();
+			ROH.sendData();
+			displayTeaser.add();
+			},1000,5)
+		},
+		MM_NORMAL:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			rentalCar.add()
+			wt_booking.add();
+			ROH.sendData();
+			displayTeaser.add();
+			},1000,5)
+		},
+		NZ_NORMAL:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			rentalCar.add()
+			wt_booking.add();
+			ROH.sendData();
+			displayTeaser.add();
+			},1000,5)
+		},
+		NO_NORMAL:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			rentalCar.add()
+			wt_booking.add();
+			ROH.sendData();
+			displayTeaser.add();
+			},1000,5)
+		},
+		OM_NORMAL:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			rentalCar.add()
+			wt_booking.add();
+			ROH.sendData();
+			displayTeaser.add();
+			},1000,5)
+		},
+		PK_NORMAL:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			rentalCar.add()
+			wt_booking.add();
+			ROH.sendData();
+			displayTeaser.add();
+			},1000,5)
+		},
+		PH_NORMAL:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			rentalCar.add()
+			wt_booking.add();
+			ROH.sendData();
+			displayTeaser.add();
+			},1000,5)
+		},
+		RU_NORMAL:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			rentalCar.add()
+			wt_booking.add();
+			ROH.sendData();
+			displayTeaser.add();
+			},1000,5)
+		},
+		SG_NORMAL:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			rentalCar.add()
+			wt_booking.add();
+			ROH.sendData();
+			displayTeaser.add();
+			},1000,5)
+		},
+		ES_NORMAL:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			// rentalCar.add()
+			// 	wt_booking.add();
+			// 	ROH.sendData();
+			displayTeaser.add();
+			console.log('NO-Widget')
+			},1000,5)
+		},
+		LK_NORMAL:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			rentalCar.add()
+			wt_booking.add();
+			ROH.sendData();
+			displayTeaser.add();
+			},1000,5)
+		},
+		SE_NORMAL:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			// rentalCar.add()
+			// 	wt_booking.add();
+			// 	ROH.sendData();
+			removePinkbanner('#PinkBanner_1');
+			removePinkbanner('#PinkBanner_4');
+			displayTeaser.add();
+			console.log('NO-Widget')
+			},1000,5)
+		},
+		CH_NORMAL:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			rentalCar.add()
+			wt_booking.add();
+			ROH.sendData();
+			displayTeaser.add();
+			},1000,5)
+		},
+		TW_NORMAL:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			// rentalCar.add()
+			wt_booking.add();
+			ROH.sendData();
+			displayTeaser.add();
+			},1000,5)
+		},
+		TH_NORMAL:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			rentalCar.add()
+			wt_booking.add();
+			ROH.sendData();
+			displayTeaser.add();
+			},1000,5)
+		},
+		AE_NORMAL:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			rentalCar.add()
+			wt_booking.add();
+			ROH.sendData();
+			displayTeaser.add();
+			},1000,5)
+		},
+		GB_NORMAL:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			rentalCar.add()
+			wt_booking.add();
+			ROH.sendData();
+			displayTeaser.add();
+			},1000,5)
+		},
+		US_NORMAL:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			rentalCar.add()
+			wt_booking.add();
+			ROH.sendData();
+			displayTeaser.add();
+			},1000,5)
+		},
+		VN_NORMAL:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			rentalCar.add()
+			wt_booking.add();
+			ROH.sendData();
+			displayTeaser.add();
+			},1000,5)
+		},
+		YY_DOMESTIC:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			rentalCar.add()
+			wt_booking.add();
+			ROH.sendData();
+			displayTeaser.add();
+
+			},1000,5)
+		},
+		YY_NORMAL:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			rentalCar.add()
+			wt_booking.add();
+			ROH.sendData();
+			displayTeaser.add();
+			},1000,5)
+		},
+		DD:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			displayTeaser.add();
+			removePinkbanner('#PinkBanner_1');
+			removePinkbanner('#PinkBanner_4');
+			console.log('NO-Widget--NO');
+			},1000,5)
+		}
+	}
+	return market[mkt]()
+}
+
+
 function pinkbanner_remove(){
 
 	var market = {
@@ -98,6 +471,22 @@ function pinkbanner_remove(){
 		}else console.log(eBaDataLayer.market);
 	},1000,5)
 }
+
+
+// let pinkbanner_remove = ()=>{
+
+// 	let market = {
+// 		CH_NORMAL:{
+// 			r_pinkbanner:['#PinkBanner_1','#PinkBanner_4']
+// 		}
+// 	}
+// 	let 
+// 	implibdx.core.updateDom("div#pinkbanner",()=>{
+
+// 	},1000,5)
+// }
+
+
 
 var displayTeaser = {
 	add:function(){
