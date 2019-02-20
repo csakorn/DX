@@ -200,47 +200,75 @@ var check = {
 		
 	// }
 }
-var modpnr = function(pnr){
-	var modDate = new Date();
-	//YYYYMMDDhhmmsscccc
-	var mergeDate = modDate.getFullYear()+''+(modDate.getMonth()+1)+''+modDate.getDate()+''+modDate.getHours()+''+modDate.getMinutes()+''+modDate.getSeconds()+''+modDate.getMilliseconds();
+// var modpnr = function(pnr){
+// 	var modDate = new Date();
+// 	//YYYYMMDDhhmmsscccc
+// 	var mergeDate = modDate.getFullYear()+''+(modDate.getMonth()+1)+''+modDate.getDate()+''+modDate.getHours()+''+modDate.getMinutes()+''+modDate.getSeconds()+''+modDate.getMilliseconds();
+// 	return mergeDate+''+pnr.match(/[a-zA-Z0-9]{1}$/)[0];
+// }
+
+let modpnr = (pnr)=>{
+	const modDate = new Date();
+	let mergeDate = modDate.getFullYear()+''+(modDate.getMonth()+1)+''+modDate.getDate()+''+modDate.getHours()+''+modDate.getMinutes()+''+modDate.getSeconds()+''+modDate.getMilliseconds();
 	return mergeDate+''+pnr.match(/[a-zA-Z0-9]{1}$/)[0];
 }
 
-function chkSite(x){
-	if(window.location.hostname != 'wav.bibi.amadeus.com'){
-		return true;
+// function chkSite(x){
+// 	if(window.location.hostname != 'wav.bibi.amadeus.com'){
+// 		return true;
+// 	}
+// 	return false;
+// }
+
+const chkSite = ()=>{return window.location.hostname !== 'wav.bibi.amadeus.com'}
+
+// let siteLang = function(l){
+
+// 	switch (eBaDataLayer.language){
+// 		case "CN": return "zh_CN";
+// 				break;
+// 		case "DE": return "de_DE";
+// 				break;
+// 		case "ES": return "en";
+// 				break;
+// 		case "FR": return "fr_FR";
+// 				break;
+// 		case "GB": return "en";
+// 				break;
+// 		case "IT": return "it_IT";
+// 				break;
+// 		case "JP": return "ja_JP";
+// 				break;
+// 		case "KO": return "ko_KR";
+// 				break;
+// 		case "RU": return "en";
+// 				break;
+// 		case "SE": return "en";
+// 				break;
+// 		case "TH": return "en_TH";
+// 				break;
+// 		case "TW": return "zh_TW";
+// 				break;
+// 		default: return "en";
+// 	}
+
+// }
+
+let siteLang = (language)=>{
+	const lang = {
+		CN:"zh_CN",
+		DE:"de_DE",
+		ES:"en",
+		FR:"fr_FR",
+		GB:"en",
+		IT:"it_IT",
+		JP:"ja_JP",
+		KO:"ko_KR",
+		RU:"en",
+		SE:"en",
+		TH:"en_TH",
+		TW:"zh_TW"
 	}
-	return false;
+	return lang[language];
 }
 
-var siteLang = function(l){
-
-	switch (eBaDataLayer.language){
-		case "CN": return "zh_CN";
-				break;
-		case "DE": return "de_DE";
-				break;
-		case "ES": return "en";
-				break;
-		case "FR": return "fr_FR";
-				break;
-		case "GB": return "en";
-				break;
-		case "IT": return "it_IT";
-				break;
-		case "JP": return "ja_JP";
-				break;
-		case "KO": return "ko_KR";
-				break;
-		case "RU": return "en";
-				break;
-		case "SE": return "en";
-				break;
-		case "TH": return "en_TH";
-				break;
-		case "TW": return "zh_TW";
-				break;
-		default: return "en";
-	}
-}
