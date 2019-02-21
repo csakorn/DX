@@ -1,97 +1,97 @@
-function runWidget(){
+// function runWidget(){
 
 
 
 
-	implibdx.core.updateDom("div#TGINSBanner", function(){
+// 	implibdx.core.updateDom("div#TGINSBanner", function(){
 
-		// wt_Takeme.add();
-		// if( ['IT'].indexOf(eBaDataLayer.bound[0].arr_country)>0 ){
-		// 	console.log('NODISPLAY');
-		// }else{
+// 		// wt_Takeme.add();
+// 		// if( ['IT'].indexOf(eBaDataLayer.bound[0].arr_country)>0 ){
+// 		// 	console.log('NODISPLAY');
+// 		// }else{
 
-		// 	rentalCar.add()
-		// 	wt_booking.add();
-		// 	ROH.sendData();
-		// }
+// 		// 	rentalCar.add()
+// 		// 	wt_booking.add();
+// 		// 	ROH.sendData();
+// 		// }
 
 
 
-		switch (eBaDataLayer.bound[0].dep_country){
-			case "CN": 
-				rentalCar.add()
-				wt_booking.add();
-				ROH.sendData();
-			break;
-			case "DE": 
-				rentalCar.add()
-				wt_booking.add();
-				ROH.sendData();
-			break;
-			case "ES": 
-				// rentalCar.add()
-				// wt_booking.add();
-				// ROH.sendData();
-			break;
-			case "FR": 
-				rentalCar.add()
-				wt_booking.add();
-				ROH.sendData();
-			break;
-			case "GB": 
-				rentalCar.add()
-				wt_booking.add();
-				ROH.sendData();
-			break;
-			case "IT": 				
-			break;
-			case "JP": 				
-			break;
-			case "KO": 
-				rentalCar.add()
-				wt_booking.add();
-				ROH.sendData();
-			break;
-			case "RU": 
-				rentalCar.add()
-				wt_booking.add();
-				ROH.sendData();
-			break;
-			case "SE": 
-				//rentalCar.add()
-				//wt_booking.add();
-				//ROH.sendData();
-				if(chkMarket(eBaDataLayer.market) == true){
-					removePinkbanner('#PinkBanner_1');
-					removePinkbanner('#PinkBanner_4');
-				}else{
-					removePinkbanner('#PinkBanner_1');
-					removePinkbanner('#PinkBanner_4');
-				}
+// 		switch (eBaDataLayer.bound[0].dep_country){
+// 			case "CN": 
+// 				rentalCar.add()
+// 				wt_booking.add();
+// 				ROH.sendData();
+// 			break;
+// 			case "DE": 
+// 				rentalCar.add()
+// 				wt_booking.add();
+// 				ROH.sendData();
+// 			break;
+// 			case "ES": 
+// 				// rentalCar.add()
+// 				// wt_booking.add();
+// 				// ROH.sendData();
+// 			break;
+// 			case "FR": 
+// 				rentalCar.add()
+// 				wt_booking.add();
+// 				ROH.sendData();
+// 			break;
+// 			case "GB": 
+// 				rentalCar.add()
+// 				wt_booking.add();
+// 				ROH.sendData();
+// 			break;
+// 			case "IT": 				
+// 			break;
+// 			case "JP": 				
+// 			break;
+// 			case "KO": 
+// 				rentalCar.add()
+// 				wt_booking.add();
+// 				ROH.sendData();
+// 			break;
+// 			case "RU": 
+// 				rentalCar.add()
+// 				wt_booking.add();
+// 				ROH.sendData();
+// 			break;
+// 			case "SE": 
+// 				//rentalCar.add()
+// 				//wt_booking.add();
+// 				//ROH.sendData();
+// 				if(chkMarket(eBaDataLayer.market) == true){
+// 					removePinkbanner('#PinkBanner_1');
+// 					removePinkbanner('#PinkBanner_4');
+// 				}else{
+// 					removePinkbanner('#PinkBanner_1');
+// 					removePinkbanner('#PinkBanner_4');
+// 				}
 				
-			break;
-			case "TH": 
-				rentalCar.add()			
-				wt_booking.add();
-				ROH.sendData();
-			break;
-			case "TW": 
-				// rentalCar.add()
-				wt_booking.add();
-				ROH.sendData();
-			break;
-			default: 
-				rentalCar.add()
-				wt_booking.add();
-				ROH.sendData();
-		}
-        // teaserDisplay.addTeaser();
-        displayTeaser.add();		
+// 			break;
+// 			case "TH": 
+// 				rentalCar.add()			
+// 				wt_booking.add();
+// 				ROH.sendData();
+// 			break;
+// 			case "TW": 
+// 				// rentalCar.add()
+// 				wt_booking.add();
+// 				ROH.sendData();
+// 			break;
+// 			default: 
+// 				rentalCar.add()
+// 				wt_booking.add();
+// 				ROH.sendData();
+// 		}
+//         // teaserDisplay.addTeaser();
+//         displayTeaser.add();		
 
-	},1000,5)
-}
+// 	},1000,5)
+// }
 
-let xrunWidget = (x)=>{
+let runWidget = (x)=>{
 	let mkt = (x !== "")?x:"DD";
 	const market = {
 		AU_NORMAL:()=>{
