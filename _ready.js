@@ -139,7 +139,7 @@ var startFNJS = function() {
             if (dataTransfer['EXTERNAL_ID#4'] === 'GOV') {
                 GOV();
             }
-            chkSite() ? console.log('DMP_ControlTag_kxct'):insurance(eBaDataLayer.bound[0].dep_country);
+            chkSite() ? console.log('insurance'):insurance(eBaDataLayer.bound[0].dep_country,eBaDataLayer.language);
             chkSite() ? DMP_ControlTag_kxct.add():console.log('DMP_ControlTag_kxct');
             chkSite() ? DMP_ControlTag_kxint.add():console.log('DMP_ControlTag_kxint');
             break;
@@ -176,7 +176,7 @@ var startFNJS = function() {
             xbagSet.set();
             removePinkbanner('#PinkBanner_3');
 
-            runWidget();
+            runWidget(eBaDataLayer.market);
             pinkbanner_remove();
             chkSite() ? DMP_ControlTag_kxct.add():console.log('DMP_ControlTag_kxct');
             chkSite() ? DMP_ControlTag_kxint.add():console.log('DMP_ControlTag_kxint');
@@ -191,7 +191,7 @@ var startFNJS = function() {
             updateHTML.remove_content.price_RTPL()
             subscribe.sbbAdd();
             (eBaDataLayer.language == "GB" || eBaDataLayer.language == "FR") ? xbagSet.set(): console.log("xbagSet");
-            runWidget();
+            runWidget(eBaDataLayer.market);
             removeXbag.remove(removeXbag.check())
 
             chkSite() ? DMP_ControlTag_kxct.add():console.log('DMP_ControlTag_kxct');
