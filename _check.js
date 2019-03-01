@@ -91,13 +91,15 @@ var checkEXP = function(name){
 	}
 }
 //setDatef
-var setDatef = function(arr){
-	var setDatef ="";
-	var toDay = new Date();
-	setDatef = toDay.setFullYear(arr[0],arr[1],arr[2]);
-	//console.log(setDatef+"----"+arr);
-	return setDatef;
-}
+// var setDatef = function(arr){
+// 	var setDatef ="";
+// 	var toDay = new Date();
+// 	setDatef = toDay.setFullYear(arr[0],arr[1],arr[2]);
+// 	//console.log(setDatef+"----"+arr);
+// 	return setDatef;
+// }
+
+const setDatef = (arr) => new Date(arr[0],arr[1],arr[2]);
 
 var check = {
 	period:function(d,a,t,e){
@@ -157,6 +159,7 @@ var check = {
 		this.date = d.split("-");
 		return this.date[2]+" "+check.months[eBaDataLayer.language][this.date[1]-1]+" "+this.date[0];
 	},
+	// date_travel:(d)=> {d.split('-')[0]+' '+check.months[eBaDataLayer.language][d.split('-')[1]-1]+' '+d.split('-')[2]},
 	trip_type:function(t){
 		this.t = t;
 		this.vDate ;
@@ -220,7 +223,7 @@ let modpnr = (pnr)=>{
 // 	return false;
 // }
 
-const chkSite = ()=>{return window.location.hostname !== 'wav.bibi.amadeus.com'}
+const chkSite = () => (window.location.hostname === "book.thaiairways.com")?true:false;
 
 // let siteLang = function(l){
 
