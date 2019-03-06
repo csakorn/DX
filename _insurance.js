@@ -107,7 +107,7 @@ let objInsurance = (c, l) => {
 
 function insurance(xcountry, xlanguage) {
     implibdx.core.updateDom("#insurance-select", function() {
-        if (document.getElementById('insurance-select') !== null) {
+        if (document.getElementById('insurance-szelect') !== null) {
             let lc = (objInsurance(xcountry, xlanguage) != undefined) ? objInsurance(xcountry, xlanguage) : objInsurance(xcountry, 'GB')
             $(".title-panel-text").html("<i class=\"icon-aid title-icon\" aria-hidden=\"true\"></i>" + lc.titlepanel)
             $(".box-insurance").html(lc.insurance_txt)
