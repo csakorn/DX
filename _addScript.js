@@ -219,7 +219,13 @@ var addScript = function(objName,elmID,updateID,fn){
         for(x in objNamescript[objName]){
             // console.log(objNamescript[objName][x].paramData,objNamescript[objName][x].txt)
          // anchor.append( createEM.create(objNamescript[objName][x].tag,(objNamescript[objName][x].paramData)?pathData(objNamescript[objName][x].paramData,objNamescript[objName][x].txt):objNamescript[objName][x].txt,objNamescript[objName][x].case) )
-        anchor.appendChild( createEM.create(objNamescript[objName][x].tag,(objNamescript[objName][x].paramData)?pathData(objNamescript[objName][x].paramData,objNamescript[objName][x].txt):objNamescript[objName][x].txt,objNamescript[objName][x].case) )
+        anchor.appendChild( 
+            createEM.create(
+                objNamescript[objName][x].tag,
+                (objNamescript[objName][x].paramData)
+                    ?pathData(objNamescript[objName][x].paramData,objNamescript[objName][x].txt)
+                    :objNamescript[objName][x].txt,
+                objNamescript[objName][x].case) )
         }
         fn;
     },1000,5);
