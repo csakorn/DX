@@ -21,6 +21,11 @@ var createEM ={
 	}
 }
 
+function limitDate(xdate){
+	const _date = setDatef(xdate);
+	return (new Date >= _date);
+}
+
 var widgetScript = {
     destination:function(objName,idName,elmName,attrName,src){
        this._Anchor = objName[idName];
