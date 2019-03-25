@@ -208,6 +208,14 @@ var startFNJS = function() {
             break;
     }
 
+    implibdx.core.updateDom("footer#main-layout-bottom",function(){
+        console.log('ALL PAGE');
+        
+         (/\b^[DK]{2}/).test(eBaDataLayer.external_id) === true && chkSite() === true ? addScriptTG('fbpixel_DK') : console.log('ignore-script');
+         (/\b^[AT]{2}/).test(eBaDataLayer.external_id) === true && chkSite() === true ? addScriptTG('fbpixel_AT') : console.log('ignore-script');
+        
+    },1000,6);
+
 }
 
 jQuery(document).on("plnext:customData:ready", startFNJS);
