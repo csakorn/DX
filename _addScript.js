@@ -964,3 +964,64 @@ var eMailTrigger ={
         // }          
     }
 }
+
+const objTagScript = {
+    fbpixel_DK: {
+        desElement_ID: 'main-layout-bottom',
+        txtScript: {
+            script: {
+                txt: "!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '2242330416020074');fbq('track', 'PageView');"
+            },
+            noscript: {
+                txt: "<img height=\"1\" width=\"1\"src=\"https://www.facebook.com/tr?id=2242330416020074&ev=PageView&noscript=1\"/>"
+            }
+        },
+        limitdate: {
+            start: ['2019', '02', '01'],
+            end: ['2019', '11', '31']
+        }
+    },
+    fbpixel_AT: {
+        desElement_ID: 'main-layout-bottom',
+        txtScript: {
+            script: {
+                txt: "!function(e,t,n,c,o,a,f){e.fbq||(o=e.fbq=function(){o.callMethod?o.callMethod.apply(o,arguments):o.queue.push(arguments)},e._fbq||(e._fbq=o),o.push=o,o.loaded=!0,o.version='2.0',o.queue=[],(a=t.createElement(n)).async=!0,a.src='https://connect.facebook.net/en_US/fbevents.js',(f=t.getElementsByTagName(n)[0]).parentNode.insertBefore(a,f))}(window,document,'script'),fbq('init','1993859664250182'),fbq('track','PageView');"
+            },
+            noscript: {
+                txt: "<img height=\"1\" width=\"1\"src=\"https://www.facebook.com/tr?id=1993859664250182&ev=PageView&noscript=1\"/>"
+            }
+        },
+        limitdate: {
+            start: ['2019', '02', '12'],
+            end: ['2019', '11', '31']
+        }
+    }
+}
+
+function addScriptTG(nameOBJ) {
+    let obj = objTagScript[nameOBJ];
+    const _date = new Date();
+
+    if (_date >= setDatef(obj.limitdate.start) && _date <= setDatef(obj.limitdate.end) ){
+
+        let st1 = document.getElementById(obj.desElement_ID);
+        let st2 = Object.keys(obj.txtScript);
+        let pix_pageCode = eBaDataLayer.page_code === 'CONF' ? 'Purchase' : eBaDataLayer.page_code === 'PURC' ? 'AddToCart' : "";
+        let createAttr, txtNode;
+        let dataBooking = eBaDataLayer.page_code === 'CONF' || eBaDataLayer.page_code === 'PURC' ? "fbq('track', '" + pix_pageCode + "'," + objDataBooking() + ")" : "";
+        st2.forEach((item) => {
+            createAttr = document.createElement(item)
+            txtNode = document.createTextNode(obj['txtScript'][item]['txt'] + ((item === 'script') ? dataBooking : ''))
+            createAttr.appendChild(txtNode)
+            st1.appendChild(createAttr)
+        })
+    }
+}
+
+const objDataBooking = ()=>{
+  return JSON.stringify({
+      connect_name: eBaDataLayer.page_code === 'CONF'?modpnr(eBaDataLayer.pnr_nbr):"",
+      varlue: eBaDataLayer.page_code === 'CONF' || eBaDataLayer.page_code === 'PURC'?eBaDataLayer.total_price:"",
+      currency:eBaDataLayer.currency
+  })
+}
