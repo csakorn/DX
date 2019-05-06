@@ -139,7 +139,10 @@ var startFNJS = function() {
             if (dataTransfer['EXTERNAL_ID#4'] === 'GOV') {
                 GOV();
             }
-            chkSite() ? console.log('insurance'):insurance(eBaDataLayer.bound[0].dep_country,eBaDataLayer.language);
+            if(new Date() >= setDatef(['2019', '03', '3']) === true){
+                insurance(eBaDataLayer.bound[0].dep_country,eBaDataLayer.language)
+            }
+            // chkSite() ? insurance(eBaDataLayer.bound[0].dep_country,eBaDataLayer.language):console.log('insurance');
             chkSite() ? DMP_ControlTag_kxct.add():console.log('DMP_ControlTag_kxct');
             chkSite() ? DMP_ControlTag_kxint.add():console.log('DMP_ControlTag_kxint');
             break;
@@ -176,7 +179,7 @@ var startFNJS = function() {
             xbagSet.set();
             removePinkbanner('#PinkBanner_3');
 
-            runWidget(eBaDataLayer.market);
+            runWidget( (eBaDataLayer.market).split('_')[0] );
             pinkbanner_remove();
             chkSite() ? DMP_ControlTag_kxct.add():console.log('DMP_ControlTag_kxct');
             chkSite() ? DMP_ControlTag_kxint.add():console.log('DMP_ControlTag_kxint');
