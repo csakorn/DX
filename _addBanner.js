@@ -94,7 +94,7 @@
 let runWidget = (x)=>{
 	let mkt = (x !== "")?x:"DD";
 	const market = {
-		AU_NORMAL:()=>{
+		AU:()=>{
 			implibdx.core.updateDom("div#TGINSBanner", function(){
 			rentalCar.add()
 			wt_booking.add();
@@ -102,16 +102,7 @@ let runWidget = (x)=>{
 			displayTeaser.add();
 			},1000,5)
 		},
-		AT_NORMAL:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
-			
-			rentalCar.add()
-			wt_booking.add();
-			ROH.sendData();
-			displayTeaser.add();
-			},1000,5)
-		},
-		BE_NORMAL:()=>{
+		AT:()=>{
 			implibdx.core.updateDom("div#TGINSBanner", function(){
 			
 			rentalCar.add()
@@ -120,7 +111,7 @@ let runWidget = (x)=>{
 			displayTeaser.add();
 			},1000,5)
 		},
-		KH_NORMAL:()=>{
+		BE:()=>{
 			implibdx.core.updateDom("div#TGINSBanner", function(){
 			
 			rentalCar.add()
@@ -129,7 +120,7 @@ let runWidget = (x)=>{
 			displayTeaser.add();
 			},1000,5)
 		},
-		CA_NORMAL:()=>{
+		KH:()=>{
 			implibdx.core.updateDom("div#TGINSBanner", function(){
 			
 			rentalCar.add()
@@ -138,7 +129,7 @@ let runWidget = (x)=>{
 			displayTeaser.add();
 			},1000,5)
 		},
-		CN_NORMAL:()=>{
+		CA:()=>{
 			implibdx.core.updateDom("div#TGINSBanner", function(){
 			
 			rentalCar.add()
@@ -147,7 +138,7 @@ let runWidget = (x)=>{
 			displayTeaser.add();
 			},1000,5)
 		},
-		DK_NORMAL:()=>{
+		CN:()=>{
 			implibdx.core.updateDom("div#TGINSBanner", function(){
 			
 			rentalCar.add()
@@ -156,7 +147,7 @@ let runWidget = (x)=>{
 			displayTeaser.add();
 			},1000,5)
 		},
-		FR_NORMAL:()=>{
+		DK:()=>{
 			implibdx.core.updateDom("div#TGINSBanner", function(){
 			
 			rentalCar.add()
@@ -165,7 +156,7 @@ let runWidget = (x)=>{
 			displayTeaser.add();
 			},1000,5)
 		},
-		DE_NORMAL:()=>{
+		FR:()=>{
 			implibdx.core.updateDom("div#TGINSBanner", function(){
 			
 			rentalCar.add()
@@ -174,7 +165,7 @@ let runWidget = (x)=>{
 			displayTeaser.add();
 			},1000,5)
 		},
-		HK_NORMAL:()=>{
+		DE:()=>{
 			implibdx.core.updateDom("div#TGINSBanner", function(){
 			
 			rentalCar.add()
@@ -183,7 +174,7 @@ let runWidget = (x)=>{
 			displayTeaser.add();
 			},1000,5)
 		},
-		IN_NORMAL:()=>{
+		HK:()=>{
 			implibdx.core.updateDom("div#TGINSBanner", function(){
 			
 			rentalCar.add()
@@ -192,7 +183,7 @@ let runWidget = (x)=>{
 			displayTeaser.add();
 			},1000,5)
 		},
-		ID_NORMAL:()=>{
+		IN:()=>{
 			implibdx.core.updateDom("div#TGINSBanner", function(){
 			
 			rentalCar.add()
@@ -201,7 +192,7 @@ let runWidget = (x)=>{
 			displayTeaser.add();
 			},1000,5)
 		},
-		IE_NORMAL:()=>{
+		ID:()=>{
 			implibdx.core.updateDom("div#TGINSBanner", function(){
 			
 			rentalCar.add()
@@ -210,7 +201,16 @@ let runWidget = (x)=>{
 			displayTeaser.add();
 			},1000,5)
 		},
-		IT_NORMAL:()=>{
+		IE:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			rentalCar.add()
+			wt_booking.add();
+			ROH.sendData();
+			displayTeaser.add();
+			},1000,5)
+		},
+		IT:()=>{
 			implibdx.core.updateDom("div#TGINSBanner", function(){
 			
 			// rentalCar.add()
@@ -220,7 +220,7 @@ let runWidget = (x)=>{
 			console.log('NO-Widget')
 			},1000,5)
 		},
-		JP_NORMAL:()=>{
+		JP:()=>{
 			implibdx.core.updateDom("div#TGINSBanner", function(){
 			
 			// rentalCar.add()
@@ -230,7 +230,7 @@ let runWidget = (x)=>{
 			console.log('NO-Widget')
 			},1000,5)
 		},
-		KR_NORMAL:()=>{
+		KR:()=>{
 			implibdx.core.updateDom("div#TGINSBanner", function(){
 			
 			rentalCar.add()
@@ -239,7 +239,7 @@ let runWidget = (x)=>{
 			displayTeaser.add();
 			},1000,5)
 		},
-		LA_NORMAL:()=>{
+		LA:()=>{
 			implibdx.core.updateDom("div#TGINSBanner", function(){
 			
 			rentalCar.add()
@@ -248,7 +248,7 @@ let runWidget = (x)=>{
 			displayTeaser.add();
 			},1000,5)
 		},
-		MY_NORMAL:()=>{
+		MY:()=>{
 			implibdx.core.updateDom("div#TGINSBanner", function(){
 			
 			rentalCar.add()
@@ -257,7 +257,7 @@ let runWidget = (x)=>{
 			displayTeaser.add();
 			},1000,5)
 		},
-		MM_NORMAL:()=>{
+		MM:()=>{
 			implibdx.core.updateDom("div#TGINSBanner", function(){
 			
 			rentalCar.add()
@@ -266,7 +266,7 @@ let runWidget = (x)=>{
 			displayTeaser.add();
 			},1000,5)
 		},
-		NZ_NORMAL:()=>{
+		NZ:()=>{
 			implibdx.core.updateDom("div#TGINSBanner", function(){
 			
 			rentalCar.add()
@@ -275,7 +275,7 @@ let runWidget = (x)=>{
 			displayTeaser.add();
 			},1000,5)
 		},
-		NO_NORMAL:()=>{
+		NO:()=>{
 			implibdx.core.updateDom("div#TGINSBanner", function(){
 			
 			rentalCar.add()
@@ -284,7 +284,7 @@ let runWidget = (x)=>{
 			displayTeaser.add();
 			},1000,5)
 		},
-		OM_NORMAL:()=>{
+		OM:()=>{
 			implibdx.core.updateDom("div#TGINSBanner", function(){
 			
 			rentalCar.add()
@@ -293,7 +293,7 @@ let runWidget = (x)=>{
 			displayTeaser.add();
 			},1000,5)
 		},
-		PK_NORMAL:()=>{
+		PK:()=>{
 			implibdx.core.updateDom("div#TGINSBanner", function(){
 			
 			rentalCar.add()
@@ -302,7 +302,7 @@ let runWidget = (x)=>{
 			displayTeaser.add();
 			},1000,5)
 		},
-		PH_NORMAL:()=>{
+		PH:()=>{
 			implibdx.core.updateDom("div#TGINSBanner", function(){
 			
 			rentalCar.add()
@@ -311,7 +311,7 @@ let runWidget = (x)=>{
 			displayTeaser.add();
 			},1000,5)
 		},
-		RU_NORMAL:()=>{
+		RU:()=>{
 			implibdx.core.updateDom("div#TGINSBanner", function(){
 			
 			rentalCar.add()
@@ -320,7 +320,7 @@ let runWidget = (x)=>{
 			displayTeaser.add();
 			},1000,5)
 		},
-		SG_NORMAL:()=>{
+		SG:()=>{
 			implibdx.core.updateDom("div#TGINSBanner", function(){
 			
 			rentalCar.add()
@@ -329,7 +329,7 @@ let runWidget = (x)=>{
 			displayTeaser.add();
 			},1000,5)
 		},
-		ES_NORMAL:()=>{
+		ES:()=>{
 			implibdx.core.updateDom("div#TGINSBanner", function(){
 			
 			// rentalCar.add()
@@ -339,7 +339,7 @@ let runWidget = (x)=>{
 			console.log('NO-Widget')
 			},1000,5)
 		},
-		LK_NORMAL:()=>{
+		LK:()=>{
 			implibdx.core.updateDom("div#TGINSBanner", function(){
 			
 			rentalCar.add()
@@ -348,7 +348,7 @@ let runWidget = (x)=>{
 			displayTeaser.add();
 			},1000,5)
 		},
-		SE_NORMAL:()=>{
+		SE:()=>{
 			implibdx.core.updateDom("div#TGINSBanner", function(){
 			
 			// rentalCar.add()
@@ -360,7 +360,7 @@ let runWidget = (x)=>{
 			console.log('NO-Widget')
 			},1000,5)
 		},
-		CH_NORMAL:()=>{
+		CH:()=>{
 			implibdx.core.updateDom("div#TGINSBanner", function(){
 			
 			rentalCar.add()
@@ -369,7 +369,7 @@ let runWidget = (x)=>{
 			displayTeaser.add();
 			},1000,5)
 		},
-		TW_NORMAL:()=>{
+		TW:()=>{
 			implibdx.core.updateDom("div#TGINSBanner", function(){
 			
 			// rentalCar.add()
@@ -378,7 +378,16 @@ let runWidget = (x)=>{
 			displayTeaser.add();
 			},1000,5)
 		},
-		TH_NORMAL:()=>{
+		TH:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			rentalCar.add()
+			wt_booking.add();
+			displayTeaser.add();
+			},1000,5)
+			ROH.sendData();
+		},
+		AE:()=>{
 			implibdx.core.updateDom("div#TGINSBanner", function(){
 			
 			rentalCar.add()
@@ -387,7 +396,7 @@ let runWidget = (x)=>{
 			displayTeaser.add();
 			},1000,5)
 		},
-		AE_NORMAL:()=>{
+		GB:()=>{
 			implibdx.core.updateDom("div#TGINSBanner", function(){
 			
 			rentalCar.add()
@@ -396,7 +405,7 @@ let runWidget = (x)=>{
 			displayTeaser.add();
 			},1000,5)
 		},
-		GB_NORMAL:()=>{
+		US:()=>{
 			implibdx.core.updateDom("div#TGINSBanner", function(){
 			
 			rentalCar.add()
@@ -405,16 +414,7 @@ let runWidget = (x)=>{
 			displayTeaser.add();
 			},1000,5)
 		},
-		US_NORMAL:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
-			
-			rentalCar.add()
-			wt_booking.add();
-			ROH.sendData();
-			displayTeaser.add();
-			},1000,5)
-		},
-		VN_NORMAL:()=>{
+		VN:()=>{
 			implibdx.core.updateDom("div#TGINSBanner", function(){
 			
 			rentalCar.add()
@@ -433,7 +433,16 @@ let runWidget = (x)=>{
 
 			},1000,5)
 		},
-		YY_NORMAL:()=>{
+		YY:()=>{
+			implibdx.core.updateDom("div#TGINSBanner", function(){
+			
+			rentalCar.add()
+			wt_booking.add();
+			ROH.sendData();
+			displayTeaser.add();
+			},1000,5)
+		},
+		WW:()=>{
 			implibdx.core.updateDom("div#TGINSBanner", function(){
 			
 			rentalCar.add()
@@ -458,15 +467,15 @@ let runWidget = (x)=>{
 function pinkbanner_remove(){
 
 	var market = {
-		CH_NORMAL:{
+		CH:{
 			r_pinkbanner:['#PinkBanner_1','#PinkBanner_4']
 		}
 	}
 
 	implibdx.core.updateDom("div#pinkbanner", function(){
 		if(chkMarket(eBaDataLayer.market) == true){
-			for(x in market.CH_NORMAL.r_pinkbanner){
-				removePinkbanner(market.CH_NORMAL.r_pinkbanner[x]);
+			for(x in market.CH.r_pinkbanner){
+				removePinkbanner(market.CH.r_pinkbanner[x]);
 			}
 		}else console.log(eBaDataLayer.market);
 	},1000,5)
@@ -476,7 +485,7 @@ function pinkbanner_remove(){
 // let pinkbanner_remove = ()=>{
 
 // 	let market = {
-// 		CH_NORMAL:{
+// 		CH:{
 // 			r_pinkbanner:['#PinkBanner_1','#PinkBanner_4']
 // 		}
 // 	}
@@ -532,7 +541,7 @@ var displayTeaser = {
 
 			if (bannerTG[name].condition.displaycon == "Departure") {
 				this.dOut = (eBaDataLayer.bound[0].dep_date).split("/");
-				this.dIn = (eBaDataLayer.bound[1].dep_date).split("/");
+				this.dIn = eBaDataLayer.bound[1] !== undefined? (eBaDataLayer.bound[1].dep_date).split("/") : "";
 				this.today = new Date();
 				this.eBaDateOut = setDatef([this.dOut[2], this.dOut[1] - 1, this.dOut[0]]);
 				this.eBaDateIn = setDatef([this.dIn[2], this.dIn[1] - 1, this.dIn[0]]);
