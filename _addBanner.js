@@ -380,12 +380,11 @@ let runWidget = (x)=>{
 		},
 		TH:()=>{
 			implibdx.core.updateDom("div#TGINSBanner", function(){
-			
 			rentalCar.add()
 			wt_booking.add();
+			ROH.sendData();
 			displayTeaser.add();
 			},1000,5)
-			ROH.sendData();
 		},
 		AE:()=>{
 			implibdx.core.updateDom("div#TGINSBanner", function(){
@@ -433,7 +432,7 @@ let runWidget = (x)=>{
 
 			},1000,5)
 		},
-		YY:()=>{
+		YY:()=>{ // global
 			implibdx.core.updateDom("div#TGINSBanner", function(){
 			
 			rentalCar.add()
@@ -442,7 +441,7 @@ let runWidget = (x)=>{
 			displayTeaser.add();
 			},1000,5)
 		},
-		WW:()=>{
+		WW:()=>{ // OTA
 			implibdx.core.updateDom("div#TGINSBanner", function(){
 			
 			rentalCar.add()
@@ -533,11 +532,27 @@ var displayTeaser = {
 			}else return false;
 		}
 	},
+	chkCity:function(city){
+		// displayTeaser.chkMarket(bannerTG[name].condition.chk
+		const chkCity = eBaDataLayer[city.data[0]];
+		const regx = new RegExp(city.rex);
+		let citylist = "";
+		
+		Object.keys(eBaDataLayer.bound).forEach((key)=>{
+			citylist += eBaDataLayer.bound[key][city.data[1]]+"-";
+		});
+
+		return regx.test(citylist);
+
+		
+	},
 	EXP:function(name){			
 		
 		if(bannerTG[name].condition.displaycon != ""){
 			console.log('displaycon != Null',name);
 			// return name;
+			this.conEnd = bannerTG[name].condition.end !==  undefined? setDatef(bannerTG[name].condition.end):"";
+			this.conStart = bannerTG[name].condition.start !==  undefined? setDatef(bannerTG[name].condition.start):"";
 
 			if (bannerTG[name].condition.displaycon == "Departure") {
 				this.dOut = (eBaDataLayer.bound[0].dep_date).split("/");
@@ -545,11 +560,12 @@ var displayTeaser = {
 				this.today = new Date();
 				this.eBaDateOut = setDatef([this.dOut[2], this.dOut[1] - 1, this.dOut[0]]);
 				this.eBaDateIn = setDatef([this.dIn[2], this.dIn[1] - 1, this.dIn[0]]);
-				if (this.expStart <= this.eBaDateOut && this.eBaDateOut <= this.expEnd && this.expStart <= this.eBaDateIn && this.eBaDateIn <= this.expEnd && chkMarket(bannerTG[name].condition.market) === true) {
+				
+				if (this.conStart <= this.eBaDateOut && this.eBaDateOut <= this.conEnd && this.conStart <= this.eBaDateIn && this.eBaDateIn <= this.conEnd && displayTeaser.chkMarket(bannerTG[name].condition.market) === true) {
         			// console.log(name+"=>OK"+"---date"+this.eBaDateOut+"---"+this.eBaDateIn)
-       				if(displayTeaser.chkMarket(bannerTG[name].condition.market) == true){
-       					return true;
-       				}else return false;
+       				//if(displayTeaser.chkMarket(bannerTG[name].condition.market) == true){       					
+       					return (bannerTG[name].condition.chk !== null)? displayTeaser.chkCity(bannerTG[name].condition.chk) : true;
+       				//}else return false;
     			} else {
     				console.log(name + "=>exp" + "---date" + this.eBaDateOut + "---" + this.eBaDateIn);
     				return false;
@@ -557,22 +573,20 @@ var displayTeaser = {
 			}
 			if (bannerTG[name].condition.displaycon == "ticketing") {
 			    this.toDay = new Date();
-			    // console.log(this.expStart+'-------------'+this.expEnd);
-			    if (this.toDay <= this.expEnd && this.expStart <= this.toDay && chkMarket(bannerTG[name].condition.market) === true) {
-			        // console.log(name+"=>OK"+"---date"+this.toDay+"---"+this.expEnd)
-			        if(displayTeaser.chkMarket(bannerTG[name].condition.market) == true){
-			        	return true;
-			        }else return false;
+			    // displayTeaser.chkCity(bannerTG[name].condition.chk)
+			    // console.log("today=",this.toDay)
+			    // console.log("conEnd=",this.conEnd)
+			    // console.log("conStart=",this.conStart)
+			    // console.log(displayTeaser.chkMarket(bannerTG[name].condition.market))
+
+			    // console.log(this.conStart+'-------------'+this.conEnd);
+			    if (this.toDay <= this.conEnd && this.conStart <= this.toDay && displayTeaser.chkMarket(bannerTG[name].condition.market) === true) {
+			        // console.log(name+"=>OK"+"---date"+this.toDay+"---"+this.conEnd)
+			        //if(displayTeaser.chkMarket(bannerTG[name].condition.market) == true){
+			        	return (bannerTG[name].condition.chk !== null)? displayTeaser.chkCity(bannerTG[name].condition.chk) : true;
+			        //}else return false;
 			    } else {
-			        console.log(name + "=>exp" + "---date" + this.toDay + "---" + this.expEnd);
-			        return false;
-			    }
-			} else {
-			    // console.log(name+"=>no exp"+"---date"+this.eBaDateOut+"---"+this.eBaDateIn)
-			    // (chkMarket(bannerTG[name].condition.market) === true)? return true: return false;
-			    if (chkMarket(bannerTG[name].condition.market) === true) {
-			        return true;
-			    } else {
+			        console.log(name + "=>exp" + "---date" + this.toDay + "---" + this.conEnd);
 			        return false;
 			    }
 			}
