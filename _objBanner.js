@@ -74,17 +74,18 @@ var bannerTG = {
         class:"box_TGINSBannerMenu",
         ADisplay:"",
         onClick:{
-            CONF:"onclick=\"dcsMultiTrack(\'WT.dl\',\'99\',\'WT.ac\',\'BaliTreat\',\'WT.totalamount\',\'\',\'WT.currcode\',\'\',\'WT.bookconfirm\',\'\',\'WT.bookfromcity\',\'\',\'WT.booktocity\',\'\',\'WT.thaicountry\',\'\',\'WT.triptype\',\'\',\'WT.bcabin\',\'\',\'WT.ceco\',\'\',\'WT.flight_numbers\',\'\',\'WT.route\',\'\',\'WT.office_id\',\'\',\'WT.rloc\',\'\',\'WT.external_id\',\'\',\'WT.paytype\',\'\',\'WT.site\',\'\',\'WT.depdate\',\'\')\"",
-            RTPL:"onclick=\"dcsMultiTrack(\'WT.dl\',\'99\',\'WT.ac\',\'BaliTreat\')\""
+            CONF:"onclick=\"\"",
+            RTPL:"onclick=\"\""
+
         },
         param:"",
         condition:{
-            start:["2018","07","6"],
-            end:["2018","10","16"],
+            start:["2019","04","3"],
+            end:["2019","05","16"],
             displaycon:"ticketing",          
             chk:{
                 rex:'[DPS]{3}',
-                data:['bound','0','route']
+                data:['bound','arr_airport']
             },
             pagecode:['CONF','RTPL'],
             market:['TH','XX','YY']
