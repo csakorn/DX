@@ -16,8 +16,8 @@ var bannerTG = {
         class:"box_TGINSBannerMenu",
         ADisplay:"",
         onClick:{
-            CONF:"onclick=\"dcsMultiTrack(\'WT.dl\',\'99\',\'WT.ac\',\'WebSatisfactionSurvey\',\'WT.totalamount\',\'\',\'WT.currcode\',\'\',\'WT.bookconfirm\',\'\',\'WT.bookfromcity\',\'\',\'WT.booktocity\',\'\',\'WT.thaicountry\',\'\',\'WT.triptype\',\'\',\'WT.bcabin\',\'\',\'WT.ceco\',\'\',\'WT.flight_numbers\',\'\',\'WT.route\',\'\',\'WT.office_id\',\'\',\'WT.rloc\',\'\',\'WT.external_id\',\'\',\'WT.paytype\',\'\',\'WT.site\',\'\',\'WT.depdate\',\'\')\"",
-            RTPL:"onclick=\"dcsMultiTrack(\'WT.dl\',\'99\',\'WT.ac\',\'WebSatisfactionSurvey\')\""
+            CONF:"onclick=\"_gaq.push(['_trackEvent', 'TH', 'eServey-CONF', 'eServey'])\"",
+            RTPL:"onclick=\"_gaq.push(['_trackEvent', 'TH', 'eServey-RTPL', 'eServey'])\""
         },
         param:{
             pnr:"pnr_nbr"
@@ -47,8 +47,8 @@ var bannerTG = {
         class:"box_TGINSBannerMenu HotelsOffers",
         ADisplay:"",
         onClick:{
-            CONF:"onclick=\"dcsMultiTrack(\'WT.dl\',\'99\',\'WT.ac\',\'Flights and Hotels\',\'WT.totalamount\',\'\',\'WT.currcode\',\'\',\'WT.bookconfirm\',\'\',\'WT.bookfromcity\',\'\',\'WT.booktocity\',\'\',\'WT.thaicountry\',\'\',\'WT.triptype\',\'\',\'WT.bcabin\',\'\',\'WT.ceco\',\'\',\'WT.flight_numbers\',\'\',\'WT.route\',\'\',\'WT.office_id\',\'\',\'WT.rloc\',\'\',\'WT.external_id\',\'\',\'WT.paytype\',\'\',\'WT.site\',\'\',\'WT.depdate\',\'\')\"",
-            RTPL:"onclick=\"dcsMultiTrack(\'WT.dl\',\'99\',\'WT.ac\',\'Flights and Hotels\')\""
+            CONF:"onclick=\"\"",
+            RTPL:"onclick=\"\""
         },
         param:"",
         condition:{
@@ -67,25 +67,25 @@ var bannerTG = {
             },
             alt:"Bali Treat is special privilege",
             linkURL:{
-                GB:"https://www.thaiairways.com/en_ID/plan_my_trip/Special_fare/Offers_Booking/Privilege.page"              
+                GB:"https://www.thaiairways.com/en_ID/offer/privileges/Privilege.page?utm_source=&utm_medium=website&utm_campaign=click-BaliTreat-ConfirmationPage"                  
             }           
         },
         target:"_blank",
-        class:"box_TGINSBannerMenu",
+        class:"box_TGINSBannerMenu BaliTreat",
         ADisplay:"",
         onClick:{
-            CONF:"onclick=\"\"",
-            RTPL:"onclick=\"\""
-
+            CONF:"onclick=\"_gaq.push(['_trackEvent', 'ID', 'Offers-CONF', 'BaliTreat'])\"",
+            RTPL:"onclick=\"_gaq.push(['_trackEvent', 'ID', 'Offers-RTPL', 'BaliTreat'])\""
+            
         },
         param:"",
         condition:{
             start:["2019","04","3"],
-            end:["2019","05","16"],
+            end:["2019","11","31"],
             displaycon:"ticketing",          
             chk:{
                 rex:'[DPS]{3}',
-                data:['bound','arr_airport']
+                data:['bound','route']
             },
             pagecode:['CONF','RTPL'],
             market:['TH','XX','YY']
