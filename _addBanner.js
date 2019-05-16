@@ -459,7 +459,7 @@ let runWidget = (x)=>{
 			},1000,5)
 		}
 	}
-	return market[mkt]()
+	return market[mkt]();
 }
 
 
@@ -538,8 +538,8 @@ var displayTeaser = {
 		const regx = new RegExp(city.rex);
 		let citylist = "";
 		
-		Object.keys(eBaDataLayer.bound).forEach((key)=>{
-			citylist += eBaDataLayer.bound[key][city.data[1]]+"-";
+		Object.keys(chkCity).forEach((key)=>{
+			citylist += chkCity[key][city.data[1]]+"-";
 		});
 
 		return regx.test(citylist);
@@ -561,13 +561,13 @@ var displayTeaser = {
 				this.eBaDateOut = setDatef([this.dOut[2], this.dOut[1] - 1, this.dOut[0]]);
 				this.eBaDateIn = setDatef([this.dIn[2], this.dIn[1] - 1, this.dIn[0]]);
 				
-				if (this.conStart <= this.eBaDateOut && this.eBaDateOut <= this.conEnd && this.conStart <= this.eBaDateIn && this.eBaDateIn <= this.conEnd && displayTeaser.chkMarket(bannerTG[name].condition.market) === true) {
+				if (this.conStart <= this.eBaDateOut && this.eBaDateOut <= this.conEnd && this.conStart <= this.eBaDateIn && this.eBaDateIn <= this.conEnd) {
         			// console.log(name+"=>OK"+"---date"+this.eBaDateOut+"---"+this.eBaDateIn)
        				//if(displayTeaser.chkMarket(bannerTG[name].condition.market) == true){       					
        					return (bannerTG[name].condition.chk !== null)? displayTeaser.chkCity(bannerTG[name].condition.chk) : true;
        				//}else return false;
     			} else {
-    				console.log(name + "=>exp" + "---date" + this.eBaDateOut + "---" + this.eBaDateIn);
+    				// console.log(name + "=>exp" + "---date" + this.eBaDateOut + "---" + this.eBaDateIn);
     				return false;
     			}
 			}
@@ -580,13 +580,13 @@ var displayTeaser = {
 			    // console.log(displayTeaser.chkMarket(bannerTG[name].condition.market))
 
 			    // console.log(this.conStart+'-------------'+this.conEnd);
-			    if (this.toDay <= this.conEnd && this.conStart <= this.toDay && displayTeaser.chkMarket(bannerTG[name].condition.market) === true) {
+			    if (this.toDay <= this.conEnd && this.conStart <= this.toDay) {
 			        // console.log(name+"=>OK"+"---date"+this.toDay+"---"+this.conEnd)
 			        //if(displayTeaser.chkMarket(bannerTG[name].condition.market) == true){
 			        	return (bannerTG[name].condition.chk !== null)? displayTeaser.chkCity(bannerTG[name].condition.chk) : true;
 			        //}else return false;
 			    } else {
-			        console.log(name + "=>exp" + "---date" + this.toDay + "---" + this.conEnd);
+			        // console.log(name + "=>exp" + "---date" + this.toDay + "---" + this.conEnd);
 			        return false;
 			    }
 			}
