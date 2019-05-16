@@ -179,7 +179,8 @@ var startFNJS = function() {
             xbagSet.set();
             removePinkbanner('#PinkBanner_3');// REMOVE 
 
-            runWidget( (eBaDataLayer.market).split('_')[0] );
+            // runWidget( (eBaDataLayer.market).split('_')[0] );
+            runWidget(eBaDataLayer.bound[0].dep_country);
             pinkbanner_remove();
             chkSite() ? DMP_ControlTag_kxct.add():console.log('DMP_ControlTag_kxct');
             chkSite() ? DMP_ControlTag_kxint.add():console.log('DMP_ControlTag_kxint');
@@ -194,7 +195,8 @@ var startFNJS = function() {
             updateHTML.remove_content.price_RTPL()
             subscribe.sbbAdd();
             (eBaDataLayer.language == "GB" || eBaDataLayer.language == "FR") ? xbagSet.set(): console.log("xbagSet");
-            runWidget( (eBaDataLayer.market).split('_')[0] );
+            // runWidget( (eBaDataLayer.market).split('_')[0] );
+            runWidget(eBaDataLayer.bound[0].dep_country);
             removeXbag.remove(removeXbag.check())
 
             chkSite() ? DMP_ControlTag_kxct.add():console.log('DMP_ControlTag_kxct');
