@@ -317,6 +317,17 @@ function _insurance(xcountry, xlanguage) {
 
 }
 
+function addFontAwesome(){
+    const addTo = document.getElementsByTagName('head');
+    const createAttr = document.createElement('link');
+    createAttr.setAttribute('rel','stylesheet');
+    createAttr.setAttribute('href','https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css');
+
+    implibdx.core.updateDom("footer#main-layout-bottom",function(){
+        addTo[0].appendChild(createAttr);
+    },1000,5)
+}
+
 
 function remove_linkPolicy() {
     implibdx.core.updateDom(".contract-detail", function() {
@@ -374,9 +385,9 @@ var startFNJS = function startFNJS() {
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code);
 
             // chkSite() ? _insurance(eBaDataLayer.bound[0].dep_country,eBaDataLayer.language):console.log('insurance');
-            if (new Date() <= setDatef(['2019', '03', '5']) === true) {
-                _insurance(eBaDataLayer.bound[0].dep_country, eBaDataLayer.language);
-            }
+            // if (new Date() <= setDatef(['2019', '03', '5']) === true) {
+            //     _insurance(eBaDataLayer.bound[0].dep_country, eBaDataLayer.language);
+            // }
 
             // implibdx.core.updateDom("footer#main-layout-bottom",function(){
             //     (/\b^[DK]{2}/).test(eBaDataLayer.external_id) === true && chkSite() === true? addScriptTG('fbpixel_DK'):console.log('ignore-script')
@@ -386,10 +397,14 @@ var startFNJS = function startFNJS() {
         case "CONF":
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code);
             // chkSite() === true ? _eMailTrigger.baliprivilege.send() : console.log('baliprivilege');
+            // runWidget( (eBaDataLayer.market).split('_')[0] );
+            addFontAwesome();
             break;
 
         case "RTPL":
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code);
+            // runWidget( (eBaDataLayer.market).split('_')[0] );
+            addFontAwesome();
 
             break;
         case "MDFSR":
