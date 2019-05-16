@@ -25,7 +25,7 @@ var ROH = {
     display_logo: function(st) {
         this.st = st;
         if (eBaDataLayer.language == "TH" || eBaDataLayer.language == "GB") {
-            this.htmlDis = '<section id="roh" class="box-roh"><h3>' + ROH.txt.errorTXT[eBaDataLayer.language][0] + '</h3><h4>' + ROH.txt.errorTXT[eBaDataLayer.language][1] + '</h4><a target="_blank" href="https://www.royalorchidholidays.com/' + check.lang(eBaDataLayer.language)[2] + '"><img class="box-roh_logoROH" src="http://www.thaiairways.com/static/common/imgscontent/banner/ROH_Logos_Thai.png"></a></section>';
+            this.htmlDis = '<section id="roh" class="box-roh"><h3>' + ROH.txt.errorTXT[eBaDataLayer.language][0] + '<img src="https://www.thaiairways.com/static/common/imgscontent/banner/rohlogo-w.png" style="width: 105px;float: right;"></h3><h4>' + ROH.txt.errorTXT[eBaDataLayer.language][1] + '</h4><a target="_blank" href="https://www.royalorchidholidays.com/' + check.lang(eBaDataLayer.language)[2] + '"><img class="box-roh_logoROH" src="http://www.thaiairways.com/static/common/imgscontent/banner/ROH_Logos_Thai.png"></a></section>';
             return this.htmlDis;
         }
     },
@@ -33,10 +33,8 @@ var ROH = {
     	console.log('----------------------------ROH');
         if ((eBaDataLayer.page_code == "CONF"|| eBaDataLayer.page_code == "RTPL") && (eBaDataLayer.language == "TH" || eBaDataLayer.language == "GB")) {
 
-            let urlROH;
-            let idST = 'reservation-details';
-
-            if (window.location.hostname == "book.thaiairways.com") { urlROH = 'https://www.thaiairways.com/app/roh/' } else { urlROH = 'https://uat.thaiairways.com/app/roh/' }
+            let urlROH = (window.location.hostname == "book.thaiairways.com")?'https://www.thaiairways.com/app/roh/':'https://uat.thaiairways.com/app/roh/';
+            let idST = 'reservation-details';            
 
             implibdx.core.updateDom("div.TGINSBannerMenu", function() {
 
