@@ -317,16 +317,48 @@ function _insurance(xcountry, xlanguage) {
 
 }
 
-function addFontAwesome(){
+function addFontAwesome() {
     const addTo = document.getElementsByTagName('head');
     const createAttr = document.createElement('link');
-    createAttr.setAttribute('rel','stylesheet');
-    createAttr.setAttribute('href','https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css');
+    createAttr.setAttribute('rel', 'stylesheet');
+    createAttr.setAttribute('href', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css');
 
-    implibdx.core.updateDom("footer#main-layout-bottom",function(){
+    implibdx.core.updateDom("footer#main-layout-bottom", function() {
         addTo[0].appendChild(createAttr);
-    },1000,5)
+    }, 1000, 5)
 }
+
+$(".BaliTreat").on('click', function(event) {
+    event.preventDefault();
+    const infoBooking = {};
+    infoBooking.data1 = dataTransfer['PNR#1_TITLECODE#1'];
+    infoBooking.data2 = eBaDataLayer.passengerList[0].first_name;
+    infoBooking.data3 = eBaDataLayer.passengerList[0].last_name;
+    infoBooking.data4 = eBaDataLayer.trip_type;
+    infoBooking.data5 = eBaDataLayer.contact_information.email;
+    infoBooking.data6 = eBaDataLayer.pnr_number !== undefined ? eBaDataLayer.pnr_number : eBaDataLayer.pnr_nbr;
+    infoBooking.data18 = eBaDataLayer.page_code;
+    infoBooking.data19 = subscribe.check_site();
+    infoBooking.data20 = "BaliTreat";
+
+    onClickBanner(infoBooking);
+})
+
+function onClickBanner(obj) {
+
+    $.ajax({
+        type: 'POST',
+        url: 'https://www.thaiairways.com/app/form/save_report',
+        data: obj,
+        dataType: 'json'
+    }).done(function(result) {
+        console.log(result.success);
+    }).error(function(e) {
+        console.log(e.statusText)
+    });
+}
+
+
 
 
 function remove_linkPolicy() {
