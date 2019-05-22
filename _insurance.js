@@ -100,7 +100,7 @@ let objInsurance = (c, l) => {
     const _objInsurance = {
         HK: {
             GB: {
-                titlepanel: "Protect your flight",
+                titlepanel: "Protect your flight The following Travel Insurance information is provided by Allianz Travel",
                 insurance_txt: `<p><br>Leave your worry behind and make sure that you're protected from </p><ul> <li><i class="icon-check title-icon"></i> Flight delay, flight cancellation</li><li><i class="icon-check title-icon"></i> Compensation for baggage delay or loss</li><li><i class="icon-check title-icon"></i> Medical expenses for in/out patient</li></ul><p>For more information, please refer to Policy Wording.</p><br><div class="box-insurance_detail"> <div class="box-insurance_detail-content"> <p> Please read the Travel Insurance Schedule of Benefits, Policy Wording and Declaration. By selecting and purchasing this Travel Insurance, you confirm that you have read and agree to the all of the terms, conditions and exclusions of the Policy Wording and Declaration. This Travel Insurance is for Hong Kong residents only with journey starting from Hong Kong. It is underwritten by Liberty International Insurance Limited ("Liberty"), with services provided by Allianz Travel. Allianz Travel, a trading name of Allianz Worldwide Partners (Hong Kong) Limited, is registered as an insurance agency of Liberty in respect of this Travel Insurance. You are purchasing this Travel Insurance from Liberty and not Thai Airways. Liberty is the insurer of and responsible for issuing this Travel Insurance. Thai Airways is not an insurance agent of Liberty and does not act as an insurance broker. Thai Airways will not be arranging this Travel Insurance on your behalf and is not responsible for any information provided by Liberty and Allianz Travel about this Travel Insurance. You consent Liberty and Allianz Travel to use your and any other passengers’ (under the same booking) personal data for the application and administration of this Travel Insurance and provision of claims and assistance services. </p></div></div>`,
                 radio_1: {
                     txt_1: "Yes, I want to protect my trip",
@@ -111,11 +111,10 @@ let objInsurance = (c, l) => {
                 radio_2: {
                     txt_1: "<span class=\"\">No, I don\'t want to protect my trip<span>",
                     txt_2: "for all passengers"
-                },
-                InsuranceTeaser:"The following Travel Insurance information is provided by Allianz Travel"
+                }
             },
             TW: {
-                titlepanel: "\u4fdd\u969c\u60a8\u7684\u65c5\u7a0b",
+                titlepanel: "\u4fdd\u969c\u60a8\u7684\u65c5\u7a0b \u4ee5\u4e0b\u65c5\u904a\u4fdd\u96aa\u8cc7\u8a0a\u7531\u5b89\u806f\u65c5\u884c\u63d0\u4f9b",
                 insurance_txt: `<p><br>\u5B89\u5FC3\u51FA\u767C\uFF0C\u70BA\u60A8\u7684\u65C5\u7A0B\u6DFB\u52A0\u4FDD\u969C </p><ul> <li><i class="icon-check title-icon"></i>\u822A\u73ED\u5EF6\u8AA4,\u822A\u73ED\u53D6\u6D88</li><li><i class="icon-check title-icon"></i>\u907A\u5931\u884C\u674E\u6216\u884C\u674E\u5EF6\u8AA4</li><li><i class="icon-check title-icon"></i>\u9580\u8A3A/\u4F4F\u9662\u91AB\u7642\u8CBB\u7528</li></ul><p>\u689D\u6B3E\u53CA\u7D30\u5247\u9069\u7528*</p><br><div class="box-insurance_detail"> <div class="box-insurance_detail-content"> <p> \u8acb\u7d30\u95b1\u65c5\u904a\u4fdd\u96aa\u4fdd\u969c\u8868, \u4fdd\u55ae\u689d\u6b3e\u53ca\u8072\u660e\u3002\u5982\u9078\u8cfc\u672c\u65c5\u904a\u4fdd\u96aa\uff0c\u5373\u8868\u793a\u95a3\u4e0b\u78ba\u8a8d\u5df2\u95b1\u8b80\u4e26\u540c\u610f\u4fdd\u55ae\u689d\u6b3e\u7684\u689d\u6b3e\u3001\u7d30\u5247\u53ca\u4e0d\u53d7\u4fdd\u4e8b\u9805\u53ca\u8072\u660e\u7684\u5167\u5bb9\u3002 \u672c\u65c5\u904a\u4fdd\u96aa\u53ea\u9069\u7528\u65bc\u9999\u6e2f\u5c45\u6c11\u4e26\u5f9e\u9999\u6e2f\u51fa\u767c\u7684\u65c5\u7a0b\u3002\u672c\u65c5\u904a\u4fdd\u96aa\u662f\u7531\u5229\u5bf6\u570b\u969b\u4fdd\u96aa\u6709\u9650\u516c\u53f8\u627f\u4fdd\uff08\u4e0b\u7a31\u300c\u5229\u5bf6\u570b\u969b\u4fdd\u96aa\u300d\uff09\uff0c\u4e26\u7531\u5b89\u806f\u65c5\u884c\u63d0\u4f9b\u670d\u52d9\u3002 \u5b89\u806f\u65c5\u884c\u70ba Allianz Worldwide Partners (Hong Kong) Limited \u7684\u5546\u6a19\uff0c\u70ba\u4e00\u5bb6\u5229\u5bf6\u570b\u969b\u4fdd\u96aa\u59d4\u4efb\u7684\u4fdd\u96aa\u4ee3\u7406\u5546\u3002 \u95a3\u4e0b\u8cfc\u8cb7\u7684\u65c5\u904a\u4fdd\u96aa\u662f\u7531\u5229\u5bf6\u570b\u969b\u4fdd\u96aa\u6709\u9650\u516c\u53f8\u63d0\u4f9b\uff0c\u800c\u4e26\u975e\u7531\u6cf0\u822a\u63d0\u4f9b\u3002\u5229\u5bf6\u570b\u969b\u4fdd\u96aa\u70ba\u672c\u65c5\u904a\u4fdd\u96aa\u7684\u627f\u4fdd\u516c\u53f8\u4e26\u5c07\u8ca0\u8cac\u7e55\u767c\u6709\u95dc\u7684\u4fdd\u55ae\u3002\u6cf0\u822a\u4e26\u975e\u5229\u5bf6\u570b\u969b\u4fdd\u96aa\u7684\u4fdd\u96aa\u4ee3\u7406\u4ea6\u4e0d\u662f\u4fdd\u96aa\u92b7\u552e\u7d93\u7d00\u3002\u6cf0\u822a\u4e0d\u6703\u4ee3\u8868\u95a3\u4e0b\u5b89\u6392\u65c5\u904a\u4fdd\u96aa\uff0c\u4ea6\u7121\u9808\u5c0d\u5229\u5bf6\u570b\u969b\u4fdd\u96aa\u53ca\u5b89\u806f\u65c5\u884c\u5c31\u672c\u65c5\u904a\u4fdd\u96aa\u6240\u63d0\u4f9b\u4e4b\u4efb\u4f55\u8cc7\u6599\u8ca0\u8cac\u3002 \u95a3\u4e0b\u540c\u610f\u5229\u5bf6\u570b\u969b\u4fdd\u96aa\u53ca\u5b89\u806f\u65c5\u884c\u4f7f\u7528\u95a3\u4e0b\u53ca\u540c\u4e00\u8a02\u7968\u4ea4\u6613\u7684\u5176\u4ed6\u65c5\u5ba2\u4e4b\u500b\u4eba\u8cc7\u6599\uff0c\u4ee5\u8655\u7406\u6295\u4fdd\u65c5\u904a\u4fdd\u96aa\u7684\u7533\u8acb\u4ee5\u53ca\u7ba1\u7406\u4fdd\u55ae\uff0c\u4e26\u63d0\u4f9b\u7d22\u8ce0\u53ca\u6551\u63f4\u670d\u52d9\u3002 </p></div></div>`,
                 radio_1: {
                     txt_1: "\u662f\uff0c\u6211\u8981\u70ba\u65c5\u7a0b\u6295\u4fdd\u00a0\u00a0 \u4ee5\u4fdd\u969c\u6bcf\u4e00\u4f4d\u65c5\u5ba2",
@@ -126,8 +125,7 @@ let objInsurance = (c, l) => {
                 radio_2: {
                     txt_1: "<span class=\"\">\u5426\uff0c\u6211\u62d2\u7d55\u70ba\u65c5\u7a0b\u6295\u4fdd\u00a0 \u4ee5\u4fdd\u969c\u6bcf\u4e00\u4f4d\u65c5\u5ba2</span>",
                     txt_2: " "
-                },
-                InsuranceTeaser:"\u4ee5\u4e0b\u65c5\u904a\u4fdd\u96aa\u8cc7\u8a0a\u7531\u5b89\u806f\u65c5\u884c\u63d0\u4f9b"
+                }
             }
         },
         GB: {
@@ -258,9 +256,6 @@ function insurance(xcountry, xlanguage) {
             let lc = (x_objInsurance(xcountry, xlanguage) != undefined) ? x_objInsurance(xcountry, xlanguage) : x_objInsurance(xcountry, 'GB')
             $(".title-panel-text").html("<i class=\"icon-aid title-icon\" aria-hidden=\"true\"></i>" + lc.titlepanel)
             $(".box-insurance").html(lc.insurance_txt)
-            if(lc.InsuranceTeaser != undefined){
-                $(".insurance-banner>p").html(lc.InsuranceTeaser)    
-            }
             $('label[for="tpl3_widget-input-purchaseForm-insuranceForm-insuranceRadioGroup-insuranceRadioGroup1"]>span.bold').html(lc.radio_1.txt_1)
             $("label[for='tpl3_widget-input-purchaseForm-insuranceForm-insuranceRadioGroup-insuranceRadioGroup1']")[0].childNodes[2].textContent = lc.radio_1.txt_2;
             $('label[for="tpl3_widget-input-purchaseForm-insuranceForm-insuranceRadioGroup-insuranceRadioGroup1"]>a').html(lc.radio_1.txtPolicy)
