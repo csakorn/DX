@@ -164,11 +164,7 @@ var startFNJS = function() {
             if (dataTransfer["EXTERNAL_ID#4"] == 'JETRADAR') {
                 addScript('jetradar', "main-layout-bottom", "footer#main-layout-bottom")
             } else { console.log('Run JETRADAR'); }
-
-
             sendProCode();
-            eMailTrigger.dusit.send()
-
             subscribe.sbbAdd();
             // chkSite() ? knorex.add():console.log("knorex");
             chkSite() ? skyscanner.add() : console.log("skyscanner");

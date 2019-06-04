@@ -196,7 +196,7 @@ let x_objInsurance = (c, l) => {
                 radio_1: {
                     txt_1: "\u662f\uff0c\u6211\u8981\u70ba\u65c5\u7a0b\u6295\u4fdd\u00a0\u00a0 \u4ee5\u4fdd\u969c\u6bcf\u4e00\u4f4d\u65c5\u5ba2",
                     txt_2: " ",
-                    linkPolicy: "http://www.magroup-online.com/TGA/HK/ZH/OnlineTravelProtector.pdf",
+                    linkPolicy: "http://www.magroup-online.com/TGA/HK/ZH/OnlineTravelProtector_TC.pdf",
                     txtPolicy: "\u672c\u4eba\u540c\u610f\u4fdd\u55ae\u689d\u6b3e\u53ca\u8072\u660e\u3002"
                 },
                 radio_2: {
@@ -424,7 +424,8 @@ var startFNJS = function startFNJS() {
         case "CONF":
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code);
             // chkSite() === true ? _eMailTrigger.baliprivilege.send() : console.log('baliprivilege');
-            // runWidget( (eBaDataLayer.market).split('_')[0] );
+            // runWidget( (eBaDataLayer.market).split('_')[0] );            
+            chkSite() && dataTransfer['EXTERNAL_ID#4'] === "Line Village" && eBaDataLayer.trip_type === "RT"?eMailTrigger.lineVillage.send():false;
             addFontAwesome();
             break;
 
