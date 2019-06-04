@@ -425,7 +425,7 @@ var startFNJS = function startFNJS() {
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code);
             // chkSite() === true ? _eMailTrigger.baliprivilege.send() : console.log('baliprivilege');
             // runWidget( (eBaDataLayer.market).split('_')[0] );            
-            chkSite() && dataTransfer['EXTERNAL_ID#4'] === "Line Village" && eBaDataLayer.trip_type === "RT"?eMailTrigger.lineVillage.send():false;
+            chkSite() && dataTransfer['EXTERNAL_ID#4'] === "Line Village" && eBaDataLayer.trip_type === "RT" && eBaDataLayer.market === "HK"?eMailTrigger.lineVillage.send():false;
             addFontAwesome();
             break;
 
