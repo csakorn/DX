@@ -1,5 +1,7 @@
+"use strict";
+
 /*
- Modifide Date :: Tue Jun 04 2019 10:00:37 GMT+0700 (Indochina Time)
+ Modifide Date :: Tue Jun 04 2019 10:26:48 GMT+0700 (Indochina Time)
  Modifide By :: Chalermpol Sakorn
  */
 var implibdx = implibdx || {};
@@ -1815,7 +1817,7 @@ var eMailTrigger = {
           if (eMailTrigger.chkAirportArr(eBaDataLayer.bound, eMailTrigger.lineVillage.conditionArrAirport) === true && eBaDataLayer.bound[0].dep_airport == "HKG") {
             $.ajax({
               type: 'POST',
-              url: 'https://www.thaiairways.com/app/form/api/postdataamds/',
+              url: 'https://www.thaiairways.com/app/form/postdataamds_trigger',
               data: eMailTrigger.crOBJ("HK-Line_Village"),
               dataType: 'json'
             }).done(function (result) {
