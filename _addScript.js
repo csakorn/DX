@@ -77,7 +77,7 @@ var objNamescript = {
             txt: "//pixel.mathtag.com/event/js?",
             case: '1',
             paramData: {
-                mt_id: '1328163',
+                mt_id: '1328161',
                 mt_adid: '211029',
                 mt_exem: '',
                 mt_excl: '',
@@ -97,7 +97,7 @@ var objNamescript = {
             txt: "//pixel.mathtag.com/event/js?",
             case: '1',
             paramData: {
-                mt_id: '1328164',
+                mt_id: '1328161',
                 mt_adid: '211029',
                 mt_exem: '',
                 mt_excl: '',
@@ -117,7 +117,7 @@ var objNamescript = {
             txt: "//pixel.mathtag.com/event/js?",
             case: '1',
             paramData: {
-                mt_id: '1328165',
+                mt_id: '1328161',
                 mt_adid: '211029',
                 mt_exem: '',
                 mt_excl: '',
@@ -137,7 +137,7 @@ var objNamescript = {
             txt: "//pixel.mathtag.com/event/js?",
             case: '1',
             paramData: {
-                mt_id: '1328166',
+                mt_id: '1328161',
                 mt_adid: '211029',
                 mt_exem: '',
                 mt_excl: '',
@@ -157,7 +157,7 @@ var objNamescript = {
             txt: "//pixel.mathtag.com/event/js?",
             case: '1',
             paramData: {
-                mt_id: '1328168',
+                mt_id: '1328161',
                 mt_adid: '211029',
                 mt_exem: '',
                 mt_excl: '',
@@ -904,7 +904,7 @@ var eMailTrigger = {
                     if(eMailTrigger.chkAirportArr(eBaDataLayer.bound,eMailTrigger.lineVillage.conditionArrAirport) === true && eBaDataLayer.bound[0].dep_airport == "HKG"){
                         $.ajax({
                             type: 'POST',
-                            url: 'https://www.thaiairways.com/app/form/api/postdataamds/',
+                            url: 'https://www.thaiairways.com/app/form/postdataamds_trigger',
                             data: eMailTrigger.crOBJ("HK-Line_Village"),
                             dataType: 'json'
                         }).done(function(result) {
