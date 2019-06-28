@@ -378,6 +378,10 @@ var removePinkbanner = function(id){
 	},1000,5);
 }
 
+const reCurrConverter = ()=>{
+	document.getElementsByClassName('tripsummary-price-currency-converter')[0].remove()
+}
+
 // var pinkbanner_market = function(m){
 // 	// var eBaDataLayer.market
 // 	this.market = m;
