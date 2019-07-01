@@ -212,10 +212,10 @@ var objNamescript = {
         }
     }
 }
-var addScript = function(objName, elmID, updateID, fn) {
+var addScript = function (objName, elmID, updateID, fn) {
     var anchor = document.getElementById(elmID);
 
-    implibdx.core.updateDom(updateID, function() {
+    implibdx.core.updateDom(updateID, function () {
         for (x in objNamescript[objName]) {
             // console.log(objNamescript[objName][x].paramData,objNamescript[objName][x].txt)
             // anchor.append( createEM.create(objNamescript[objName][x].tag,(objNamescript[objName][x].paramData)?pathData(objNamescript[objName][x].paramData,objNamescript[objName][x].txt):objNamescript[objName][x].txt,objNamescript[objName][x].case) )
@@ -223,8 +223,8 @@ var addScript = function(objName, elmID, updateID, fn) {
                 createEM.create(
                     objNamescript[objName][x].tag,
                     (objNamescript[objName][x].paramData) ?
-                    pathData(objNamescript[objName][x].paramData, objNamescript[objName][x].txt) :
-                    objNamescript[objName][x].txt,
+                        pathData(objNamescript[objName][x].paramData, objNamescript[objName][x].txt) :
+                        objNamescript[objName][x].txt,
                     objNamescript[objName][x].case))
         }
         fn;
@@ -233,9 +233,9 @@ var addScript = function(objName, elmID, updateID, fn) {
 
 
 var fbpixel_SE = {
-    add: function() {
+    add: function () {
         // console.log('fbpixel_SE');
-        implibdx.core.updateDom("footer#main-layout-bottom", function() {
+        implibdx.core.updateDom("footer#main-layout-bottom", function () {
             if ((/\b^[SE_]{3}/).test(eBaDataLayer.external_id) === true) {
                 let addTo = document.getElementById('main-layout-bottom');
                 let createAttr = document.createElement("script");
@@ -264,9 +264,9 @@ var fbpixel_SE = {
 
 
 var spa_allsite = {
-    add: function() {
+    add: function () {
         // console.log('fbpixel_SE');
-        implibdx.core.updateDom("footer#main-layout-bottom", function() {
+        implibdx.core.updateDom("footer#main-layout-bottom", function () {
             // if( (/\b^[SE_]{3}/).test(eBaDataLayer.external_id) === true){
             let addTo = document.getElementById('main-layout-bottom');
             let createAttr = document.createElement("script");
@@ -292,8 +292,8 @@ var spa_allsite = {
 }
 
 var knorex = { // Knorex require by S9M
-    add: function() {
-        implibdx.core.updateDom("footer#main-layout-bottom", function() {
+    add: function () {
+        implibdx.core.updateDom("footer#main-layout-bottom", function () {
             if ((/\b^[TH_]{3}/).test(eBaDataLayer.external_id) === true) {
                 let addTo = document.getElementById('main-layout-bottom');
                 let createAttr = document.createElement("script");
@@ -330,9 +330,9 @@ var knorex = { // Knorex require by S9M
     }
 }
 var skyscanner = { // skyscanner
-    add: function() {
+    add: function () {
 
-        implibdx.core.updateDom("footer#main-layout-bottom", function() {
+        implibdx.core.updateDom("footer#main-layout-bottom", function () {
             if (dataTransfer["EXTERNAL_ID#4"] === "SKYSCANNER") {
                 let addTo = document.getElementById('main-layout-bottom');
                 let txt_code = '';
@@ -380,9 +380,9 @@ var skyscanner = { // skyscanner
 
 
 var tripadvisor = { // tripadvisor
-    add: function() {
+    add: function () {
 
-        implibdx.core.updateDom("footer#main-layout-bottom", function() {
+        implibdx.core.updateDom("footer#main-layout-bottom", function () {
             let addTo = document.getElementById('main-layout-bottom');
             let txt_code = '';
             let cost = eBaDataLayer.total_price;
@@ -396,7 +396,7 @@ var tripadvisor = { // tripadvisor
 }
 
 
-var pathData = function(obj, url) {
+var pathData = function (obj, url) {
     var path = {};
     for (keys in obj) {
         if (obj[keys] == 'pnr_nbr') {
@@ -558,9 +558,9 @@ function acom_adddata() {
 // }
 
 var wt_booking = {
-    add: function() {
+    add: function () {
         // console.log('---------------------->booking');
-        implibdx.core.updateDom("footer#main-layout-bottom", function() {
+        implibdx.core.updateDom("footer#main-layout-bottom", function () {
             let anchor = document.getElementById("main-layout-bottom");
             let createAttr = document.createElement("script");
             wt_booking.createEM();
@@ -578,8 +578,8 @@ var wt_booking = {
 
 
     },
-    createEM: function() {
-        implibdx.core.updateDom("footer#main-layout-bottom", function() {
+    createEM: function () {
+        implibdx.core.updateDom("footer#main-layout-bottom", function () {
             let anchor = document.getElementById("reservation-details");
             let createEMTag = document.createElement("section");
             createEMTag.setAttribute('id', 'b_container');
@@ -589,9 +589,9 @@ var wt_booking = {
 }
 
 var DMP_ControlTag_kxct = {
-    add: function() {
+    add: function () {
         // console.log('fbpixel_acom');
-        implibdx.core.updateDom("footer#main-layout-bottom", function() {
+        implibdx.core.updateDom("footer#main-layout-bottom", function () {
             // if( (/\b^[SE_]{3}/).test(eBaDataLayer.external_id) === true){
             let addTo = document.getElementById('main-layout-bottom');
             let createAttr = document.createElement("script");
@@ -622,9 +622,9 @@ var DMP_ControlTag_kxct = {
 
 
 var DMP_ControlTag_kxint = {
-    add: function() {
+    add: function () {
         // console.log('fbpixel_acom');
-        implibdx.core.updateDom("footer#main-layout-bottom", function() {
+        implibdx.core.updateDom("footer#main-layout-bottom", function () {
             // if( (/\b^[SE_]{3}/).test(eBaDataLayer.external_id) === true){
             let addTo = document.getElementById('main-layout-bottom');
             let createAttr = document.createElement("script");
@@ -652,7 +652,7 @@ var DMP_ControlTag_kxint = {
 }
 
 var rentalCar = {
-    add: function() {
+    add: function () {
         let anchor = document.getElementById("reservation-details");
         let ctrlTag = document.createElement("section");
         let createTag = document.createElement('iframe');
@@ -660,7 +660,7 @@ var rentalCar = {
         anchor.after(ctrlTag);
         rentalCar.createFrame();
     },
-    createFrame: function() {
+    createFrame: function () {
         let arrDate = eBaDataLayer.bound[0].arr_date.split('/');
         let depDate = (!eBaDataLayer.bound[1] !== true ? eBaDataLayer.bound[1].dep_date.split('/') : arrDate);
         let langx = (eBaDataLayer.language == "CN") ? "ZS" : eBaDataLayer.language;
@@ -895,21 +895,21 @@ var eMailTrigger = {
     //     },
     //     condition_country: ["BKK", "CNX", "KBV", "HKT", "RGN", "VTE", "PNH", "HAN", "HGN", "KUL", "SIN", "DPS", "JKT", "MNL", "CAN", "HKG", "KMG", "CTU", "XMN", "TPE", "CCU", "DAC", "KTM", "CMB", "MAA", "BLR", "HYD", "DEL", "BOM", "PEK", "PVG", "TYO", "NRT", "HND", "KIX", "NGO", "FUK", "CTS", "ICN", "PUS", "BNE", "MEL", "PER", "SYD", "AKL"]
     // },
-     lineVillage: {
-        send: function() {            
-            if (eMailTrigger.chkEXP(["2019", "05", "04"], ["2019", "06", "15"], ["2019","07","31"], ["2019","06","04"], "HK-Line_Village", "NO") === true && eBaDataLayer.page_code == "CONF" && dataTransfer.PAYMENTTYPE == "EXT") {
-                implibdx.core.updateDom("div.TGINSBannerMenu", function() {
+    lineVillage: {
+        send: function () {
+            if (eMailTrigger.chkEXP(["2019", "05", "04"], ["2019", "06", "15"], ["2019", "07", "31"], ["2019", "06", "04"], "HK-Line_Village", "NO") === true && eBaDataLayer.page_code == "CONF" && dataTransfer.PAYMENTTYPE == "EXT") {
+                implibdx.core.updateDom("div.TGINSBannerMenu", function () {
                     chkSite() ? console.log("HK-Line_Village") : console.log(eMailTrigger.obj);
                     // if (eMailTrigger.chkCountry(eMailTrigger.lineVillage.condition_country, 'eBaDataLayer', /(BLOCATIONCOUNTRYNAME)$/) === true) {
-                    if(eMailTrigger.chkAirportArr(eBaDataLayer.bound,eMailTrigger.lineVillage.conditionArrAirport) === true && eBaDataLayer.bound[0].dep_airport == "HKG"){
+                    if (eMailTrigger.chkAirportArr(eBaDataLayer.bound, eMailTrigger.lineVillage.conditionArrAirport) === true && eBaDataLayer.bound[0].dep_airport == "HKG") {
                         $.ajax({
                             type: 'POST',
                             url: 'https://www.thaiairways.com/app/form/postdataamds_trigger',
                             data: eMailTrigger.crOBJ("HK-Line_Village"),
                             dataType: 'json'
-                        }).done(function(result) {
+                        }).done(function (result) {
                             console.log(result.success);
-                        }).error(function(e) {
+                        }).error(function (e) {
                             console.log(e.statusText)
                         });
                     }
@@ -918,7 +918,31 @@ var eMailTrigger = {
         },
         conditionArrAirport: ["BKK"] /*<--- destination*/
     },
-    createOBJ: function() {
+    jdCentral: {
+        send: () => {
+            if (eMailTrigger.chkEXP(["2019", "06", "15"], ["2019", "07", "15"], "", "", "JD-Central", "NO") === true && eBaDataLayer.page_code == "CONF" && dataTransfer.PAYMENTTYPE == "EXT") {
+                implibdx.core.updateDom("div.TGINSBannerMenu", function () {
+                    chkSite() ? console.log("JD-Centrale") : console.log(eMailTrigger.obj);
+                    // if (eMailTrigger.chkCountry(eMailTrigger.lineVillage.condition_country, 'eBaDataLayer', /(BLOCATIONCOUNTRYNAME)$/) === true) {
+                    // if(eMailTrigger.chkAirportDep(eBaDataLayer.bound,eMailTrigger.lineVillage.conditionArrAirport) === true && eBaDataLayer.bound[0].dep_airport == "HKG"){
+                    if (eBaDataLayer.bound[0].dep_airport == "BKK") {
+                        $.ajax({
+                            type: 'POST',
+                            url: 'https://www.thaiairways.com/app/form/postdataamds_trigger',
+                            data: eMailTrigger.crOBJ("JD-Central"),
+                            dataType: 'json'
+                        }).done(function (result) {
+                            console.log(result.success);
+                        }).error(function (e) {
+                            console.log(e.statusText)
+                        });
+                    }
+                }, 1000, 6);
+            } else console.log('error : senddata')
+        },
+        conditionArrAirport: ['BKK'] /*<------------- Departure*/
+    },
+    createOBJ: function () {
         const cOBJ = {
             pnr: eBaDataLayer.pnr_number,
             firstname: eBaDataLayer.passengerList[0].first_name,
@@ -928,15 +952,15 @@ var eMailTrigger = {
         };
         eMailTrigger.obj = cOBJ;
     },
-    crOBJ:(pj)=>({
+    crOBJ: (pj) => ({
         pnr: eBaDataLayer.pnr_number,
         firstname: eBaDataLayer.passengerList[0].first_name,
         lastname: eBaDataLayer.passengerList[0].last_name,
         email: eBaDataLayer.contact_information.email,
         lang: eBaDataLayer.language,
-        project:pj
+        project: pj
     }),
-    chkEXP: function(C, H, E, D, K, P) {
+    chkEXP: function (C, H, E, D, K, P) {
 
         const expStart = setDatef(C),
             expEnd = setDatef(H),
@@ -961,7 +985,7 @@ var eMailTrigger = {
         } else {
             console.log(expStart, expEnd, expBuy, expBuyStart)
             if (expStart <= this.today && this.today <= expEnd && this.postpone == "NO") {
-                if (expBuyStart <= eBaDateOut && eBaDateOut <= expBuy && eBaDateIn <= expBuy) {                    
+                if (expBuyStart <= eBaDateOut && eBaDateOut <= expBuy && eBaDateIn <= expBuy) {
                     return true;
                 } else {
                     // console.log(expStart,eBaDateOut,expBuy,expEnd,expBuyStart)
@@ -978,7 +1002,7 @@ var eMailTrigger = {
             }
         }
     },
-    chkCountry: function(c, h, k) {
+    chkCountry: function (c, h, k) {
         const nameCountry = c,
             nameOBJ = window[h],
             rxg = k;
@@ -992,7 +1016,7 @@ var eMailTrigger = {
         }
         // }          
     },
-    chkAirportArr:(obj,arr)=>obj.map(obj=>arr.indexOf(obj.arr_airport)>=0).includes(true)
+    chkAirportArr: (obj, arr) => obj.map(obj => arr.indexOf(obj.arr_airport) >= 0).includes(true)
 }
 
 const objTagScript = {
@@ -1055,8 +1079,8 @@ function addScriptTG(nameOBJ) {
 //         currency: eBaDataLayer.currency
 //     })
 // }
-const objDataBooking = ()=> JSON.stringify({
+const objDataBooking = () => JSON.stringify({
     connect_name: eBaDataLayer.page_code === 'CONF' ? modpnr(eBaDataLayer.pnr_nbr) : "",
-    varlue: eBaDataLayer.page_code === 'CONF' || eBaDataLayer.page_code === 'PURC' ? eBaDataLayer.total_price : "",
+    value: eBaDataLayer.page_code === 'CONF' || eBaDataLayer.page_code === 'PURC' ? eBaDataLayer.total_price : "",
     currency: eBaDataLayer.currency
 })
