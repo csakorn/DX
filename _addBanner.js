@@ -459,7 +459,13 @@ let runWidget = (x)=>{
 			},1000,5)
 		}
 	}
-	return market[mkt]();
+	try {
+		return market[mkt]();
+	} catch (error) {
+		console.log('Err:',error)
+		return market.DD();
+	}
+	// return market[mkt]();
 }
 
 
