@@ -276,7 +276,7 @@ function _insurance(xcountry, xlanguage) {
         if (document.getElementById('insurance-select') !== null) {
             let lc = (x_objInsurance(xcountry, xlanguage) != undefined) ? x_objInsurance(xcountry, xlanguage) : x_objInsurance(xcountry, 'GB')
             $(".title-panel-text").html("<i class=\"icon-aid title-icon\" aria-hidden=\"true\"></i>" + lc.titlepanel)
-            $(".box-insurance").html(lc.insurance_txt)            
+            $(".box-insurance").html(lc.insurance_txt)
             $('label[for="tpl3_widget-input-purchaseForm-insuranceForm-insuranceRadioGroup-insuranceRadioGroup1"]>span.bold').html(lc.radio_1.txt_1)
             $("label[for='tpl3_widget-input-purchaseForm-insuranceForm-insuranceRadioGroup-insuranceRadioGroup1']")[0].childNodes[2].textContent = lc.radio_1.txt_2;
             $('label[for="tpl3_widget-input-purchaseForm-insuranceForm-insuranceRadioGroup-insuranceRadioGroup1"]>a').html(lc.radio_1.txtPolicy)
@@ -293,7 +293,7 @@ function _insurance(xcountry, xlanguage) {
                 let inshref = chkSite() ? $('.checkbox a')[1] : $('.checkbox a')[2];
                 let inshref_GB = chkSite() ? $('.checkbox a')[3] : $('.checkbox a')[4];
                 if (eBaDataLayer.bound[0].dep_country === "HK") {
-                    insurances_tc = eBaDataLayer.language === 'TW'? inshref.textContent : inshref_GB.textContent;
+                    insurances_tc = eBaDataLayer.language === 'TW' ? inshref.textContent : inshref_GB.textContent;
                 } else {
                     insurances_tc = inshref_GB.textContent;
                 }
@@ -353,7 +353,31 @@ function onClickBanner(obj) {
     });
 }
 
+var dkPixel_log = () => {
+    if ((/\b^[DK]{2}/).test(eBaDataLayer.external_id) === true && eBaDataLayer.page_code == "CONF") {
+        const obj = {}
+        obj.data1 = modpnr(eBaDataLayer.pnr_nbr);
+        obj.data2 = eBaDataLayer.total_price;
+        obj.data3 = eBaDataLayer.currency;
+        obj.data4 = eBaDataLayer.external_id;
+        obj.data5 = eBaDataLayer.market;
+        obj.data6 = eBaDataLayer.pnr_nbr;
+        obj.data7 = chkSite();
+        obj.data19 = "thaiairways-DK";
+        obj.data20 = "fbpixel_DK";
 
+        $.ajax({
+            type: 'POST',
+            url: 'https://www.thaiairways.com/app/form/save_report',
+            data: obj,
+            dataType: 'json'
+        }).done(function(result) {
+            console.log(result.success);
+        }).error(function(e) {
+            console.log(e.statusText)
+        });
+    }
+}
 
 
 function remove_linkPolicy() {
@@ -425,7 +449,7 @@ var startFNJS = function startFNJS() {
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code);
             // chkSite() === true ? _eMailTrigger.baliprivilege.send() : console.log('baliprivilege');
             // runWidget( (eBaDataLayer.market).split('_')[0] );            
-            chkSite() && dataTransfer['EXTERNAL_ID#4'] === "Line Village" && eBaDataLayer.trip_type === "RT" && eBaDataLayer.market === "HK"?eMailTrigger.lineVillage.send():false;
+            chkSite() && dataTransfer['EXTERNAL_ID#4'] === "Line Village" && eBaDataLayer.trip_type === "RT" && eBaDataLayer.market === "HK" ? eMailTrigger.lineVillage.send() : false;
             addFontAwesome();
             break;
 
@@ -441,14 +465,13 @@ var startFNJS = function startFNJS() {
 
             break;
     }
-
-    /*implibdx.core.updateDom("footer#main-layout-bottom", function() {
-        console.log('ALL PAGE');
-        
-            (/\b^[DK]{2}/).test(eBaDataLayer.external_id) === true && chkSite() === true ? addScriptTG('fbpixel_DK') : console.log('ignore-script');
-            (/\b^[AT]{2}/).test(eBaDataLayer.external_id) === true && chkSite() === true ? addScriptTG('fbpixel_AT') : console.log('ignore-script');
     
-    }, 1000, 6);*/
+    implibdx.core.updateDom("footer#main-layout-bottom", function() {
+        console.log('ALL PAGE-2');
+
+        /\b^[DK]{2}/.test(eBaDataLayer.external_id) === true && chkSite() === true && eBaDataLayer.page_code == "CONF"? dkPixel_log() : console.log('ignore-script');
+        // /\b^[AT]{2}/.test(eBaDataLayer.external_id) === true && chkSite() === true ? addScriptTG('fbpixel_AT') : console.log('ignore-script');
+    }, 1000, 6);
 };
 
 jQuery(document).on("plnext:customData:ready", startFNJS);
