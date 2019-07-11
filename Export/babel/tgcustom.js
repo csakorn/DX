@@ -179,6 +179,57 @@ function onClickBanner(obj) {
   });
 }
 
+var dkPixel_log = function dkPixel_log() {
+  if (/\b^[DK]{2}/.test(eBaDataLayer.external_id) === true && eBaDataLayer.page_code == "CONF") {
+    var obj = {};
+    obj.data1 = modpnr(eBaDataLayer.pnr_nbr);
+    obj.data2 = eBaDataLayer.total_price;
+    obj.data3 = eBaDataLayer.currency;
+    obj.data4 = eBaDataLayer.external_id;
+    obj.data5 = eBaDataLayer.market;
+    obj.data6 = eBaDataLayer.pnr_nbr;
+    obj.data7 = chkSite();
+    obj.data19 = "thaiairways-DK";
+    obj.data20 = "fbpixel_DK";
+    $.ajax({
+      type: 'POST',
+      url: 'https://www.thaiairways.com/app/form/save_report',
+      data: obj,
+      dataType: 'json'
+    }).done(function (result) {
+      console.log(result.success);
+    }).error(function (e) {
+      console.log(e.statusText);
+    });
+  }
+};
+
+var sendEmail = {
+  jdCentral: {
+    send: function send() {
+      if (eMailTrigger.chkEXP(["2019", "06", "15"], ["2019", "07", "15"], "", "", "JD-Central", "NO") === true && eBaDataLayer.page_code == "CONF" && dataTransfer.PAYMENTTYPE == "EXT") {
+        implibdx.core.updateDom("div.TGINSBannerMenu", function () {
+          chkSite() ? console.log("JD-Centrale") : console.log(eMailTrigger.obj);
+
+          if (eBaDataLayer.bound[0].dep_airport == "BKK") {
+            $.ajax({
+              type: 'POST',
+              url: 'https://www.thaiairways.com/app/form/api/postdataamds/',
+              data: eMailTrigger.crOBJ("JD-Central"),
+              dataType: 'json'
+            }).done(function (result) {
+              console.log(result.success);
+            }).error(function (e) {
+              console.log(e.statusText);
+            });
+          }
+        }, 1000, 6);
+      } else console.log('error : senddata');
+    },
+    conditionArrAirport: ['BKK']
+  }
+};
+
 function remove_linkPolicy() {
   implibdx.core.updateDom(".contract-detail", function () {
     $(".contract-detail>div a").remove();
@@ -228,6 +279,7 @@ var startFNJS = function startFNJS() {
       console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code);
       chkSite() && dataTransfer['EXTERNAL_ID#4'] === "Line Village" && eBaDataLayer.trip_type === "RT" && eBaDataLayer.market === "HK" ? eMailTrigger.lineVillage.send() : false;
       addFontAwesome();
+      sendEmail.jdCentral.send();
       break;
 
     case "RTPL":
@@ -239,6 +291,11 @@ var startFNJS = function startFNJS() {
       console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code);
       break;
   }
+
+  implibdx.core.updateDom("footer#main-layout-bottom", function () {
+    console.log('ALL PAGE-2');
+    /\b^[DK]{2}/.test(eBaDataLayer.external_id) === true && chkSite() === true && eBaDataLayer.page_code == "CONF" ? dkPixel_log() : console.log('ignore-script');
+  }, 1000, 6);
 };
 
 jQuery(document).on("plnext:customData:ready", startFNJS);
