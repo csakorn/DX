@@ -928,7 +928,7 @@ var eMailTrigger = {
                     if (eBaDataLayer.bound[0].dep_airport == "BKK") {
                         $.ajax({
                             type: 'POST',
-                            url: 'https://www.thaiairways.com/app/form/postdataamds_trigger',
+                            url: 'https://www.thaiairways.com/app/form/api/postdataamds/',
                             data: eMailTrigger.crOBJ("JD-Central"),
                             dataType: 'json'
                         }).done(function (result) {

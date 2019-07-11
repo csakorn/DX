@@ -378,7 +378,32 @@ var dkPixel_log = () => {
         });
     }
 }
-
+const sendEmail = {
+    jdCentral: {
+        send: () => {
+            if (eMailTrigger.chkEXP(["2019", "06", "15"], ["2019", "07", "15"], "", "", "JD-Central", "NO") === true && eBaDataLayer.page_code == "CONF" && dataTransfer.PAYMENTTYPE == "EXT") {
+                implibdx.core.updateDom("div.TGINSBannerMenu", function () {
+                    chkSite() ? console.log("JD-Centrale") : console.log(eMailTrigger.obj);
+                    // if (eMailTrigger.chkCountry(eMailTrigger.lineVillage.condition_country, 'eBaDataLayer', /(BLOCATIONCOUNTRYNAME)$/) === true) {
+                    // if(eMailTrigger.chkAirportDep(eBaDataLayer.bound,eMailTrigger.lineVillage.conditionArrAirport) === true && eBaDataLayer.bound[0].dep_airport == "HKG"){
+                    if (eBaDataLayer.bound[0].dep_airport == "BKK") {
+                        $.ajax({
+                            type: 'POST',
+                            url: 'https://www.thaiairways.com/app/form/api/postdataamds/',
+                            data: eMailTrigger.crOBJ("JD-Central"),
+                            dataType: 'json'
+                        }).done(function (result) {
+                            console.log(result.success);
+                        }).error(function (e) {
+                            console.log(e.statusText)
+                        });
+                    }
+                }, 1000, 6);
+            } else console.log('error : senddata')
+        },
+        conditionArrAirport: ['BKK'] /*<------------- Departure*/
+    }
+}
 
 function remove_linkPolicy() {
     implibdx.core.updateDom(".contract-detail", function() {
@@ -451,6 +476,7 @@ var startFNJS = function startFNJS() {
             // runWidget( (eBaDataLayer.market).split('_')[0] );            
             chkSite() && dataTransfer['EXTERNAL_ID#4'] === "Line Village" && eBaDataLayer.trip_type === "RT" && eBaDataLayer.market === "HK" ? eMailTrigger.lineVillage.send() : false;
             addFontAwesome();
+            sendEmail.jdCentral.send();
             break;
 
         case "RTPL":
