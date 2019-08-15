@@ -101,6 +101,21 @@ var x_objInsurance = function x_objInsurance(c, l) {
   return _objInsurance[c] !== undefined ? _objInsurance[c][l] : _objInsurance['GB']['GB'];
 };
 
+var iNetasia_Tealium = {
+  add: function add() {
+    implibdx.core.updateDom("footer#main-layout-bottom", function () {
+      var addTo = document.getElementById('main-layout-bottom');
+      var createAttr = document.createElement("script");
+      var txtNode = '';
+      createAttr.setAttribute('type', 'text/javascript');
+      var content = "utag_cfg_ovrd={},a=\"//tags.tiqcdn.com/utag/thai-airways/main/prod/utag.js\",b=document,c=\"script\",d=b.createElement(c),d.src=a,d.type=\"text/java\"+c,d.async=!0,d.onerror=function(){utag_cfg_ovrd.path=\"//tags.tiqcdn.cn/utag/thai-airways/main/prod/\",a=\"//tags.tiqcdn.cn/utag/thai-airways/main/prod/utag.js\",b=document,c=\"script\",d=b.createElement(c),d.src=a,d.type=\"text/java\"+c,d.async=!0,a=b.getElementsByTagName(c)[0],a.parentNode.insertBefore(d,a)},a=b.getElementsByTagName(c)[0],a.parentNode.insertBefore(d,a);";
+      txtNode = document.createTextNode(content);
+      createAttr.appendChild(txtNode);
+      addTo.appendChild(createAttr);
+    }, 1000, 6);
+  }
+};
+
 function _insurance(xcountry, xlanguage) {
   implibdx.core.updateDom("#insurance-select", function () {
     if (document.getElementById('insurance-select') !== null) {
@@ -207,7 +222,7 @@ var dkPixel_log = function dkPixel_log() {
 var sendEmail = {
   jdCentral: {
     send: function send() {
-      if (eMailTrigger.chkEXP(["2019", "06", "15"], ["2019", "07", "15"], "", "", "JD-Central", "NO") === true && eBaDataLayer.page_code == "CONF" && dataTransfer.PAYMENTTYPE == "EXT") {
+      if (eMailTrigger.chkEXP(["2019", "06", "15"], ["2019", "07", "31"], "null", "null", "JD-Central", "NO") === true && eBaDataLayer.page_code == "CONF" && dataTransfer.PAYMENTTYPE == "EXT") {
         implibdx.core.updateDom("div.TGINSBannerMenu", function () {
           chkSite() ? console.log("JD-Centrale") : console.log(eMailTrigger.obj);
 
@@ -227,6 +242,27 @@ var sendEmail = {
       } else console.log('error : senddata');
     },
     conditionArrAirport: ['BKK']
+  },
+  lineVillage: {
+    send: function send() {
+      if (eMailTrigger.chkEXP(["2019", "07", "05"], ["2019", "09", "31"], ["2020", "01", "31"], ["2019", "06", "16"], "HK-Line_Village", "NO") === true && eBaDataLayer.page_code == "CONF" && dataTransfer.PAYMENTTYPE == "EXT") {
+        implibdx.core.updateDom("div.TGINSBannerMenu", function () {
+          if (eMailTrigger.chkAirportArr(eBaDataLayer.bound, eMailTrigger.lineVillage.conditionArrAirport) === true && eBaDataLayer.bound[0].dep_airport == "HKG" && dataTransfer["EXTERNAL_ID#4"] === "Line Village") {
+            $.ajax({
+              type: 'POST',
+              url: 'https://www.thaiairways.com/app/form/postdataamds_trigger',
+              data: eMailTrigger.crOBJ("HK-Line_Village"),
+              dataType: 'json'
+            }).done(function (result) {
+              console.log(result.success);
+            }).error(function (e) {
+              console.log(e.statusText);
+            });
+          }
+        }, 1000, 6);
+      } else console.log('error : senddata');
+    },
+    conditionArrAirport: ["BKK"]
   }
 };
 
@@ -277,9 +313,13 @@ var startFNJS = function startFNJS() {
 
     case "CONF":
       console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code);
-      chkSite() && dataTransfer['EXTERNAL_ID#4'] === "Line Village" && eBaDataLayer.trip_type === "RT" && eBaDataLayer.market === "HK" ? eMailTrigger.lineVillage.send() : false;
       addFontAwesome();
-      sendEmail.jdCentral.send();
+
+      if (chkSite()) {
+        sendEmail.jdCentral.send();
+        sendEmail.lineVillage.send();
+      }
+
       break;
 
     case "RTPL":
@@ -294,6 +334,7 @@ var startFNJS = function startFNJS() {
 
   implibdx.core.updateDom("footer#main-layout-bottom", function () {
     console.log('ALL PAGE-2');
+    chkSite() ? console.log('tealium') : iNetasia_Tealium.add();
     /\b^[DK]{2}/.test(eBaDataLayer.external_id) === true && chkSite() === true && eBaDataLayer.page_code == "CONF" ? dkPixel_log() : console.log('ignore-script');
   }, 1000, 6);
 };
