@@ -105,12 +105,11 @@ var updateHTML = {
 	// },
 	extraService: function (idService, idbox, nService) {
 		implibdx.core.updateDom(idbox, function () {
-			setTimeoutBAG();
 			try {
 				// var boxService = document.getElementsByClassName(idService);
 				// $("div[id$='_"+idService+"']>div div.description-text").append(check.defaultLang(_extraServiceOBJ[nService], eBaDataLayer.language, "GB"));
 
-				$('.'+idService).append(check.defaultLang(_extraServiceOBJ[nService], eBaDataLayer.language, "GB"));
+				$('.' + idService).append(check.defaultLang(_extraServiceOBJ[nService], eBaDataLayer.language, "GB"));
 				// $(BAG).append( check.defaultLang(_extraServiceOBJ.baggage,eBaDataLayer.language,"GB") );
 				// $(MEA).append( check.defaultLang(_extraServiceOBJ.meal,eBaDataLayer.language,"GB") );
 			} catch (error) {
@@ -216,8 +215,8 @@ function expanded_adult() {
 	}, 1000, 6);
 }
 
-$(function() {
-    $('div.catalogServices-teaser-MEA').on('click', function () {
+$(function () {
+	$('div.catalogServices-teaser-MEA').on('click', function () {
 
 		console.log('51112')
 	})
@@ -227,6 +226,23 @@ $(function() {
 	})
 });
 function setTimeoutBAG() {
+	console.log('sssssss')
+	implibdx.core.updateDom('.catalogServices-container', function () {
+		// $('.catalogServices-teaser-SIT').on('click', () => {
+		// 	$('.box_service').remove()
+		// });
+		//$("li[id $='_li_CON'],label[for $='_radio_CON'],input[id $='_radio_CON'],.fop-icon icon-office")
+		$("button[id$='-close-btn']").on('click', function () {
+			if($('.box_service').length == 0){
+				window.setTimeout(function () {
+					updateHTML.extraService('catalogServices-teaser-SIT', 'div.catalogServices-teasers-container', 'seat');
+					updateHTML.extraService('catalogServices-teaser-MEA', 'div.catalogServices-teasers-container', 'meal');
+					updateHTML.extraService('catalogServices-teaser-BAG', 'div.catalogServices-teasers-container', 'baggage');
+					console.log('xxxx')
+				}, 600);
+			}
+		});
+	}, 1000, 5);
 	// var ss = document.getElementsByClassName('catalogServices-teaser-MEA');
 	// ss[0].addEventListener('click',function(){
 	// 	window.setTimeout(function () {
@@ -234,15 +250,15 @@ function setTimeoutBAG() {
 	// 	}, 600)        
 	// 	})
 
-	$('div.catalogServices-teaser-MEA').on('click', function () {
+	// $('div.catalogServices-teaser-MEA').on('click', function () {
 
-		console.log('11112')
-	})
+	// 	console.log('11112')
+	// })
 
-	$('div.catalogServices-teaser-SIT').on('click', function () {
+	// $('div.catalogServices-teaser-SIT').on('click', function () {
 
-		console.log('11111')
-	})
+	// 	console.log('11111')
+	// })
 
 	// $("#tpl7_BAG").on("click", function (e) {
 	// 	window.setTimeout(function () {

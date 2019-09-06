@@ -120,9 +120,10 @@ var startFNJS = function () {
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
             chkSite() ? spa_allsite.add() : console.log("star_tag");
             // updateHTML.extraService('#tpl7_SIT', '#tpl7_MEA', '#tpl7_BAG', 'div.catalogServices-teasers-container');
-            updateHTML.extraService('catalogServices-teaser-SIT','div.catalogServices-teasers-container','seat');
-            updateHTML.extraService('catalogServices-teaser-MEA','div.catalogServices-teasers-container','meal');
-            updateHTML.extraService('catalogServices-teaser-BAG','div.catalogServices-teasers-container','baggage');
+            // updateHTML.extraService('catalogServices-teaser-SIT','div.catalogServices-teasers-container','seat');
+            // updateHTML.extraService('catalogServices-teaser-MEA','div.catalogServices-teasers-container','meal');
+            // updateHTML.extraService('catalogServices-teaser-BAG','div.catalogServices-teasers-container','baggage');
+            // setTimeoutBAG();
 
             chkSite() ? DMP_ControlTag_kxct.add() : console.log('DMP_ControlTag_kxct');
             chkSite() ? DMP_ControlTag_kxint.add() : console.log('DMP_ControlTag_kxint');
