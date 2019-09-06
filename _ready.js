@@ -1,8 +1,8 @@
-var startFNJS = function() {
+var startFNJS = function () {
     $("#datatransferForm>input").serializeArray().forEach(datatransferForm);
     switch (eBaDataLayer.page_code) {
         case "FPOW":
-        // Step 1
+            // Step 1
 
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
             chkSite() ? spa_allsite.add() : console.log("star_tag");
@@ -13,34 +13,34 @@ var startFNJS = function() {
             if ((/\b^[SG_]{3}/).test(eBaDataLayer.external_id) === true) {
                 chkSite() ? addScript("pixel_SG_FPOW", "main-layout-bottom", "footer#main-layout-bottom") : console.log('pixel_SG_FPOW');
                 chkSite() ? addScript("fbpixel_sg_pageview", "main-layout-bottom", "footer#main-layout-bottom") : console.log('fbpixel_sg_pageview');
-            }            
+            }
 
-            chkSite() ? DMP_ControlTag_kxct.add():console.log('DMP_ControlTag_kxct');
-            chkSite() ? DMP_ControlTag_kxint.add():console.log('DMP_ControlTag_kxint');
+            chkSite() ? DMP_ControlTag_kxct.add() : console.log('DMP_ControlTag_kxct');
+            chkSite() ? DMP_ControlTag_kxint.add() : console.log('DMP_ControlTag_kxint');
             break;
         case "FDCS":
-        // Step 1 Calendar matrix
+            // Step 1 Calendar matrix
 
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
             chkSite() ? spa_allsite.add() : console.log("star_tag");
             chkSite() ? addScript("insider", "main-layout-bottom", "footer#main-layout-bottom") : console.log('insider');
             lowest();
             _addClass('main-layout-header', 'page-template-section');
-            chkSite() ? DMP_ControlTag_kxct.add():console.log('DMP_ControlTag_kxct');
-            chkSite() ? DMP_ControlTag_kxint.add():console.log('DMP_ControlTag_kxint');
+            chkSite() ? DMP_ControlTag_kxct.add() : console.log('DMP_ControlTag_kxct');
+            chkSite() ? DMP_ControlTag_kxint.add() : console.log('DMP_ControlTag_kxint');
             break;
         case "SDAI":
-        // Step 1 Multi City
+            // Step 1 Multi City
 
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
             chkSite() ? spa_allsite.add() : console.log("star_tag");
             chkSite() ? addScript("insider", "main-layout-bottom", "footer#main-layout-bottom") : console.log('insider');
 
-            chkSite() ? DMP_ControlTag_kxct.add():console.log('DMP_ControlTag_kxct');
-            chkSite() ? DMP_ControlTag_kxint.add():console.log('DMP_ControlTag_kxint');
+            chkSite() ? DMP_ControlTag_kxct.add() : console.log('DMP_ControlTag_kxct');
+            chkSite() ? DMP_ControlTag_kxint.add() : console.log('DMP_ControlTag_kxint');
             break;
         case "FDFF":
-        // Step 1 COMPARISON
+            // Step 1 COMPARISON
 
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
             chkSite() ? spa_allsite.add() : console.log("star_tag");
@@ -51,11 +51,11 @@ var startFNJS = function() {
             }
 
 
-            chkSite() ? DMP_ControlTag_kxct.add():console.log('DMP_ControlTag_kxct');
-            chkSite() ? DMP_ControlTag_kxint.add():console.log('DMP_ControlTag_kxint');
+            chkSite() ? DMP_ControlTag_kxct.add() : console.log('DMP_ControlTag_kxct');
+            chkSite() ? DMP_ControlTag_kxint.add() : console.log('DMP_ControlTag_kxint');
             break;
         case "FARE":
-        // Step 2 DETAILS
+            // Step 2 DETAILS
 
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
             chkSite() ? spa_allsite.add() : console.log("star_tag");
@@ -68,35 +68,40 @@ var startFNJS = function() {
             }
             if ((/\b^[CN_]{3}/).test(eBaDataLayer.external_id) === true) { addScript('CheeseMobile_FARE', "main-layout-bottom", "footer#main-layout-bottom"); }
 
-            chkSite() ? DMP_ControlTag_kxct.add():console.log('DMP_ControlTag_kxct');
-            chkSite() ? DMP_ControlTag_kxint.add():console.log('DMP_ControlTag_kxint');
+            chkSite() ? DMP_ControlTag_kxct.add() : console.log('DMP_ControlTag_kxct');
+            chkSite() ? DMP_ControlTag_kxint.add() : console.log('DMP_ControlTag_kxint');
             break;
         case "ALPI":
-        // Step 2 FILL IN DETAILS
+            // Step 2 FILL IN DETAILS
 
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
             chkSite() ? spa_allsite.add() : console.log("star_tag");
             chkSite() ? addScript("insider", "main-layout-bottom", "footer#main-layout-bottom") : console.log('insider');
             updateHTML.Passengerinfo()
 
-            updateHTML.extraService('#tpl7_SIT>article', '#tpl7_MEA>article', '#tpl7_BAG>article', 'div.catalogServices-teasers-container');
+            // updateHTML.extraService('#tpl7_SIT>article', '#tpl7_MEA>article', '#tpl7_BAG>article', 'divdiv.div.catalogServices-teasers-container');
+            updateHTML.extraService('catalogServices-teaser-SIT','div.catalogServices-teasers-container','seat');
+            updateHTML.extraService('catalogServices-teaser-MEA','div.catalogServices-teasers-container','meal');
+            updateHTML.extraService('catalogServices-teaser-BAG','div.catalogServices-teasers-container','baggage');
             if ((/\b^[SG_]{3}/).test(eBaDataLayer.external_id) === true) {
                 chkSite() ? addScript("pixel_SG_ALPI", "main-layout-bottom", "footer#main-layout-bottom") : console.log('pixel_SG_ALPI');
                 chkSite() ? addScript("fbpixel_sg_pageview", "main-layout-bottom", "footer#main-layout-bottom") : console.log('fbpixel_sg_pageview');
             }
-            chkSite() ? DMP_ControlTag_kxct.add():console.log('DMP_ControlTag_kxct');
-            chkSite() ? DMP_ControlTag_kxint.add():console.log('DMP_ControlTag_kxint');
+            chkSite() ? DMP_ControlTag_kxct.add() : console.log('DMP_ControlTag_kxct');
+            chkSite() ? DMP_ControlTag_kxint.add() : console.log('DMP_ControlTag_kxint');
             break;
 
         case "APIM":
-        // Step 2 PASSENGER INFORMATION
+            // Step 2 PASSENGER INFORMATION
 
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
             chkSite() ? spa_allsite.add() : console.log("star_tag");
             chkSite() ? addScript("insider", "main-layout-bottom", "footer#main-layout-bottom") : console.log('insider');
             updateHTML.Passengerinfo()
-            updateHTML.extraService('#tpl7_SIT>article', '#tpl7_MEA>article', '#tpl7_BAG>article', 'div.catalogServices-teasers-container');
-
+            // updateHTML.extraService('#tpl7_SIT>article', '#tpl7_MEA>article', '#tpl7_BAG>article', 'divdiv.div.catalogServices-teasers-container');
+            updateHTML.extraService('catalogServices-teaser-SIT','div.catalogServices-teasers-container','seat');
+            updateHTML.extraService('catalogServices-teaser-MEA','div.catalogServices-teasers-container','meal');
+            updateHTML.extraService('catalogServices-teaser-BAG','div.catalogServices-teasers-container','baggage');
             if ((/\b^[SG_]{3}/).test(eBaDataLayer.external_id) === true) {
                 chkSite() ? addScript("pixel_SG_ALPI", "main-layout-bottom", "footer#main-layout-bottom") : console.log('pixel_SG_APIM');
                 chkSite() ? addScript("fbpixel_sg_pageview", "main-layout-bottom", "footer#main-layout-bottom") : console.log('fbpixel_sg_pageview');
@@ -106,22 +111,24 @@ var startFNJS = function() {
             govApim();
             contactInfo.click_phone();
 
-            chkSite() ? DMP_ControlTag_kxct.add():console.log('DMP_ControlTag_kxct');
-            chkSite() ? DMP_ControlTag_kxint.add():console.log('DMP_ControlTag_kxint');
+            chkSite() ? DMP_ControlTag_kxct.add() : console.log('DMP_ControlTag_kxct');
+            chkSite() ? DMP_ControlTag_kxint.add() : console.log('DMP_ControlTag_kxint');
             break;
         case "AAS":
-        // Step 2 CHOOSE SERVICES
-
+            // Step 2 CHOOSE SERVICES
             chkSite() ? addScript("insider", "main-layout-bottom", "footer#main-layout-bottom") : console.log('insider');
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
             chkSite() ? spa_allsite.add() : console.log("star_tag");
-            updateHTML.extraService('#tpl7_SIT', '#tpl7_MEA', '#tpl7_BAG', 'catalogServices-teasers-container');
+            // updateHTML.extraService('#tpl7_SIT', '#tpl7_MEA', '#tpl7_BAG', 'div.catalogServices-teasers-container');
+            updateHTML.extraService('catalogServices-teaser-SIT','div.catalogServices-teasers-container','seat');
+            updateHTML.extraService('catalogServices-teaser-MEA','div.catalogServices-teasers-container','meal');
+            updateHTML.extraService('catalogServices-teaser-BAG','div.catalogServices-teasers-container','baggage');
 
-            chkSite() ? DMP_ControlTag_kxct.add():console.log('DMP_ControlTag_kxct');
-            chkSite() ? DMP_ControlTag_kxint.add():console.log('DMP_ControlTag_kxint');
+            chkSite() ? DMP_ControlTag_kxct.add() : console.log('DMP_ControlTag_kxct');
+            chkSite() ? DMP_ControlTag_kxint.add() : console.log('DMP_ControlTag_kxint');
             break;
         case "PURC":
-        // Step 3 PAYMENT
+            // Step 3 PAYMENT
 
             chkSite() ? addScript("insider", "main-layout-bottom", "footer#main-layout-bottom") : console.log('insider');
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
@@ -139,15 +146,16 @@ var startFNJS = function() {
             if (dataTransfer['EXTERNAL_ID#4'] === 'GOV') {
                 GOV();
             }
-            if(new Date() >= setDatef(['2019', '03', '3']) === true){
-                insurance(eBaDataLayer.bound[0].dep_country,eBaDataLayer.language)
+            if (new Date() >= setDatef(['2019', '03', '3']) === true) {
+                insurance(eBaDataLayer.bound[0].dep_country, eBaDataLayer.language)
             }
             // chkSite() ? insurance(eBaDataLayer.bound[0].dep_country,eBaDataLayer.language):console.log('insurance');
-            chkSite() ? DMP_ControlTag_kxct.add():console.log('DMP_ControlTag_kxct');
-            chkSite() ? DMP_ControlTag_kxint.add():console.log('DMP_ControlTag_kxint');
+            chkSite() ? DMP_ControlTag_kxct.add() : console.log('DMP_ControlTag_kxct');
+            chkSite() ? DMP_ControlTag_kxint.add() : console.log('DMP_ControlTag_kxint');
+            linkDangerous(isMobile);
             break;
         case "CONF":
-        // Step 3 CONFIRMED BOOKING
+            // Step 3 CONFIRMED BOOKING
 
 
             chkSite() ? addScript("insider", "main-layout-bottom", "footer#main-layout-bottom") : console.log('insider');
@@ -178,44 +186,44 @@ var startFNJS = function() {
             // runWidget( (eBaDataLayer.market).split('_')[0] );
             runWidget(eBaDataLayer.bound[0].dep_country);
             pinkbanner_remove();
-            chkSite() ? DMP_ControlTag_kxct.add():console.log('DMP_ControlTag_kxct');
-            chkSite() ? DMP_ControlTag_kxint.add():console.log('DMP_ControlTag_kxint');
+            chkSite() ? DMP_ControlTag_kxct.add() : console.log('DMP_ControlTag_kxct');
+            chkSite() ? DMP_ControlTag_kxint.add() : console.log('DMP_ControlTag_kxint');
             break;
 
         case "RTPL":
-        // Step 3
+            // Step 3
 
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code);
             chkSite() ? spa_allsite.add() : console.log("star_tag");
             chkSite() ? addScript("insider", "main-layout-bottom", "footer#main-layout-bottom") : console.log('insider');
             updateHTML.remove_content.price_RTPL()
             subscribe.sbbAdd();
-            (eBaDataLayer.language == "GB" || eBaDataLayer.language == "FR") ? xbagSet.set(): console.log("xbagSet");
+            (eBaDataLayer.language == "GB" || eBaDataLayer.language == "FR") ? xbagSet.set() : console.log("xbagSet");
             // runWidget( (eBaDataLayer.market).split('_')[0] );
             runWidget(eBaDataLayer.bound[0].dep_country);
             removeXbag.remove(removeXbag.check())
 
-            chkSite() ? DMP_ControlTag_kxct.add():console.log('DMP_ControlTag_kxct');
-            chkSite() ? DMP_ControlTag_kxint.add():console.log('DMP_ControlTag_kxint');
+            chkSite() ? DMP_ControlTag_kxct.add() : console.log('DMP_ControlTag_kxct');
+            chkSite() ? DMP_ControlTag_kxint.add() : console.log('DMP_ControlTag_kxint');
             break;
         case "MDFSR":
 
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
             chkSite() ? spa_allsite.add() : console.log("star_tag");
             chkSite() ? addScript("insider", "main-layout-bottom", "footer#main-layout-bottom") : console.log('insider');
-            updateHTML.extraService('div.catalogServices-teaser-SIT', 'div.catalogServices-teaser-MEA', 'div.catalogServices-teaser-BAG', 'div.catalogServices-teasers-container');
-            chkSite() ? DMP_ControlTag_kxct.add():console.log('DMP_ControlTag_kxct');
-            chkSite() ? DMP_ControlTag_kxint.add():console.log('DMP_ControlTag_kxint');
+            updateHTML.extraService('divdiv.catalogServices-teaser-SIT', 'divdiv.catalogServices-teaser-MEA', 'divdiv.catalogServices-teaser-BAG', 'divdiv.div.catalogServices-teasers-container');
+            chkSite() ? DMP_ControlTag_kxct.add() : console.log('DMP_ControlTag_kxct');
+            chkSite() ? DMP_ControlTag_kxint.add() : console.log('DMP_ControlTag_kxint');
             break;
     }
 
-    implibdx.core.updateDom("footer#main-layout-bottom",function(){
+    implibdx.core.updateDom("footer#main-layout-bottom", function () {
         console.log('ALL PAGE');
         
-         (/\b^[DK]{2}/).test(eBaDataLayer.external_id) === true && chkSite() === true ? addScriptTG('fbpixel_DK') : console.log('ignore-script');
-         (/\b^[AT]{2}/).test(eBaDataLayer.external_id) === true && chkSite() === true ? addScriptTG('fbpixel_AT') : console.log('ignore-script');
-        
-    },1000,6);
+        (/\b^[DK]{2}/).test(eBaDataLayer.external_id) === true && chkSite() === true ? addScriptTG('fbpixel_DK') : console.log('ignore-script');
+        (/\b^[AT]{2}/).test(eBaDataLayer.external_id) === true && chkSite() === true ? addScriptTG('fbpixel_AT') : console.log('ignore-script');
+
+    }, 1000, 6);
 
 }
 

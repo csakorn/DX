@@ -1,7 +1,5 @@
-"use strict";
-
 /*
- Modifide Date :: Tue Jun 04 2019 10:26:48 GMT+0700 (Indochina Time)
+ Modifide Date :: Thu Sep 05 2019 22:45:34 GMT+0700 (Indochina Time)
  Modifide By :: Chalermpol Sakorn
  */
 var implibdx = implibdx || {};
@@ -332,12 +330,7 @@ var runWidget = function runWidget(x) {
       }, 1000, 5);
     },
     FR: function FR() {
-      implibdx.core.updateDom("div#TGINSBanner", function () {
-        rentalCar.add();
-        wt_booking.add();
-        ROH.sendData();
-        displayTeaser.add();
-      }, 1000, 5);
+      implibdx.core.updateDom("div#TGINSBanner", function () {}, 1000, 5);
     },
     DE: function DE() {
       implibdx.core.updateDom("div#TGINSBanner", function () {
@@ -589,7 +582,13 @@ var runWidget = function runWidget(x) {
       }, 1000, 5);
     }
   };
-  return market[mkt]();
+
+  try {
+    return market[mkt]();
+  } catch (error) {
+    console.log('Err:', error);
+    return market.DD();
+  }
 };
 
 function pinkbanner_remove() {
@@ -813,13 +812,15 @@ var updateHTML = {
       }, 1000, 5);
     }
   },
-  extraService: function extraService(SIT, MEA, BAG, idbox) {
+  extraService: function extraService(idService, idbox, nService) {
     implibdx.core.updateDom(idbox, function () {
       setTimeoutBAG();
-      console.log(SIT, BAG, MEA);
-      $(SIT).append(check.defaultLang(_extraServiceOBJ.seat, eBaDataLayer.language, "GB"));
-      $(BAG).append(check.defaultLang(_extraServiceOBJ.baggage, eBaDataLayer.language, "GB"));
-      $(MEA).append(check.defaultLang(_extraServiceOBJ.meal, eBaDataLayer.language, "GB"));
+
+      try {
+        $('.' + idService).append(check.defaultLang(_extraServiceOBJ[nService], eBaDataLayer.language, "GB"));
+      } catch (error) {
+        console.log('Err : ' + error);
+      }
     }, 1000, 4);
   },
   remove_content: {
@@ -916,18 +917,21 @@ function expanded_adult() {
   }, 1000, 6);
 }
 
-function setTimeoutBAG() {
-  $("#tpl7_BAG").on("click", function (e) {
-    window.setTimeout(function () {
-      console.log("setTimeout");
-      $("div.service-container.col-xs-24").append(check.defaultLang(dialog_baggage, eBaDataLayer.language, "GB"));
-    }, 600);
+$(function () {
+  $('div.catalogServices-teaser-MEA').on('click', function () {
+    console.log('51112');
   });
-  $("#tpl3_BAG").on("click", function (e) {
-    window.setTimeout(function () {
-      console.log("setTimeout");
-      $("div.service-container.col-xs-24").append(check.defaultLang(dialog_baggage, eBaDataLayer.language, "GB"));
-    }, 600);
+  $('div.catalogServices-teaser-SIT').on('click', function () {
+    console.log('51111');
+  });
+});
+
+function setTimeoutBAG() {
+  $('div.catalogServices-teaser-MEA').on('click', function () {
+    console.log('11112');
+  });
+  $('div.catalogServices-teaser-SIT').on('click', function () {
+    console.log('11111');
   });
 }
 
@@ -1066,6 +1070,10 @@ var removePinkbanner = function removePinkbanner(id) {
   }, 1000, 5);
 };
 
+var reCurrConverter = function reCurrConverter() {
+  document.getElementsByClassName('tripsummary-price-currency-converter')[0].remove();
+};
+
 function chkMarket(m) {
   var xMaket = m;
   var _market = ['CH_NORMAL'];
@@ -1151,6 +1159,22 @@ var _Bound = function _Bound(b, o) {
 var checkRBD = function checkRBD(reg, rbd) {
   return reg.test(rbd);
 };
+
+function linkDangerous(isMobile) {
+  implibdx.core.updateDom("#alert-title-terms-and-conditions", function () {
+    try {
+      document.getElementById('link_dangerous').addEventListener('click', function () {
+        $(".tripsummary-btn").click();
+      });
+
+      if (isMobile) {
+        document.getElementById("link_dangerous").setAttribute('href', "javascript:$('.tabs-container>ul li[data-tab-index=\"2\"]').click()");
+      }
+    } catch (error) {
+      console.log('Err--- Addscript' + error);
+    }
+  }, 1000, 5);
+}
 
 function ExpandCarSearch(argument) {}
 
@@ -1575,11 +1599,15 @@ var objNamescript = {
 var addScript = function addScript(objName, elmID, updateID, fn) {
   var anchor = document.getElementById(elmID);
   implibdx.core.updateDom(updateID, function () {
-    for (x in objNamescript[objName]) {
-      anchor.appendChild(createEM.create(objNamescript[objName][x].tag, objNamescript[objName][x].paramData ? pathData(objNamescript[objName][x].paramData, objNamescript[objName][x].txt) : objNamescript[objName][x].txt, objNamescript[objName][x]["case"]));
-    }
+    try {
+      for (var x in objNamescript[objName]) {
+        anchor.appendChild(createEM.create(objNamescript[objName][x].tag, objNamescript[objName][x].paramData ? pathData(objNamescript[objName][x].paramData, objNamescript[objName][x].txt) : objNamescript[objName][x].txt, objNamescript[objName][x]["case"]));
+      }
 
-    fn;
+      fn;
+    } catch (_unused) {
+      console.log('Err--- Addscript' + objName);
+    }
   }, 1000, 5);
 };
 
@@ -1831,6 +1859,52 @@ var eMailTrigger = {
     },
     conditionArrAirport: ["BKK"]
   },
+  jdCentral: {
+    send: function send() {
+      if (eMailTrigger.chkEXP(["2019", "06", "15"], ["2019", "07", "15"], "", "", "JD-Central", "NO") === true && eBaDataLayer.page_code == "CONF" && dataTransfer.PAYMENTTYPE == "EXT") {
+        implibdx.core.updateDom("div.TGINSBannerMenu", function () {
+          chkSite() ? console.log("JD-Centrale") : console.log(eMailTrigger.obj);
+
+          if (eBaDataLayer.bound[0].dep_airport == "BKK") {
+            $.ajax({
+              type: 'POST',
+              url: 'https://www.thaiairways.com/app/form/api/postdataamds/',
+              data: eMailTrigger.crOBJ("JD-Central"),
+              dataType: 'json'
+            }).done(function (result) {
+              console.log(result.success);
+            }).error(function (e) {
+              console.log(e.statusText);
+            });
+          }
+        }, 1000, 6);
+      } else console.log('error : senddata');
+    },
+    conditionArrAirport: ['BKK']
+  },
+  SG_Halloween: {
+    send: function send() {
+      if (eMailTrigger.chkEXP(["2019", "08", "02"], ["2019", "09", "31"], ["2019", "09", "31"], ["2019", "08", "02"], "SG_Halloween", "NO") === true && eBaDataLayer.page_code == "CONF" && dataTransfer.PAYMENTTYPE == "EXT") {
+        implibdx.core.updateDom("div.TGINSBannerMenu", function () {
+          chkSite() ? console.log("JD-Centrale") : console.log(eMailTrigger.obj);
+
+          if (eBaDataLayer.bound[0].dep_airport == "BKK" && eBaDataLayer.bound[0].arr_airport == "SIN" && dataTransfer["EXTERNAL_ID#4"] == "HHN9") {
+            $.ajax({
+              type: 'POST',
+              url: 'https://www.thaiairways.com/app/form/api/postdataamds/',
+              data: eMailTrigger.crOBJ("SG_Halloween"),
+              dataType: 'json'
+            }).done(function (result) {
+              console.log(result.success);
+            }).error(function (e) {
+              console.log(e.statusText);
+            });
+          }
+        }, 1000, 6);
+      } else console.log('error : senddata');
+    },
+    conditionArrAirport: ['BKK']
+  },
   createOBJ: function createOBJ() {
     var cOBJ = {
       pnr: eBaDataLayer.pnr_number,
@@ -1920,7 +1994,8 @@ var objTagScript = {
     limitdate: {
       start: ['2019', '02', '01'],
       end: ['2019', '11', '31']
-    }
+    },
+    typetag: 'fbpixel'
   },
   fbpixel_AT: {
     desElement_ID: 'main-layout-bottom',
@@ -1935,7 +2010,21 @@ var objTagScript = {
     limitdate: {
       start: ['2019', '02', '12'],
       end: ['2019', '11', '31']
-    }
+    },
+    typetag: 'fbpixel'
+  },
+  pixel_SG: {
+    desElement_ID: 'main-layout-bottom',
+    txtScript: {
+      script: {
+        txt: "//pixel.mathtag.com/event/js?mt_id=1328156&mt_adid=211029&mt_exem=&mt_excl=&v1=&v2=&v3=&s1=&s2=&s3="
+      }
+    },
+    limitdate: {
+      start: ['2019', '02', '12'],
+      end: ['2019', '11', '31']
+    },
+    typetag: 'pixel'
   }
 };
 
@@ -1952,8 +2041,15 @@ function addScriptTG(nameOBJ) {
     var dataBooking = eBaDataLayer.page_code === 'CONF' || eBaDataLayer.page_code === 'PURC' ? "fbq('track', '" + pix_pageCode + "'," + objDataBooking() + ")" : "";
     st2.forEach(function (item) {
       createAttr = document.createElement(item);
-      txtNode = document.createTextNode(obj['txtScript'][item]['txt'] + (item === 'script' ? dataBooking : ''));
-      createAttr.appendChild(txtNode);
+
+      if (obj['typetag'] == 'fbpixel') {
+        txtNode = document.createTextNode(obj['txtScript'][item]['txt'] + (item === 'script' ? dataBooking : ''));
+        createAttr.appendChild(txtNode);
+      } else {
+        createAttr.setAttribute('async', 'async');
+        createAttr.src = obj['txtScript'][item]['txt'];
+      }
+
       st1.appendChild(createAttr);
     });
   }
@@ -1962,7 +2058,7 @@ function addScriptTG(nameOBJ) {
 var objDataBooking = function objDataBooking() {
   return JSON.stringify({
     connect_name: eBaDataLayer.page_code === 'CONF' ? modpnr(eBaDataLayer.pnr_nbr) : "",
-    varlue: eBaDataLayer.page_code === 'CONF' || eBaDataLayer.page_code === 'PURC' ? eBaDataLayer.total_price : "",
+    value: eBaDataLayer.page_code === 'CONF' || eBaDataLayer.page_code === 'PURC' ? eBaDataLayer.total_price : "",
     currency: eBaDataLayer.currency
   });
 };
@@ -2304,6 +2400,8 @@ var sendProCode = function sendProCode() {
   }
 };
 
+var isMobile = document.getElementsByTagName("body")[0].getAttribute("data-device-type") === "MOBILE";
+
 var objInsurance = function objInsurance(c, l) {
   var _objInsurance = {
     HK: {
@@ -2408,11 +2506,11 @@ function insurance(xcountry, xlanguage) {
       var lc = x_objInsurance(xcountry, xlanguage) != undefined ? x_objInsurance(xcountry, xlanguage) : x_objInsurance(xcountry, 'GB');
       $(".title-panel-text").html("<i class=\"icon-aid title-icon\" aria-hidden=\"true\"></i>" + lc.titlepanel);
       $(".box-insurance").html(lc.insurance_txt);
-      $('label[for="tpl3_widget-input-purchaseForm-insuranceForm-insuranceRadioGroup-insuranceRadioGroup1"]>span.bold').html(lc.radio_1.txt_1);
-      $("label[for='tpl3_widget-input-purchaseForm-insuranceForm-insuranceRadioGroup-insuranceRadioGroup1']")[0].childNodes[2].textContent = lc.radio_1.txt_2;
-      $('label[for="tpl3_widget-input-purchaseForm-insuranceForm-insuranceRadioGroup-insuranceRadioGroup1"]>a').html(lc.radio_1.txtPolicy);
-      $('label[for="tpl3_widget-input-purchaseForm-insuranceForm-insuranceRadioGroup-insuranceRadioGroup1"]>a').attr('href', lc.radio_1.linkPolicy);
-      $('label[for="tpl3_widget-input-purchaseForm-insuranceForm-insuranceRadioGroup-insuranceRadioGroup2"]').html(lc.radio_2.txt_1 + " " + lc.radio_2.txt_2);
+      $('label[for$="insuranceRadioGroup-insuranceRadioGroup1"]>span.bold').html(lc.radio_1.txt_1);
+      $("label[for$='insuranceRadioGroup-insuranceRadioGroup1']")[0].childNodes[2].textContent = lc.radio_1.txt_2;
+      $('label[for$="insuranceRadioGroup-insuranceRadioGroup1"]>a').html(lc.radio_1.txtPolicy);
+      $('label[for$="insuranceRadioGroup-insuranceRadioGroup1"]>a').attr('href', lc.radio_1.linkPolicy);
+      $('label[for$="insuranceRadioGroup-insuranceRadioGroup2"]').html(lc.radio_2.txt_1 + " " + lc.radio_2.txt_2);
     }
   }, 1000, 5);
   var lcx = x_objInsurance(xcountry, xlanguage) != undefined ? x_objInsurance(xcountry, xlanguage) : x_objInsurance(xcountry, 'GB');
@@ -2523,7 +2621,9 @@ var startFNJS = function startFNJS() {
       chkSite() ? spa_allsite.add() : console.log("star_tag");
       chkSite() ? addScript("insider", "main-layout-bottom", "footer#main-layout-bottom") : console.log('insider');
       updateHTML.Passengerinfo();
-      updateHTML.extraService('#tpl7_SIT>article', '#tpl7_MEA>article', '#tpl7_BAG>article', 'div.catalogServices-teasers-container');
+      updateHTML.extraService('catalogServices-teaser-SIT', 'div.catalogServices-teasers-container', 'seat');
+      updateHTML.extraService('catalogServices-teaser-MEA', 'div.catalogServices-teasers-container', 'meal');
+      updateHTML.extraService('catalogServices-teaser-BAG', 'div.catalogServices-teasers-container', 'baggage');
 
       if (/\b^[SG_]{3}/.test(eBaDataLayer.external_id) === true) {
         chkSite() ? addScript("pixel_SG_ALPI", "main-layout-bottom", "footer#main-layout-bottom") : console.log('pixel_SG_ALPI');
@@ -2539,7 +2639,9 @@ var startFNJS = function startFNJS() {
       chkSite() ? spa_allsite.add() : console.log("star_tag");
       chkSite() ? addScript("insider", "main-layout-bottom", "footer#main-layout-bottom") : console.log('insider');
       updateHTML.Passengerinfo();
-      updateHTML.extraService('#tpl7_SIT>article', '#tpl7_MEA>article', '#tpl7_BAG>article', 'div.catalogServices-teasers-container');
+      updateHTML.extraService('catalogServices-teaser-SIT', 'div.catalogServices-teasers-container', 'seat');
+      updateHTML.extraService('catalogServices-teaser-MEA', 'div.catalogServices-teasers-container', 'meal');
+      updateHTML.extraService('catalogServices-teaser-BAG', 'div.catalogServices-teasers-container', 'baggage');
 
       if (/\b^[SG_]{3}/.test(eBaDataLayer.external_id) === true) {
         chkSite() ? addScript("pixel_SG_ALPI", "main-layout-bottom", "footer#main-layout-bottom") : console.log('pixel_SG_APIM');
@@ -2557,7 +2659,9 @@ var startFNJS = function startFNJS() {
       chkSite() ? addScript("insider", "main-layout-bottom", "footer#main-layout-bottom") : console.log('insider');
       console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code);
       chkSite() ? spa_allsite.add() : console.log("star_tag");
-      updateHTML.extraService('#tpl7_SIT', '#tpl7_MEA', '#tpl7_BAG', 'catalogServices-teasers-container');
+      updateHTML.extraService('catalogServices-teaser-SIT', 'div.catalogServices-teasers-container', 'seat');
+      updateHTML.extraService('catalogServices-teaser-MEA', 'div.catalogServices-teasers-container', 'meal');
+      updateHTML.extraService('catalogServices-teaser-BAG', 'div.catalogServices-teasers-container', 'baggage');
       chkSite() ? DMP_ControlTag_kxct.add() : console.log('DMP_ControlTag_kxct');
       chkSite() ? DMP_ControlTag_kxint.add() : console.log('DMP_ControlTag_kxint');
       break;
@@ -2590,6 +2694,7 @@ var startFNJS = function startFNJS() {
 
       chkSite() ? DMP_ControlTag_kxct.add() : console.log('DMP_ControlTag_kxct');
       chkSite() ? DMP_ControlTag_kxint.add() : console.log('DMP_ControlTag_kxint');
+      linkDangerous(isMobile);
       break;
 
     case "CONF":
@@ -2647,7 +2752,7 @@ var startFNJS = function startFNJS() {
       console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code);
       chkSite() ? spa_allsite.add() : console.log("star_tag");
       chkSite() ? addScript("insider", "main-layout-bottom", "footer#main-layout-bottom") : console.log('insider');
-      updateHTML.extraService('div.catalogServices-teaser-SIT', 'div.catalogServices-teaser-MEA', 'div.catalogServices-teaser-BAG', 'div.catalogServices-teasers-container');
+      updateHTML.extraService('divdiv.catalogServices-teaser-SIT', 'divdiv.catalogServices-teaser-MEA', 'divdiv.catalogServices-teaser-BAG', 'divdiv.div.catalogServices-teasers-container');
       chkSite() ? DMP_ControlTag_kxct.add() : console.log('DMP_ControlTag_kxct');
       chkSite() ? DMP_ControlTag_kxint.add() : console.log('DMP_ControlTag_kxint');
       break;

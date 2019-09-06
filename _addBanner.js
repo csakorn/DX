@@ -159,10 +159,10 @@ let runWidget = (x)=>{
 		FR:()=>{
 			implibdx.core.updateDom("div#TGINSBanner", function(){
 			
-			rentalCar.add()
-			wt_booking.add();
-			ROH.sendData();
-			displayTeaser.add();
+			// rentalCar.add()
+			// wt_booking.add();
+			// ROH.sendData();
+			// displayTeaser.add();
 			},1000,5)
 		},
 		DE:()=>{

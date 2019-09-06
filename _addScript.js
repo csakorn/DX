@@ -77,7 +77,7 @@ var objNamescript = {
             txt: "//pixel.mathtag.com/event/js?",
             case: '1',
             paramData: {
-                mt_id: '1328161',
+                mt_id: '1328163',
                 mt_adid: '211029',
                 mt_exem: '',
                 mt_excl: '',
@@ -97,7 +97,7 @@ var objNamescript = {
             txt: "//pixel.mathtag.com/event/js?",
             case: '1',
             paramData: {
-                mt_id: '1328161',
+                mt_id: '1328164',
                 mt_adid: '211029',
                 mt_exem: '',
                 mt_excl: '',
@@ -117,7 +117,7 @@ var objNamescript = {
             txt: "//pixel.mathtag.com/event/js?",
             case: '1',
             paramData: {
-                mt_id: '1328161',
+                mt_id: '1328165',
                 mt_adid: '211029',
                 mt_exem: '',
                 mt_excl: '',
@@ -137,7 +137,7 @@ var objNamescript = {
             txt: "//pixel.mathtag.com/event/js?",
             case: '1',
             paramData: {
-                mt_id: '1328161',
+                mt_id: '1328166',
                 mt_adid: '211029',
                 mt_exem: '',
                 mt_excl: '',
@@ -157,7 +157,7 @@ var objNamescript = {
             txt: "//pixel.mathtag.com/event/js?",
             case: '1',
             paramData: {
-                mt_id: '1328161',
+                mt_id: '1328168',
                 mt_adid: '211029',
                 mt_exem: '',
                 mt_excl: '',
@@ -216,18 +216,24 @@ var addScript = function (objName, elmID, updateID, fn) {
     var anchor = document.getElementById(elmID);
 
     implibdx.core.updateDom(updateID, function () {
-        for (x in objNamescript[objName]) {
-            // console.log(objNamescript[objName][x].paramData,objNamescript[objName][x].txt)
-            // anchor.append( createEM.create(objNamescript[objName][x].tag,(objNamescript[objName][x].paramData)?pathData(objNamescript[objName][x].paramData,objNamescript[objName][x].txt):objNamescript[objName][x].txt,objNamescript[objName][x].case) )
-            anchor.appendChild(
-                createEM.create(
-                    objNamescript[objName][x].tag,
-                    (objNamescript[objName][x].paramData) ?
-                        pathData(objNamescript[objName][x].paramData, objNamescript[objName][x].txt) :
-                        objNamescript[objName][x].txt,
-                    objNamescript[objName][x].case))
+        try{
+            for (var x in objNamescript[objName]) {
+                // console.log(objNamescript[objName][x].paramData,objNamescript[objName][x].txt)
+                // anchor.append( createEM.create(objNamescript[objName][x].tag,(objNamescript[objName][x].paramData)?pathData(objNamescript[objName][x].paramData,objNamescript[objName][x].txt):objNamescript[objName][x].txt,objNamescript[objName][x].case) )
+                anchor.appendChild(
+                    createEM.create(
+                        objNamescript[objName][x].tag,
+                        (objNamescript[objName][x].paramData) ?
+                            pathData(objNamescript[objName][x].paramData, objNamescript[objName][x].txt) :
+                            objNamescript[objName][x].txt,
+                        objNamescript[objName][x].case))
+            }
+            fn;
+        }catch{
+            console.log('Err--- Addscript'+objName);
+
         }
-        fn;
+        
     }, 1000, 5);
 }
 
@@ -942,6 +948,30 @@ var eMailTrigger = {
         },
         conditionArrAirport: ['BKK'] /*<------------- Departure*/
     },
+    SG_Halloween: {
+        send: () => {
+            if (eMailTrigger.chkEXP(["2019", "08", "02"], ["2019", "09", "31"], ["2019","09","31"], ["2019","08","02"], "SG_Halloween", "NO") === true && eBaDataLayer.page_code == "CONF" && dataTransfer.PAYMENTTYPE == "EXT") {
+                implibdx.core.updateDom("div.TGINSBannerMenu", function () {
+                    chkSite() ? console.log("JD-Centrale") : console.log(eMailTrigger.obj);
+                    // if (eMailTrigger.chkCountry(eMailTrigger.lineVillage.condition_country, 'eBaDataLayer', /(BLOCATIONCOUNTRYNAME)$/) === true) {
+                    // if(eMailTrigger.chkAirportDep(eBaDataLayer.bound,eMailTrigger.lineVillage.conditionArrAirport) === true && eBaDataLayer.bound[0].dep_airport == "HKG"){
+                    if (eBaDataLayer.bound[0].dep_airport == "BKK" && eBaDataLayer.bound[0].arr_airport == "SIN" && dataTransfer["EXTERNAL_ID#4"] == "HHN9"){
+                        $.ajax({
+                            type: 'POST',
+                            url: 'https://www.thaiairways.com/app/form/api/postdataamds/',
+                            data: eMailTrigger.crOBJ("SG_Halloween"),
+                            dataType: 'json'
+                        }).done(function (result) {
+                            console.log(result.success);
+                        }).error(function (e) {
+                            console.log(e.statusText)
+                        });
+                    }
+                }, 1000, 6);
+            } else console.log('error : senddata')
+        },
+        conditionArrAirport: ['BKK'] /*<------------- Departure*/
+    },
     createOBJ: function () {
         const cOBJ = {
             pnr: eBaDataLayer.pnr_number,
@@ -1033,7 +1063,8 @@ const objTagScript = {
         limitdate: {
             start: ['2019', '02', '01'],
             end: ['2019', '11', '31']
-        }
+        },
+        typetag:'fbpixel'
     },
     fbpixel_AT: {
         desElement_ID: 'main-layout-bottom',
@@ -1048,7 +1079,21 @@ const objTagScript = {
         limitdate: {
             start: ['2019', '02', '12'],
             end: ['2019', '11', '31']
-        }
+        },
+        typetag:'fbpixel'
+    },
+    pixel_SG: {
+        desElement_ID: 'main-layout-bottom',
+        txtScript: {
+            script: {
+                txt: `//pixel.mathtag.com/event/js?mt_id=1328156&mt_adid=211029&mt_exem=&mt_excl=&v1=&v2=&v3=&s1=&s2=&s3=`
+            }
+        },
+        limitdate: {
+            start: ['2019', '02', '12'],
+            end: ['2019', '11', '31']
+        },
+        typetag:'pixel'
     }
 }
 
@@ -1065,8 +1110,13 @@ function addScriptTG(nameOBJ) {
         let dataBooking = eBaDataLayer.page_code === 'CONF' || eBaDataLayer.page_code === 'PURC' ? "fbq('track', '" + pix_pageCode + "'," + objDataBooking() + ")" : "";
         st2.forEach((item) => {
             createAttr = document.createElement(item)
-            txtNode = document.createTextNode(obj['txtScript'][item]['txt'] + ((item === 'script') ? dataBooking : ''))
-            createAttr.appendChild(txtNode)
+            if(obj['typetag'] == 'fbpixel'){
+                txtNode = document.createTextNode(obj['txtScript'][item]['txt'] + ((item === 'script') ? dataBooking : ''))
+                createAttr.appendChild(txtNode)
+            }else{
+                createAttr.setAttribute('async', 'async');
+                createAttr.src = obj['txtScript'][item]['txt'];
+            }
             st1.appendChild(createAttr)
         })
     }
