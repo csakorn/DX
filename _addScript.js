@@ -673,7 +673,7 @@ var rentalCar = {
         let langx = (eBaDataLayer.language == "CN") ? "ZS" : eBaDataLayer.language;
 
         let frame = document.createElement("iframe");
-
+// 13 SEP 19
         frame.setAttribute("src", "https://secure.rentalcarsconnect.com/WidgetSearch.do?affiliateCode=thaiairways&preflang=" + langx + "&pickupIATACode=" + eBaDataLayer.bound[0].arr_airport + "&results=2&pickupMonth=" + arrDate[1] + "&pickupDate=" + arrDate[0] + "&pickupYear=" + arrDate[2] + "&returnDate=" + depDate[0] + "&returnMonth=" + depDate[1] + "&returnYear=" + depDate[2] + "&enabler=thaipromo5");
         // frame.setAttribute("src", "https://secure.rentalcars.com/ELBanner.do?iataCode="+eBaDataLayer.bound[0].arr_city+"&display=city-night&affiliateCode=thaiairways&puDay="+arrDate[0]+"&puMonth="+arrDate[1]+"&puYear="+arrDate[2]+"&puHour=&puMinute=&doDay="+depDate[0]+"&doMonth="+depDate[1]+"&doYear="+depDate[2]+"&doHour=&doMinute=&driversAge=&preflang="+eBaDataLayer.language+"&serverName=www.rentalcars.com&prefcurrency=thb&adplat=elb");
 
