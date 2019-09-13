@@ -49,7 +49,7 @@ var _extraServiceOBJ = {
 		TW: "<p class=\"box_service\"> \u7dda\u4e0a\u9810\u8cfc\u984d\u5916\u8d85\u91cd\u884c\u674e\u91cd\u91cf\u50c5\u9650\u65bc\u6cf0\u822a\u71df\u904b\u4e4b3\u78bc\u822a\u73ed\u3002\u570b\u969b\u7dda\u822a\u73ed\u8d77\u98db\u524d24\u5c0f\u6642\u53ef\u80fd\u63d0\u4f9b\u7dda\u4e0a\u9810\u8cfc\u984d\u5916\u8d85\u91cd\u884c\u674e\u91cd\u91cf\u670d\u52d9\u3002</p>",
 		SE: "<p class=\"box_service\">Att k\u00f6pa extra bagage \u00e4r m\u00f6jligt p\u00e5 internationella flyg fram till 24h innan avresa p\u00e5 TG flyg med tre siffror.</p>"
 	}
-	/*
+	/* Add
 	EN:
 THAI provides wheelchair service without any extra charge.
 Please request wheelchairs at least 48 hours before departure date
