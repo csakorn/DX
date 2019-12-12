@@ -163,6 +163,15 @@ let runWidget = (x)=>{
 			// wt_booking.add();
 			// ROH.sendData();
 			// displayTeaser.add();
+			// removePinkbanner('#PinkBanner_1');
+			// removePinkbanner('#PinkBanner_4');
+			$('#pinkbanner').remove();
+			$('#rentalCar').remove();
+			$('#b_container').remove();
+			$('.box_TGINSBannerMenu').remove();
+
+
+			console.log('NO..!! Teaser Display')
 			},1000,5)
 		},
 		DE:()=>{

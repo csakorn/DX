@@ -11,12 +11,12 @@ var _extraServiceOBJ = {
 		DE: "<p class=\"box_service\">Sitzplatzreservierungen k\u00f6nnen bei internationalen Fl\u00fcgen bis 48 Stunden vor Abflug vorgenommen werden.</p>",
 		ES: "<p class=\"box_service\">La reserva de asientos online es posible en vuelos internacionales hasta 48 horas antes de la salida. Aplicable solamente para los vuelos de TG de 3 d\u00edgitos.</p>",
 		FR: "<p class=\"box_service\">R\u00e9serverz votre si\u00e8ge en ligne jusqu\'\u00e0 48 heures avant le d\u00e9part de votre vol.</p>",
-		GB: "<p class=\"box_service\">Online seat reservation is possible on international flights until 48 hours before departure of TG 3 digits flight only.</p>",
+		GB: "<p class=\"box_service\">Online seat reservation is possible on international flights until 48 hours before departure of TG 3 digits flight only. <span class='txt-b'>Preferred Seat can be purchased after ticket has been issued.</span></p>",
 		IT: "<p class=\"box_service\">La prenotazione online del posto, solo sui voli internazionali TG a 3 cifre,  \u00e8 possibile fino a 48 ore prima della partenza.</p>",
 		JP: "<p class=\"box_service\">\u30bf\u30a4\u56fd\u969b\u822a\u7a7a\u904b\u822a\uff08TG3\u6841\u4fbf\uff09\u306e\u56fd\u969b\u7dda\u3067\u306f\u3001\u3054\u51fa\u767a48\u6642\u9593\u524d\u307e\u3067\u3001\u30aa\u30f3\u30e9\u30a4\u30f3\u306b\u3066\u5ea7\u5e2d\u3092\u3054\u6307\u5b9a\u3044\u305f\u3060\u3051\u307e\u3059\u3002\n</p>",
 		KO: "<p class=\"box_service\">\uc6f9\uc0ac\uc774\ud2b8\ub97c \ud1b5\ud55c \uc88c\uc11d \uc120\ud0dd\uc740 \ud0c0\uc774\ud56d\uacf5 \uc6b4\ud56d\ud3b8 TGxxx(3\uc790\ub9ac \uc22b\uc790 \ud3b8\uba85) \uad6d\uc81c\uc120\uc5d0 \ud55c\ud558\uc5ec \ucd9c\ubc1c 48\uc2dc\uac04 \uc804\uae4c\uc9c0\ub9cc \uac00\ub2a5\ud569\ub2c8\ub2e4.</p>",
 		RU: "<p class=\"box_service\">\u041f\u0440\u0435\u0434\u0432\u0430\u0440\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0435 \u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u043c\u0435\u0441\u0442 \u0432 \u0441\u0430\u043b\u043e\u043d\u0435 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u043e \u043d\u0435 \u043f\u043e\u0437\u0434\u043d\u0435\u0435 48 \u0447\u0430\u0441\u043e\u0432 \u0434\u043e \u0432\u044b\u043b\u0435\u0442\u0430 \u043d\u0430 \u043c\u0435\u0436\u0434\u0443\u043d\u0430\u0440\u043e\u0434\u043d\u044b\u0445 \u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u044f\u0445 (\u0442\u043e\u043b\u044c\u043a\u043e \u0434\u043b\u044f 3-\u0445 \u0437\u043d\u0430\u0447\u043d\u044b\u0445 \u043d\u043e\u043c\u0435\u0440\u043e\u0432 \u0440\u0435\u0439\u0441\u043e\u0432)</p>",
-		TH: "<p class=\"box_service\">\u0e17\u0e48\u0e32\u0e19\u0e2a\u0e32\u0e21\u0e32\u0e23\u0e16\u0e01\u0e33\u0e2b\u0e19\u0e14\u0e17\u0e35\u0e48\u0e19\u0e31\u0e48\u0e07\u0e2d\u0e2d\u0e19\u0e44\u0e25\u0e19\u0e4c\u0e25\u0e48\u0e27\u0e07\u0e2b\u0e19\u0e49\u0e32\u0e44\u0e14\u0e49 \u0e08\u0e19\u0e16\u0e36\u0e07\u0e40\u0e27\u0e25\u0e32 48 \u0e0a\u0e31\u0e48\u0e27\u0e42\u0e21\u0e07\u0e01\u0e48\u0e2d\u0e19\u0e40\u0e27\u0e25\u0e32\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e2d\u0e2d\u0e01</p>",
+		TH: "<p class=\"box_service\">\u0e17\u0e48\u0e32\u0e19\u0e2a\u0e32\u0e21\u0e32\u0e23\u0e16\u0e01\u0e33\u0e2b\u0e19\u0e14\u0e17\u0e35\u0e48\u0e19\u0e31\u0e48\u0e07\u0e2d\u0e2d\u0e19\u0e44\u0e25\u0e19\u0e4c\u0e25\u0e48\u0e27\u0e07\u0e2b\u0e19\u0e49\u0e32\u0e44\u0e14\u0e49 \u0e08\u0e19\u0e16\u0e36\u0e07\u0e40\u0e27\u0e25\u0e32 48 \u0e0a\u0e31\u0e48\u0e27\u0e42\u0e21\u0e07\u0e01\u0e48\u0e2d\u0e19\u0e40\u0e27\u0e25\u0e32\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e2d\u0e2d\u0e01 <span class='txt-b'> \u0e1c\u0e39\u0e49\u0e42\u0e14\u0e22\u0e2a\u0e32\u0e23\u0e2a\u0e32\u0e21\u0e32\u0e23\u0e16\u0e0b\u0e37\u0e49\u0e2d Preferred Seat \u0e44\u0e14\u0e49\u0e2b\u0e25\u0e31\u0e07\u0e08\u0e32\u0e01\u0e14\u0e33\u0e40\u0e19\u0e34\u0e19\u0e01\u0e32\u0e23\u0e2d\u0e2d\u0e01\u0e15\u0e31\u0e4b\u0e27\u0e40\u0e23\u0e35\u0e22\u0e1a\u0e23\u0e49\u0e2d\u0e22\u0e41\u0e25\u0e49\u0e27</p>",
 		TW: "<p class=\"box_service\">\u7dda\u4e0a\u9810\u9078\u5ea7\u4f4d\u50c5\u9650\u65bc\u6cf0\u822a\u71df\u904b\u4e4b3\u78bc\u822a\u73ed\u3002\u570b\u969b\u7dda\u822a\u73ed\u8d77\u98db\u524d48\u5c0f\u6642\u53ef\u80fd\u63d0\u4f9b\u7dda\u4e0a\u9810\u9078\u5ea7\u4f4d\u670d\u52d9\u3002</p>",
 		SE: "<p class=\"box_service\">Du kan v\u00e4lja din sittplats online p\u00e5 internationella flygningar fram till 48h innan avg\u00e5ng p\u00e5 TG flyg med tre siffror.</p>"
 
@@ -48,14 +48,21 @@ var _extraServiceOBJ = {
 		TH: "<p class=\"box_service\">\u0e17\u0e48\u0e32\u0e19\u0e2a\u0e32\u0e21\u0e32\u0e23\u0e16\u0e0b\u0e37\u0e49\u0e2d\u0e19\u0e49\u0e33\u0e2b\u0e19\u0e31\u0e01\u0e40\u0e1e\u0e34\u0e48\u0e21\u0e40\u0e15\u0e34\u0e21\u0e25\u0e48\u0e27\u0e07\u0e2b\u0e19\u0e49\u0e32\u0e44\u0e14\u0e49 24 \u0e0a\u0e31\u0e48\u0e27\u0e42\u0e21\u0e07\u0e01\u0e48\u0e2d\u0e19\u0e40\u0e27\u0e25\u0e32\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e2d\u0e2d\u0e01 </p>",
 		TW: "<p class=\"box_service\"> \u7dda\u4e0a\u9810\u8cfc\u984d\u5916\u8d85\u91cd\u884c\u674e\u91cd\u91cf\u50c5\u9650\u65bc\u6cf0\u822a\u71df\u904b\u4e4b3\u78bc\u822a\u73ed\u3002\u570b\u969b\u7dda\u822a\u73ed\u8d77\u98db\u524d24\u5c0f\u6642\u53ef\u80fd\u63d0\u4f9b\u7dda\u4e0a\u9810\u8cfc\u984d\u5916\u8d85\u91cd\u884c\u674e\u91cd\u91cf\u670d\u52d9\u3002</p>",
 		SE: "<p class=\"box_service\">Att k\u00f6pa extra bagage \u00e4r m\u00f6jligt p\u00e5 internationella flyg fram till 24h innan avresa p\u00e5 TG flyg med tre siffror.</p>"
+	},
+	wheelchair: {
+		CN: "",
+		DE: "",
+		ES: "",
+		FR: "",
+		GB: `THAI provides wheelchair service without any extra charge. Please request wheelchairs at least 48 hours before departure date`,
+		IT: "",
+		JP: "",
+		KO: "",
+		RU: "",
+		TH: `\u0e01\u0e32\u0e23\u0e1a\u0e34\u0e19\u0e44\u0e17\u0e22\u0e43\u0e2b\u0e49\u0e1a\u0e23\u0e34\u0e01\u0e32\u0e23\u0e40\u0e01\u0e49\u0e32\u0e2d\u0e35\u0e49\u0e23\u0e16\u0e40\u0e02\u0e47\u0e19 \u0e42\u0e14\u0e22\u0e44\u0e21\u0e48\u0e04\u0e34\u0e14\u0e04\u0e48\u0e32\u0e43\u0e0a\u0e49\u0e08\u0e48\u0e32\u0e22 \u0e01\u0e23\u0e38\u0e13\u0e32\u0e41\u0e08\u0e49\u0e07\u0e01\u0e48\u0e2d\u0e19 48 \u0e0a\u0e31\u0e48\u0e27\u0e42\u0e21\u0e07`,
+		TW: "",
+		SE: ""
 	}
-	/* Add
-	EN:
-THAI provides wheelchair service without any extra charge.
-Please request wheelchairs at least 48 hours before departure date
-TH:
-การบินไทยให้บริการเก้าอี้รถเข็น โดยไม่คิดค่าใช้จ่าย กรุณาแจ้งก่อน 48 ชั่วโมง
-	*/
 }
 var dialog_baggage = {
 	CN: "<p class=\"box_service-dialog\">\u4e58\u5ba2\u53ef\u5728\u822a\u73ed\u8d77\u98de\u65f6\u95f4\u63d0\u524d24\u5c0f\u65f6\u5728\u7ebf\u8d2d\u4e70\u989d\u5916\u6258\u8fd0\u884c\u674e\u914d\u989d <a target=\"_blank\"href=\"https://www.thaiairways.com/booking/baggage_con_CN.html\">More information </a></p>",
@@ -155,10 +162,10 @@ var updateHTML = {
 	},
 	Passengerinfo: function () {
 
-		implibdx.core.updateDom("section.traveller-panel-body.panel-body", function () {
-			$('select[id $= \'_ADT-FREQ_Airline_0\']>option[value=\'AI\']').html('Air India');
-			// $("section.traveller-panel-body.panel-body").before("<p class=\"box-mandatory\">Please complete all the fields marked * . </p>")
-		}, 1000, 5);
+		// implibdx.core.updateDom("section.traveller-panel-body.panel-body", function () {
+		// 	$('select[id $= \'_ADT-FREQ_Airline_0\']>option[value=\'AI\']').html('Air India');
+		// 	// $("section.traveller-panel-body.panel-body").before("<p class=\"box-mandatory\">Please complete all the fields marked * . </p>")
+		// }, 1000, 5);
 
 
 		if (eBaDataLayer.currency == "SGD") {
@@ -192,6 +199,17 @@ var updateHTML = {
 				});
 			}, 1000, 6);
 		}
+	},
+	addseat_class: () => {
+		implibdx.core.updateDom("div.catalogServices-teaser-column", function () {
+			if (eBaDataLayer.bound[0].flights[0].cabin !== 'E') {
+				$('#service-desc-SIT div').removeClass('class-default');
+				$('#service-desc-SIT > div div.class-' + eBaDataLayer.bound[0].flights[0].cabin).addClass('class-default');
+			} else if (eBaDataLayer.bound[0].flights[0].cabin == 'N') {
+				$('#service-desc-SIT div').removeClass('class-default');
+				$('#service-desc-SIT > div div.airline-WE').addClass('class-default');
+			}
+		}, 1000, 5)
 	}
 }
 
@@ -240,7 +258,7 @@ function setTimeoutBAG() {
 		// });
 		//$("li[id $='_li_CON'],label[for $='_radio_CON'],input[id $='_radio_CON'],.fop-icon icon-office")
 		$("button[id$='-close-btn']").on('click', function () {
-			if($('.box_service').length == 0){
+			if ($('.box_service').length == 0) {
 				window.setTimeout(function () {
 					updateHTML.extraService('catalogServices-teaser-SIT', 'div.catalogServices-teasers-container', 'seat');
 					updateHTML.extraService('catalogServices-teaser-MEA', 'div.catalogServices-teasers-container', 'meal');
@@ -380,6 +398,29 @@ var govApim = function () {
 // hide Contact Information #Home Phone:|Business Phone
 
 var contactInfo = {
+	click_label: () => {
+		$('#PhoneSmsNotifCode,#PhoneHomeCode,#PhoneBusinessCode').on('click', (x) => {
+			// console.log(x.currentTarget.id)
+			$('#' + x.currentTarget.id + ' .phoneCode').show()
+			$('#' + x.currentTarget.id + ' .phoneNumber').show()
+		})
+	},
+	hide_phone: () => {
+		implibdx.core.updateDom("section.traveller-contact-information-panel", function () {
+			$('.phoneCode').map(x => contactInfo._hidephone($('.phoneCode')[x]))
+			contactInfo.click_label();
+		}, 1000, 7);
+	},
+	_hidephone: (x) => {
+		if (/(PhoneSmsNotifCode|PhoneHomeCode|PhoneBusinessCode)$/.test(x.children[0].id) == true) {
+			x.parentNode.setAttribute('id', x.children[0].id.split("-").pop())
+			x.parentNode.children[1].style.display = "none";
+			x.parentNode.children[2].style.display = "none";
+			return x.parentNode;
+		} else {
+			return false;
+		}
+	},
 	phone: function () {
 		for (i = 0; i < $(".phoneCode").length; i++) {
 			if (i !== 0 && i !== 3) {
@@ -445,5 +486,42 @@ function chkMarket(m) {
 	const _market = ['CH_NORMAL'];
 	for (i = 0; i <= _market.length; i++) {
 		return xMaket == _market[i];
+	}
+}
+function placeholder() {
+	implibdx.core.updateDom('.traveller-panel-body', function () {
+		$("input[id$=_ADT-IDEN_FirstName]").attr('placeholder', `Prénom (tel qu'indiqué sur le passeport)`)
+		$("input[id$=_ADT-IDEN_LastName]").attr('placeholder', `Nom (tel qu'indiqué sur le passeport)`)
+	}, 1000, 5);
+}
+
+const passenger_list = {
+	addHtml: () => {
+		passenger_list.passlist = "";
+		passenger_list.totalpass = "";
+		let paxType = {	"ADT": "Adult(s)",	"CHD": "Child",	"B15": "Youth",	"INF": "Infant"	}
+		eBaDataLayer.passengerList.forEach( (x,i) => passenger_list.passlist += `<li> <span>${i+1}. ${dataTransfer['PNR#1_TITLENAME#'+(i+1)]}.${x.first_name} ${x.last_name}</span> (${x.pax_type})</li>`);
+		eBaDataLayer.passengers.filter((e, i, arr) => arr.findIndex(e2 => Object.keys(e2).every(prop => e2[prop] == e[prop])) == i).forEach(x => passenger_list.totalpass += `<span class="traveller"> ${x.nb_pax_type}${paxType[x.pax_type]}</span>`)
+		let newItem = document.createElement("div");
+		newItem.setAttribute('id', 'passengerlist');
+
+
+		let addHTML = `<header class="travellers-panel-heading ">
+									<i class="icon icon-adult" aria-hidden="true"></i>
+									<span class="title">${eBaDataLayer.passengers.length} Travellers</span>
+									${passenger_list.totalpass}
+								</header>
+								<ul>
+									${passenger_list.passlist}
+								</ul>`;
+
+
+
+		implibdx.core.updateDom('.ticket-delivery', () => {
+
+			document.getElementsByClassName('ticket-delivery')[0].parentNode.insertBefore(newItem, document.getElementsByClassName('ticket-delivery')[0].nextSibling);
+			document.getElementById('passengerlist').innerHTML = addHTML;
+
+		}, 1000, 5);
 	}
 }

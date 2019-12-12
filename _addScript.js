@@ -1,5 +1,5 @@
 var objNamescript = {
-    jetradar: { //Request by S9P
+    jetradar: { //Request by S9P // done on tea
         elm1: {
             tag: "img",
             txt: "http://pixel.aviasales.ru/ThaiAirways?",
@@ -9,7 +9,7 @@ var objNamescript = {
             }
         }
     },
-    fbpixel_it: {
+    fbpixel_it: { //done on tea
         elm1: {
             tag: "script",
             txt: "!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n; n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '154899338410823');",
@@ -21,7 +21,7 @@ var objNamescript = {
             case: "0"
         }
     },
-    everymundo_FareNet: { //Request by S9N (Nahathai Keerakajinda)
+    everymundo_FareNet: { //Request by S9N (Nahathai Keerakajinda)  //done on tea
         elm1: {
             tag: "script",
             txt: "https://www.securitytrfx.com/js/tg.js",
@@ -171,7 +171,7 @@ var objNamescript = {
             }
         }
     },
-    CheeseMobile_FARE: {
+    CheeseMobile_FARE: {//done on tea
         elm: {
             tag: "img",
             txt: "https://track.cdn-ads.com/TG/?",
@@ -181,7 +181,7 @@ var objNamescript = {
             }
         }
     },
-    CheeseMobile_PURC: {
+    CheeseMobile_PURC: {//done on tea
         elm: {
             tag: "img",
             txt: "https://track.cdn-ads.com/TG/?",
@@ -191,7 +191,7 @@ var objNamescript = {
             }
         }
     },
-    CheeseMobile_CONF: {
+    CheeseMobile_CONF: {//done on tea
         elm: {
             tag: "script",
             txt: "https://track.cdn-ads.com/TG/?",
@@ -201,7 +201,7 @@ var objNamescript = {
             }
         }
     },
-    insider: {
+    insider: {// done on tea
         elm: {
             tag: "script",
             txt: "//thaiairways.api.useinsider.com/ins.js",
@@ -237,6 +237,35 @@ var addScript = function (objName, elmID, updateID, fn) {
     }, 1000, 5);
 }
 
+var iNetasia_Tealium = {
+    add: function add() {
+      implibdx.core.updateDom("footer#main-layout-bottom", function () {
+        var addTo = document.getElementById('main-layout-bottom');
+        var createAttr = document.createElement("script");
+        var txtNode = '';
+        createAttr.setAttribute('type', 'text/javascript');
+        var content = "utag_cfg_ovrd={},a=\"//tags.tiqcdn.com/utag/thai-airways/main/prod/utag.js\",b=document,c=\"script\",d=b.createElement(c),d.src=a,d.type=\"text/java\"+c,d.async=!0,d.onerror=function(){utag_cfg_ovrd.path=\"//tags.tiqcdn.cn/utag/thai-airways/main/prod/\",a=\"//tags.tiqcdn.cn/utag/thai-airways/main/prod/utag.js\",b=document,c=\"script\",d=b.createElement(c),d.src=a,d.type=\"text/java\"+c,d.async=!0,a=b.getElementsByTagName(c)[0],a.parentNode.insertBefore(d,a)},a=b.getElementsByTagName(c)[0],a.parentNode.insertBefore(d,a);";
+        txtNode = document.createTextNode(content);
+        createAttr.appendChild(txtNode);
+        addTo.appendChild(createAttr);
+      }, 1000, 6);
+    }
+  };
+
+  var iNetasia_Tealium_qa = {
+    add: function add() {
+      implibdx.core.updateDom("footer#main-layout-bottom", function () {
+        var addTo = document.getElementById('main-layout-bottom');
+        var createAttr = document.createElement("script");
+        var txtNode = '';
+        createAttr.setAttribute('type', 'text/javascript');
+        var content = "utag_cfg_ovrd={},a=\"//tags.tiqcdn.com/utag/thai-airways/main/qa/utag.js\",b=document,c=\"script\",d=b.createElement(c),d.src=a,d.type=\"text/java\"+c,d.async=!0,d.onerror=function(){utag_cfg_ovrd.path=\"//tags.tiqcdn.cn/utag/thai-airways/main/prod/\",a=\"//tags.tiqcdn.cn/utag/thai-airways/main/prod/utag.js\",b=document,c=\"script\",d=b.createElement(c),d.src=a,d.type=\"text/java\"+c,d.async=!0,a=b.getElementsByTagName(c)[0],a.parentNode.insertBefore(d,a)},a=b.getElementsByTagName(c)[0],a.parentNode.insertBefore(d,a);";
+        txtNode = document.createTextNode(content);
+        createAttr.appendChild(txtNode);
+        addTo.appendChild(createAttr);
+      }, 1000, 6);
+    }
+  };
 
 var fbpixel_SE = {
     add: function () {
@@ -669,11 +698,11 @@ var rentalCar = {
     createFrame: function () {
         let arrDate = eBaDataLayer.bound[0].arr_date.split('/');
         let depDate = (!eBaDataLayer.bound[1] !== true ? eBaDataLayer.bound[1].dep_date.split('/') : arrDate);
-        let langx = (eBaDataLayer.language == "CN") ? "ZS" : eBaDataLayer.language;
+        let langx = (eBaDataLayer.language == "CN") ? "ZS" : eBaDataLayer.language == 'GB'? "EN":eBaDataLayer.language;
 
         let frame = document.createElement("iframe");
 
-        frame.setAttribute("src", "https://widget.rentalcars.com/WidgetSearch.do?affiliateCode=thaiairways&preflang=" + langx + "&pickupIATACode=" + eBaDataLayer.bound[0].arr_airport + "&results=2&pickupMonth=" + arrDate[1] + "&pickupDate=" + arrDate[0] + "&pickupYear=" + arrDate[2] + "&returnDate=" + depDate[0] + "&returnMonth=" + depDate[1] + "&returnYear=" + depDate[2] + "&enabler=thaipromo5");
+        frame.setAttribute("src", "https://secure.rentalcarsconnect.com/WidgetSearch.do?affiliateCode=thaiairways&preflang=" + langx + "&pickupIATACode=" + eBaDataLayer.bound[0].arr_airport + "&results=2&pickupMonth=" + arrDate[1] + "&pickupDate=" + arrDate[0] + "&pickupYear=" + arrDate[2] + "&returnDate=" + depDate[0] + "&returnMonth=" + depDate[1] + "&returnYear=" + depDate[2] + "&enabler=thaipromo&serverName=www.rentalcars.com");
         // frame.setAttribute("src", "https://secure.rentalcars.com/ELBanner.do?iataCode="+eBaDataLayer.bound[0].arr_city+"&display=city-night&affiliateCode=thaiairways&puDay="+arrDate[0]+"&puMonth="+arrDate[1]+"&puYear="+arrDate[2]+"&puHour=&puMinute=&doDay="+depDate[0]+"&doMonth="+depDate[1]+"&doYear="+depDate[2]+"&doHour=&doMinute=&driversAge=&preflang="+eBaDataLayer.language+"&serverName=www.rentalcars.com&prefcurrency=thb&adplat=elb");
 
         frame.setAttribute("name", "rentalCar");
@@ -901,77 +930,77 @@ var eMailTrigger = {
     //     },
     //     condition_country: ["BKK", "CNX", "KBV", "HKT", "RGN", "VTE", "PNH", "HAN", "HGN", "KUL", "SIN", "DPS", "JKT", "MNL", "CAN", "HKG", "KMG", "CTU", "XMN", "TPE", "CCU", "DAC", "KTM", "CMB", "MAA", "BLR", "HYD", "DEL", "BOM", "PEK", "PVG", "TYO", "NRT", "HND", "KIX", "NGO", "FUK", "CTS", "ICN", "PUS", "BNE", "MEL", "PER", "SYD", "AKL"]
     // },
-    lineVillage: {
-        send: function () {
-            if (eMailTrigger.chkEXP(["2019", "05", "04"], ["2019", "06", "15"], ["2019", "07", "31"], ["2019", "06", "04"], "HK-Line_Village", "NO") === true && eBaDataLayer.page_code == "CONF" && dataTransfer.PAYMENTTYPE == "EXT") {
-                implibdx.core.updateDom("div.TGINSBannerMenu", function () {
-                    chkSite() ? console.log("HK-Line_Village") : console.log(eMailTrigger.obj);
-                    // if (eMailTrigger.chkCountry(eMailTrigger.lineVillage.condition_country, 'eBaDataLayer', /(BLOCATIONCOUNTRYNAME)$/) === true) {
-                    if (eMailTrigger.chkAirportArr(eBaDataLayer.bound, eMailTrigger.lineVillage.conditionArrAirport) === true && eBaDataLayer.bound[0].dep_airport == "HKG") {
-                        $.ajax({
-                            type: 'POST',
-                            url: 'https://www.thaiairways.com/app/form/postdataamds_trigger',
-                            data: eMailTrigger.crOBJ("HK-Line_Village"),
-                            dataType: 'json'
-                        }).done(function (result) {
-                            console.log(result.success);
-                        }).error(function (e) {
-                            console.log(e.statusText)
-                        });
-                    }
-                }, 1000, 6);
-            } else console.log('error : senddata')
-        },
-        conditionArrAirport: ["BKK"] /*<--- destination*/
-    },
-    jdCentral: {
-        send: () => {
-            if (eMailTrigger.chkEXP(["2019", "06", "15"], ["2019", "07", "15"], "", "", "JD-Central", "NO") === true && eBaDataLayer.page_code == "CONF" && dataTransfer.PAYMENTTYPE == "EXT") {
-                implibdx.core.updateDom("div.TGINSBannerMenu", function () {
-                    chkSite() ? console.log("JD-Centrale") : console.log(eMailTrigger.obj);
-                    // if (eMailTrigger.chkCountry(eMailTrigger.lineVillage.condition_country, 'eBaDataLayer', /(BLOCATIONCOUNTRYNAME)$/) === true) {
-                    // if(eMailTrigger.chkAirportDep(eBaDataLayer.bound,eMailTrigger.lineVillage.conditionArrAirport) === true && eBaDataLayer.bound[0].dep_airport == "HKG"){
-                    if (eBaDataLayer.bound[0].dep_airport == "BKK") {
-                        $.ajax({
-                            type: 'POST',
-                            url: 'https://www.thaiairways.com/app/form/api/postdataamds/',
-                            data: eMailTrigger.crOBJ("JD-Central"),
-                            dataType: 'json'
-                        }).done(function (result) {
-                            console.log(result.success);
-                        }).error(function (e) {
-                            console.log(e.statusText)
-                        });
-                    }
-                }, 1000, 6);
-            } else console.log('error : senddata')
-        },
-        conditionArrAirport: ['BKK'] /*<------------- Departure*/
-    },
-    SG_Halloween: {
-        send: () => {
-            if (eMailTrigger.chkEXP(["2019", "08", "02"], ["2019", "09", "31"], ["2019","09","31"], ["2019","08","02"], "SG_Halloween", "NO") === true && eBaDataLayer.page_code == "CONF" && dataTransfer.PAYMENTTYPE == "EXT") {
-                implibdx.core.updateDom("div.TGINSBannerMenu", function () {
-                    chkSite() ? console.log("JD-Centrale") : console.log(eMailTrigger.obj);
-                    // if (eMailTrigger.chkCountry(eMailTrigger.lineVillage.condition_country, 'eBaDataLayer', /(BLOCATIONCOUNTRYNAME)$/) === true) {
-                    // if(eMailTrigger.chkAirportDep(eBaDataLayer.bound,eMailTrigger.lineVillage.conditionArrAirport) === true && eBaDataLayer.bound[0].dep_airport == "HKG"){
-                    if (eBaDataLayer.bound[0].dep_airport == "BKK" && eBaDataLayer.bound[0].arr_airport == "SIN" && dataTransfer["EXTERNAL_ID#4"] == "HHN9"){
-                        $.ajax({
-                            type: 'POST',
-                            url: 'https://www.thaiairways.com/app/form/api/postdataamds/',
-                            data: eMailTrigger.crOBJ("SG_Halloween"),
-                            dataType: 'json'
-                        }).done(function (result) {
-                            console.log(result.success);
-                        }).error(function (e) {
-                            console.log(e.statusText)
-                        });
-                    }
-                }, 1000, 6);
-            } else console.log('error : senddata')
-        },
-        conditionArrAirport: ['BKK'] /*<------------- Departure*/
-    },
+    // lineVillage: {
+    //     send: function () {
+    //         if (eMailTrigger.chkEXP(["2019", "05", "04"], ["2019", "06", "15"], ["2019", "07", "31"], ["2019", "06", "04"], "HK-Line_Village", "NO") === true && eBaDataLayer.page_code == "CONF" && dataTransfer.PAYMENTTYPE == "EXT") {
+    //             implibdx.core.updateDom("div.TGINSBannerMenu", function () {
+    //                 chkSite() ? console.log("HK-Line_Village") : console.log(eMailTrigger.obj);
+    //                 // if (eMailTrigger.chkCountry(eMailTrigger.lineVillage.condition_country, 'eBaDataLayer', /(BLOCATIONCOUNTRYNAME)$/) === true) {
+    //                 if (eMailTrigger.chkAirportArr(eBaDataLayer.bound, eMailTrigger.lineVillage.conditionArrAirport) === true && eBaDataLayer.bound[0].dep_airport == "HKG") {
+    //                     $.ajax({
+    //                         type: 'POST',
+    //                         url: 'https://www.thaiairways.com/app/form/postdataamds_trigger',
+    //                         data: eMailTrigger.crOBJ("HK-Line_Village"),
+    //                         dataType: 'json'
+    //                     }).done(function (result) {
+    //                         console.log(result.success);
+    //                     }).error(function (e) {
+    //                         console.log(e.statusText)
+    //                     });
+    //                 }
+    //             }, 1000, 6);
+    //         } else console.log('error : senddata')
+    //     },
+    //     conditionArrAirport: ["BKK"] /*<--- destination*/
+    // },
+    // jdCentral: {
+    //     send: () => {
+    //         if (eMailTrigger.chkEXP(["2019", "06", "15"], ["2019", "07", "15"], "", "", "JD-Central", "NO") === true && eBaDataLayer.page_code == "CONF" && dataTransfer.PAYMENTTYPE == "EXT") {
+    //             implibdx.core.updateDom("div.TGINSBannerMenu", function () {
+    //                 chkSite() ? console.log("JD-Centrale") : console.log(eMailTrigger.obj);
+    //                 // if (eMailTrigger.chkCountry(eMailTrigger.lineVillage.condition_country, 'eBaDataLayer', /(BLOCATIONCOUNTRYNAME)$/) === true) {
+    //                 // if(eMailTrigger.chkAirportDep(eBaDataLayer.bound,eMailTrigger.lineVillage.conditionArrAirport) === true && eBaDataLayer.bound[0].dep_airport == "HKG"){
+    //                 if (eBaDataLayer.bound[0].dep_airport == "BKK") {
+    //                     $.ajax({
+    //                         type: 'POST',
+    //                         url: 'https://www.thaiairways.com/app/form/api/postdataamds/',
+    //                         data: eMailTrigger.crOBJ("JD-Central"),
+    //                         dataType: 'json'
+    //                     }).done(function (result) {
+    //                         console.log(result.success);
+    //                     }).error(function (e) {
+    //                         console.log(e.statusText)
+    //                     });
+    //                 }
+    //             }, 1000, 6);
+    //         } else console.log('error : senddata')
+    //     },
+    //     conditionArrAirport: ['BKK'] /*<------------- Departure*/
+    // },
+    // SG_Halloween: {
+    //     send: () => {
+    //         if (eMailTrigger.chkEXP(["2019", "08", "02"], ["2019", "09", "31"], ["2019","09","31"], ["2019","08","02"], "SG_Halloween", "NO") === true && eBaDataLayer.page_code == "CONF" && dataTransfer.PAYMENTTYPE == "EXT") {
+    //             implibdx.core.updateDom("div.TGINSBannerMenu", function () {
+    //                 chkSite() ? console.log("JD-Centrale") : console.log(eMailTrigger.obj);
+    //                 // if (eMailTrigger.chkCountry(eMailTrigger.lineVillage.condition_country, 'eBaDataLayer', /(BLOCATIONCOUNTRYNAME)$/) === true) {
+    //                 // if(eMailTrigger.chkAirportDep(eBaDataLayer.bound,eMailTrigger.lineVillage.conditionArrAirport) === true && eBaDataLayer.bound[0].dep_airport == "HKG"){
+    //                 if (eBaDataLayer.bound[0].dep_airport == "BKK" && eBaDataLayer.bound[0].arr_airport == "SIN" && dataTransfer["EXTERNAL_ID#4"] == "HHN9"){
+    //                     $.ajax({
+    //                         type: 'POST',
+    //                         url: 'https://www.thaiairways.com/app/form/api/postdataamds/',
+    //                         data: eMailTrigger.crOBJ("SG_Halloween"),
+    //                         dataType: 'json'
+    //                     }).done(function (result) {
+    //                         console.log(result.success);
+    //                     }).error(function (e) {
+    //                         console.log(e.statusText)
+    //                     });
+    //                 }
+    //             }, 1000, 6);
+    //         } else console.log('error : senddata')
+    //     },
+    //     conditionArrAirport: ['BKK'] /*<------------- Departure*/
+    // },
     createOBJ: function () {
         const cOBJ = {
             pnr: eBaDataLayer.pnr_number,
@@ -1082,7 +1111,7 @@ const objTagScript = {
         },
         typetag:'fbpixel'
     },
-    pixel_SG: {
+    pixel_SG: { // done on tea
         desElement_ID: 'main-layout-bottom',
         txtScript: {
             script: {
@@ -1134,3 +1163,172 @@ const objDataBooking = () => JSON.stringify({
     value: eBaDataLayer.page_code === 'CONF' || eBaDataLayer.page_code === 'PURC' ? eBaDataLayer.total_price : "",
     currency: eBaDataLayer.currency
 })
+const objSearch = () => datasearch = {
+    location_code : eBaDataLayer['search']["flights"].map( x => x.departure.location_code+'-'+x.arrival.location_code).toString(),
+    destination: eBaDataLayer.trip_type !== "RT"?eBaDataLayer['search']["flights"].map( x => x.arrival.location_code).slice(-1).toString():eBaDataLayer['search']["flights"].map( x => x.arrival.location_code)[0],
+    origin:eBaDataLayer['search']["flights"].map( x => x.departure.location_code)[0]
+}
+
+const sendEmail = {
+    jdCentral: {
+        send: () => {
+            if (eMailTrigger.chkEXP(["2019", "06", "15"], ["2019", "07", "31"], "null", "null", "JD-Central", "NO") === true && eBaDataLayer.page_code == "CONF" && dataTransfer.PAYMENTTYPE == "EXT") {
+                implibdx.core.updateDom("div.TGINSBannerMenu", function () {
+                    chkSite() ? console.log("JD-Centrale") : console.log(eMailTrigger.obj);
+                    // if (eMailTrigger.chkCountry(eMailTrigger.lineVillage.condition_country, 'eBaDataLayer', /(BLOCATIONCOUNTRYNAME)$/) === true) {
+                    // if(eMailTrigger.chkAirportDep(eBaDataLayer.bound,eMailTrigger.lineVillage.conditionArrAirport) === true && eBaDataLayer.bound[0].dep_airport == "HKG"){
+                    if (eBaDataLayer.bound[0].dep_airport == "BKK") {
+                        $.ajax({
+                            type: 'POST',
+                            url: 'https://www.thaiairways.com/app/form/api/postdataamds/',
+                            data: eMailTrigger.crOBJ("JD-Central"),
+                            dataType: 'json'
+                        }).done(function (result) {
+                            console.log(result.success);
+                        }).error(function (e) {
+                            console.log(e.statusText)
+                        });
+                    }
+                }, 1000, 6);
+            } else console.log('error : senddata')
+        },
+        conditionArrAirport: ['BKK'] /*<------------- Departure*/
+    },
+    lineVillage: {
+        send: function () {
+            if (eMailTrigger.chkEXP(["2019", "07", "05"], ["2019", "11", "31"], ["2020", "01", "31"], ["2019", "06", "16"], "HK-Line_Village", "NO") === true && eBaDataLayer.page_code == "CONF" && dataTransfer.PAYMENTTYPE == "EXT") {
+                implibdx.core.updateDom("div.TGINSBannerMenu", function () {
+                    // chkSite() ? console.log("HK-Line_Village") : console.log(eMailTrigger.obj);
+                    // if (eMailTrigger.chkCountry(eMailTrigger.lineVillage.condition_country, 'eBaDataLayer', /(BLOCATIONCOUNTRYNAME)$/) === true) {
+                    if (eMailTrigger.chkAirportArr(eBaDataLayer.bound, eMailTrigger.lineVillage.conditionArrAirport) === true && eBaDataLayer.bound[0].dep_airport == "HKG" && dataTransfer["EXTERNAL_ID#4"] === "Line Village") {
+                        $.ajax({
+                            type: 'POST',
+                            url: 'https://www.thaiairways.com/app/form/postdataamds_trigger',
+                            data: eMailTrigger.crOBJ("HK-Line_Village"),
+                            dataType: 'json'
+                        }).done(function (result) {
+                            console.log(result.success);
+                        }).error(function (e) {
+                            console.log(e.statusText)
+                        });
+                    }
+                }, 1000, 6);
+            } else console.log('error : senddata')
+        },
+        conditionArrAirport: ["BKK"] /*<--- destination*/
+    },
+    SG_Halloween: {
+        send: function send() {
+            if (eMailTrigger.chkEXP(["2019", "08", "02"], ["2019", "09", "31"], ["2019", "09", "31"], ["2019", "08", "02"], "SG_Halloween", "NO") === true && eBaDataLayer.page_code == "CONF" && dataTransfer.PAYMENTTYPE == "EXT") {
+                implibdx.core.updateDom("div.TGINSBannerMenu", function () {
+                    if (eBaDataLayer.bound[0].dep_airport == "BKK" && eBaDataLayer.bound[0].arr_airport == "SIN" && dataTransfer["EXTERNAL_ID#4"] == "HHN9" && eBaDataLayer.trip_type == "RT") {
+                        $.ajax({
+                            type: 'POST',
+                            url: 'https://www.thaiairways.com/app/form/api/mastercard/',
+                            data: eMailTrigger.crOBJ("SG_Halloween_2020"),
+                            dataType: 'json'
+                        }).done(function (result) {
+                            console.log(result.success);
+                        }).error(function (e) {
+                            console.log(e.statusText);
+                        });
+                    }
+                }, 1000, 6);
+            } else console.log('error : senddata');
+        },
+        conditionArrAirport: ['BKK']
+    },
+    Samitivej: {
+        send: function send() {
+            if (eMailTrigger.chkEXP(["2019", "08", "01"], ["2019", "11", "25"], "null", "null", "Samitivej", "NO") === true && eBaDataLayer.page_code == "CONF" && dataTransfer.PAYMENTTYPE == "EXT") {
+                implibdx.core.updateDom("div.TGINSBannerMenu", function () {
+                    if (eBaDataLayer.bound[0].dep_airport == "BKK" && isDom(eBaDataLayer.bound[0].arr_airport) == false) {
+                        $.ajax({
+                            type: 'POST',
+                            url: 'https://www.thaiairways.com/app/form/api/postdataamds/',
+                            data: eMailTrigger.crOBJ("Samitivej-coupon"),
+                            dataType: 'json'
+                        }).done(function (result) {
+                            console.log(result.success);
+                        }).error(function (e) {
+                            console.log(e.statusText);
+                        });
+                    }
+                }, 1000, 6);
+            } else console.log('error : senddata');
+        },
+        conditionArrAirport: ['BKK']
+    },
+    Brusselsvoucher: {
+        send: function send() {
+            if (eMailTrigger.chkEXP(["2019", "07", "29"], ["2019", "11", "29"], ["2019", "11", "31"], ["2019", "07", "29"], "Brusselsvoucher", "NO") === true && eBaDataLayer.page_code == "CONF" && dataTransfer.PAYMENTTYPE == "EXT") {
+                implibdx.core.updateDom("div.TGINSBannerMenu", function () {
+                    if (eBaDataLayer.bound[0].dep_airport !== "BRU" && arrAirport('BRU') == true) {
+                        $.ajax({
+                            type: 'POST',
+                            url: 'https://www.thaiairways.com/app/form/api/postdataamds/',
+                            data: eMailTrigger.crOBJ("Brussels-voucher"),
+                            dataType: 'json'
+                        }).done(function (result) {
+                            console.log(result.success);
+                        }).error(function (e) {
+                            console.log(e.statusText);
+                        });
+                    }
+                }, 1000, 6);
+            } else console.log('error : senddata');
+        },
+        conditionArrAirport: ['BKK']
+    },
+    Anantaravoucher:{
+        send: function send() {
+            if (eMailTrigger.chkEXP(["2019", "10", "7"], ["2019", "10", "30"], ["2019", "11", "19"], ["2019", "10", "7"], "Anantaravoucher", "NO") === true && eBaDataLayer.page_code == "CONF" && dataTransfer.PAYMENTTYPE == "EXT") {
+                implibdx.core.updateDom("div.TGINSBannerMenu", function () {
+                    const isFirstBus = eBaDataLayer.bound.map(x => x.flights[0].cabin).find(k => /F|B/.test(k))?true:false;
+                    if (eBaDataLayer.bound[0].dep_country == "AU" && eBaDataLayer.bound[1].dep_city == "BKK" && isFirstBus == true && dataTransfer["EXTERNAL_ID#4"] === "TGANANTARA" && (eBaDataLayer.trip_type == 'RT'|| eBaDataLayer.trip_type == 'OW')){
+                        $.ajax({
+                            type: 'POST',
+                            url: 'https://www.thaiairways.com/app/form/api/postdataamds/',
+                            data: eMailTrigger.crOBJ("TG_Anantara"),
+                            dataType: 'json'
+                        }).done(function (result) {
+                            console.log(result.success);
+                        }).error(function (e) {
+                            console.log(e.statusText);
+                        });
+                    }
+                }, 1000, 6);
+            } else console.log('error : senddata');
+        },
+        conditionArrAirport: ['BKK']
+    },
+    kyotobus:{
+        send: function send() {
+            if (eMailTrigger.chkEXP(["2019", "10", "7"], ["2020", "2", "31"], ["2020", "2", "31"], ["2019", "10", "7"], "Anantaravoucher", "NO") === true && eBaDataLayer.page_code == "CONF" && dataTransfer.PAYMENTTYPE == "EXT") {
+                implibdx.core.updateDom("div.TGINSBannerMenu", function () {
+                    if (eBaDataLayer.bound[0].dep_airport == "BKK" && eBaDataLayer.bound[1].dep_airport == "NGO" && eBaDataLayer.trip_type == 'RT'){
+                        $.ajax({
+                            type: 'POST',
+                            url: urlSendemail.all_send,
+                            data: eMailTrigger.crOBJ("KyotoExpressBus"),
+                            dataType: 'json'
+                        }).done(function (result) {
+                            console.log(result.success);
+                        }).error(function (e) {
+                            console.log(e.statusText);
+                        });
+                    }
+                }, 1000, 6);
+            } else console.log('error : senddata');
+        },
+        conditionArrAirport: ['BKK']
+    }
+}
+const urlSendemail ={
+    all_send:"https://www.thaiairways.com/app/form/api/postdataamds/",
+    limit_send:"https://www.thaiairways.com/app/form/api/mastercard/",
+    limit_cont_send:"https://www.thaiairways.com/app/form/postdataamds_trigger"
+}
+const arrDom = ["CNX", "CEI", "DMK", "HDY", "KKC", "USM", "KBV", "LPT", "HGN", "NAW", "HKT", "THS", "URT", "TDX", "UBP"];
+const isDom = (city) => { return arrDom.find(key => (key == city)) ? true : false }
+const arrAirport = (airport) => eBaDataLayer.search.flights.map(k => k.arrival.location_code).find(k => (k == airport)) ? true : false;

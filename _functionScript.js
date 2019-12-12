@@ -71,15 +71,16 @@ var checkRBD = function (reg, rbd) {
 
 function linkDangerous(isMobile) {
 	implibdx.core.updateDom("#alert-title-terms-and-conditions", function () {
-		try {
-			document.getElementById('link_dangerous').addEventListener('click', () => {
-				$(".tripsummary-btn").click();
-			});
+		try {			
 			// $("#link_dangerous").on('click',()=>{
 			// 	$(".tripsummary-btn").click();
 			// })
 			if (isMobile) {
 				document.getElementById("link_dangerous").setAttribute('href', `javascript:$('.tabs-container>ul li[data-tab-index="2"]').click()`)
+			}else{
+				document.getElementById('link_dangerous').addEventListener('click', () => {
+					$(".tripsummary-btn").click();
+				});
 			}
 
 		} catch (error) {
