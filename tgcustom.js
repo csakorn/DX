@@ -313,10 +313,10 @@ function addScriptTGX(nameOBJ) {
         let dataBooking = eBaDataLayer.page_code === 'CONF' || eBaDataLayer.page_code === 'PURC' ? "fbq('track', '" + pix_pageCode + "'," + objDataBooking() + ")" : "";
         st2.forEach((item) => {
             createAttr = document.createElement(item)
-            if(obj['typetag'] == 'fbpixel'){
+            if (obj['typetag'] == 'fbpixel') {
                 txtNode = document.createTextNode(obj['txtScript'][item]['txt'] + ((item === 'script') ? dataBooking : ''))
                 createAttr.appendChild(txtNode)
-            }else{
+            } else {
                 createAttr.setAttribute('async', 'async');
                 createAttr.src = obj['txtScript'][item]['txt'];
             }
@@ -358,7 +358,11 @@ function remove_linkPolicy() {
         $(".contract-detail>div a").css('display', 'none')
     }, 1000, 5);
 }
-
+const hide_MEA = (isDom) => {
+    if (isDom) {
+        $("#tpl7_MEA").css('display', 'none');
+    }
+}
 // function linkDangerous(isMobile){
 //     $("#link_dangerous").on('click',()=>{
 //         $(".tripsummary-btn").click();
@@ -399,12 +403,14 @@ var startFNJS = function startFNJS() {
         case "ALPI":
 
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code);
+            // hide_MEA(eBaDataLayer.external_id == "TH_DOMESTIC")
 
             break;
 
         case "APIM":
 
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code);
+            // hide_MEA(eBaDataLayer.external_id == "TH_DOMESTIC")
 
             break;
         case "AAS":
@@ -432,8 +438,8 @@ var startFNJS = function startFNJS() {
             // chkSite() && dataTransfer['EXTERNAL_ID#4'] === "Line Village" && eBaDataLayer.trip_type === "RT" && eBaDataLayer.market === "HK" ? sendEmail.lineVillage.send() : false;
             addFontAwesome();
             // chkSite()?sendEmail.jdCentral.send():console.log('jdCentral');
-            
-            
+
+
             break;
 
         case "RTPL":

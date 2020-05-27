@@ -42,7 +42,7 @@ var ROH = {
 
                 ROH.createOBJ();
 
-                if ((check.period(passengerROH.CheckinDate, 4, passengerROH.CheckoutDate, 0) === true) && (check.period(passengerROH.CheckinDate, 30, passengerROH.CheckoutDate, 1) === true)) {
+                if ((check.period(passengerROH.CheckinDate, 4, passengerROH.CheckoutDate, 0) === true) && (check.period(passengerROH.CheckinDate, 25, passengerROH.CheckoutDate, 1) === true)) {
 
                     $.ajax({
                             type: 'POST',

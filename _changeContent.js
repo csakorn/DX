@@ -7,18 +7,18 @@ var travellerAlert = {
 }
 var _extraServiceOBJ = {
 	seat: {
-		CN: "<p class=\"box_service\">\u4e58\u5ba2\u53ef\u5728\u56fd\u9645\u822a\u73ed\u8d77\u98de\u65f6\u95f4\u63d0\u524d48\u5c0f\u65f6\u5728\u7ebf\u9884\u9009\u673a\u4e0a\u5ea7\u4f4d <span class='txt-b'>\u51fa\u7968\u540e\u53ef\u8d2d\u4e70\u4f18\u9009\u5ea7\u4f4d</span></p>",
+		CN: "<p class=\"box_service\">\u4e58\u5ba2\u53ef\u5728\u56fd\u9645\u822a\u73ed\u8d77\u98de\u65f6\u95f4\u63d0\u524d48\u5c0f\u65f6\u5728\u7ebf\u9884\u9009\u673a\u4e0a\u5ea7\u4f4d <span class='txt-b hide'>\u51fa\u7968\u540e\u53ef\u8d2d\u4e70\u4f18\u9009\u5ea7\u4f4d</span></p>",
 		DE: "<p class=\"box_service\">Sitzplatzreservierungen k\u00f6nnen bei internationalen Fl\u00fcgen bis 48 Stunden vor Abflug vorgenommen werden.</p>",
 		ES: "<p class=\"box_service\">La reserva de asientos online es posible en vuelos internacionales hasta 48 horas antes de la salida. Aplicable solamente para los vuelos de TG de 3 d\u00edgitos.</p>",
-		FR: "<p class=\"box_service\">R\u00e9serverz votre si\u00e8ge en ligne jusqu\'\u00e0 48 heures avant le d\u00e9part de votre vol.<span class='txt-b'>Le si\u00e8ge pr\u00e9f\u00e9rentiel peut \u00eatre achet\u00e9 apr\u00e8s l\'\u00e9mission du billet</span></p>",
-		GB: "<p class=\"box_service\">Online seat reservation is possible on international flights until 48 hours before departure of TG 3 digits flight only. <span class='txt-b'>Preferred Seat can be purchased after ticket has been issued.</span></p>",
-		IT: "<p class=\"box_service\">La prenotazione online del posto, solo sui voli internazionali TG a 3 cifre,  \u00e8 possibile fino a 48 ore prima della partenza. <span class='txt-b'>Il posto preferenziale pu\u00f2 essere acquistato dopo l\u2019emissione del biglietto</span></p>",
-		JP: "<p class=\"box_service\">\u30bf\u30a4\u56fd\u969b\u822a\u7a7a\u904b\u822a\uff08TG3\u6841\u4fbf\uff09\u306e\u56fd\u969b\u7dda\u3067\u306f\u3001\u3054\u51fa\u767a48\u6642\u9593\u524d\u307e\u3067\u3001\u30aa\u30f3\u30e9\u30a4\u30f3\u306b\u3066\u5ea7\u5e2d\u3092\u3054\u6307\u5b9a\u3044\u305f\u3060\u3051\u307e\u3059\u3002\n <span class='txt-b'>\u822a\u7a7a\u5238\u3054\u8cfc\u5165\u5f8c\u304b\u3089TG\u512a\u5148\u5ea7\u5e2d\uff08\u6709\u6599\uff09\u3092\u304a\u7533\u8fbc\u307f\u9802\u3051\u307e\u3059</span></p>",
-		KO: "<p class=\"box_service\">\uc6f9\uc0ac\uc774\ud2b8\ub97c \ud1b5\ud55c \uc88c\uc11d \uc120\ud0dd\uc740 \ud0c0\uc774\ud56d\uacf5 \uc6b4\ud56d\ud3b8 TGxxx(3\uc790\ub9ac \uc22b\uc790 \ud3b8\uba85) \uad6d\uc81c\uc120\uc5d0 \ud55c\ud558\uc5ec \ucd9c\ubc1c 48\uc2dc\uac04 \uc804\uae4c\uc9c0\ub9cc \uac00\ub2a5\ud569\ub2c8\ub2e4. <span class='txt-b'>\uc120\ud638 \uc88c\uc11d \uc11c\ube44\uc2a4\ub294 \ud56d\uacf5\uad8c \uad6c\ub9e4(\ubc1c\uad8c) \ud6c4\uc5d0 \uad6c\uc785\ud558\uc2e4 \uc218 \uc788\uc2b5\ub2c8\ub2e4</span></p>",
-		RU: "<p class=\"box_service\">\u041f\u0440\u0435\u0434\u0432\u0430\u0440\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0435 \u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u043c\u0435\u0441\u0442 \u0432 \u0441\u0430\u043b\u043e\u043d\u0435 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u043e \u043d\u0435 \u043f\u043e\u0437\u0434\u043d\u0435\u0435 48 \u0447\u0430\u0441\u043e\u0432 \u0434\u043e \u0432\u044b\u043b\u0435\u0442\u0430 \u043d\u0430 \u043c\u0435\u0436\u0434\u0443\u043d\u0430\u0440\u043e\u0434\u043d\u044b\u0445 \u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u044f\u0445 (\u0442\u043e\u043b\u044c\u043a\u043e \u0434\u043b\u044f 3-\u0445 \u0437\u043d\u0430\u0447\u043d\u044b\u0445 \u043d\u043e\u043c\u0435\u0440\u043e\u0432 \u0440\u0435\u0439\u0441\u043e\u0432) <span class='txt-b'>\u0423\u0441\u043b\u0443\u0433\u0430 \u00ab\u0432\u044b\u0431\u043e\u0440 \u043c\u0435\u0441\u0442\u0430\u00bb \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u0430 \u043a \u0437\u0430\u043a\u0430\u0437\u0443 \u043f\u043e\u0441\u043b\u0435 \u043e\u0444\u043e\u0440\u043c\u043b\u0435\u043d\u0438\u044f \u0431\u0438\u043b\u0435\u0442\u0430</span></p>",
-		TH: "<p class=\"box_service\">\u0e17\u0e48\u0e32\u0e19\u0e2a\u0e32\u0e21\u0e32\u0e23\u0e16\u0e01\u0e33\u0e2b\u0e19\u0e14\u0e17\u0e35\u0e48\u0e19\u0e31\u0e48\u0e07\u0e2d\u0e2d\u0e19\u0e44\u0e25\u0e19\u0e4c\u0e25\u0e48\u0e27\u0e07\u0e2b\u0e19\u0e49\u0e32\u0e44\u0e14\u0e49 \u0e08\u0e19\u0e16\u0e36\u0e07\u0e40\u0e27\u0e25\u0e32 48 \u0e0a\u0e31\u0e48\u0e27\u0e42\u0e21\u0e07\u0e01\u0e48\u0e2d\u0e19\u0e40\u0e27\u0e25\u0e32\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e2d\u0e2d\u0e01 <span class='txt-b'> \u0e1c\u0e39\u0e49\u0e42\u0e14\u0e22\u0e2a\u0e32\u0e23\u0e2a\u0e32\u0e21\u0e32\u0e23\u0e16\u0e0b\u0e37\u0e49\u0e2d Preferred Seat \u0e44\u0e14\u0e49\u0e2b\u0e25\u0e31\u0e07\u0e08\u0e32\u0e01\u0e14\u0e33\u0e40\u0e19\u0e34\u0e19\u0e01\u0e32\u0e23\u0e2d\u0e2d\u0e01\u0e15\u0e31\u0e4b\u0e27\u0e40\u0e23\u0e35\u0e22\u0e1a\u0e23\u0e49\u0e2d\u0e22\u0e41\u0e25\u0e49\u0e27</p>",
-		TW: "<p class=\"box_service\">\u7dda\u4e0a\u9810\u9078\u5ea7\u4f4d\u50c5\u9650\u65bc\u6cf0\u822a\u71df\u904b\u4e4b3\u78bc\u822a\u73ed\u3002\u570b\u969b\u7dda\u822a\u73ed\u8d77\u98db\u524d48\u5c0f\u6642\u53ef\u80fd\u63d0\u4f9b\u7dda\u4e0a\u9810\u9078\u5ea7\u4f4d\u670d\u52d9\u3002 <span class='txt-b'>\u6a5f\u7968\u767c\u51fa\u5f8c\uff0c\u5373\u53ef\u8cfc\u8cb7\u9996\u9078\u5ea7\u4f4d\u3002</span></p>",
-		SE: "<p class=\"box_service\">Du kan v\u00e4lja din sittplats online p\u00e5 internationella flygningar fram till 48h innan avg\u00e5ng p\u00e5 TG flyg med tre siffror. <span class='txt-b'>Platsreservation med extra benutrymme kan köpas efter att biljetten är bekräftad</span></p>"
+		FR: "<p class=\"box_service\">R\u00e9serverz votre si\u00e8ge en ligne jusqu\'\u00e0 48 heures avant le d\u00e9part de votre vol.<span class='txt-b hide'>Le si\u00e8ge pr\u00e9f\u00e9rentiel peut \u00eatre achet\u00e9 apr\u00e8s l\'\u00e9mission du billet</span></p>",
+		GB: "<p class=\"box_service\">Online seat reservation is possible on international flights until 48 hours before departure of TG 3 digits flight only. <span class='txt-b hide'>Preferred Seat can be purchased after ticket has been issued.</span></p>",
+		IT: "<p class=\"box_service\">La prenotazione online del posto, solo sui voli internazionali TG a 3 cifre,  \u00e8 possibile fino a 48 ore prima della partenza. <span class='txt-b hide'>Il posto preferenziale pu\u00f2 essere acquistato dopo l\u2019emissione del biglietto</span></p>",
+		JP: "<p class=\"box_service\">\u30bf\u30a4\u56fd\u969b\u822a\u7a7a\u904b\u822a\uff08TG3\u6841\u4fbf\uff09\u306e\u56fd\u969b\u7dda\u3067\u306f\u3001\u3054\u51fa\u767a48\u6642\u9593\u524d\u307e\u3067\u3001\u30aa\u30f3\u30e9\u30a4\u30f3\u306b\u3066\u5ea7\u5e2d\u3092\u3054\u6307\u5b9a\u3044\u305f\u3060\u3051\u307e\u3059\u3002\n <span class='txt-b hide'>\u822a\u7a7a\u5238\u3054\u8cfc\u5165\u5f8c\u304b\u3089TG\u512a\u5148\u5ea7\u5e2d\uff08\u6709\u6599\uff09\u3092\u304a\u7533\u8fbc\u307f\u9802\u3051\u307e\u3059</span></p>",
+		KO: "<p class=\"box_service\">\uc6f9\uc0ac\uc774\ud2b8\ub97c \ud1b5\ud55c \uc88c\uc11d \uc120\ud0dd\uc740 \ud0c0\uc774\ud56d\uacf5 \uc6b4\ud56d\ud3b8 TGxxx(3\uc790\ub9ac \uc22b\uc790 \ud3b8\uba85) \uad6d\uc81c\uc120\uc5d0 \ud55c\ud558\uc5ec \ucd9c\ubc1c 48\uc2dc\uac04 \uc804\uae4c\uc9c0\ub9cc \uac00\ub2a5\ud569\ub2c8\ub2e4. <span class='txt-b hide'>\uc120\ud638 \uc88c\uc11d \uc11c\ube44\uc2a4\ub294 \ud56d\uacf5\uad8c \uad6c\ub9e4(\ubc1c\uad8c) \ud6c4\uc5d0 \uad6c\uc785\ud558\uc2e4 \uc218 \uc788\uc2b5\ub2c8\ub2e4</span></p>",
+		RU: "<p class=\"box_service\">\u041f\u0440\u0435\u0434\u0432\u0430\u0440\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0435 \u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u043c\u0435\u0441\u0442 \u0432 \u0441\u0430\u043b\u043e\u043d\u0435 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u043e \u043d\u0435 \u043f\u043e\u0437\u0434\u043d\u0435\u0435 48 \u0447\u0430\u0441\u043e\u0432 \u0434\u043e \u0432\u044b\u043b\u0435\u0442\u0430 \u043d\u0430 \u043c\u0435\u0436\u0434\u0443\u043d\u0430\u0440\u043e\u0434\u043d\u044b\u0445 \u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u044f\u0445 (\u0442\u043e\u043b\u044c\u043a\u043e \u0434\u043b\u044f 3-\u0445 \u0437\u043d\u0430\u0447\u043d\u044b\u0445 \u043d\u043e\u043c\u0435\u0440\u043e\u0432 \u0440\u0435\u0439\u0441\u043e\u0432) <span class='txt-b hide'>\u0423\u0441\u043b\u0443\u0433\u0430 \u00ab\u0432\u044b\u0431\u043e\u0440 \u043c\u0435\u0441\u0442\u0430\u00bb \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u0430 \u043a \u0437\u0430\u043a\u0430\u0437\u0443 \u043f\u043e\u0441\u043b\u0435 \u043e\u0444\u043e\u0440\u043c\u043b\u0435\u043d\u0438\u044f \u0431\u0438\u043b\u0435\u0442\u0430</span></p>",
+		TH: "<p class=\"box_service\">\u0e17\u0e48\u0e32\u0e19\u0e2a\u0e32\u0e21\u0e32\u0e23\u0e16\u0e01\u0e33\u0e2b\u0e19\u0e14\u0e17\u0e35\u0e48\u0e19\u0e31\u0e48\u0e07\u0e2d\u0e2d\u0e19\u0e44\u0e25\u0e19\u0e4c\u0e25\u0e48\u0e27\u0e07\u0e2b\u0e19\u0e49\u0e32\u0e44\u0e14\u0e49 \u0e08\u0e19\u0e16\u0e36\u0e07\u0e40\u0e27\u0e25\u0e32 48 \u0e0a\u0e31\u0e48\u0e27\u0e42\u0e21\u0e07\u0e01\u0e48\u0e2d\u0e19\u0e40\u0e27\u0e25\u0e32\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e2d\u0e2d\u0e01 <span class='txt-b hide'> \u0e1c\u0e39\u0e49\u0e42\u0e14\u0e22\u0e2a\u0e32\u0e23\u0e2a\u0e32\u0e21\u0e32\u0e23\u0e16\u0e0b\u0e37\u0e49\u0e2d Preferred Seat \u0e44\u0e14\u0e49\u0e2b\u0e25\u0e31\u0e07\u0e08\u0e32\u0e01\u0e14\u0e33\u0e40\u0e19\u0e34\u0e19\u0e01\u0e32\u0e23\u0e2d\u0e2d\u0e01\u0e15\u0e31\u0e4b\u0e27\u0e40\u0e23\u0e35\u0e22\u0e1a\u0e23\u0e49\u0e2d\u0e22\u0e41\u0e25\u0e49\u0e27</p>",
+		TW: "<p class=\"box_service\">\u7dda\u4e0a\u9810\u9078\u5ea7\u4f4d\u50c5\u9650\u65bc\u6cf0\u822a\u71df\u904b\u4e4b3\u78bc\u822a\u73ed\u3002\u570b\u969b\u7dda\u822a\u73ed\u8d77\u98db\u524d48\u5c0f\u6642\u53ef\u80fd\u63d0\u4f9b\u7dda\u4e0a\u9810\u9078\u5ea7\u4f4d\u670d\u52d9\u3002 <span class='txt-b hide'>\u6a5f\u7968\u767c\u51fa\u5f8c\uff0c\u5373\u53ef\u8cfc\u8cb7\u9996\u9078\u5ea7\u4f4d\u3002</span></p>",
+		SE: "<p class=\"box_service\">Du kan v\u00e4lja din sittplats online p\u00e5 internationella flygningar fram till 48h innan avg\u00e5ng p\u00e5 TG flyg med tre siffror. <span class='txt-b hide'>Platsreservation med extra benutrymme kan köpas efter att biljetten är bekräftad</span></p>"
 
 	},
 	meal: {
@@ -54,12 +54,12 @@ var _extraServiceOBJ = {
 		DE: "",
 		ES: "",
 		FR: "",
-		GB: `THAI provides wheelchair service without any extra charge. Please request wheelchairs at least 48 hours before departure date`,
+		GB: `Wheelchair (WCHR) service is available at no extra charge for passengers who find walking inconvenient, but can ascend and descend stairs of the aircraft by themselves. Request this special assistance at least 48 hours before your departure time.`,
 		IT: "",
 		JP: "",
 		KO: "",
 		RU: "",
-		TH: `\u0e01\u0e32\u0e23\u0e1a\u0e34\u0e19\u0e44\u0e17\u0e22\u0e43\u0e2b\u0e49\u0e1a\u0e23\u0e34\u0e01\u0e32\u0e23\u0e40\u0e01\u0e49\u0e32\u0e2d\u0e35\u0e49\u0e23\u0e16\u0e40\u0e02\u0e47\u0e19 \u0e42\u0e14\u0e22\u0e44\u0e21\u0e48\u0e04\u0e34\u0e14\u0e04\u0e48\u0e32\u0e43\u0e0a\u0e49\u0e08\u0e48\u0e32\u0e22 \u0e01\u0e23\u0e38\u0e13\u0e32\u0e41\u0e08\u0e49\u0e07\u0e01\u0e48\u0e2d\u0e19 48 \u0e0a\u0e31\u0e48\u0e27\u0e42\u0e21\u0e07`,
+		TH: `\u0e1a\u0e23\u0e34\u0e01\u0e32\u0e23\u0e23\u0e16\u0e40\u0e02\u0e47\u0e19 (WCHR) \u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e1c\u0e39\u0e49\u0e42\u0e14\u0e22\u0e2a\u0e32\u0e23\u0e17\u0e35\u0e48\u0e44\u0e21\u0e48\u0e2a\u0e32\u0e21\u0e32\u0e23\u0e16\u0e40\u0e14\u0e34\u0e19\u0e23\u0e30\u0e22\u0e30\u0e44\u0e01\u0e25\u0e44\u0e14\u0e49 \u0e41\u0e15\u0e48\u0e2a\u0e32\u0e21\u0e32\u0e23\u0e16\u0e02\u0e36\u0e49\u0e19\x2F\u0e25\u0e07\u0e1a\u0e31\u0e19\u0e44\u0e14\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e1a\u0e34\u0e19\u0e41\u0e25\u0e30\u0e40\u0e14\u0e34\u0e19\u0e40\u0e02\u0e49\u0e32\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e1a\u0e34\u0e19\u0e40\u0e2d\u0e07\u0e44\u0e14\u0e49 \u0e08\u0e33\u0e40\u0e1b\u0e47\u0e19\u0e15\u0e49\u0e2d\u0e07\u0e17\u0e33\u0e01\u0e32\u0e23\u0e02\u0e2d\u0e23\u0e31\u0e1a\u0e1a\u0e23\u0e34\u0e01\u0e32\u0e23\u0e25\u0e48\u0e27\u0e07\u0e2b\u0e19\u0e49\u0e32\u0e2d\u0e22\u0e48\u0e32\u0e07\u0e19\u0e49\u0e2d\u0e22 48 \u0e0a\u0e31\u0e48\u0e27\u0e42\u0e21\u0e07\u0e01\u0e48\u0e2d\u0e19\u0e40\u0e27\u0e25\u0e32\u0e40\u0e14\u0e34\u0e19\u0e17\u0e32\u0e07\u0e42\u0e14\u0e22\u0e44\u0e21\u0e48\u0e21\u0e35\u0e04\u0e48\u0e32\u0e43\u0e0a\u0e49\u0e08\u0e48\u0e32\u0e22 \u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e01\u0e32\u0e23\u0e1a\u0e23\u0e34\u0e01\u0e32\u0e23\u0e0a\u0e48\u0e27\u0e22\u0e40\u0e2b\u0e25\u0e37\u0e2d\u0e1e\u0e34\u0e40\u0e28\u0e29\u0e2d\u0e37\u0e48\u0e19\u0e46 \u0e15\u0e34\u0e14\u0e15\u0e48\u0e2d THAI Contact Center 02-356-1111`,
 		TW: "",
 		SE: ""
 	}
@@ -124,6 +124,9 @@ var updateHTML = {
 				// $("div[id$='_"+idService+"']>div div.description-text").append(check.defaultLang(_extraServiceOBJ[nService], eBaDataLayer.language, "GB"));
 
 				$('.' + idService).append(check.defaultLang(_extraServiceOBJ[nService], eBaDataLayer.language, "GB"));
+				if (eBaDataLayer.bound[0].flights[0].cabin == "E") {
+					$('.box_service > .txt-b').removeClass('hide')
+				}
 				// $(BAG).append( check.defaultLang(_extraServiceOBJ.baggage,eBaDataLayer.language,"GB") );
 				// $(MEA).append( check.defaultLang(_extraServiceOBJ.meal,eBaDataLayer.language,"GB") );
 			} catch (error) {
@@ -205,7 +208,7 @@ var updateHTML = {
 			if (eBaDataLayer.bound[0].flights[0].cabin !== 'E') {
 				$('#service-desc-SIT div').removeClass('class-default');
 				$('#service-desc-SIT > div div.class-' + eBaDataLayer.bound[0].flights[0].cabin).addClass('class-default');
-			} else if (eBaDataLayer.bound[0].flights[0].cabin == 'N') {
+			} else if (eBaDataLayer.bound[0].flights[0].cabin == 'N' || eBaDataLayer.bound[0].flights[0].operated_by.airline_code == "WE") {
 				$('#service-desc-SIT div').removeClass('class-default');
 				$('#service-desc-SIT > div div.airline-WE').addClass('class-default');
 			}
@@ -531,3 +534,45 @@ const changeClassPagmentbox = () => {
 		$('.relative.fop-wrapper').removeClass('col-xs-24 col-sm-18').addClass('col-sm-16')
 	}, 1000, 5);
 }
+
+const ms_icon = () => {
+	implibdx.core.updateDom('#tpl4_rememberDetails', function () {
+		const obj = {
+			remember: {
+				element: document.getElementById("message-remember-checkbox"),
+				remove_class: "icon-miles",
+				add_class: "icon-save",
+			},
+			allowemail: {
+				element: document.getElementById("message-allow-data-collection"),
+				remove_class: "icon-miles",
+				add_class: "icon-envelope",
+			}
+		}
+		Object.keys(obj).forEach(key => {
+			obj[key].element.firstChild.classList.remove(obj[key].remove_class);
+			obj[key].element.firstChild.classList.add(obj[key].add_class);
+		})
+	}, 1000, 3);
+}
+/* Remove Bag on Flight CUT */
+const xeBag = () => {
+	const cityairport = /(CTU)/.test(eBaDataLayer.bound.map(x => x.route).toString());
+	if (eBaDataLayer.page_code == 'APIM' && cityairport == true) {
+		implibdx.core.updateDom('#apim_afterContactInformation', function () {
+			document.getElementById("tpl7_BAG").remove();
+		}, 1000, 3);
+	} else if (eBaDataLayer.page_code === 'MDFSR' && cityairport == true) {
+		implibdx.core.updateDom('.catalogServices-teasers-container', function () {
+			// document.getElementsByClassName('servicesbreakdown-footer')[0].remove();
+			document.getElementsByClassName('catalogServices-teaser-column-BAG')[0].remove();
+			console.log('xxx')
+		}, 1000, 3);
+	} else if (eBaDataLayer.page_code == "AAS" && cityairport == true) {
+		implibdx.core.updateDom('.catalogServices-teasers-container', function () {
+			document.getElementsByClassName('catalogServices-teaser-BAG')[0].remove();
+		}, 1000, 3);
+	}
+}
+
+

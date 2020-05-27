@@ -1,5 +1,5 @@
 /*
- Modifide Date :: Thu Dec 12 2019 14:53:41 GMT+0700 (Indochina Time)
+ Modifide Date :: Fri May 22 2020 14:05:57 GMT+0700 (Indochina Time)
  Modifide By :: Chalermpol Sakorn
  */ 
 var implibdx = implibdx || {};
@@ -105,157 +105,6 @@ var emailencrypt = function(email){
     return '"'+Base64.encode(email)+'"';
 }
 
-var bannerTG = {
-    eServe:{
-        image:{
-            URL:{
-                GB:"http://www.thaiairways.com/static/common/imgscontent/banner/survey_banne_EN.jpg",
-                TH:"http://www.thaiairways.com/static/common/imgscontent/banner/survey_banne_TH.jpg"
-            },
-            alt:"Web Satisfaction Survey",
-            linkURL:{
-                GB:"http://www.thaiairways.com/en_TH/satisfaction_survey/survey_form_pnr.page",
-                TH:"http://www.thaiairways.com/th_TH/satisfaction_survey/survey_form_pnr.page"
-            }           
-        },
-        target:"_blank",
-        class:"box_TGINSBannerMenu",
-        ADisplay:"",
-        onClick:{
-            CONF:"onclick=\"_gaq.push(['_trackEvent', 'TH', 'eServey-CONF', 'eServey'])\"",
-            RTPL:"onclick=\"_gaq.push(['_trackEvent', 'TH', 'eServey-RTPL', 'eServey'])\""
-        },
-        param:{
-            pnr:"pnr_nbr"
-        },
-        condition:{
-            start:"",
-            end:"",
-            displaycon:"",          
-            chk:null,
-            pagecode:['CONF','RTPL'],
-            market:['All']
-        }
-    },
-    HotelsBestOffers:{
-        image:{
-            URL:{
-                GB:"http://www.thaiairways.com/static/common/imgscontent/banner/ExclusiveROH_EN_CONF.jpg",
-                TH:"http://www.thaiairways.com/static/common/imgscontent/banner/ExclusiveROH_TH_CONF.jpg"
-            },
-            alt:"Fly With Thai | Get Hotels Best Offers",
-            linkURL:{
-                GB:"javascript:void(0)",
-                TH:"javascript:void(0)"
-            }           
-        },
-        target:"_blank",
-        class:"box_TGINSBannerMenu HotelsOffers",
-        ADisplay:"",
-        onClick:{
-            CONF:"onclick=\"\"",
-            RTPL:"onclick=\"\""
-        },
-        param:"",
-        condition:{
-            start:"",
-            end:"",
-            displaycon:"",          
-            chk:null,
-            pagecode:['CONF','RTPL'],
-            market:['TH','XX','YY']
-        }
-    },
-    BaliTreat:{
-        image:{
-            URL:{
-                GB:"http://www.thaiairways.com/static/common/imgscontent/banner/baliTreatPrivilege_banner.jpg"              
-            },
-            alt:"Bali Treat is special privilege",
-            linkURL:{
-                GB:"https://www.thaiairways.com/en_ID/offer/privileges/Privilege.page?utm_source=&utm_medium=website&utm_campaign=click-BaliTreat-ConfirmationPage"                  
-            }           
-        },
-        target:"_blank",
-        class:"box_TGINSBannerMenu BaliTreat",
-        ADisplay:"",
-        onClick:{
-            CONF:"onclick=\"_gaq.push(['_trackEvent', 'ID', 'Offers-CONF', 'BaliTreat'])\"",
-            RTPL:"onclick=\"_gaq.push(['_trackEvent', 'ID', 'Offers-RTPL', 'BaliTreat'])\""
-
-                    },
-        param:"",
-        condition:{
-            start:["2019","04","3"],
-            end:["2019","11","31"],
-            displaycon:"ticketing",          
-            chk:{
-                rex:'[DPS]{3}',
-                data:['bound','route']
-            },
-            pagecode:['CONF','RTPL'],
-            market:['TH','XX','YY']
-        }
-    },
-    HolidayTaxis:{
-        image:{
-            URL:{
-                GB:"http://www.thaiairways.com/static/common/imgscontent/banner/HolidayTaxisGB.png",
-                TH:"http://www.thaiairways.com/static/common/imgscontent/banner/HolidayTaxisTH.png"          
-            },
-            alt:"HolidayTaxis",
-            linkURL:{
-                GB:"https://www.holidaytaxis.com/en/?ref=THAI&currency=THB&utm_source=ThaiAiways.com&utm_medium=banner&utm_campaign=confirmation-page",
-                TH:"https://www.holidaytaxis.com/th/?ref=THAI&currency=THB&utm_source=ThaiAiways.com&utm_medium=banner&utm_campaign=confirmation-page"
-            }           
-        },
-        target:"_blank",
-        class:"box_TGINSBannerMenu",
-        ADisplay:"",
-        onClick:{
-            CONF:"onclick=\"dcsMultiTrack(\'WT.dl\',\'99\',\'WT.ac\',\'HolidayTaxis\',\'WT.totalamount\',\'\',\'WT.currcode\',\'\',\'WT.bookconfirm\',\'\',\'WT.bookfromcity\',\'\',\'WT.booktocity\',\'\',\'WT.thaicountry\',\'\',\'WT.triptype\',\'\',\'WT.bcabin\',\'\',\'WT.ceco\',\'\',\'WT.flight_numbers\',\'\',\'WT.route\',\'\',\'WT.office_id\',\'\',\'WT.rloc\',\'\',\'WT.external_id\',\'\',\'WT.paytype\',\'\',\'WT.site\',\'\',\'WT.depdate\',\'\')\"",
-            RTPL:"onclick=\"dcsMultiTrack(\'WT.dl\',\'99\',\'WT.ac\',\'HolidayTaxis\')\""
-        },
-        param:"",
-        condition:{
-            start:"",
-            end:"",
-            displaycon:"",          
-            chk:null,
-            pagecode:['CONF','RTPL'],
-            market:['TH','XX','YY']
-        }
-    },
-    Bellugg:{
-        image:{
-            URL:{
-                GB:"http://www.thaiairways.com/static/common/imgscontent/banner/Bellugg-bag.jpg",
-                TH:"http://www.thaiairways.com/static/common/imgscontent/banner/Bellugg-bag.jpg"
-            },
-            alt:"Bellugg",
-            linkURL:{
-                GB:"https://www.bellugg.com/thaiairways/",
-                TH:"https://www.bellugg.com/thaiairways/"
-            }           
-        },
-        target:"_blank",
-        class:"box_TGINSBannerMenu",
-        ADisplay:"",
-        onClick:{
-            CONF:"onclick=\"dcsMultiTrack(\'WT.dl\',\'99\',\'WT.ac\',\'Bellugg\',\'WT.totalamount\',\'\',\'WT.currcode\',\'\',\'WT.bookconfirm\',\'\',\'WT.bookfromcity\',\'\',\'WT.booktocity\',\'\',\'WT.thaicountry\',\'\',\'WT.triptype\',\'\',\'WT.bcabin\',\'\',\'WT.ceco\',\'\',\'WT.flight_numbers\',\'\',\'WT.route\',\'\',\'WT.office_id\',\'\',\'WT.rloc\',\'\',\'WT.external_id\',\'\',\'WT.paytype\',\'\',\'WT.site\',\'\',\'WT.depdate\',\'\')\"",
-            RTPL:"onclick=\"dcsMultiTrack(\'WT.dl\',\'99\',\'WT.ac\',\'Bellugg\')\""
-        },
-        param:"",
-        condition:{
-            start:["2018","07","6"],
-            end:["2018","10","16"],
-            displaycon:"Departure",          
-            chk:null,
-            pagecode:['CONF','RTPL'],
-            market:['TH','XX','YY']
-        }
-    }
-}
 
 
 
@@ -264,399 +113,313 @@ var bannerTG = {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-let runWidget = (x)=>{
-	let mkt = (x !== "")?x:"DD";
+let runWidget = (x) => {
+	let mkt = (x !== "") ? x : "DD";
 	const market = {
-		AU:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
-			rentalCar.add()
-			wt_booking.add();
-			ROH.sendData();
-			displayTeaser.add();
-			},1000,5)
+		AU: () => {
+			implibdx.core.updateDom("div#TGINSBanner", function () {
+				wt_booking.add();
+				ROH.sendData();
+			}, 1000, 5)
 		},
-		AT:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
+		AT: () => {
+			implibdx.core.updateDom("div#TGINSBanner", function () {
 
-						rentalCar.add()
-			wt_booking.add();
-			ROH.sendData();
-			displayTeaser.add();
-			},1000,5)
+				wt_booking.add();
+				ROH.sendData();
+			}, 1000, 5)
 		},
-		BE:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
+		BE: () => {
+			implibdx.core.updateDom("div#TGINSBanner", function () {
 
-						rentalCar.add()
-			wt_booking.add();
-			ROH.sendData();
-			displayTeaser.add();
-			},1000,5)
+				wt_booking.add();
+				ROH.sendData();
+			}, 1000, 5)
 		},
-		KH:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
+		KH: () => {
+			implibdx.core.updateDom("div#TGINSBanner", function () {
 
-						rentalCar.add()
-			wt_booking.add();
-			ROH.sendData();
-			displayTeaser.add();
-			},1000,5)
+				wt_booking.add();
+				ROH.sendData();
+			}, 1000, 5)
 		},
-		CA:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
+		CA: () => {
+			implibdx.core.updateDom("div#TGINSBanner", function () {
 
-						rentalCar.add()
-			wt_booking.add();
-			ROH.sendData();
-			displayTeaser.add();
-			},1000,5)
+				wt_booking.add();
+				ROH.sendData();
+			}, 1000, 5)
 		},
-		CN:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
+		CN: () => {
+			implibdx.core.updateDom("div#TGINSBanner", function () {
 
-						rentalCar.add()
-			wt_booking.add();
-			ROH.sendData();
-			displayTeaser.add();
-			},1000,5)
+				wt_booking.add();
+				ROH.sendData();
+			}, 1000, 5)
 		},
-		DK:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
+		DK: () => {
+			implibdx.core.updateDom("div#TGINSBanner", function () {
 
-						rentalCar.add()
-			wt_booking.add();
-			ROH.sendData();
-			displayTeaser.add();
-			},1000,5)
+				wt_booking.add();
+				ROH.sendData();
+			}, 1000, 5)
 		},
-		FR:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
-
-			$('#pinkbanner').remove();
-			$('#rentalCar').remove();
-			$('#b_container').remove();
-			$('.box_TGINSBannerMenu').remove();
-
-
-			console.log('NO..!! Teaser Display')
-			},1000,5)
+		FR: () => {
+			implibdx.core.updateDom("div#TGINSBanner", function () {
+				$('#pinkbanner').remove();
+				$('#rentalCar').remove();
+				$('#b_container').remove();
+				$('.box_TGINSBannerMenu').remove();
+				console.log('NO..!! Teaser Display')
+			}, 1000, 5)
 		},
-		DE:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
+		DE: () => {
+			implibdx.core.updateDom("div#TGINSBanner", function () {
 
-						rentalCar.add()
-			wt_booking.add();
-			ROH.sendData();
-			displayTeaser.add();
-			},1000,5)
+				wt_booking.add();
+				ROH.sendData();
+			}, 1000, 5)
 		},
-		HK:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
+		HK: () => {
+			implibdx.core.updateDom("div#TGINSBanner", function () {
 
-						rentalCar.add()
-			wt_booking.add();
-			ROH.sendData();
-			displayTeaser.add();
-			},1000,5)
+				wt_booking.add();
+				ROH.sendData();
+			}, 1000, 5)
 		},
-		IN:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
+		IN: () => {
+			implibdx.core.updateDom("div#TGINSBanner", function () {
 
-						rentalCar.add()
-			wt_booking.add();
-			ROH.sendData();
-			displayTeaser.add();
-			},1000,5)
+				wt_booking.add();
+				ROH.sendData();
+			}, 1000, 5)
 		},
-		ID:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
+		ID: () => {
+			implibdx.core.updateDom("div#TGINSBanner", function () {
 
-						rentalCar.add()
-			wt_booking.add();
-			ROH.sendData();
-			displayTeaser.add();
-			},1000,5)
+				wt_booking.add();
+				ROH.sendData();
+			}, 1000, 5)
 		},
-		IE:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
+		IE: () => {
+			implibdx.core.updateDom("div#TGINSBanner", function () {
 
-						rentalCar.add()
-			wt_booking.add();
-			ROH.sendData();
-			displayTeaser.add();
-			},1000,5)
+				wt_booking.add();
+				ROH.sendData();
+			}, 1000, 5)
 		},
-		IT:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
+		IT: () => {
+			implibdx.core.updateDom("div#TGINSBanner", function () {
 
-			displayTeaser.add();
-			console.log('NO-Widget')
-			},1000,5)
+				console.log('NO-Widget')
+			}, 1000, 5)
 		},
-		JP:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
+		JP: () => {
+			implibdx.core.updateDom("div#TGINSBanner", function () {
 
-			displayTeaser.add();
-			console.log('NO-Widget')
-			},1000,5)
+				console.log('NO-Widget')
+			}, 1000, 5)
 		},
-		KR:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
+		KR: () => {
+			implibdx.core.updateDom("div#TGINSBanner", function () {
 
-						rentalCar.add()
-			wt_booking.add();
-			ROH.sendData();
-			displayTeaser.add();
-			},1000,5)
+				wt_booking.add();
+				ROH.sendData();
+			}, 1000, 5)
 		},
-		LA:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
+		LA: () => {
+			implibdx.core.updateDom("div#TGINSBanner", function () {
 
-						rentalCar.add()
-			wt_booking.add();
-			ROH.sendData();
-			displayTeaser.add();
-			},1000,5)
+				wt_booking.add();
+				ROH.sendData();
+			}, 1000, 5)
 		},
-		MY:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
+		MY: () => {
+			implibdx.core.updateDom("div#TGINSBanner", function () {
 
-						rentalCar.add()
-			wt_booking.add();
-			ROH.sendData();
-			displayTeaser.add();
-			},1000,5)
+				wt_booking.add();
+				ROH.sendData();
+			}, 1000, 5)
 		},
-		MM:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
+		MM: () => {
+			implibdx.core.updateDom("div#TGINSBanner", function () {
 
-						rentalCar.add()
-			wt_booking.add();
-			ROH.sendData();
-			displayTeaser.add();
-			},1000,5)
+				wt_booking.add();
+				ROH.sendData();
+			}, 1000, 5)
 		},
-		NZ:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
+		NZ: () => {
+			implibdx.core.updateDom("div#TGINSBanner", function () {
 
-						rentalCar.add()
-			wt_booking.add();
-			ROH.sendData();
-			displayTeaser.add();
-			},1000,5)
+				wt_booking.add();
+				ROH.sendData();
+			}, 1000, 5)
 		},
-		NO:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
+		NO: () => {
+			implibdx.core.updateDom("div#TGINSBanner", function () {
 
-						rentalCar.add()
-			wt_booking.add();
-			ROH.sendData();
-			displayTeaser.add();
-			},1000,5)
+				wt_booking.add();
+				ROH.sendData();
+			}, 1000, 5)
 		},
-		OM:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
+		OM: () => {
+			implibdx.core.updateDom("div#TGINSBanner", function () {
 
-						rentalCar.add()
-			wt_booking.add();
-			ROH.sendData();
-			displayTeaser.add();
-			},1000,5)
+				wt_booking.add();
+				ROH.sendData();
+			}, 1000, 5)
 		},
-		PK:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
+		PK: () => {
+			implibdx.core.updateDom("div#TGINSBanner", function () {
 
-						rentalCar.add()
-			wt_booking.add();
-			ROH.sendData();
-			displayTeaser.add();
-			},1000,5)
+				wt_booking.add();
+				ROH.sendData();
+			}, 1000, 5)
 		},
-		PH:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
+		PH: () => {
+			implibdx.core.updateDom("div#TGINSBanner", function () {
 
-						rentalCar.add()
-			wt_booking.add();
-			ROH.sendData();
-			displayTeaser.add();
-			},1000,5)
+				wt_booking.add();
+				ROH.sendData();
+			}, 1000, 5)
 		},
-		RU:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
+		RU: () => {
+			implibdx.core.updateDom("div#TGINSBanner", function () {
 
-						rentalCar.add()
-			wt_booking.add();
-			ROH.sendData();
-			displayTeaser.add();
-			},1000,5)
+				wt_booking.add();
+				ROH.sendData();
+			}, 1000, 5)
 		},
-		SG:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
+		SG: () => {
+			implibdx.core.updateDom("div#TGINSBanner", function () {
 
-						rentalCar.add()
-			wt_booking.add();
-			ROH.sendData();
-			displayTeaser.add();
-			},1000,5)
+				wt_booking.add();
+				ROH.sendData();
+			}, 1000, 5)
 		},
-		ES:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
+		ES: () => {
+			implibdx.core.updateDom("div#TGINSBanner", function () {
 
-			displayTeaser.add();
-			console.log('NO-Widget')
-			},1000,5)
+				console.log('NO-Widget')
+			}, 1000, 5)
 		},
-		LK:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
+		LK: () => {
+			implibdx.core.updateDom("div#TGINSBanner", function () {
 
-						rentalCar.add()
-			wt_booking.add();
-			ROH.sendData();
-			displayTeaser.add();
-			},1000,5)
+				wt_booking.add();
+				ROH.sendData();
+			}, 1000, 5)
 		},
-		SE:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
+		SE: () => {
+			implibdx.core.updateDom("div#TGINSBanner", function () {
 
-			removePinkbanner('#PinkBanner_1');
-			removePinkbanner('#PinkBanner_4');
-			displayTeaser.add();
-			console.log('NO-Widget')
-			},1000,5)
+				removePinkbanner('#PinkBanner_1');
+				removePinkbanner('#PinkBanner_4');
+				console.log('NO-Widget')
+			}, 1000, 5)
 		},
-		CH:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
+		CH: () => {
+			implibdx.core.updateDom("div#TGINSBanner", function () {
 
-						rentalCar.add()
-			wt_booking.add();
-			ROH.sendData();
-			displayTeaser.add();
-			},1000,5)
+				wt_booking.add();
+				ROH.sendData();
+			}, 1000, 5)
 		},
-		TW:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
+		TW: () => {
+			implibdx.core.updateDom("div#TGINSBanner", function () {
 
-			wt_booking.add();
-			ROH.sendData();
-			displayTeaser.add();
-			},1000,5)
+				wt_booking.add();
+				ROH.sendData();
+			}, 1000, 5)
 		},
-		TH:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
-			rentalCar.add()
-			wt_booking.add();
-			ROH.sendData();
-			displayTeaser.add();
-			},1000,5)
+		TH: () => {
+			implibdx.core.updateDom("div#TGINSBanner", function () {
+				wt_booking.add();
+				ROH.sendData();
+			}, 1000, 5)
 		},
-		AE:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
+		AE: () => {
+			implibdx.core.updateDom("div#TGINSBanner", function () {
 
-						rentalCar.add()
-			wt_booking.add();
-			ROH.sendData();
-			displayTeaser.add();
-			},1000,5)
+				wt_booking.add();
+				ROH.sendData();
+			}, 1000, 5)
 		},
-		GB:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
+		GB: () => {
+			implibdx.core.updateDom("div#TGINSBanner", function () {
 
-						rentalCar.add()
-			wt_booking.add();
-			ROH.sendData();
-			displayTeaser.add();
-			},1000,5)
+				wt_booking.add();
+				ROH.sendData();
+			}, 1000, 5)
 		},
-		US:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
+		US: () => {
+			implibdx.core.updateDom("div#TGINSBanner", function () {
 
-						rentalCar.add()
-			wt_booking.add();
-			ROH.sendData();
-			displayTeaser.add();
-			},1000,5)
+				wt_booking.add();
+				ROH.sendData();
+			}, 1000, 5)
 		},
-		VN:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
+		VN: () => {
+			implibdx.core.updateDom("div#TGINSBanner", function () {
 
-						rentalCar.add()
-			wt_booking.add();
-			ROH.sendData();
-			displayTeaser.add();
-			},1000,5)
+				wt_booking.add();
+				ROH.sendData();
+			}, 1000, 5)
 		},
-		YY_DOMESTIC:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
+		YY_DOMESTIC: () => {
+			implibdx.core.updateDom("div#TGINSBanner", function () {
 
-						rentalCar.add()
-			wt_booking.add();
-			ROH.sendData();
-			displayTeaser.add();
+				wt_booking.add();
+				ROH.sendData();
 
-			},1000,5)
+			}, 1000, 5)
 		},
-		YY:()=>{ 
-			implibdx.core.updateDom("div#TGINSBanner", function(){
+		YY: () => { 
+			implibdx.core.updateDom("div#TGINSBanner", function () {
 
-						rentalCar.add()
-			wt_booking.add();
-			ROH.sendData();
-			displayTeaser.add();
-			},1000,5)
+				wt_booking.add();
+				ROH.sendData();
+			}, 1000, 5)
 		},
-		WW:()=>{ 
-			implibdx.core.updateDom("div#TGINSBanner", function(){
+		WW: () => { 
+			implibdx.core.updateDom("div#TGINSBanner", function () {
 
-						rentalCar.add()
-			wt_booking.add();
-			ROH.sendData();
-			displayTeaser.add();
-			},1000,5)
+				wt_booking.add();
+				ROH.sendData();
+			}, 1000, 5)
 		},
-		DD:()=>{
-			implibdx.core.updateDom("div#TGINSBanner", function(){
-			displayTeaser.add();
-			removePinkbanner('#PinkBanner_1');
-			removePinkbanner('#PinkBanner_4');
-			console.log('NO-Widget--NO');
-			},1000,5)
+		DD: () => {
+			implibdx.core.updateDom("div#TGINSBanner", function () {
+				removePinkbanner('#PinkBanner_1');
+				removePinkbanner('#PinkBanner_4');
+				console.log('NO-Widget--NO');
+			}, 1000, 5)
 		}
 	}
 	try {
 		return market[mkt]();
 	} catch (error) {
-		console.log('Err:',error)
+		console.log('Err:', error)
 		return market.DD();
 	}
 }
 
 
-function pinkbanner_remove(){
+function pinkbanner_remove() {
 
 	var market = {
-		CH:{
-			r_pinkbanner:['#PinkBanner_1','#PinkBanner_4']
+		CH: {
+			r_pinkbanner: ['#PinkBanner_1', '#PinkBanner_4']
 		}
 	}
 
-	implibdx.core.updateDom("div#pinkbanner", function(){
-		if(chkMarket(eBaDataLayer.market) == true){
-			for(x in market.CH.r_pinkbanner){
+	implibdx.core.updateDom("div#pinkbanner", function () {
+		if (chkMarket(eBaDataLayer.market) == true) {
+			for (x in market.CH.r_pinkbanner) {
 				removePinkbanner(market.CH.r_pinkbanner[x]);
 			}
-		}else console.log(eBaDataLayer.market);
-	},1000,5)
+		} else console.log(eBaDataLayer.market);
+	}, 1000, 5)
 }
 
 
@@ -666,107 +429,112 @@ function pinkbanner_remove(){
 
 
 var displayTeaser = {
-	add:function(){
+	add: function () {
 		let href = "";
-		let img ="";
+		let img = "";
 
-		for(keys in bannerTG){
+		for (keys in bannerTG) {
 
-			implibdx.core.updateDom("div.TGINSBanner", function() {
+			implibdx.core.updateDom("div.TGINSBanner", function () {
 				$("#TGINSBannerMenu").append(displayTeaser.cHTML(keys));
-			},1000,5);
+			}, 1000, 5);
 
 		}
 	},
-	chkMarket:function(m){
+	chkMarket: function (m) {
 		console.log(m)
 
-				for(keys in  m){
-		var s = new RegExp("["+m[keys]+"]{2}");
-			if(m[keys] === 'All'){
+		for (keys in m) {
+			var s = new RegExp("[" + m[keys] + "]{2}");
+			if (m[keys] === 'All') {
 				console.log("All")
 				return true;
-			}else if(s.test(eBaDataLayer.market) == true){
-				console.log(m +"------"+ eBaDataLayer.market);
+			} else if (s.test(eBaDataLayer.market) == true) {
+				console.log(m + "------" + eBaDataLayer.market);
 				return true;
-			}else return false;
+			} else return false;
 		}
 	},
-	chkCity:function(city){
+	chkCity: function (city) {
 		const chkCity = eBaDataLayer[city.data[0]];
 		const regx = new RegExp(city.rex);
 		let citylist = "";
 
-				Object.keys(chkCity).forEach((key)=>{
-			citylist += chkCity[key][city.data[1]]+"-";
+		Object.keys(chkCity).forEach((key) => {
+			citylist += chkCity[key][city.data[1]] + "-";
 		});
+		if (typeof bannerTG.BaliTreat.condition.chk.status !== "undefined") {
+			if (regx.test(chkCity[0].dep_airport)) {
+				return bannerTG.BaliTreat.condition.chk.status;
+			} else {
+				return true;
+			}
+		} else {
+			return regx.test(citylist);
+		}
+	},
+	EXP: function (name) {
 
-		return regx.test(citylist);
-
-
-			},
-	EXP:function(name){			
-
-				if(bannerTG[name].condition.displaycon != ""){
-			console.log('displaycon != Null',name);
-			this.conEnd = bannerTG[name].condition.end !==  undefined? setDatef(bannerTG[name].condition.end):"";
-			this.conStart = bannerTG[name].condition.start !==  undefined? setDatef(bannerTG[name].condition.start):"";
+		if (bannerTG[name].condition.displaycon != "") {
+			console.log('displaycon != Null', name);
+			this.conEnd = bannerTG[name].condition.end !== undefined ? setDatef(bannerTG[name].condition.end) : "";
+			this.conStart = bannerTG[name].condition.start !== undefined ? setDatef(bannerTG[name].condition.start) : "";
 
 			if (bannerTG[name].condition.displaycon == "Departure") {
 				this.dOut = (eBaDataLayer.bound[0].dep_date).split("/");
-				this.dIn = eBaDataLayer.bound[1] !== undefined? (eBaDataLayer.bound[1].dep_date).split("/") : "";
+				this.dIn = eBaDataLayer.bound[1] !== undefined ? (eBaDataLayer.bound[1].dep_date).split("/") : "";
 				this.today = new Date();
 				this.eBaDateOut = setDatef([this.dOut[2], this.dOut[1] - 1, this.dOut[0]]);
 				this.eBaDateIn = setDatef([this.dIn[2], this.dIn[1] - 1, this.dIn[0]]);
 
-								if (this.conStart <= this.eBaDateOut && this.eBaDateOut <= this.conEnd && this.conStart <= this.eBaDateIn && this.eBaDateIn <= this.conEnd) {
-       					return (bannerTG[name].condition.chk !== null)? displayTeaser.chkCity(bannerTG[name].condition.chk) : true;
-    			} else {
-    				return false;
-    			}
+				if (this.conStart <= this.eBaDateOut && this.eBaDateOut <= this.conEnd && this.conStart <= this.eBaDateIn && this.eBaDateIn <= this.conEnd) {
+					return (bannerTG[name].condition.chk !== null) ? displayTeaser.chkCity(bannerTG[name].condition.chk) : true;
+				} else {
+					return false;
+				}
 			}
 			if (bannerTG[name].condition.displaycon == "ticketing") {
-			    this.toDay = new Date();
+				this.toDay = new Date();
 
-			    if (this.toDay <= this.conEnd && this.conStart <= this.toDay) {
-			        	return (bannerTG[name].condition.chk !== null)? displayTeaser.chkCity(bannerTG[name].condition.chk) : true;
-			    } else {
-			        return false;
-			    }
+				if (this.toDay <= this.conEnd && this.conStart <= this.toDay) {
+					return (bannerTG[name].condition.chk !== null) ? displayTeaser.chkCity(bannerTG[name].condition.chk) : true;
+				} else {
+					return false;
+				}
 			}
-        }else{
+		} else {
 
-						if(displayTeaser.chkMarket(bannerTG[name].condition.market) == true){
-				console.log('displaycon == Null',name);
+			if (displayTeaser.chkMarket(bannerTG[name].condition.market) == true) {
+				console.log('displaycon == Null', name);
 				return true;
-            }else{
+			} else {
 				console.log('....')
 				return false;
-            }
-        }
+			}
+		}
 	},
-	cHTML:function(name){
+	cHTML: function (name) {
 		let objname = name;
 		let href = "";
-		let img ="";
-		console.log("cHTML",name);
-		if((bannerTG[objname].condition.pagecode).indexOf(eBaDataLayer.page_code) >= 0 && displayTeaser.EXP(objname) == true){
-			 href = (bannerTG[objname].image.linkURL[eBaDataLayer.language] !== undefined) ? bannerTG[objname].image.linkURL[eBaDataLayer.language]:bannerTG[objname].image.linkURL['GB'];
-			 img = (bannerTG[objname].image.URL[eBaDataLayer.language] !== undefined)? bannerTG[objname].image.URL[eBaDataLayer.language]:bannerTG[objname].image.URL['GB'];
-			 return "<aside class=\""+bannerTG[objname].class+"\"><a href=\""+href+displayTeaser.param_obj(bannerTG[objname].param)+"\" target=\""+bannerTG[objname].target+"\" "+bannerTG[objname].onClick[eBaDataLayer.page_code]+"><img src=\""+img+"\" alt=\""+bannerTG[objname].image.alt+"\"></a></aside>";
+		let img = "";
+		console.log("cHTML", name);
+		if ((bannerTG[objname].condition.pagecode).indexOf(eBaDataLayer.page_code) >= 0 && displayTeaser.EXP(objname) == true) {
+			href = (bannerTG[objname].image.linkURL[eBaDataLayer.language] !== undefined) ? bannerTG[objname].image.linkURL[eBaDataLayer.language] : bannerTG[objname].image.linkURL['GB'];
+			img = (bannerTG[objname].image.URL[eBaDataLayer.language] !== undefined) ? bannerTG[objname].image.URL[eBaDataLayer.language] : bannerTG[objname].image.URL['GB'];
+			return "<aside class=\"" + bannerTG[objname].class + "\"><a href=\"" + href + displayTeaser.param_obj(bannerTG[objname].param) + "\" target=\"" + bannerTG[objname].target + "\" " + bannerTG[objname].onClick[eBaDataLayer.page_code] + "><img src=\"" + img + "\" alt=\"" + bannerTG[objname].image.alt + "\"></a></aside>";
 
 		}
 	},
-	param_obj:function(obj){
+	param_obj: function (obj) {
 		let result = {};
-		for(key in obj){
-				if(obj !== ''){
-					result[key] = eBaDataLayer[obj[key]];
-				}else{
-					return '';
-				}
+		for (key in obj) {
+			if (obj !== '') {
+				result[key] = eBaDataLayer[obj[key]];
+			} else {
+				return '';
+			}
 		}
-		return '?'+$.param(result)
+		return '?' + $.param(result)
 	}
 }
 
@@ -780,20 +548,94 @@ var displayTeaser = {
 
 
 var addTGBanner = {
-	creHTML: function(name,param){
+	creHTML: function (name, param) {
 		this.banner = name;
 		this.param = param;
 		this.htmlBN = "";
 		this.code = eBaDataLayer.page_code;
-		if(checkEXP(this.banner) == true ){
-			this.htmlBN = "<aside class=\""+bannerTG[this.banner].class+"\"><a href=\""+bannerTG[this.banner].link+this.param+"\" target=\""+bannerTG[this.banner].target+"\" "+bannerTG[this.banner].onClick[this.code]+"><img src=\""+bannerTG[this.banner].image+"\" alt=\""+bannerTG[this.banner].alt+"\"></a></aside>";
-		}else{
+		if (checkEXP(this.banner) == true) {
+			this.htmlBN = "<aside class=\"" + bannerTG[this.banner].class + "\"><a href=\"" + bannerTG[this.banner].link + this.param + "\" target=\"" + bannerTG[this.banner].target + "\" " + bannerTG[this.banner].onClick[this.code] + "><img src=\"" + bannerTG[this.banner].image + "\" alt=\"" + bannerTG[this.banner].alt + "\"></a></aside>";
+		} else {
 			return this.htmlBN = "";
 		}
 		return this.htmlBN;
 	}
 }
 
+
+var tgTeaser = {
+	eServe: {
+		img_url: {
+			GB: "http://www.thaiairways.com/static/common/imgscontent/banner/survey_banne_EN.jpg",
+			TH: "http://www.thaiairways.com/static/common/imgscontent/banner/survey_banne_TH.jpg"
+		},
+		link_url: {
+			GB: "http://www.thaiairways.com/en_TH/satisfaction_survey/survey_form_pnr.page",
+			TH: "http://www.thaiairways.com/th_TH/satisfaction_survey/survey_form_pnr.page"
+		},
+		img_alt: "Web Satisfaction Survey",
+		target: "_blank",
+		style: "box_TGINSBannerMenu",
+		onClick: {
+			CONF: "onclick=\"\"",
+			RTPL: "onclick=\"\""
+		},
+		condition: {
+			start: new Date(["2020", "01", "4"]),
+			end: new Date(["2020", "11", "31"]),
+			chk_bound: null,
+			is_page: ['CONF', 'RTPL'],
+			except_maket: new RegExp(/^(FR)|^(IT)/)
+		}
+	},
+	BaliTreat: {
+		img_url: {
+			GB: "http://www.thaiairways.com/static/common/imgscontent/banner/baliTreatPrivilege_banner.jpg"
+		},
+		link_url: {
+			GB: "https://www.thaiairways.com/en_ID/offer/privileges/Privilege.page?utm_source=&utm_medium=website&utm_campaign=click-BaliTreat-ConfirmationPage"
+		},
+		img_alt: "BaliTreat",
+		target: "_blank",
+		style: "box_TGINSBannerMenu",
+		onClick: {
+			CONF: "onclick=\"\"",
+			RTPL: "onclick=\"\""
+		},
+		condition: {
+			start: new Date(["2020", "01", "4"]),
+			end: new Date(["2020", "11", "31"]),
+			chk_bound: {
+				flight_numbers: new RegExp(/(TG431)/)
+			},
+			is_page: ['CONF', 'RTPL'],
+			except_maket: new RegExp(/^(ID)/)
+		}
+	}
+}
+
+const tgBanner = {
+	add: () => {
+		implibdx.core.updateDom("div#pinkbanner", function () {
+			Object.keys(tgTeaser).forEach(key => {
+				if (tgBanner.check(tgTeaser[key].condition)) {
+					$("#TGINSBannerMenu").append(tgBanner.createEliment(tgTeaser[key]));
+				}
+			})
+		}, 1000, 3)
+	},
+	createEliment: ({ img_url, link_url, img_alt, target, style }) => {
+		let _lang = typeof tgTeaser.eServe.img_url[eBaDataLayer.language] !== "undefined" ? eBaDataLayer.language : "GB";
+		return _aside = `<aside class="${style}"><a href="${link_url[_lang]}" target="${target}"> <img src="${img_url[_lang]}" alt="${img_alt}"> </a></aside>`;
+	},
+	check: ({ start, end, except_maket, is_page, chk_bound }) => {
+		let nowDate = new Date();
+		let excMaket = except_maket !== null ? except_maket.test(eBaDataLayer.market) !== true : true;
+		let isPage = is_page.find(x => x === eBaDataLayer.page_code) ? true : false;
+		let chkOpt = chk_bound !== null? Object.keys(chk_bound).map( key => chk_bound[key].test(eBaDataLayer.bound.map(x => x[key]).toString()))[0]:true;
+		return (nowDate >= start && nowDate <= end && excMaket && isPage && chkOpt) ? true : false;
+	}
+}
 
 
 
@@ -805,18 +647,18 @@ var travellerAlert = {
 }
 var _extraServiceOBJ = {
 	seat: {
-		CN: "<p class=\"box_service\">\u4e58\u5ba2\u53ef\u5728\u56fd\u9645\u822a\u73ed\u8d77\u98de\u65f6\u95f4\u63d0\u524d48\u5c0f\u65f6\u5728\u7ebf\u9884\u9009\u673a\u4e0a\u5ea7\u4f4d</p>",
+		CN: "<p class=\"box_service\">\u4e58\u5ba2\u53ef\u5728\u56fd\u9645\u822a\u73ed\u8d77\u98de\u65f6\u95f4\u63d0\u524d48\u5c0f\u65f6\u5728\u7ebf\u9884\u9009\u673a\u4e0a\u5ea7\u4f4d <span class='txt-b hide'>\u51fa\u7968\u540e\u53ef\u8d2d\u4e70\u4f18\u9009\u5ea7\u4f4d</span></p>",
 		DE: "<p class=\"box_service\">Sitzplatzreservierungen k\u00f6nnen bei internationalen Fl\u00fcgen bis 48 Stunden vor Abflug vorgenommen werden.</p>",
 		ES: "<p class=\"box_service\">La reserva de asientos online es posible en vuelos internacionales hasta 48 horas antes de la salida. Aplicable solamente para los vuelos de TG de 3 d\u00edgitos.</p>",
-		FR: "<p class=\"box_service\">R\u00e9serverz votre si\u00e8ge en ligne jusqu\'\u00e0 48 heures avant le d\u00e9part de votre vol.</p>",
-		GB: "<p class=\"box_service\">Online seat reservation is possible on international flights until 48 hours before departure of TG 3 digits flight only. <span class='txt-b'>Preferred Seat can be purchased after ticket has been issued.</span></p>",
-		IT: "<p class=\"box_service\">La prenotazione online del posto, solo sui voli internazionali TG a 3 cifre,  \u00e8 possibile fino a 48 ore prima della partenza.</p>",
-		JP: "<p class=\"box_service\">\u30bf\u30a4\u56fd\u969b\u822a\u7a7a\u904b\u822a\uff08TG3\u6841\u4fbf\uff09\u306e\u56fd\u969b\u7dda\u3067\u306f\u3001\u3054\u51fa\u767a48\u6642\u9593\u524d\u307e\u3067\u3001\u30aa\u30f3\u30e9\u30a4\u30f3\u306b\u3066\u5ea7\u5e2d\u3092\u3054\u6307\u5b9a\u3044\u305f\u3060\u3051\u307e\u3059\u3002\n</p>",
-		KO: "<p class=\"box_service\">\uc6f9\uc0ac\uc774\ud2b8\ub97c \ud1b5\ud55c \uc88c\uc11d \uc120\ud0dd\uc740 \ud0c0\uc774\ud56d\uacf5 \uc6b4\ud56d\ud3b8 TGxxx(3\uc790\ub9ac \uc22b\uc790 \ud3b8\uba85) \uad6d\uc81c\uc120\uc5d0 \ud55c\ud558\uc5ec \ucd9c\ubc1c 48\uc2dc\uac04 \uc804\uae4c\uc9c0\ub9cc \uac00\ub2a5\ud569\ub2c8\ub2e4.</p>",
-		RU: "<p class=\"box_service\">\u041f\u0440\u0435\u0434\u0432\u0430\u0440\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0435 \u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u043c\u0435\u0441\u0442 \u0432 \u0441\u0430\u043b\u043e\u043d\u0435 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u043e \u043d\u0435 \u043f\u043e\u0437\u0434\u043d\u0435\u0435 48 \u0447\u0430\u0441\u043e\u0432 \u0434\u043e \u0432\u044b\u043b\u0435\u0442\u0430 \u043d\u0430 \u043c\u0435\u0436\u0434\u0443\u043d\u0430\u0440\u043e\u0434\u043d\u044b\u0445 \u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u044f\u0445 (\u0442\u043e\u043b\u044c\u043a\u043e \u0434\u043b\u044f 3-\u0445 \u0437\u043d\u0430\u0447\u043d\u044b\u0445 \u043d\u043e\u043c\u0435\u0440\u043e\u0432 \u0440\u0435\u0439\u0441\u043e\u0432)</p>",
-		TH: "<p class=\"box_service\">\u0e17\u0e48\u0e32\u0e19\u0e2a\u0e32\u0e21\u0e32\u0e23\u0e16\u0e01\u0e33\u0e2b\u0e19\u0e14\u0e17\u0e35\u0e48\u0e19\u0e31\u0e48\u0e07\u0e2d\u0e2d\u0e19\u0e44\u0e25\u0e19\u0e4c\u0e25\u0e48\u0e27\u0e07\u0e2b\u0e19\u0e49\u0e32\u0e44\u0e14\u0e49 \u0e08\u0e19\u0e16\u0e36\u0e07\u0e40\u0e27\u0e25\u0e32 48 \u0e0a\u0e31\u0e48\u0e27\u0e42\u0e21\u0e07\u0e01\u0e48\u0e2d\u0e19\u0e40\u0e27\u0e25\u0e32\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e2d\u0e2d\u0e01 <span class='txt-b'> \u0e1c\u0e39\u0e49\u0e42\u0e14\u0e22\u0e2a\u0e32\u0e23\u0e2a\u0e32\u0e21\u0e32\u0e23\u0e16\u0e0b\u0e37\u0e49\u0e2d Preferred Seat \u0e44\u0e14\u0e49\u0e2b\u0e25\u0e31\u0e07\u0e08\u0e32\u0e01\u0e14\u0e33\u0e40\u0e19\u0e34\u0e19\u0e01\u0e32\u0e23\u0e2d\u0e2d\u0e01\u0e15\u0e31\u0e4b\u0e27\u0e40\u0e23\u0e35\u0e22\u0e1a\u0e23\u0e49\u0e2d\u0e22\u0e41\u0e25\u0e49\u0e27</p>",
-		TW: "<p class=\"box_service\">\u7dda\u4e0a\u9810\u9078\u5ea7\u4f4d\u50c5\u9650\u65bc\u6cf0\u822a\u71df\u904b\u4e4b3\u78bc\u822a\u73ed\u3002\u570b\u969b\u7dda\u822a\u73ed\u8d77\u98db\u524d48\u5c0f\u6642\u53ef\u80fd\u63d0\u4f9b\u7dda\u4e0a\u9810\u9078\u5ea7\u4f4d\u670d\u52d9\u3002</p>",
-		SE: "<p class=\"box_service\">Du kan v\u00e4lja din sittplats online p\u00e5 internationella flygningar fram till 48h innan avg\u00e5ng p\u00e5 TG flyg med tre siffror.</p>"
+		FR: "<p class=\"box_service\">R\u00e9serverz votre si\u00e8ge en ligne jusqu\'\u00e0 48 heures avant le d\u00e9part de votre vol.<span class='txt-b hide'>Le si\u00e8ge pr\u00e9f\u00e9rentiel peut \u00eatre achet\u00e9 apr\u00e8s l\'\u00e9mission du billet</span></p>",
+		GB: "<p class=\"box_service\">Online seat reservation is possible on international flights until 48 hours before departure of TG 3 digits flight only. <span class='txt-b hide'>Preferred Seat can be purchased after ticket has been issued.</span></p>",
+		IT: "<p class=\"box_service\">La prenotazione online del posto, solo sui voli internazionali TG a 3 cifre,  \u00e8 possibile fino a 48 ore prima della partenza. <span class='txt-b hide'>Il posto preferenziale pu\u00f2 essere acquistato dopo l\u2019emissione del biglietto</span></p>",
+		JP: "<p class=\"box_service\">\u30bf\u30a4\u56fd\u969b\u822a\u7a7a\u904b\u822a\uff08TG3\u6841\u4fbf\uff09\u306e\u56fd\u969b\u7dda\u3067\u306f\u3001\u3054\u51fa\u767a48\u6642\u9593\u524d\u307e\u3067\u3001\u30aa\u30f3\u30e9\u30a4\u30f3\u306b\u3066\u5ea7\u5e2d\u3092\u3054\u6307\u5b9a\u3044\u305f\u3060\u3051\u307e\u3059\u3002\n <span class='txt-b hide'>\u822a\u7a7a\u5238\u3054\u8cfc\u5165\u5f8c\u304b\u3089TG\u512a\u5148\u5ea7\u5e2d\uff08\u6709\u6599\uff09\u3092\u304a\u7533\u8fbc\u307f\u9802\u3051\u307e\u3059</span></p>",
+		KO: "<p class=\"box_service\">\uc6f9\uc0ac\uc774\ud2b8\ub97c \ud1b5\ud55c \uc88c\uc11d \uc120\ud0dd\uc740 \ud0c0\uc774\ud56d\uacf5 \uc6b4\ud56d\ud3b8 TGxxx(3\uc790\ub9ac \uc22b\uc790 \ud3b8\uba85) \uad6d\uc81c\uc120\uc5d0 \ud55c\ud558\uc5ec \ucd9c\ubc1c 48\uc2dc\uac04 \uc804\uae4c\uc9c0\ub9cc \uac00\ub2a5\ud569\ub2c8\ub2e4. <span class='txt-b hide'>\uc120\ud638 \uc88c\uc11d \uc11c\ube44\uc2a4\ub294 \ud56d\uacf5\uad8c \uad6c\ub9e4(\ubc1c\uad8c) \ud6c4\uc5d0 \uad6c\uc785\ud558\uc2e4 \uc218 \uc788\uc2b5\ub2c8\ub2e4</span></p>",
+		RU: "<p class=\"box_service\">\u041f\u0440\u0435\u0434\u0432\u0430\u0440\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0435 \u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u043c\u0435\u0441\u0442 \u0432 \u0441\u0430\u043b\u043e\u043d\u0435 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u043e \u043d\u0435 \u043f\u043e\u0437\u0434\u043d\u0435\u0435 48 \u0447\u0430\u0441\u043e\u0432 \u0434\u043e \u0432\u044b\u043b\u0435\u0442\u0430 \u043d\u0430 \u043c\u0435\u0436\u0434\u0443\u043d\u0430\u0440\u043e\u0434\u043d\u044b\u0445 \u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u044f\u0445 (\u0442\u043e\u043b\u044c\u043a\u043e \u0434\u043b\u044f 3-\u0445 \u0437\u043d\u0430\u0447\u043d\u044b\u0445 \u043d\u043e\u043c\u0435\u0440\u043e\u0432 \u0440\u0435\u0439\u0441\u043e\u0432) <span class='txt-b hide'>\u0423\u0441\u043b\u0443\u0433\u0430 \u00ab\u0432\u044b\u0431\u043e\u0440 \u043c\u0435\u0441\u0442\u0430\u00bb \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u0430 \u043a \u0437\u0430\u043a\u0430\u0437\u0443 \u043f\u043e\u0441\u043b\u0435 \u043e\u0444\u043e\u0440\u043c\u043b\u0435\u043d\u0438\u044f \u0431\u0438\u043b\u0435\u0442\u0430</span></p>",
+		TH: "<p class=\"box_service\">\u0e17\u0e48\u0e32\u0e19\u0e2a\u0e32\u0e21\u0e32\u0e23\u0e16\u0e01\u0e33\u0e2b\u0e19\u0e14\u0e17\u0e35\u0e48\u0e19\u0e31\u0e48\u0e07\u0e2d\u0e2d\u0e19\u0e44\u0e25\u0e19\u0e4c\u0e25\u0e48\u0e27\u0e07\u0e2b\u0e19\u0e49\u0e32\u0e44\u0e14\u0e49 \u0e08\u0e19\u0e16\u0e36\u0e07\u0e40\u0e27\u0e25\u0e32 48 \u0e0a\u0e31\u0e48\u0e27\u0e42\u0e21\u0e07\u0e01\u0e48\u0e2d\u0e19\u0e40\u0e27\u0e25\u0e32\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e2d\u0e2d\u0e01 <span class='txt-b hide'> \u0e1c\u0e39\u0e49\u0e42\u0e14\u0e22\u0e2a\u0e32\u0e23\u0e2a\u0e32\u0e21\u0e32\u0e23\u0e16\u0e0b\u0e37\u0e49\u0e2d Preferred Seat \u0e44\u0e14\u0e49\u0e2b\u0e25\u0e31\u0e07\u0e08\u0e32\u0e01\u0e14\u0e33\u0e40\u0e19\u0e34\u0e19\u0e01\u0e32\u0e23\u0e2d\u0e2d\u0e01\u0e15\u0e31\u0e4b\u0e27\u0e40\u0e23\u0e35\u0e22\u0e1a\u0e23\u0e49\u0e2d\u0e22\u0e41\u0e25\u0e49\u0e27</p>",
+		TW: "<p class=\"box_service\">\u7dda\u4e0a\u9810\u9078\u5ea7\u4f4d\u50c5\u9650\u65bc\u6cf0\u822a\u71df\u904b\u4e4b3\u78bc\u822a\u73ed\u3002\u570b\u969b\u7dda\u822a\u73ed\u8d77\u98db\u524d48\u5c0f\u6642\u53ef\u80fd\u63d0\u4f9b\u7dda\u4e0a\u9810\u9078\u5ea7\u4f4d\u670d\u52d9\u3002 <span class='txt-b hide'>\u6a5f\u7968\u767c\u51fa\u5f8c\uff0c\u5373\u53ef\u8cfc\u8cb7\u9996\u9078\u5ea7\u4f4d\u3002</span></p>",
+		SE: "<p class=\"box_service\">Du kan v\u00e4lja din sittplats online p\u00e5 internationella flygningar fram till 48h innan avg\u00e5ng p\u00e5 TG flyg med tre siffror. <span class='txt-b hide'>Platsreservation med extra benutrymme kan köpas efter att biljetten är bekräftad</span></p>"
 
 	},
 	meal: {
@@ -824,14 +666,14 @@ var _extraServiceOBJ = {
 		DE: "<p class=\"box_service\">Sondermen\u00fc k\u00f6nnen bei internationalen Fl\u00fcgen bis 24 Stunden vor Abflug vorgenommen werden.</p>",
 		ES: "<p class=\"box_service\">La selecci\u00f3n de comida es posible en vuelos internacionales saliendo desde Bangkok hasta 24 horas antes de la salida y para vuelos internacionales hacia Bangkok, debe realizarse 48 horas antes de la salida del vuelo. Aplicable solo a vuelos TG de 3 d\u00edgitos.</p>",
 		FR: "<p class=\"box_service\">Le choix d\u2019un repas peut \u00eatre fait sur un vol international, 24 heures avant le d\u00e9part du vol.</p>",
-		GB: "<p class=\"box_service\">Meal selection is possible on International flight until 24 hrs for outbound from Bangkok and 48hrs for inbound to Bangkok before departure of TG 3 digits flight only.</p>",
+		GB: "<p class=\"box_service\">Meal selection is only necessary for passengers requiring special meals. Special meal selection is possible on International flights until 24hrs for outbound from Bangkok and 48hrs for inbound to Bangkok (before departure). Only on TG 3 digit flights.</p>",
 		IT: "<p class=\"box_service\">La selezione online dei pasti, sui voli internazionali TG a 3 cifre, \u00e8 possibile fino a 48 ore prima della partenza per voli verso Bangkok e fino a 24 ore prima della partenza per i voli da Bangkok.</p>",
 		JP: "<p class=\"box_service\">\u30bf\u30a4\u56fd\u969b\u822a\u7a7a\u904b\u822a\uff08TG3\u6841\u4fbf\uff09\u306e\u56fd\u969b\u7dda\u3067\u306f\u3001\u3054\u51fa\u767a48\u6642\u9593\u524d\u307e\u3067\uff08\u30d0\u30f3\u30b3\u30af\u767a\u306f24\u6642\u9593\u524d\u307e\u3067\uff09\u3001\u30aa\u30f3\u30e9\u30a4\u30f3\u306b\u3066\u7279\u5225\u6a5f\u5185\u98df\u3092\u304a\u7533\u3057\u8fbc\u307f\u3044\u305f\u3060\u3051\u307e\u3059\u3002\n</p>",
 		KO: "<p class=\"box_service\">\uae30\ub0b4\uc2dd \uc120\ud0dd\uc740 \ud0c0\uc774\ud56d\uacf5 \uc6b4\ud56d\ud3b8 TGxxx(3\uc790\ub9ac \uc22b\uc790 \ud3b8\uba85) \uad6d\uc81c\uc120\uc5d0 \ud55c\ud558\uc5ec \ubc29\ucf55 \ucd9c\ubc1c\uc758 \uacbd\uc6b0 \ucd9c\ubc1c 24\uc2dc\uac04 \uc804\uae4c\uc9c0 \uac00\ub2a5\ud558\uc9c0\ub9cc \uadf8\uc774\uc678 \uc9c0\uc5ed\uc5d0\uc11c \ucd9c\ubc1c\uc758 \uacbd\uc6b0 (\ub300\ud55c\ubbfc\uad6d \ud3ec\ud568) \ucd9c\ubc1c 48\uc2dc\uac04 \uc804\uae4c\uc9c0\ub9cc \uac00\ub2a5\ud569\ub2c8\ub2e4.</p>",
 		RU: "<p class=\"box_service\">\u0412\u044b\u0431\u043e\u0440 \u043f\u0438\u0442\u0430\u043d\u0438\u044f \u0434\u043e\u0441\u0442\u0443\u043f\u0435\u043d \u043d\u0435 \u043f\u043e\u0437\u0434\u043d\u0435\u0435 24  \u0447\u0430\u0441\u043e\u0432 \u0434\u043e \u0432\u044b\u043b\u0435\u0442\u0430 \u0434\u043b\u044f \u0440\u0435\u0439\u0441\u043e\u0432, \u0432\u044b\u043b\u0435\u0442\u0430\u044e\u0449\u0438\u0445 \u0438\u0437 \u0411\u0430\u043d\u0433\u043a\u043e\u043a\u0430, \u0438 \u043d\u0435 \u043f\u043e\u0437\u0434\u043d\u0435\u0435 48 \u0447\u0430\u0441\u043e\u0432 \u0434\u043e \u0432\u044b\u043b\u0435\u0442\u0430 \u0434\u043b\u044f \u0440\u0435\u0439\u0441\u043e\u0432, \u0432\u044b\u043b\u0435\u0442\u0430\u044e\u0449\u0438\u0445 \u0432 \u0411\u0430\u043d\u0433\u043a\u043e\u043a (\u0442\u043e\u043b\u044c\u043a\u043e \u0434\u043b\u044f 3-\u0445 \u0437\u043d\u0430\u0447\u043d\u044b\u0445 \u043d\u043e\u043c\u0435\u0440\u043e\u0432 \u0440\u0435\u0439\u0441\u043e\u0432)\n</p>",
 		TH: "<p class=\"box_service\">\u0e17\u0e48\u0e32\u0e19\u0e2a\u0e32\u0e21\u0e32\u0e23\u0e16\u0e08\u0e2d\u0e07\u0e2d\u0e32\u0e2b\u0e32\u0e23\u0e1e\u0e34\u0e40\u0e28\u0e29\u0e43\u0e19\u0e40\u0e2a\u0e49\u0e19\u0e17\u0e32\u0e07\u0e23\u0e30\u0e2b\u0e27\u0e48\u0e32\u0e07\u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e14\u0e49\u0e15\u0e25\u0e2d\u0e14\u0e08\u0e19\u0e16\u0e36\u0e07\u0e40\u0e27\u0e25\u0e32 24 \u0e0a\u0e31\u0e48\u0e27\u0e42\u0e21\u0e07\u0e01\u0e48\u0e2d\u0e19\u0e01\u0e33\u0e2b\u0e19\u0e14\u0e01\u0e32\u0e23\u0e40\u0e14\u0e34\u0e19\u0e17\u0e32\u0e07\u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e2b\u0e23\u0e31\u0e1a\u0e40\u0e17\u0e35\u0e48\u0e22\u0e27\u0e1a\u0e34\u0e19\u0e2d\u0e2d\u0e01\u0e08\u0e32\u0e01\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e2f \u0e41\u0e25\u0e30 48 \u0e0a\u0e31\u0e48\u0e27\u0e42\u0e21\u0e07 \u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e40\u0e17\u0e35\u0e48\u0e22\u0e27\u0e1a\u0e34\u0e19\u0e2a\u0e39\u0e48\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e2f</p>",
 		TW: "<p class=\"box_service\">\u9810\u9078\u6a5f\u4e0a\u9910\u98df\u670d\u52d9\u50c5\u9650\u65bc\u6cf0\u822a\u71df\u904b\u4e4b3\u78bc\u822a\u73ed\u3002\u5f9e\u66fc\u8c37\u767c\u51fa\u4e4b\u570b\u969b\u7dda\u822a\u73ed\u8d77\u98db\u524d24\u5c0f\u6642\uff0c\u53ca\u5f9e\u5916\u7ad9\u98db\u5f80\u66fc\u8c37\u4e4b\u822a\u73ed\u8d77\u98db\u524d48\u5c0f\u6642\uff0c\u53ef\u80fd\u63d0\u4f9b\u9810\u9078\u9910\u98df\u670d\u52d9\u3002</p>",
-		SE: "<p class=\"box_service\">Du kan v\u00e4lja m\u00e5ltid p\u00e5 internationella flyg fram till 24h innan utresa fr\u00e5n Bangkok och 48h innan avresa f\u00f6r inresa i Bangkok. Detta g\u00e4ller endast p\u00e5 TG flyg med tre siffor.</p>"
+		SE: "<p class=\"box_service\">Du beh\u00f6ver inte v\u00e4lja m\u00e5ltid om du inte beh\u00f6ver specialkost. Specialkost g\u00e5r att best\u00e4lla p\u00e5 internationella flyg fram till 24h innan utresa fr\u00e5n Bangkok och 48h innan avresa f\u00f6r inresa i Bangkok. Detta g\u00e4ller endast f\u00f6r TG flyg med tre siffror.</p>"
 	},
 	baggage: {
 		CN: "<p class=\"box_service\">\u4e58\u5ba2\u53ef\u5728\u822a\u73ed\u8d77\u98de\u65f6\u95f4\u63d0\u524d24\u5c0f\u65f6\u5728\u7ebf\u8d2d\u4e70\u989d\u5916\u6258\u8fd0\u884c\u674e\u914d\u989d</p>",
@@ -852,12 +694,12 @@ var _extraServiceOBJ = {
 		DE: "",
 		ES: "",
 		FR: "",
-		GB: `THAI provides wheelchair service without any extra charge. Please request wheelchairs at least 48 hours before departure date`,
+		GB: `Wheelchair (WCHR) service is available at no extra charge for passengers who find walking inconvenient, but can ascend and descend stairs of the aircraft by themselves. Request this special assistance at least 48 hours before your departure time.`,
 		IT: "",
 		JP: "",
 		KO: "",
 		RU: "",
-		TH: `\u0e01\u0e32\u0e23\u0e1a\u0e34\u0e19\u0e44\u0e17\u0e22\u0e43\u0e2b\u0e49\u0e1a\u0e23\u0e34\u0e01\u0e32\u0e23\u0e40\u0e01\u0e49\u0e32\u0e2d\u0e35\u0e49\u0e23\u0e16\u0e40\u0e02\u0e47\u0e19 \u0e42\u0e14\u0e22\u0e44\u0e21\u0e48\u0e04\u0e34\u0e14\u0e04\u0e48\u0e32\u0e43\u0e0a\u0e49\u0e08\u0e48\u0e32\u0e22 \u0e01\u0e23\u0e38\u0e13\u0e32\u0e41\u0e08\u0e49\u0e07\u0e01\u0e48\u0e2d\u0e19 48 \u0e0a\u0e31\u0e48\u0e27\u0e42\u0e21\u0e07`,
+		TH: `\u0e1a\u0e23\u0e34\u0e01\u0e32\u0e23\u0e23\u0e16\u0e40\u0e02\u0e47\u0e19 (WCHR) \u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e1c\u0e39\u0e49\u0e42\u0e14\u0e22\u0e2a\u0e32\u0e23\u0e17\u0e35\u0e48\u0e44\u0e21\u0e48\u0e2a\u0e32\u0e21\u0e32\u0e23\u0e16\u0e40\u0e14\u0e34\u0e19\u0e23\u0e30\u0e22\u0e30\u0e44\u0e01\u0e25\u0e44\u0e14\u0e49 \u0e41\u0e15\u0e48\u0e2a\u0e32\u0e21\u0e32\u0e23\u0e16\u0e02\u0e36\u0e49\u0e19\x2F\u0e25\u0e07\u0e1a\u0e31\u0e19\u0e44\u0e14\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e1a\u0e34\u0e19\u0e41\u0e25\u0e30\u0e40\u0e14\u0e34\u0e19\u0e40\u0e02\u0e49\u0e32\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e1a\u0e34\u0e19\u0e40\u0e2d\u0e07\u0e44\u0e14\u0e49 \u0e08\u0e33\u0e40\u0e1b\u0e47\u0e19\u0e15\u0e49\u0e2d\u0e07\u0e17\u0e33\u0e01\u0e32\u0e23\u0e02\u0e2d\u0e23\u0e31\u0e1a\u0e1a\u0e23\u0e34\u0e01\u0e32\u0e23\u0e25\u0e48\u0e27\u0e07\u0e2b\u0e19\u0e49\u0e32\u0e2d\u0e22\u0e48\u0e32\u0e07\u0e19\u0e49\u0e2d\u0e22 48 \u0e0a\u0e31\u0e48\u0e27\u0e42\u0e21\u0e07\u0e01\u0e48\u0e2d\u0e19\u0e40\u0e27\u0e25\u0e32\u0e40\u0e14\u0e34\u0e19\u0e17\u0e32\u0e07\u0e42\u0e14\u0e22\u0e44\u0e21\u0e48\u0e21\u0e35\u0e04\u0e48\u0e32\u0e43\u0e0a\u0e49\u0e08\u0e48\u0e32\u0e22 \u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e01\u0e32\u0e23\u0e1a\u0e23\u0e34\u0e01\u0e32\u0e23\u0e0a\u0e48\u0e27\u0e22\u0e40\u0e2b\u0e25\u0e37\u0e2d\u0e1e\u0e34\u0e40\u0e28\u0e29\u0e2d\u0e37\u0e48\u0e19\u0e46 \u0e15\u0e34\u0e14\u0e15\u0e48\u0e2d THAI Contact Center 02-356-1111`,
 		TW: "",
 		SE: ""
 	}
@@ -908,6 +750,9 @@ var updateHTML = {
 			try {
 
 				$('.' + idService).append(check.defaultLang(_extraServiceOBJ[nService], eBaDataLayer.language, "GB"));
+				if (eBaDataLayer.bound[0].flights[0].cabin == "E") {
+					$('.box_service > .txt-b').removeClass('hide')
+				}
 			} catch (error) {
 				console.log('Err : ' + error);
 			}
@@ -983,7 +828,7 @@ var updateHTML = {
 			if (eBaDataLayer.bound[0].flights[0].cabin !== 'E') {
 				$('#service-desc-SIT div').removeClass('class-default');
 				$('#service-desc-SIT > div div.class-' + eBaDataLayer.bound[0].flights[0].cabin).addClass('class-default');
-			} else if (eBaDataLayer.bound[0].flights[0].cabin == 'N') {
+			} else if (eBaDataLayer.bound[0].flights[0].cabin == 'N' || eBaDataLayer.bound[0].flights[0].operated_by.airline_code == "WE") {
 				$('#service-desc-SIT div').removeClass('class-default');
 				$('#service-desc-SIT > div div.airline-WE').addClass('class-default');
 			}
@@ -1232,8 +1077,8 @@ const passenger_list = {
 	addHtml: () => {
 		passenger_list.passlist = "";
 		passenger_list.totalpass = "";
-		let paxType = {	"ADT": "Adult(s)",	"CHD": "Child",	"B15": "Youth",	"INF": "Infant"	}
-		eBaDataLayer.passengerList.forEach( (x,i) => passenger_list.passlist += `<li> <span>${i+1}. ${dataTransfer['PNR#1_TITLENAME#'+(i+1)]}.${x.first_name} ${x.last_name}</span> (${x.pax_type})</li>`);
+		let paxType = { "ADT": "Adult(s)", "CHD": "Child", "B15": "Youth", "INF": "Infant" }
+		eBaDataLayer.passengerList.forEach((x, i) => passenger_list.passlist += `<li> <span>${i + 1}. ${dataTransfer['PNR#1_TITLENAME#' + (i + 1)]}.${x.first_name} ${x.last_name}</span> (${x.pax_type})</li>`);
 		eBaDataLayer.passengers.filter((e, i, arr) => arr.findIndex(e2 => Object.keys(e2).every(prop => e2[prop] == e[prop])) == i).forEach(x => passenger_list.totalpass += `<span class="traveller"> ${x.nb_pax_type}${paxType[x.pax_type]}</span>`)
 		let newItem = document.createElement("div");
 		newItem.setAttribute('id', 'passengerlist');
@@ -1258,6 +1103,53 @@ const passenger_list = {
 		}, 1000, 5);
 	}
 }
+const changeClassPagmentbox = () => {
+	implibdx.core.updateDom('.payment', function () {
+		$('.payment div[data-placeholder-path="PURC/pageContent/payment"]').addClass('col-sm-24');
+		$('.relative.fop-wrapper').removeClass('col-xs-24 col-sm-18').addClass('col-sm-16')
+	}, 1000, 5);
+}
+
+const ms_icon = () => {
+	implibdx.core.updateDom('#tpl4_rememberDetails', function () {
+		const obj = {
+			remember: {
+				element: document.getElementById("message-remember-checkbox"),
+				remove_class: "icon-miles",
+				add_class: "icon-save",
+			},
+			allowemail: {
+				element: document.getElementById("message-allow-data-collection"),
+				remove_class: "icon-miles",
+				add_class: "icon-envelope",
+			}
+		}
+		Object.keys(obj).forEach(key => {
+			obj[key].element.firstChild.classList.remove(obj[key].remove_class);
+			obj[key].element.firstChild.classList.add(obj[key].add_class);
+		})
+	}, 1000, 3);
+}
+const xeBag = () => {
+	const cityairport = /(CTU)/.test(eBaDataLayer.bound.map(x => x.route).toString());
+	if (eBaDataLayer.page_code == 'APIM' && cityairport == true) {
+		implibdx.core.updateDom('#apim_afterContactInformation', function () {
+			document.getElementById("tpl7_BAG").remove();
+		}, 1000, 3);
+	} else if (eBaDataLayer.page_code === 'MDFSR' && cityairport == true) {
+		implibdx.core.updateDom('.catalogServices-teasers-container', function () {
+			document.getElementsByClassName('catalogServices-teaser-column-BAG')[0].remove();
+			console.log('xxx')
+		}, 1000, 3);
+	} else if (eBaDataLayer.page_code == "AAS" && cityairport == true) {
+		implibdx.core.updateDom('.catalogServices-teasers-container', function () {
+			document.getElementsByClassName('catalogServices-teaser-BAG')[0].remove();
+		}, 1000, 3);
+	}
+}
+
+
+
 
 var createEM = {
 	create: function (tag, txt, sta) {
@@ -1786,7 +1678,7 @@ var addScript = function (objName, elmID, updateID, fn) {
     var anchor = document.getElementById(elmID);
 
     implibdx.core.updateDom(updateID, function () {
-        try{
+        try {
             for (var x in objNamescript[objName]) {
                 anchor.appendChild(
                     createEM.create(
@@ -1797,94 +1689,43 @@ var addScript = function (objName, elmID, updateID, fn) {
                         objNamescript[objName][x].case))
             }
             fn;
-        }catch{
-            console.log('Err--- Addscript'+objName);
+        } catch{
+            console.log('Err--- Addscript' + objName);
 
         }
 
-            }, 1000, 5);
+    }, 1000, 5);
 }
 
 var iNetasia_Tealium = {
     add: function add() {
-      implibdx.core.updateDom("footer#main-layout-bottom", function () {
-        var addTo = document.getElementById('main-layout-bottom');
-        var createAttr = document.createElement("script");
-        var txtNode = '';
-        createAttr.setAttribute('type', 'text/javascript');
-        var content = "utag_cfg_ovrd={},a=\"//tags.tiqcdn.com/utag/thai-airways/main/prod/utag.js\",b=document,c=\"script\",d=b.createElement(c),d.src=a,d.type=\"text/java\"+c,d.async=!0,d.onerror=function(){utag_cfg_ovrd.path=\"//tags.tiqcdn.cn/utag/thai-airways/main/prod/\",a=\"//tags.tiqcdn.cn/utag/thai-airways/main/prod/utag.js\",b=document,c=\"script\",d=b.createElement(c),d.src=a,d.type=\"text/java\"+c,d.async=!0,a=b.getElementsByTagName(c)[0],a.parentNode.insertBefore(d,a)},a=b.getElementsByTagName(c)[0],a.parentNode.insertBefore(d,a);";
-        txtNode = document.createTextNode(content);
-        createAttr.appendChild(txtNode);
-        addTo.appendChild(createAttr);
-      }, 1000, 6);
-    }
-  };
-
-  var iNetasia_Tealium_qa = {
-    add: function add() {
-      implibdx.core.updateDom("footer#main-layout-bottom", function () {
-        var addTo = document.getElementById('main-layout-bottom');
-        var createAttr = document.createElement("script");
-        var txtNode = '';
-        createAttr.setAttribute('type', 'text/javascript');
-        var content = "utag_cfg_ovrd={},a=\"//tags.tiqcdn.com/utag/thai-airways/main/qa/utag.js\",b=document,c=\"script\",d=b.createElement(c),d.src=a,d.type=\"text/java\"+c,d.async=!0,d.onerror=function(){utag_cfg_ovrd.path=\"//tags.tiqcdn.cn/utag/thai-airways/main/prod/\",a=\"//tags.tiqcdn.cn/utag/thai-airways/main/prod/utag.js\",b=document,c=\"script\",d=b.createElement(c),d.src=a,d.type=\"text/java\"+c,d.async=!0,a=b.getElementsByTagName(c)[0],a.parentNode.insertBefore(d,a)},a=b.getElementsByTagName(c)[0],a.parentNode.insertBefore(d,a);";
-        txtNode = document.createTextNode(content);
-        createAttr.appendChild(txtNode);
-        addTo.appendChild(createAttr);
-      }, 1000, 6);
-    }
-  };
-
-var fbpixel_SE = {
-    add: function () {
         implibdx.core.updateDom("footer#main-layout-bottom", function () {
-            if ((/\b^[SE_]{3}/).test(eBaDataLayer.external_id) === true) {
-                let addTo = document.getElementById('main-layout-bottom');
-                let createAttr = document.createElement("script");
-                let txtNode = ''
-                let content = ''
-                let lang = eBaDataLayer.language;
-                let exID = eBaDataLayer.external_id;
-                let pnr = (eBaDataLayer.page_code == "CONF") ? modpnr(eBaDataLayer.pnr_nbr) : "";
-                let currency = eBaDataLayer.currency;
-
-                if (eBaDataLayer.page_code == "CONF") {
-                    content = "!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n; n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '270700370143865');fbq('track', 'PageView');fbq('track', 'Purchase', { content_name: '" + pnr + "', value:'" + eBaDataLayer.total_price + "',currency: '" + eBaDataLayer.currency + "' })";
-                } else if (eBaDataLayer.page_code == "FPOW") {
-                    content = "!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n; n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '270700370143865');fbq('track', 'PageView');";
-                } else if (eBaDataLayer.page_code == "PURC") {
-                    content = "!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n; n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '270700370143865');fbq('track', 'PageView');fbq('track', 'AddToCart', { value: " + eBaDataLayer.total_price + ",currency:'" + eBaDataLayer.currency + "'})";
-                }
-                txtNode = document.createTextNode(content)
-                createAttr.appendChild(txtNode);
-                addTo.appendChild(createAttr);
-            } else console.log('fbpixel_SE');
-        }, 1000, 6);
-    }
-}
-
-
-var spa_allsite = {
-    add: function () {
-        implibdx.core.updateDom("footer#main-layout-bottom", function () {
-            let addTo = document.getElementById('main-layout-bottom');
-            let createAttr = document.createElement("script");
-            let txtNode = ''
-            let content = ''
-            let price = eBaDataLayer.total_price;
-            let currency = eBaDataLayer.currency;
-
-            if (eBaDataLayer.page_code == "CONF") {
-                content = "!function(f,b,e,v,n,t,s)  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?  n.callMethod.apply(n,arguments):n.queue.push(arguments)};  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';  n.queue=[];t=b.createElement(e);t.async=!0;  t.src=v;s=b.getElementsByTagName(e)[0];  s.parentNode.insertBefore(t,s)}(window, document,'script',  'https://connect.facebook.net/en_US/fbevents.js');  fbq('init', '369060826977725');  fbq('track', 'PageView');fbq('track', 'Purchase', { value: '" + price + "',currency: '" + currency + "'});";
-            } else {
-                content = "!function(f,b,e,v,n,t,s)  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?  n.callMethod.apply(n,arguments):n.queue.push(arguments)};  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';  n.queue=[];t=b.createElement(e);t.async=!0;  t.src=v;s=b.getElementsByTagName(e)[0];  s.parentNode.insertBefore(t,s)}(window, document,'script',  'https://connect.facebook.net/en_US/fbevents.js');  fbq('init', '369060826977725');  fbq('track', 'PageView');";
-            }
-            txtNode = document.createTextNode(content)
+            var addTo = document.getElementById('main-layout-bottom');
+            var createAttr = document.createElement("script");
+            var txtNode = '';
+            createAttr.setAttribute('type', 'text/javascript');
+            var content = "utag_cfg_ovrd={},a=\"//tags.tiqcdn.com/utag/thai-airways/main/prod/utag.js\",b=document,c=\"script\",d=b.createElement(c),d.src=a,d.type=\"text/java\"+c,d.async=!0,d.onerror=function(){utag_cfg_ovrd.path=\"//tags.tiqcdn.cn/utag/thai-airways/main/prod/\",a=\"//tags.tiqcdn.cn/utag/thai-airways/main/prod/utag.js\",b=document,c=\"script\",d=b.createElement(c),d.src=a,d.type=\"text/java\"+c,d.async=!0,a=b.getElementsByTagName(c)[0],a.parentNode.insertBefore(d,a)},a=b.getElementsByTagName(c)[0],a.parentNode.insertBefore(d,a);";
+            txtNode = document.createTextNode(content);
             createAttr.appendChild(txtNode);
             addTo.appendChild(createAttr);
-        }, 1000, 6);
+        }, 1000, 4);
     }
-}
+};
+
+var iNetasia_Tealium_qa = {
+    add: function add() {
+        implibdx.core.updateDom("footer#main-layout-bottom", function () {
+            var addTo = document.getElementById('main-layout-bottom');
+            var createAttr = document.createElement("script");
+            var txtNode = '';
+            createAttr.setAttribute('type', 'text/javascript');
+            var content = "utag_cfg_ovrd={},a=\"//tags.tiqcdn.com/utag/thai-airways/main/qa/utag.js\",b=document,c=\"script\",d=b.createElement(c),d.src=a,d.type=\"text/java\"+c,d.async=!0,d.onerror=function(){utag_cfg_ovrd.path=\"//tags.tiqcdn.cn/utag/thai-airways/main/prod/\",a=\"//tags.tiqcdn.cn/utag/thai-airways/main/prod/utag.js\",b=document,c=\"script\",d=b.createElement(c),d.src=a,d.type=\"text/java\"+c,d.async=!0,a=b.getElementsByTagName(c)[0],a.parentNode.insertBefore(d,a)},a=b.getElementsByTagName(c)[0],a.parentNode.insertBefore(d,a);";
+            txtNode = document.createTextNode(content);
+            createAttr.appendChild(txtNode);
+            addTo.appendChild(createAttr);
+        }, 1000, 4);
+    }
+};
 
 var knorex = { 
     add: function () {
@@ -1917,42 +1758,7 @@ var knorex = {
         }, 1000, 5);
     }
 }
-var skyscanner = { 
-    add: function () {
 
-        implibdx.core.updateDom("footer#main-layout-bottom", function () {
-            if (dataTransfer["EXTERNAL_ID#4"] === "SKYSCANNER") {
-                let addTo = document.getElementById('main-layout-bottom');
-                let txt_code = '';
-                let cost = eBaDataLayer.total_price;
-                let ord = modpnr(eBaDataLayer.pnr_nbr);
-                let createAttr = document.createElement("img");
-                createAttr.src = 'https://pubads.g.doubleclick.net/activity;xsp=4380767;qty=1;cost=' + cost + ';ord=' + ord + '?';
-                addTo.appendChild(createAttr);
-            }
-        }, 1000, 5);
-    }
-}
-
-
-
-
-
-
-var tripadvisor = { 
-    add: function () {
-
-        implibdx.core.updateDom("footer#main-layout-bottom", function () {
-            let addTo = document.getElementById('main-layout-bottom');
-            let txt_code = '';
-            let cost = eBaDataLayer.total_price;
-            let ord = modpnr(eBaDataLayer.pnr_nbr);
-            let createAttr = document.createElement("img");
-            createAttr.src = 'https://pubads.g.doubleclick.net/activity;xsp=4371151;qty=1;cost' + cost + ';ord=' + ord + '?';
-            addTo.appendChild(createAttr);
-        }, 1000, 5);
-    }
-}
 
 
 var pathData = function (obj, url) {
@@ -1969,20 +1775,6 @@ var pathData = function (obj, url) {
 
 
 
-
-
-
-
-
-function acom_adddata() {
-    window.uetq = window.uetq || [];
-    window.uetq.push({ 'gv': eBaDataLayer.total_price, 'gc': eBaDataLayer.currency });
-    console.log(window.uetq.push({ 'gv': eBaDataLayer.total_price, 'gc': eBaDataLayer.currency }))
-}
-
-
-
-
 var wt_booking = {
     add: function () {
         implibdx.core.updateDom("footer#main-layout-bottom", function () {
@@ -1995,7 +1787,7 @@ var wt_booking = {
             createAttr.setAttribute('data-container', 'b_container');
             createAttr.setAttribute('data-size', '1050x280');
             createAttr.setAttribute('data-tpncy', 'false');
-            createAttr.src = 'https://aff.bstatic.com/static/affiliate_base/js/booking_sp_widget.js?iata=' + check.depCity() + '&lang=' + eBaDataLayer.language + '&iata_orr=1&checkin=' + check.chkdate(eBaDataLayer.bound[0].arr_date) + '&checkout=' + check.trip_type(eBaDataLayer.trip_type);
+            createAttr.src = 'https://aff.bstatic.com/static/affiliate_base/js/booking_sp_widget.js?iata=' + eBaDataLayer.bound[0].arr_airport + '&lang=' + eBaDataLayer.language + '&iata_orr=1&checkin=' + check.chkdate(eBaDataLayer.bound[0].arr_date) + '&checkout=' + check.trip_type(eBaDataLayer.trip_type);
             anchor.appendChild(createAttr);
 
         }, 1000, 10);
@@ -2077,7 +1869,7 @@ var rentalCar = {
     createFrame: function () {
         let arrDate = eBaDataLayer.bound[0].arr_date.split('/');
         let depDate = (!eBaDataLayer.bound[1] !== true ? eBaDataLayer.bound[1].dep_date.split('/') : arrDate);
-        let langx = (eBaDataLayer.language == "CN") ? "ZS" : eBaDataLayer.language == 'GB'? "EN":eBaDataLayer.language;
+        let langx = (eBaDataLayer.language == "CN") ? "ZS" : eBaDataLayer.language == 'GB' ? "EN" : eBaDataLayer.language;
 
         let frame = document.createElement("iframe");
 
@@ -2095,26 +1887,7 @@ var rentalCar = {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 var eMailTrigger = {
-
-
-
-
-
     createOBJ: function () {
         const cOBJ = {
             pnr: eBaDataLayer.pnr_number,
@@ -2200,7 +1973,7 @@ const objTagScript = {
             start: ['2019', '02', '01'],
             end: ['2019', '11', '31']
         },
-        typetag:'fbpixel'
+        typetag: 'fbpixel'
     },
     fbpixel_AT: {
         desElement_ID: 'main-layout-bottom',
@@ -2216,7 +1989,7 @@ const objTagScript = {
             start: ['2019', '02', '12'],
             end: ['2019', '11', '31']
         },
-        typetag:'fbpixel'
+        typetag: 'fbpixel'
     },
     pixel_SG: { 
         desElement_ID: 'main-layout-bottom',
@@ -2229,7 +2002,7 @@ const objTagScript = {
             start: ['2019', '02', '12'],
             end: ['2019', '11', '31']
         },
-        typetag:'pixel'
+        typetag: 'pixel'
     }
 }
 
@@ -2246,10 +2019,10 @@ function addScriptTG(nameOBJ) {
         let dataBooking = eBaDataLayer.page_code === 'CONF' || eBaDataLayer.page_code === 'PURC' ? "fbq('track', '" + pix_pageCode + "'," + objDataBooking() + ")" : "";
         st2.forEach((item) => {
             createAttr = document.createElement(item)
-            if(obj['typetag'] == 'fbpixel'){
+            if (obj['typetag'] == 'fbpixel') {
                 txtNode = document.createTextNode(obj['txtScript'][item]['txt'] + ((item === 'script') ? dataBooking : ''))
                 createAttr.appendChild(txtNode)
-            }else{
+            } else {
                 createAttr.setAttribute('async', 'async');
                 createAttr.src = obj['txtScript'][item]['txt'];
             }
@@ -2258,15 +2031,16 @@ function addScriptTG(nameOBJ) {
     }
 }
 
+
 const objDataBooking = () => JSON.stringify({
     connect_name: eBaDataLayer.page_code === 'CONF' ? modpnr(eBaDataLayer.pnr_nbr) : "",
     value: eBaDataLayer.page_code === 'CONF' || eBaDataLayer.page_code === 'PURC' ? eBaDataLayer.total_price : "",
     currency: eBaDataLayer.currency
 })
 const objSearch = () => datasearch = {
-    location_code : eBaDataLayer['search']["flights"].map( x => x.departure.location_code+'-'+x.arrival.location_code).toString(),
-    destination: eBaDataLayer.trip_type !== "RT"?eBaDataLayer['search']["flights"].map( x => x.arrival.location_code).slice(-1).toString():eBaDataLayer['search']["flights"].map( x => x.arrival.location_code)[0],
-    origin:eBaDataLayer['search']["flights"].map( x => x.departure.location_code)[0]
+    location_code: eBaDataLayer['search']["flights"].map(x => x.departure.location_code + '-' + x.arrival.location_code).toString(),
+    destination: eBaDataLayer.trip_type !== "RT" ? eBaDataLayer['search']["flights"].map(x => x.arrival.location_code).slice(-1).toString() : eBaDataLayer['search']["flights"].map(x => x.arrival.location_code)[0],
+    origin: eBaDataLayer['search']["flights"].map(x => x.departure.location_code)[0]
 }
 
 const sendEmail = {
@@ -2376,12 +2150,12 @@ const sendEmail = {
         },
         conditionArrAirport: ['BKK']
     },
-    Anantaravoucher:{
+    Anantaravoucher: {
         send: function send() {
             if (eMailTrigger.chkEXP(["2019", "10", "7"], ["2019", "10", "30"], ["2019", "11", "19"], ["2019", "10", "7"], "Anantaravoucher", "NO") === true && eBaDataLayer.page_code == "CONF" && dataTransfer.PAYMENTTYPE == "EXT") {
                 implibdx.core.updateDom("div.TGINSBannerMenu", function () {
-                    const isFirstBus = eBaDataLayer.bound.map(x => x.flights[0].cabin).find(k => /F|B/.test(k))?true:false;
-                    if (eBaDataLayer.bound[0].dep_country == "AU" && eBaDataLayer.bound[1].dep_city == "BKK" && isFirstBus == true && dataTransfer["EXTERNAL_ID#4"] === "TGANANTARA" && (eBaDataLayer.trip_type == 'RT'|| eBaDataLayer.trip_type == 'OW')){
+                    const isFirstBus = eBaDataLayer.bound.map(x => x.flights[0].cabin).find(k => /F|B/.test(k)) ? true : false;
+                    if (eBaDataLayer.bound[0].dep_country == "AU" && eBaDataLayer.bound[1].dep_city == "BKK" && isFirstBus == true && dataTransfer["EXTERNAL_ID#4"] === "TGANANTARA" && (eBaDataLayer.trip_type == 'RT' || eBaDataLayer.trip_type == 'OW')) {
                         $.ajax({
                             type: 'POST',
                             url: 'https://www.thaiairways.com/app/form/api/postdataamds/',
@@ -2398,11 +2172,11 @@ const sendEmail = {
         },
         conditionArrAirport: ['BKK']
     },
-    kyotobus:{
+    kyotobus: {
         send: function send() {
             if (eMailTrigger.chkEXP(["2019", "10", "7"], ["2020", "2", "31"], ["2020", "2", "31"], ["2019", "10", "7"], "Anantaravoucher", "NO") === true && eBaDataLayer.page_code == "CONF" && dataTransfer.PAYMENTTYPE == "EXT") {
                 implibdx.core.updateDom("div.TGINSBannerMenu", function () {
-                    if (eBaDataLayer.bound[0].dep_airport == "BKK" && eBaDataLayer.bound[1].dep_airport == "NGO" && eBaDataLayer.trip_type == 'RT'){
+                    if (eBaDataLayer.bound[0].dep_airport == "BKK" && eBaDataLayer.bound[1].dep_airport == "NGO" && eBaDataLayer.trip_type == 'RT') {
                         $.ajax({
                             type: 'POST',
                             url: urlSendemail.all_send,
@@ -2420,14 +2194,148 @@ const sendEmail = {
         conditionArrAirport: ['BKK']
     }
 }
-const urlSendemail ={
-    all_send:"https://www.thaiairways.com/app/form/api/postdataamds/",
-    limit_send:"https://www.thaiairways.com/app/form/api/mastercard/",
-    limit_cont_send:"https://www.thaiairways.com/app/form/postdataamds_trigger"
+const urlSendemail = {
+    all_send: "https://www.thaiairways.com/app/form/api/postdataamds/",
+    limit_send: "https://www.thaiairways.com/app/form/api/mastercard/",
+    limit_cont_send: "https://www.thaiairways.com/app/form/postdataamds_trigger"
 }
 const arrDom = ["CNX", "CEI", "DMK", "HDY", "KKC", "USM", "KBV", "LPT", "HGN", "NAW", "HKT", "THS", "URT", "TDX", "UBP"];
 const isDom = (city) => { return arrDom.find(key => (key == city)) ? true : false }
 const arrAirport = (airport) => eBaDataLayer.search.flights.map(k => k.arrival.location_code).find(k => (k == airport)) ? true : false;
+
+
+const hidepaynow = () => {
+    implibdx.core.updateDom("div#reservation-menu", function () {
+        if ((/BKK-ARN/).test(eBaDataLayer.bound[0].route) == true) {
+            $('#reservation-menu').addClass('xARR');
+            $('.pay-now-btn').remove();
+        } else {
+            $('.pay-now-btn').css('display', 'block');
+        }
+    }, 1000, 4);
+}
+const hidemodflight = () => { 
+    const errDateE = [new Date(2019, 11, 18), new Date(2019, 11, 20)]; 
+    const bDate = new Date(eBaDataLayer.pnr_creation_date);
+    const errDate = bDate >= errDateE[0] && bDate < errDateE[1]
+    const errClass = eBaDataLayer.bound.map(x => x.flights).map(x => x[0].cabin == 'B').every(x => x);
+    implibdx.core.updateDom("div#fare-review-bounds", function () {
+        if ((/BKK-ARN/).test(eBaDataLayer.bound[0].route) == true && errDate && errClass) {
+            $('div#fare-review-bounds button').remove();
+        }
+    }, 1000, 4);
+}
+const _hideMEA = () => {
+    if (eBaDataLayer.bound.every(x => x.dep_country == 'TH') &&  eBaDataLayer.bound[0].arr_country == 'TH') {
+        implibdx.core.updateDom(".catalogServices-teasers-container", function () {
+            $("#tpl7_MEA").css('display', 'none');
+            $("div.catalogServices-teaser-column-MEA").css('display', 'none');
+            $("div.catalogServices-column-MEA").css('display', 'none');
+
+        }, 1000, 4);
+    }
+}
+const isLang = () => {
+    return eBaDataLayer.language == "GB" ? "en" : eBaDataLayer.language.toLowerCase();;
+}
+let _fareCondi = {
+    CN: "",
+    DE: "",
+    ES: "",
+    FR: "",
+    GB: "I acknowledge after review the refund policy for ",
+    IT: "",
+    JP: "",
+    KO: "",
+    RU: "",
+    TH: "",
+    TW: "",
+    SE: ""
+}
+const fare_condi_purc = (lang) => {
+    implibdx.core.updateDom(".purchase-conditions", function () {
+        let _fareCondiLang = _fareCondi[lang] !== "" ? _fareCondi[lang] : _fareCondi["GB"];
+        let fareCondi = document.getElementById('fare_condi');
+        let boxCondi = $("div[id$=termsAndConditions] ul>li").length !== 0 ? $("div[id$=termsAndConditions] ul>li") : $(".checkbox");
+        let _tripsummaty_fare = "";
+        let extIconlink = `<i class="icon icon-external-link" aria-hidden="true" title="Open new window"></i>`;
+        let _purchase_fare_condi = Object.keys(boxCondi[0].children).filter(x => (/(Purchase conditions)|(Fare Conditions)/).test(boxCondi[0].children[x].text));
+        $("#link_dangerous").on("click", () => {
+            $('#button-tripsummary-baggage-policy').click()
+        })
+        if (typeof eBaDataLayer.bound[0].selected_ff_code !== "undefined") {
+            eBaDataLayer.bound.map(x => _tripsummaty_fare += `<a href="https://www.thaiairways.com/booking/flexpricer/` + isLang() + '/' + x.selected_ff_code + `.html" target="_blank">` + x.selected_ff_name + extIconlink + `</a> `);
+        }
+        if ($("div[id$=termsAndConditions] ul>li").length !== 0) {
+            _purchase_fare_condi.map(x => _tripsummaty_fare += boxCondi[0].children[x].outerHTML);
+            fareCondi.innerHTML = _fareCondiLang + "" + _tripsummaty_fare;
+            fareCondi.classList.remove("hide");
+        } else {
+            boxCondi.append('<ul><li>' + _fareCondiLang + "" + _tripsummaty_fare + "</li></ul>")
+        }
+
+
+
+
+    }, 1000, 4);
+}
+
+
+const xcheckbox_cf = (dep_country) => {
+    try {
+        $("#consent_ins").html('sdasdasdasdasdasdasdasd');
+        $("#consent_ins").appendTo($('.insurance-radio-selection'));
+        $("#consent_ins").removeClass($('ins_hide'));
+    } catch (error) {
+        console.log('no checkbox');
+    }
+}
+
+const services_tablefooter = (city) => {
+    if (city == "TWD") {
+        implibdx.core.updateDom(".availability-container", function () {
+            $(".availability-bound ").addClass('tw_city');
+        }, 1000, 4);
+    }
+}
+
+const iden_doc_apim = (ex4) => {
+    let _idenDoc = document.getElementsByName('PSPT_DocumentType')[0];
+    if (ex4 = 'STU') {
+        _idenDoc.options[0].remove()
+        _idenDoc.setAttribute('disabled', 'disabled')
+    }
+}
+
+const testobj = {
+    namePri:{
+        conditions:{
+            date_dep:new Date(['2020','01','25']), 
+            date_arr:new Date(['2020','11','25']), 
+            sale_start:new Date(['2020','02','25']), 
+            sale_end:new Date(['2020','11','25']), 
+            city_trav:"BKK-CDG", 
+            flight_dep:["TG610"] ,
+            maket:new RegExp(/^(TH)/) 
+        }
+    }
+}
+const chk_conditions = ({conditions}) =>{
+    let toDay = new Date();
+    let _Trvel = eBaDataLayer.bound.map(x => new Date(x.dep_date.slice(6)+x.dep_date.slice(2,6)+x.dep_date.slice(0,2)) )
+
+        let obj ={
+        isRoute:eBaDataLayer.bound.find(x=>x.route == testobj.namePri.conditions.city_trav)?true:false,
+        isSale:toDay <= conditions.sale_start && toDay <= conditions.sale_end,
+        flightDep:conditions.flight_dep !== null && typeof conditions.flight_dep !== "undefined"? eBaDataLayer.bound.find( x => conditions.flight_dep.find(k => k === x.flight_numbers) )?true:false:true,
+        isMaket:conditions.maket !== null && typeof conditions.maket !== "undefined" ? conditions.maket.test(eBaDataLayer.maket):false
+    }
+    return obj;
+}
+
+
+
+
 
 var subscribe = {
 	HTML:{
@@ -2565,7 +2473,7 @@ var ROH = {
 
                 ROH.createOBJ();
 
-                if ((check.period(passengerROH.CheckinDate, 4, passengerROH.CheckoutDate, 0) === true) && (check.period(passengerROH.CheckinDate, 30, passengerROH.CheckoutDate, 1) === true)) {
+                if ((check.period(passengerROH.CheckinDate, 4, passengerROH.CheckoutDate, 0) === true) && (check.period(passengerROH.CheckinDate, 25, passengerROH.CheckoutDate, 1) === true)) {
 
                     $.ajax({
                             type: 'POST',
@@ -2787,9 +2695,10 @@ let x_objInsurance = (c, l) => {
     const _objInsurance = {
         HK: {
             GB: {
+                logourl:"./img/client/TravelInsuranceIcon.jpg",
                 titlepanel: "Protect your flight The following Travel Insurance information is provided by Allianz Travel",
                 insurance_txt: `<p><br>Leave your worry behind and make sure that you're protected from </p><ul> <li><i class="icon-check title-icon"></i> Flight delay, flight cancellation</li><li><i class="icon-check title-icon"></i> Compensation for baggage delay or loss</li><li><i class="icon-check title-icon"></i> Medical expenses for in/out patient</li></ul><p>For more information, please refer to Policy Wording.</p><br><div class="box-insurance_detail"> <div class="box-insurance_detail-content"> <p> Please read the Travel Insurance Schedule of Benefits, Policy Wording and Declaration. By selecting and purchasing this Travel Insurance, you confirm that you have read and agree to the all of the terms, conditions and exclusions of the Policy Wording and Declaration. This Travel Insurance is for Hong Kong residents only with journey starting from Hong Kong. It is underwritten by Liberty International Insurance Limited ("Liberty"), with services provided by Allianz Travel. Allianz Travel, a trading name of Allianz Worldwide Partners (Hong Kong) Limited, is registered as an insurance agency of Liberty in respect of this Travel Insurance. You are purchasing this Travel Insurance from Liberty and not Thai Airways. Liberty is the insurer of and responsible for issuing this Travel Insurance. Thai Airways is not an insurance agent of Liberty and does not act as an insurance broker. Thai Airways will not be arranging this Travel Insurance on your behalf and is not responsible for any information provided by Liberty and Allianz Travel about this Travel Insurance. You consent Liberty and Allianz Travel to use your and any other passengers’ (under the same booking) personal data for the application and administration of this Travel Insurance and provision of claims and assistance services. </p></div></div>`,
-                insurance_txt_mobile:`<p><br>Leave your worry behind and make sure that you're protected</p>`,
+                insurance_txt_mobile: `<p><br>Leave your worry behind and make sure that you're protected</p>`,
                 radio_1: {
                     txt_1: "Yes, I want to protect my trip",
                     txt_2: "for all passengers",
@@ -2802,9 +2711,10 @@ let x_objInsurance = (c, l) => {
                 }
             },
             TW: {
+                logourl:"./img/client/TravelInsuranceIcon.jpg",
                 titlepanel: "\u4fdd\u969c\u60a8\u7684\u65c5\u7a0b \u4ee5\u4e0b\u65c5\u904a\u4fdd\u96aa\u8cc7\u8a0a\u7531\u5b89\u806f\u65c5\u884c\u63d0\u4f9b",
                 insurance_txt: `<p><br>\u5B89\u5FC3\u51FA\u767C\uFF0C\u70BA\u60A8\u7684\u65C5\u7A0B\u6DFB\u52A0\u4FDD\u969C </p><ul> <li><i class="icon-check title-icon"></i>\u822A\u73ED\u5EF6\u8AA4,\u822A\u73ED\u53D6\u6D88</li><li><i class="icon-check title-icon"></i>\u907A\u5931\u884C\u674E\u6216\u884C\u674E\u5EF6\u8AA4</li><li><i class="icon-check title-icon"></i>\u9580\u8A3A/\u4F4F\u9662\u91AB\u7642\u8CBB\u7528</li></ul><p>\u689D\u6B3E\u53CA\u7D30\u5247\u9069\u7528*</p><br><div class="box-insurance_detail"> <div class="box-insurance_detail-content"> <p> \u8acb\u7d30\u95b1\u65c5\u904a\u4fdd\u96aa\u4fdd\u969c\u8868, \u4fdd\u55ae\u689d\u6b3e\u53ca\u8072\u660e\u3002\u5982\u9078\u8cfc\u672c\u65c5\u904a\u4fdd\u96aa\uff0c\u5373\u8868\u793a\u95a3\u4e0b\u78ba\u8a8d\u5df2\u95b1\u8b80\u4e26\u540c\u610f\u4fdd\u55ae\u689d\u6b3e\u7684\u689d\u6b3e\u3001\u7d30\u5247\u53ca\u4e0d\u53d7\u4fdd\u4e8b\u9805\u53ca\u8072\u660e\u7684\u5167\u5bb9\u3002 \u672c\u65c5\u904a\u4fdd\u96aa\u53ea\u9069\u7528\u65bc\u9999\u6e2f\u5c45\u6c11\u4e26\u5f9e\u9999\u6e2f\u51fa\u767c\u7684\u65c5\u7a0b\u3002\u672c\u65c5\u904a\u4fdd\u96aa\u662f\u7531\u5229\u5bf6\u570b\u969b\u4fdd\u96aa\u6709\u9650\u516c\u53f8\u627f\u4fdd\uff08\u4e0b\u7a31\u300c\u5229\u5bf6\u570b\u969b\u4fdd\u96aa\u300d\uff09\uff0c\u4e26\u7531\u5b89\u806f\u65c5\u884c\u63d0\u4f9b\u670d\u52d9\u3002 \u5b89\u806f\u65c5\u884c\u70ba Allianz Worldwide Partners (Hong Kong) Limited \u7684\u5546\u6a19\uff0c\u70ba\u4e00\u5bb6\u5229\u5bf6\u570b\u969b\u4fdd\u96aa\u59d4\u4efb\u7684\u4fdd\u96aa\u4ee3\u7406\u5546\u3002 \u95a3\u4e0b\u8cfc\u8cb7\u7684\u65c5\u904a\u4fdd\u96aa\u662f\u7531\u5229\u5bf6\u570b\u969b\u4fdd\u96aa\u6709\u9650\u516c\u53f8\u63d0\u4f9b\uff0c\u800c\u4e26\u975e\u7531\u6cf0\u822a\u63d0\u4f9b\u3002\u5229\u5bf6\u570b\u969b\u4fdd\u96aa\u70ba\u672c\u65c5\u904a\u4fdd\u96aa\u7684\u627f\u4fdd\u516c\u53f8\u4e26\u5c07\u8ca0\u8cac\u7e55\u767c\u6709\u95dc\u7684\u4fdd\u55ae\u3002\u6cf0\u822a\u4e26\u975e\u5229\u5bf6\u570b\u969b\u4fdd\u96aa\u7684\u4fdd\u96aa\u4ee3\u7406\u4ea6\u4e0d\u662f\u4fdd\u96aa\u92b7\u552e\u7d93\u7d00\u3002\u6cf0\u822a\u4e0d\u6703\u4ee3\u8868\u95a3\u4e0b\u5b89\u6392\u65c5\u904a\u4fdd\u96aa\uff0c\u4ea6\u7121\u9808\u5c0d\u5229\u5bf6\u570b\u969b\u4fdd\u96aa\u53ca\u5b89\u806f\u65c5\u884c\u5c31\u672c\u65c5\u904a\u4fdd\u96aa\u6240\u63d0\u4f9b\u4e4b\u4efb\u4f55\u8cc7\u6599\u8ca0\u8cac\u3002 \u95a3\u4e0b\u540c\u610f\u5229\u5bf6\u570b\u969b\u4fdd\u96aa\u53ca\u5b89\u806f\u65c5\u884c\u4f7f\u7528\u95a3\u4e0b\u53ca\u540c\u4e00\u8a02\u7968\u4ea4\u6613\u7684\u5176\u4ed6\u65c5\u5ba2\u4e4b\u500b\u4eba\u8cc7\u6599\uff0c\u4ee5\u8655\u7406\u6295\u4fdd\u65c5\u904a\u4fdd\u96aa\u7684\u7533\u8acb\u4ee5\u53ca\u7ba1\u7406\u4fdd\u55ae\uff0c\u4e26\u63d0\u4f9b\u7d22\u8ce0\u53ca\u6551\u63f4\u670d\u52d9\u3002 </p></div></div>`,
-                insurance_txt_mobile:"<p><br>\u5B89\u5FC3\u51FA\u767C\uFF0C\u70BA\u60A8\u7684\u65C5\u7A0B\u6DFB\u52A0\u4FDD\u969C </p><ul>",
+                insurance_txt_mobile: "<p><br>\u5B89\u5FC3\u51FA\u767C\uFF0C\u70BA\u60A8\u7684\u65C5\u7A0B\u6DFB\u52A0\u4FDD\u969C </p><ul>",
                 radio_1: {
                     txt_1: "\u662f\uff0c\u6211\u8981\u70ba\u65c5\u7a0b\u6295\u4fdd\u00a0\u00a0 \u4ee5\u4fdd\u969c\u6bcf\u4e00\u4f4d\u65c5\u5ba2",
                     txt_2: " ",
@@ -2821,7 +2731,7 @@ let x_objInsurance = (c, l) => {
             GB: {
                 titlepanel: "Protect your flight (Recommended)",
                 insurance_txt: "<p>THAI Travel Safe <br> Leave your worry behind and make sure that you're protected from </p> <ul> <li><i class=\"icon-check title-icon\"></i> Flight delay, flight cancellation</li> <li><i class=\"icon-check title-icon\"></i> Compensation for baggage delay or loss</li> <li><i class=\"icon-check title-icon\"></i> Medical expenses for in/out patient</li> </ul> <p>For more information please <a target=\"_blank\" href=\"http://www.magroup-online.com/TGA/TH/EN/TG_Product_and_Plans.pdf\">click here.</a></p> <br> <div class=\"box-insurance_detail\"> <div class=\"box-insurance_detail-img\"> <a href=\"https://www.thaiairways-insurance.com/wordpress/wp-content/themes/ovhc/images/Non-Life_Broker_License_Certificate_of_AWP_Services_Thailand.jpg\" target=\"_blank\"><img src=\"./img/client/AGA_license.jpg\" alt=\"AGA license image\" height=\"60\" width=\"60\" style=\"vertical-align: text-bottom;\"></a> </div> <div class=\"box-insurance_detail-content\"> <p>This travel insurance is managed by AWP Services (Thailand) Co., Ltd. Trading as Allianz Global Assistance, and is underwritten by Muang Thai Insurance Public Company Limited. In purchasing the policy, you agree to receive confirmation and future communications via email. If passengers would like to change the contact method, please call +66(0)2 305 8492</p> </div> </div>",
-                insurance_txt_mobile:"<p>THAI Travel Safe <br> Leave your worry behind and make sure that you're protected </p>",
+                insurance_txt_mobile: "<p>THAI Travel Safe <br> Leave your worry behind and make sure that you're protected </p>",
                 radio_1: {
                     txt_1: "Yes, I want to protect my trip",
                     txt_2: "for all passengers",
@@ -2838,7 +2748,7 @@ let x_objInsurance = (c, l) => {
             GB: {
                 titlepanel: "Protect your flight (Recommended)",
                 insurance_txt: "<p>THAI Travel Safe <br>Leave your worry behind and make sure that you're protected from </p><ul> <li><i class=\"icon-check title-icon\"></i> Flight delay, flight cancellation</li><li><i class=\"icon-check title-icon\"></i> Compensation for baggage delay or loss</li><li><i class=\"icon-check title-icon\"></i> Medical expenses for in/out patient</li></ul> <p>For more information, please refer to Policy Wording.</p><br><div class=\"box-insurance_detail\"> <div class=\"box-insurance_detail-content\"> <p>This product is underwritten by Liberty Insurance Pte Ltd with the assistance services provided by Allianz Global Assistance. Coverage is available to Singapore citizen or Permanent Resident of Singapore or Singapore Pass Holder and/or Work Permit Holder and their dependents residing in Singapore, and whose journey must start and end in Singapore.</p></div></div>",
-                insurance_txt_mobile:`<p>THAI Travel Safe <br>Leave your worry behind and make sure that you're protected </p>`,
+                insurance_txt_mobile: `<p>THAI Travel Safe <br>Leave your worry behind and make sure that you're protected </p>`,
                 radio_1: {
                     txt_1: "Yes, I want to protect my trip",
                     txt_2: "for all passengers",
@@ -2855,7 +2765,7 @@ let x_objInsurance = (c, l) => {
             GB: {
                 titlepanel: "Protect your flight (Recommended)",
                 insurance_txt: "<p>THAI Travel Safe <br>Leave your worry behind and make sure that you're protected from </p><ul> <li><i class=\"icon-check title-icon\"></i> Flight delay, flight cancellation</li><li><i class=\"icon-check title-icon\"></i> Compensation for baggage delay or loss</li><li><i class=\"icon-check title-icon\"></i> Medical expenses for in/out patient</li></ul> <p>For more information, please refer to Policy Wording.</p><br><div class=\"box-insurance_detail\"> <div class=\"box-insurance_detail-img\"> <a href=\"https://www.thaiairways-insurance.com/wordpress/wp-content/themes/ovhc/images/Non-Life_Broker_License_Certificate_of_AWP_Services_Thailand.jpg\" target=\"_blank\"><img src=\"./img/client/AGA_license.jpg\" alt=\"AGA license image\" height=\"60\" width=\"60\" style=\"vertical-align: text-bottom;\"></a> </div><div class=\"box-insurance_detail-content\"> <p lang=\"en\">\"I consent to the Company for storage, use and disclosure of my truly medical history and information to Office of Insurance Commission for the purpose of regulating the insurance industry. This travel insurance is managed by AWP Services (Thailand) Co., Ltd. Trading as Allianz Global Assistance, and is underwritten by Muang Thai Insurance Public Company Limited. In purchasing the policy, you agree to receive confirmation and future communications via email. If passengers would like to change the contact method, please call +66(0)2 305 8492\"</p></div></div>",
-                insurance_txt_mobile:"<p>THAI Travel Safe <br> Leave your worry behind and make sure that you're protected </p>",
+                insurance_txt_mobile: "<p>THAI Travel Safe <br> Leave your worry behind and make sure that you're protected </p>",
                 radio_1: {
                     txt_1: "Yes, I want to protect my trip",
                     txt_2: "for all passengers",
@@ -2870,7 +2780,7 @@ let x_objInsurance = (c, l) => {
             TH: {
                 titlepanel: "\u0e04\u0e38\u0e49\u0e21\u0e04\u0e23\u0e2d\u0e07\u0e01\u0e32\u0e23\u0e40\u0e14\u0e34\u0e19\u0e17\u0e32\u0e07\u0e02\u0e2d\u0e07\u0e04\u0e38\u0e13 (\u0e41\u0e19\u0e30\u0e19\u0e33)",
                 insurance_txt: "<p>THAI Travel Safe <br>\u0e40\u0e1e\u0e34\u0e48\u0e21\u0e40\u0e07\u0e34\u0e19\u0e40\u0e1e\u0e35\u0e22\u0e07\u0e40\u0e25\u0e47\u0e01\u0e19\u0e49\u0e2d\u0e22\u0e40\u0e1e\u0e37\u0e48\u0e2d\u0e1b\u0e01\u0e1b\u0e49\u0e2d\u0e07\u0e04\u0e38\u0e13 \u0e41\u0e25\u0e30\u0e04\u0e19\u0e17\u0e35\u0e48\u0e04\u0e38\u0e13\u0e23\u0e31\u0e01 \u0e14\u0e49\u0e27\u0e22\u0e04\u0e27\u0e32\u0e21\u0e04\u0e38\u0e49\u0e21\u0e04\u0e23\u0e2d\u0e07\u0e08\u0e32\u0e01\u0e1b\u0e23\u0e30\u0e01\u0e31\u0e19\u0e20\u0e31\u0e22\u0e01\u0e32\u0e23\u0e40\u0e14\u0e34\u0e19\u0e17\u0e32\u0e07 </p><ul> <li><i class=\"icon-check title-icon\"></i>\u0e40\u0e17\u0e35\u0e48\u0e22\u0e27\u0e1a\u0e34\u0e19\u0e25\u0e48\u0e32\u0e0a\u0e49\u0e32 \u0e22\u0e01\u0e40\u0e25\u0e34\u0e01\u0e01\u0e32\u0e23\u0e40\u0e14\u0e34\u0e19\u0e17\u0e32\u0e07</li><li><i class=\"icon-check title-icon\"></i>\u0e2a\u0e31\u0e21\u0e20\u0e32\u0e23\u0e30\u0e25\u0e48\u0e32\u0e0a\u0e49\u0e32 \u0e2a\u0e39\u0e0d\u0e2b\u0e32\u0e22 \u0e2b\u0e23\u0e37\u0e2d\u0e40\u0e2a\u0e35\u0e22\u0e2b\u0e32\u0e22</li><li><i class=\"icon-check title-icon\"></i>\u0e04\u0e48\u0e32\u0e23\u0e31\u0e01\u0e29\u0e32\u0e1e\u0e22\u0e32\u0e1a\u0e32\u0e25 \u0e41\u0e25\u0e30\u0e2d\u0e37\u0e48\u0e19\u0e46 \u0e2d\u0e35\u0e01\u0e21\u0e32\u0e01\u0e21\u0e32\u0e22</li></ul> <p>\u0e01\u0e23\u0e38\u0e13\u0e32\u0e28\u0e36\u0e01\u0e29\u0e32\u0e23\u0e32\u0e22\u0e25\u0e30\u0e40\u0e2d\u0e35\u0e22\u0e14\u0e40\u0e1e\u0e34\u0e48\u0e21\u0e40\u0e15\u0e34\u0e21\u0e08\u0e32\u0e01\u0e01\u0e23\u0e21\u0e18\u0e23\u0e23\u0e21\u0e4c\u0e1b\u0e23\u0e30\u0e01\u0e31\u0e19\u0e20\u0e31\u0e22\u0e09\u0e1a\u0e31\u0e1a\u0e40\u0e15\u0e47\u0e21</p><br><div class=\"box-insurance_detail\"> <div class=\"box-insurance_detail-img\"> <a href=\"https://www.thaiairways-insurance.com/wordpress/wp-content/themes/ovhc/images/Non-Life_Broker_License_Certificate_of_AWP_Services_Thailand.jpg\" target=\"_blank\"><img src=\"./img/client/AGA_license.jpg\" alt=\"AGA license image\" height=\"60\" width=\"60\" style=\"vertical-align: text-bottom;\"></a> </div><div class=\"box-insurance_detail-content\"> <p>\u0e02\u0e49\u0e32\u0e1e\u0e40\u0e08\u0e49\u0e32\u0e22\u0e34\u0e19\u0e22\u0e2d\u0e21\u0e43\u0e2b\u0e49\u0e1a\u0e23\u0e34\u0e29\u0e31\u0e17\u0e2f \u0e08\u0e31\u0e14\u0e40\u0e01\u0e47\u0e1a \u0e43\u0e0a\u0e49 \u0e41\u0e25\u0e30\u0e40\u0e1b\u0e34\u0e14\u0e40\u0e1c\u0e22 \u0e02\u0e49\u0e2d\u0e40\u0e17\u0e47\u0e08\u0e08\u0e23\u0e34\u0e07\u0e40\u0e01\u0e35\u0e48\u0e22\u0e27\u0e01\u0e31\u0e1a\u0e2a\u0e38\u0e02\u0e20\u0e32\u0e1e\u0e41\u0e25\u0e30\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25\u0e02\u0e2d\u0e07\u0e02\u0e49\u0e32\u0e1e\u0e40\u0e08\u0e49\u0e32\u0e15\u0e48\u0e2d\u0e04\u0e13\u0e30\u0e01\u0e23\u0e23\u0e21\u0e01\u0e32\u0e23\u0e01\u0e33\u0e01\u0e31\u0e1a\u0e41\u0e25\u0e30\u0e2a\u0e48\u0e07\u0e40\u0e2a\u0e23\u0e34\u0e21\u0e01\u0e32\u0e23\u0e1b\u0e23\u0e30\u0e01\u0e2d\u0e1a\u0e18\u0e38\u0e23\u0e01\u0e34\u0e08\u0e1b\u0e23\u0e30\u0e01\u0e31\u0e19\u0e20\u0e31\u0e22 \u0e40\u0e1e\u0e37\u0e48\u0e2d\u0e1b\u0e23\u0e30\u0e42\u0e22\u0e0a\u0e19\u0e4c\u0e43\u0e19\u0e01\u0e32\u0e23\u0e01\u0e33\u0e01\u0e31\u0e1a\u0e14\u0e39\u0e41\u0e25\u0e18\u0e38\u0e23\u0e01\u0e34\u0e08\u0e1b\u0e23\u0e30\u0e01\u0e31\u0e19\u0e20\u0e31\u0e22\n\u0e1b\u0e23\u0e30\u0e01\u0e31\u0e19\u0e20\u0e31\u0e22\u0e01\u0e32\u0e23\u0e40\u0e14\u0e34\u0e19\u0e17\u0e32\u0e07\u0e19\u0e35\u0e49\u0e43\u0e2b\u0e49\u0e1a\u0e23\u0e34\u0e01\u0e32\u0e23\u0e42\u0e14\u0e22 \u0e1a\u0e23\u0e34\u0e29\u0e31\u0e17 \u0e40\u0e2d \u0e14\u0e31\u0e1a\u0e40\u0e1a\u0e34\u0e25\u0e22\u0e39 \u0e1e\u0e35 \u0e40\u0e0b\u0e2d\u0e23\u0e4c\u0e27\u0e34\u0e2a\u0e40\u0e0b\u0e2a (\u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22) \u0e08\u0e33\u0e01\u0e31\u0e14 \u0e20\u0e32\u0e22\u0e43\u0e15\u0e49\u0e0a\u0e37\u0e48\u0e2d\u0e01\u0e32\u0e23\u0e04\u0e49\u0e32 \u0e2d\u0e25\u0e34\u0e2d\u0e31\u0e19\u0e0b\u0e4c \u0e42\u0e01\u0e25\u0e1a\u0e2d\u0e25 \u0e41\u0e2d\u0e2a\u0e0b\u0e34\u0e2a\u0e41\u0e17\u0e19\u0e17\u0e4c \u0e41\u0e25\u0e30\u0e23\u0e31\u0e1a\u0e1b\u0e23\u0e30\u0e01\u0e31\u0e19\u0e20\u0e31\u0e22\u0e42\u0e14\u0e22\u0e1a\u0e23\u0e34\u0e29\u0e31\u0e17 \u0e40\u0e21\u0e37\u0e2d\u0e07\u0e44\u0e17\u0e22\u0e1b\u0e23\u0e30\u0e01\u0e31\u0e19\u0e20\u0e31\u0e22 \u0e08\u0e33\u0e01\u0e31\u0e14 (\u0e21\u0e2b\u0e32\u0e0a\u0e19) \u0e01\u0e32\u0e23\u0e0b\u0e37\u0e49\u0e2d\u0e01\u0e23\u0e21\u0e18\u0e23\u0e23\u0e21\u0e4c\u0e19\u0e35\u0e49\u0e17\u0e48\u0e32\u0e19\u0e15\u0e01\u0e25\u0e07\u0e17\u0e35\u0e48\u0e08\u0e30\u0e23\u0e31\u0e1a\u0e01\u0e23\u0e21\u0e18\u0e23\u0e23\u0e21\u0e4c\u0e1b\u0e23\u0e30\u0e01\u0e31\u0e19\u0e20\u0e31\u0e22\u0e41\u0e25\u0e30\u0e43\u0e2b\u0e49\u0e15\u0e34\u0e14\u0e15\u0e48\u0e2d\u0e2a\u0e37\u0e48\u0e2d\u0e2a\u0e32\u0e23\u0e1c\u0e48\u0e32\u0e19\u0e0a\u0e48\u0e2d\u0e07\u0e17\u0e32\u0e07\u0e2d\u0e35\u0e40\u0e21\u0e25 \u0e2b\u0e32\u0e01\u0e17\u0e48\u0e32\u0e19\u0e21\u0e35\u0e04\u0e27\u0e32\u0e21\u0e1b\u0e23\u0e30\u0e2a\u0e07\u0e04\u0e4c\u0e40\u0e1b\u0e25\u0e35\u0e48\u0e22\u0e19\u0e41\u0e1b\u0e25\u0e07\u0e0a\u0e48\u0e2d\u0e07\u0e17\u0e32\u0e07\u0e01\u0e32\u0e23\u0e23\u0e31\u0e1a\u0e01\u0e23\u0e21\u0e18\u0e23\u0e23\u0e21\u0e4c\u0e41\u0e25\u0e30\u0e0a\u0e48\u0e2d\u0e07\u0e17\u0e32\u0e07\u0e01\u0e32\u0e23\u0e15\u0e34\u0e14\u0e15\u0e48\u0e2d\u0e2a\u0e37\u0e48\u0e2d\u0e2a\u0e32\u0e23 \u0e01\u0e23\u0e38\u0e13\u0e32\u0e41\u0e08\u0e49\u0e07\u0e04\u0e27\u0e32\u0e21\u0e1b\u0e23\u0e30\u0e2a\u0e07\u0e04\u0e4c\u0e21\u0e32\u0e17\u0e35\u0e48 +66(0)2 305 8492</p></div></div>",
-                insurance_txt_mobile:"<p>THAI Travel Safe <br>\u0e40\u0e1e\u0e34\u0e48\u0e21\u0e40\u0e07\u0e34\u0e19\u0e40\u0e1e\u0e35\u0e22\u0e07\u0e40\u0e25\u0e47\u0e01\u0e19\u0e49\u0e2d\u0e22\u0e40\u0e1e\u0e37\u0e48\u0e2d\u0e1b\u0e01\u0e1b\u0e49\u0e2d\u0e07\u0e04\u0e38\u0e13 \u0e41\u0e25\u0e30\u0e04\u0e19\u0e17\u0e35\u0e48\u0e04\u0e38\u0e13\u0e23\u0e31\u0e01 \u0e14\u0e49\u0e27\u0e22\u0e04\u0e27\u0e32\u0e21\u0e04\u0e38\u0e49\u0e21\u0e04\u0e23\u0e2d\u0e07\u0e08\u0e32\u0e01\u0e1b\u0e23\u0e30\u0e01\u0e31\u0e19\u0e20\u0e31\u0e22\u0e01\u0e32\u0e23\u0e40\u0e14\u0e34\u0e19\u0e17\u0e32\u0e07 </p>",
+                insurance_txt_mobile: "<p>THAI Travel Safe <br>\u0e40\u0e1e\u0e34\u0e48\u0e21\u0e40\u0e07\u0e34\u0e19\u0e40\u0e1e\u0e35\u0e22\u0e07\u0e40\u0e25\u0e47\u0e01\u0e19\u0e49\u0e2d\u0e22\u0e40\u0e1e\u0e37\u0e48\u0e2d\u0e1b\u0e01\u0e1b\u0e49\u0e2d\u0e07\u0e04\u0e38\u0e13 \u0e41\u0e25\u0e30\u0e04\u0e19\u0e17\u0e35\u0e48\u0e04\u0e38\u0e13\u0e23\u0e31\u0e01 \u0e14\u0e49\u0e27\u0e22\u0e04\u0e27\u0e32\u0e21\u0e04\u0e38\u0e49\u0e21\u0e04\u0e23\u0e2d\u0e07\u0e08\u0e32\u0e01\u0e1b\u0e23\u0e30\u0e01\u0e31\u0e19\u0e20\u0e31\u0e22\u0e01\u0e32\u0e23\u0e40\u0e14\u0e34\u0e19\u0e17\u0e32\u0e07 </p>",
                 radio_1: {
                     txt_1: "\u0e15\u0e49\u0e2d\u0e07\u0e01\u0e32\u0e23\u0e04\u0e27\u0e32\u0e21\u0e04\u0e38\u0e49\u0e21\u0e04\u0e23\u0e2d\u0e07",
                     txt_2: "\u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e1c\u0e39\u0e49\u0e42\u0e14\u0e22\u0e2a\u0e32\u0e23\u0e17\u0e31\u0e49\u0e07\u0e2b\u0e21\u0e14",
@@ -2882,6 +2792,112 @@ let x_objInsurance = (c, l) => {
                     txt_2: "\u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e1c\u0e39\u0e49\u0e42\u0e14\u0e22\u0e2a\u0e32\u0e23\u0e17\u0e31\u0e49\u0e07\u0e2b\u0e21\u0e14"
                 }
             }
+        },
+        IT: {
+            IT: {
+                titlepanel: 'Assicurazione Viaggi',
+                insurance_txt: "<header class=\"box-insurance_header\"> <img id=\"logo_ins_2\" src=\"\" alt=\"\"> <p>Servizio offerto da Allianz Global Assistance, un marchio di AWP P.&C. S.A. <a target=\"_blank\" href=\"http://www.magroup-online.com/ITA/IT/IT/AWP_Company_Data.pdf\">Maggiori Informazioni</a> </p></header> <p>Sulla base delle informazioni fin qui acquisite, dei rischi specifici relativi al tipo di servizio richiesto e tenuto conto delle caratteristiche dei servizi turistici prescelti, il prodotto che la compagnia ritiene adeguato rispetto alle vostre esigenze assicurative ha le seguenti caratteristiche:</p><p class=\"txtregular\">Informiamo che, in considerazione delle caratteristiche del prodotto di cui alla presente offerta, rivolto a clientela digital, l'acquisto della polizza avviene interamente on-line. Pertanto, se non si dispone di un indirizzo e-mail, l'acquisto non potr\xE0 essere finalizzato. In tal caso, La invitiamo a consultare i nostri prodotti tramite differenti canali.\u201D</p><p>COPERTURA MULTIRISCHI CON ANNULLAMENTO</p><ul> <li><i class=\"icon-check title-icon\"></i>Rinuncia al viaggio \u2013 Rimborso penale <span>Rimborso fino a \u20AC 2.500,00 per persona della penale per la rinuncia o la modifica della prenotazione con l'applicazione di una franchigia fino al 10% con un minimo di \u20AC 10,00</span></li><li><i class=\"icon-check title-icon\"></i>Viaggio sicuro - Assistenza in viaggio - vedi dettaglio </li><li><i class=\"icon-check title-icon\"></i>Spese mediche <p>Pagamento diretto spese ospedaliere</p><ol> <li>- fino a \u20AC 1.500,00 per persona per viaggi in Italia</li><li>- fino a \u20AC 150.000,00 per persona per viaggi all'Estero</li><li>- limite rette di degenza : \u20AC 100,00 per persona al giorno fino a massimo \u20AC 1.250,00 </li></ol> <p>Rimborso spese mediche e farmaceutiche</p><ol> <li>- fino a \u20AC \u20AC 1.250,00 per persona per viaggi in Italia e all'Estero</li><li>- franchigia fissa applicata \u20AC 100,00 per persona</li></ol> </li><li><i class=\"icon-check title-icon\"></i>Bagaglio ed effetti personali <span>Rimborso fino a \u20AC 1.000,00 per persona in caso di furto, incendio, rapina, scippo, smarrimento, danneggiamento </span><ol> <li>- limite per oggetto di \u20AC 150,00 </li><li>- franchigia del 10% con un minimo di \u20AC 10,00</li></ol> </li></ul> <p><a target=\"_blank\" href=\"http://www.magroup-online.com/TGA/IT/IT/TGA_IT_it_IPID_INT_Multirischi_con_Annullamento.pdf\"> Consulta il set informativo precontrattuale </a></p><p>La presente polizza assicurativa copre solo i residenti in Italia</p>",
+                radio_1: {
+                    txt_1: "Desidero acquistare",
+                    txt_2: "l\u2019Assicurazione viaggio - Premio totale: ",
+                    linkPolicy: "",
+                    txtPolicy: "",
+                    description: "<br><span class=\"box-insurance_desc\">Selezionando questo prodotto assicurativo:</span><ul class=\"box-insurance_desc\">    <li>- confermo di aver letto e accettato il set informativo precontrattuale (composto da condizioni di assicurazione, DIP e DIP Aggiuntivo) e l'informativa privacy in formato digitale </li>    <li>- confermo che la polizza corrisponde alle mie richieste ed esigenze</li>    <li>Sono consapevole che, in considerazione delle caratteristiche del prodotto che mi \xE8 stato offerto, in quanto rivolto a clientela digital, per finalizzare l'acquisto della polizza \xE8 necessario disporre di un indirizzo email.</li></ul>"
+                },
+                radio_2: {
+                    txt_1: "Intendo proseguire",
+                    txt_2: "senza Assicurazione"
+                }
+            }
+        },
+        FR: {
+            FR: {
+                titlepanel: 'Votre assurance voyage (Recommand\u00E9e)',
+                insurance_txt: "",
+                radio_1: {
+                    txt_1: "Assurance Multirisque",
+                    txt_2: " ",
+                    linkPolicy: "",
+                    txtPolicy: "",
+                    description: "<br><ul class=\"box-insurance_desc\">\n<li><i class=\"icon-check title-icon\"></i><span class=\"bold\">Annulation / Modification</span><br>\n                       <p> Si vous rencontrez un impr\xE9vu : maladie, accident, modification de cong\xE9 par votre employeur.Billet rembours\xE9 \xE0 hauteur de 2500\u20AC par personne assur\xE9e, en cas d'annulation.Remboursement des \xE9ventuels frais li\xE9s \xE0 une modification \xE0 hauteur de 30\u20AC par personne assur\xE9e. </p></li>\n                    <li><i class=\"icon-check title-icon\"></i><span class=\"bold\">Dommages aux bagages</span><br>\n                        <p>Vous endommagez et/ou perdez vos bagages :<br>\n                        Indemnisation par personne assur\xE9e \xE0 haueur de 1000\u20AC. </p></li>\n                    <li><i class=\"icon-check title-icon\"></i><span class=\"bold\">Interruption de s\xE9jour</span><br>\n                        <p>Remboursement des \xE9ventuels frais suite \xE0 l'interruption de votre voyage.</p>\n                    </li>\n                    <li><i class=\"icon-check title-icon\"></i><span class=\"bold\">Assistance aux voyageurs</span><br>\n                        <p>En cas d'urgence :<br>\n                Profitez d'une assistance m\xE9dicale totale.\n                Organisation et prise en charge du rapatriement, du retour de vos proches.</p>\n                    </li>\n                    <li><i class=\"icon-check title-icon\"></i><span class=\"bold\">Rapatriement et frais m\xE9dicaux</span><br>\n                        <p>Prise en charge jusqu'\xE0 75 000\u20AC.<br>\n                        Pour en savoir plus, <a target=\"_blank\" href=\"http://www.magroup-online.com/TGA/FR/FR/TGA_FR_fr_TCs.pdf\">cliquez ici</a>. </p>\n                    </li>\n                </ul>"
+                },
+                radio_2: {
+                    txt_1: "Assurance Annulation",
+                    txt_2: " ",
+                    description: "<br><ul class=\"box-insurance_desc\">\n<li><i class=\"icon-check title-icon\"></i><span class=\"bold\">Annulation / Modification</span><br>\n                        <p>Si vous rencontrez un impr\xE9vu : maladie, accident, modification de cong\xE9 par votre employeur.\n                        Billet rembours\xE9 \xE0 hauteur de 2500\u20AC par personne assur\xE9e, en cas d'annulation.\n                        Remboursement des \xE9ventuels frais li\xE9s \xE0 une modification \xE0 hauteur de 30\u20AC par personne assur\xE9e.</p>\n                    </li>\n                </ul>"
+                },
+                radio_3: {
+                    txt_1: "Je ne souhaite pas \xEAtre couvert et en cas ",
+                    txt_2: "d'impr\xE9vus tous les frais resteront \xE0 ma charge.",
+                    description: "<br><span class=\"box-insurance_desc\">En s\xE9lectionnant un produit d'assurance :</span>\n<p class=\"box-insurance_desc\">Je d\xE9clare avoir pris connaissance du document d\u2019information pr\xE9alablement \xE0 la souscription du contrat d\u2019assurance ainsi que des Conditions G\xE9n\xE9rales et de la d\xE9claration de confidentialit\xE9. Je reconnais que le produit propos\xE9 correspond \xE0 mes besoins.</p>\n<p class=\"box-insurance_desc\">Je confirme avoir ma r\xE9sidence en France. Ce contrat d'assurance garantit uniquement les r\xE9sidents en France.</p>"
+                }
+            }
+        },
+        MY:{
+            GB:{
+                titlepanel: "Protect your flight (Recommended)",
+                insurance_txt: `<p>THAI Travel Safe <br> Leave your worry behind and make sure that you're protected from </p> <ul> <li><i class="icon-check title-icon"></i> Flight delay, flight cancellation</li> <li><i class="icon-check title-icon"></i> Compensation for baggage delay or loss</li> <li><i class="icon-check title-icon"></i> Medical expenses for in/out patient</li> </ul> <p>For more information, please refer to Policy Wording.</p> <br>  <div class="box-insurance_detail-content"> <p>Note: This insurance service is provided by CIMB Howden. Please read the Policy Wording and the <a target="_blank" href="http://www.magroup-online.com/TGA/MY/EN/TGMY_Service_Booklet.pdf">Service Booklet</a> for complete details on coverage terms.</p> </div> </div>`,
+                insurance_txt_mobile:"<p>THAI Travel Safe <br> Leave your worry behind and make sure that you're protected </p>",
+                radio_1: {
+                    txt_1: "Yes, I want to protect my trip",
+                    txt_2: "for all passengers ",
+                    linkPolicy: "http://www.magroup-online.com/TGA/MY/EN/Comprehensive_TGMY_V1.pdf",
+                    txtPolicy: "For Policy Wording"
+                },
+                radio_2: {
+                    txt_1: "No, I don\'t want to protect my trip",
+                    txt_2: "for all passengers"
+                }
+            }
+        },
+        BE:{
+            GB: {
+                titlepanel: "The following Travel Insurance information is provided by Allianz Assistance.",
+                insurance_txt: "<p>Protect yourself against unexpected with Travel Insurance from Allianz.<br>Our Policy covers :</p> <ul> <li><i class=\"icon-check title-icon\"></i> Flight delay, flight cancellation</li> <li><i class=\"icon-check title-icon\"></i> Compensation for baggage delay or loss</li> <li><i class=\"icon-check title-icon\"></i> Medical expenses for in/out patient</li> </ul> <p>For more information, please refer to Policy Wording.</p> <br>  <div class=\"box-insurance_detail-content\"> <p><b>Please read the Product Information Document (IPID), the Privacy Document and the general conditions. By selecting and purchasing this Travel Insurance, you confirm that you have read and that you agree with the Product Information Document (IPID), the Privacy Document and the general conditions.</b><br>\n                This Travel Insurance is for residents from Belgium and Luxembourg only with journey starting from Belgium or Luxembourg. It is underwritten by <b>Liberty International Insurance Limited (\"Liberty\")</b>, with services provided by <b>Allianz Assistance.</b> Allianz Assistance, a trading name of <b>Allianz Partners (Belgian Branch)</b>, is registered as an insurance agency of Liberty in respect of this Travel Insurance. You are purchasing this Travel Insurance from Liberty and not Thai Airways. Liberty is the insurer of and responsible for issuing this Travel Insurance. Thai Airways is not an insurance agent of Liberty and does not act as an insurance broker. Thai Airways will not be arranging this Travel Insurance on your behalf and is not responsible for any information provided by Liberty and Allianz Assistance about this Travel Insurance.<br>\n                <b>You consent Liberty and Allianz Assistance to use your and any other passengers (under this booking) personal data for the application and administration of this Travel Insurance and provision of claims and assistance services. </b></p> </div> </div>",
+                insurance_txt_mobile: "<p>Protect yourself against unexpected with Travel Insurance from Allianz.<br>Our Policy covers :</p>",
+                radio_1: {
+                    txt_1: "I agree to the Product Information Document (IPID) and the general conditions.",
+                    txt_2: "",
+                    linkPolicy: "http://www.magroup-online.com/TGA/TH/EN/TG_TCs_Domestic&Outbound_EN.pdf",
+                    txtPolicy: "For Policy Wording",
+                    description:`<br><span>By selecting this insurance product:</span><ul class="box-insurance_desc"><li>- I confirm that I have read and I accept the Insurance Product Information Document, the Terms & Conditions and the Privacy Statement, provided in a digital format</li><li>I confirm I have verified that product chosen corresponds to my needs</li><li>I confirm having my residence in Belgium</li></ul>`
+                },
+                radio_2: {
+                    txt_1: "No, I don\'t want to protect my trip",
+                    txt_2: "for all passengers"
+                }
+            },
+            FR:{
+                titlepanel: "Protect your flight",
+                insurance_txt: `<p>The following Travel Insurance information is provided by Allianz Assistance<br> Leave your worry behind and make sure that you're protected from </p> <ul> <li><i class="icon-check title-icon"></i> Flight delay, flight cancellation</li> <li><i class="icon-check title-icon"></i> Compensation for baggage delay or loss</li> <li><i class="icon-check title-icon"></i> Medical expenses for in/out patient</li> </ul> <p>For more information, please refer to Policy Wording.</p> <br>  <div class="box-insurance_detail-content"> <p><b>Veuillez lire le document d\'information sur les produits d\'assurance, l\'avis de confidentialit\u00e9, les modalit\u00e9s et conditions des produits d\'assurance. En choisissant et en souscrivant la pr\u00e9sente assurance voyage, vous confirmez que vous avez lu et que vous acceptez l\'ensemble des modalit\u00e9s, conditions et exclusions du libell\u00e9 et l\'avis de confidentialit\u00e9. Vous confirmez avoir v\u00e9rifi\u00e9 que le produit choisi correspond \u00e0 vos besoins. Cette assurance voyage est r\u00e9serv\u00e9e aux r\u00e9sidents belges ou luxembourgeois dont le voyage commence en Belgique ou au Luxembourg. Elle est souscrite par Liberty International Insurance Limited (\" Liberty \"), avec des services fournis par Allianz Assistance. Allianz Assistance, nom commercial d\'Allianz Partners (Belux), est enregistr\u00e9e en tant qu\'agence d\'assurance de Liberty pour cette assurance voyage. Vous achetez cette assurance voyage de Liberty et non de Thai Airways. Liberty est l\'assureur et le responsable de l\'\u00e9mission de cette assurance voyage. Thai Airways n\'est pas un agent d\'assurance de Liberty et n\'agit pas en tant que courtier d\'assurance. Thai Airways n\'organisera pas cette assurance voyage en votre nom et n\'est pas responsable des informations fournies par Liberty et Allianz Assistance concernant cette assurance voyage.</b><br>Vous consentez \u00e0 ce que Liberty et Allianz Assistance utilisent vos donn\u00e9es personnelles et celles de tout autre passager (dans le cadre de cette r\u00e9servation) pour l\'application et l\'administration de cette assurance voyage et la fourniture de services d\'assistance et de r\u00e9clamation. La prime est la prime totale pour toutes les personnes assur\u00e9es.<br>
+              </p> </div> </div>`,
+                insurance_txt_mobile:"<p>THAI Travel Safe <br> Leave your worry behind and make sure that you're protected </p>",
+                radio_1: {
+                    txt_1: "I agree to the Product Information Document (IPID) and the general conditions.",
+                    txt_2: "for all passengers",
+                    linkPolicy: "http://www.magroup-online.com/TGA/TH/EN/TG_TCs_Domestic&Outbound_EN.pdf",
+                    txtPolicy: "For Policy Wording"
+                },
+                radio_2: {
+                    txt_1: "No, I don\'t want to protect my trip",
+                    txt_2: "for all passengers"
+                }
+            },
+            DE: {
+                titlepanel: "Protect your flight",
+                insurance_txt: "<p>The following Travel Insurance information is provided by Allianz Assistance<br> Leave your worry behind and make sure that you're protected from </p> <ul> <li><i class=\"icon-check title-icon\"></i> Flight delay, flight cancellation</li> <li><i class=\"icon-check title-icon\"></i> Compensation for baggage delay or loss</li> <li><i class=\"icon-check title-icon\"></i> Medical expenses for in/out patient</li> </ul> <p>For more information, please refer to Policy Wording.</p> <br>  <div class=\"box-insurance_detail-content\"> <p><b>Gelieve het Product Informatie Document (IPID), het Privacy Document en de Algemene Voorwaarden te lezen. Door deze reisverzekering te kiezen en aan te kopen bevestig ik dat ik de Algemene Voorwaarden, het Product Informatie Document en het Privacy Document heb gelezen en goedgekeurd. U heft nagegaan dat het gekozen verzekeringsproduct passend is voor uw behoeften.</b>start in Belgi\u00eb of Luxemburg. Het is onderschreven door Liberty International Insurance Limited (\"Liberty\"), met diensten die voorzien zijn door Allianz Assistance. Allianz Assistance, een merknaam van Allianz Partners (Belux), is geregistreerd als een verzekeringsmaatschappij van Liberty toeziend op deze reisverzekering. U koopt de reisverzekering aan van Liberty en niet van Thai Airways. Liberty is de verzekeraar en verantwoordelijk voor de opmaak van deze reisverzekering. Thai Airways is geen verzekeringsagent van Liberty en handelt niet als verzekeringsmakelaar. Thai Airways handelt deze reisverzekering niet af in naam van de klant en is niet verantwoordelijk voor welke informatie dan ook die gegeven werd door Liberty en Allianz Assistance mbt deze reisverzekering.<br><b>U stemt ermee in dat Liberty en Allianz Assistance uw, en deze van de andere passagiers (onder deze boeking), persoonlijke gegevens aanwendt voor de toepassing en de administratie van deze reisverzekering en de afhandeling van schadegevallen en bijstandsdiensten. De premie is de totale premie voor alle verzekerde personen.</b><br>\n</p> </div> </div>",
+                insurance_txt_mobile: "<p>THAI Travel Safe <br> Leave your worry behind and make sure that you're protected </p>",
+                radio_1: {
+                    txt_1: "Ik ben het eens met de Product Informatie Document (IPID) en de algemene voorwaarden.",
+                    txt_2: "for all passengers",
+                    linkPolicy: "http://www.magroup-online.com/TGA/TH/EN/TG_TCs_Domestic&Outbound_EN.pdf",
+                    txtPolicy: "For Policy Wording"
+                },
+                radio_2: {
+                    txt_1: "No, I don\'t want to protect my trip",
+                    txt_2: "for all passengers"
+                }
+            }
         }
     }
     return _objInsurance[c] !== undefined ? _objInsurance[c][l] : _objInsurance['GB']['GB'];
@@ -2889,28 +2905,47 @@ let x_objInsurance = (c, l) => {
 
 
 function insurance(xcountry, xlanguage) {
-    implibdx.core.updateDom("#insurance-select", function() {
-        if (document.getElementById('insurance-select') !== null) {
-            let lc = (x_objInsurance(xcountry, xlanguage) != undefined) ? x_objInsurance(xcountry, xlanguage) : x_objInsurance(xcountry, 'GB')
-            $(".title-panel-text").html("<i class=\"icon-aid title-icon\" aria-hidden=\"true\"></i>" + lc.titlepanel)
-            $(".box-insurance").html(lc.insurance_txt);
-            $('label[for$="insuranceRadioGroup-insuranceRadioGroup1"]>span.bold').html(lc.radio_1.txt_1)
-            $("label[for$='insuranceRadioGroup-insuranceRadioGroup1']")[0].childNodes[2].textContent = lc.radio_1.txt_2;
-            $('label[for$="insuranceRadioGroup-insuranceRadioGroup1"]>a').html(lc.radio_1.txtPolicy)
-            $('label[for$="insuranceRadioGroup-insuranceRadioGroup1"]>a').attr('href', lc.radio_1.linkPolicy);
-            $('label[for$="insuranceRadioGroup-insuranceRadioGroup2"]').html(lc.radio_2.txt_1 + " " + lc.radio_2.txt_2);
-        }
-    }, 1000, 5);
+        implibdx.core.updateDom("#insurance-select", function () {
+            if (document.getElementById('insurance-select') !== null) {
+                let lc = (x_objInsurance(xcountry, xlanguage) != undefined) ? x_objInsurance(xcountry, xlanguage) : x_objInsurance(xcountry, 'GB')
+                $(".title-panel-text").html("<i class=\"icon-aid title-icon\" aria-hidden=\"true\"></i>" + lc.titlepanel)
 
+                                $(".box-insurance").html(lc.insurance_txt);
+                $('label[for$="insuranceRadioGroup-insuranceRadioGroup1"]>span.bold').html(lc.radio_1.txt_1)
+                $("label[for$='insuranceRadioGroup-insuranceRadioGroup1']")[0].childNodes[1].textContent = lc.radio_1.txt_1;
+                $("label[for$='insuranceRadioGroup-insuranceRadioGroup1']")[0].childNodes[2].textContent = lc.radio_1.txt_2;
+                $('label[for$="insuranceRadioGroup-insuranceRadioGroup1"]>a').html(lc.radio_1.txtPolicy)
+                $('label[for$="insuranceRadioGroup-insuranceRadioGroup1"]>a').attr('href', lc.radio_1.linkPolicy);
+                $('label[for$="insuranceRadioGroup-insuranceRadioGroup2"]').html(lc.radio_2.txt_1 + " " + lc.radio_2.txt_2);
+
+                if(typeof lc.logourl !== "undefined"){
+                    document.querySelector('.insurance-banner img').src = lc.logourl;
+                }
+                if(typeof lc.radio_1.description !== "undefined" ){
+                    $("label[for$='insuranceRadioGroup-insuranceRadioGroup1']").append(lc.radio_1.description)
+                }
+                if(typeof lc.radio_2.description !== "undefined" ){
+                    $("label[for$='insuranceRadioGroup-insuranceRadioGroup2']").append(lc.radio_2.description)
+                }
+                if(typeof lc.radio_3 !== "undefined" ){
+                    $('label[for$="insuranceRadioGroup-insuranceRadioGroup3"]').html(lc.radio_3.txt_1 + " " + lc.radio_3.txt_2);
+                    if( typeof lc.radio_3.description !== "undefined"){
+                        $("label[for$='insuranceRadioGroup-insuranceRadioGroup3']").append(lc.radio_3.description)    
+                    }
+                }
+                checkbox_cf(xcountry)
+            }
+
+        }, 1000, 5);
     let lcx = (x_objInsurance(xcountry, xlanguage) != undefined) ? x_objInsurance(xcountry, xlanguage) : x_objInsurance(xcountry, 'GB')
-    implibdx.core.updateDom("#terms-and-conditions", function() {
+    implibdx.core.updateDom("#terms-and-conditions", function () {
         $("#tpl3_widget-input-purchaseForm-insuranceForm-insuranceRadioGroup-insuranceRadioGroup1").click(() => {
             let insurances_tc = "";
             setTimeout(() => {
                 let inshref = chkSite() ? $('.checkbox a')[1] : $('.checkbox a')[2];
                 let inshref_GB = chkSite() ? $('.checkbox a')[3] : $('.checkbox a')[4];
                 if (eBaDataLayer.bound[0].dep_country === "HK") {
-                    insurances_tc = eBaDataLayer.language === 'TW'? inshref.textContent : inshref_GB.textContent;
+                    insurances_tc = eBaDataLayer.language === 'TW' ? inshref.textContent : inshref_GB.textContent;
                 } else {
                     insurances_tc = inshref_GB.textContent;
                 }
@@ -2929,12 +2964,23 @@ function insurance(xcountry, xlanguage) {
 
 }
 
-function remove_linkPolicy(){
-    implibdx.core.updateDom(".contract-detail", function() {
-    $(".contract-detail>div a").remove();
-    $(".contract-detail>div a").css('display','none')
+function remove_linkPolicy() {
+    implibdx.core.updateDom(".contract-detail", function () {
+        $(".contract-detail>div a").remove();
+        $(".contract-detail>div a").css('display', 'none')
     }, 1000, 5);
 }
+const checkbox_cf = (dep_country)=>{
+    try {
+        if(dep_country == "FR" || dep_country == "IT"){
+            $("#consent_ins").appendTo($('.insurance-radio-selection'));
+            $("#consent_ins").removeClass($('ins_hide'));
+        }
+    } catch (error) {
+        console.log('no checkbox');
+    }
+}
+
 var startFNJS = function () {
     $("#datatransferForm>input").serializeArray().forEach(datatransferForm);
     switch (eBaDataLayer.page_code) {
@@ -2944,31 +2990,24 @@ var startFNJS = function () {
 
 
 
-            chkSite() ? DMP_ControlTag_kxct.add() : console.log('DMP_ControlTag_kxct');
-            chkSite() ? DMP_ControlTag_kxint.add() : console.log('DMP_ControlTag_kxint');
+            services_tablefooter(eBaDataLayer.currency)
             break;
         case "FDCS":
 
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
             lowest();
             _addClass('main-layout-header', 'page-template-section');
-            chkSite() ? DMP_ControlTag_kxct.add() : console.log('DMP_ControlTag_kxct');
-            chkSite() ? DMP_ControlTag_kxint.add() : console.log('DMP_ControlTag_kxint');
             break;
         case "SDAI":
 
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
 
-            chkSite() ? DMP_ControlTag_kxct.add() : console.log('DMP_ControlTag_kxct');
-            chkSite() ? DMP_ControlTag_kxint.add() : console.log('DMP_ControlTag_kxint');
             break;
         case "FDFF":
 
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
 
 
-            chkSite() ? DMP_ControlTag_kxct.add() : console.log('DMP_ControlTag_kxct');
-            chkSite() ? DMP_ControlTag_kxint.add() : console.log('DMP_ControlTag_kxint');
             break;
         case "FARE":
 
@@ -2976,8 +3015,6 @@ var startFNJS = function () {
             updateHTML.hilight_Content.content_FARE()
 
 
-            chkSite() ? DMP_ControlTag_kxct.add() : console.log('DMP_ControlTag_kxct');
-            chkSite() ? DMP_ControlTag_kxint.add() : console.log('DMP_ControlTag_kxint');
             break;
         case "ALPI":
 
@@ -2987,8 +3024,9 @@ var startFNJS = function () {
             updateHTML.extraService('catalogServices-teaser-SIT','div.catalogServices-teasers-container','seat');
             updateHTML.extraService('catalogServices-teaser-MEA','div.catalogServices-teasers-container','meal');
             updateHTML.extraService('catalogServices-teaser-BAG','div.catalogServices-teasers-container','baggage');
-            chkSite() ? DMP_ControlTag_kxct.add() : console.log('DMP_ControlTag_kxct');
-            chkSite() ? DMP_ControlTag_kxint.add() : console.log('DMP_ControlTag_kxint');
+            updateHTML.extraService('catalogServices-teaser-WCH','div.catalogServices-teasers-container','wheelchair');
+            _hideMEA();
+
             if(eBaDataLayer.language === "FR"){
                 placeholder();
             }
@@ -3003,21 +3041,24 @@ var startFNJS = function () {
             updateHTML.extraService('catalogServices-teaser-BAG','div.catalogServices-teasers-container','baggage');
             updateHTML.extraService('catalogServices-teaser-WCH','div.catalogServices-teasers-container','wheelchair');
             updateHTML.addseat_class();
+            _hideMEA();
+            xeBag();
 
             expanded_adult();
             govApim();
             contactInfo.hide_phone();
-            chkSite() ? DMP_ControlTag_kxct.add() : console.log('DMP_ControlTag_kxct');
-            chkSite() ? DMP_ControlTag_kxint.add() : console.log('DMP_ControlTag_kxint');
             if(eBaDataLayer.language === "FR"){
                 placeholder();
             }
             break;
         case "AAS":
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
+            updateHTML.extraService('catalogServices-teaser-SIT','div.catalogServices-teasers-container','seat');
+            updateHTML.extraService('catalogServices-teaser-MEA','div.catalogServices-teasers-container','meal');
+            updateHTML.extraService('catalogServices-teaser-BAG','div.catalogServices-teasers-container','baggage');
+            _hideMEA();
+            xeBag();
 
-            chkSite() ? DMP_ControlTag_kxct.add() : console.log('DMP_ControlTag_kxct');
-            chkSite() ? DMP_ControlTag_kxint.add() : console.log('DMP_ControlTag_kxint');
             break;
         case "PURC":
 
@@ -3026,45 +3067,42 @@ var startFNJS = function () {
             updateHTML.clickConfirm();
             abandon_consent.add();
             goodservice_india.AddData();
+            fare_condi_purc(eBaDataLayer.language); 
 
             if (dataTransfer['EXTERNAL_ID#4'] === 'GOV') {
                 GOV();
             }
-            if (new Date() >= setDatef(['2019', '03', '3']) === true) {
-                insurance(eBaDataLayer.bound[0].dep_country, eBaDataLayer.language)
-            }
-            chkSite() ? DMP_ControlTag_kxct.add() : console.log('DMP_ControlTag_kxct');
-            chkSite() ? DMP_ControlTag_kxint.add() : console.log('DMP_ControlTag_kxint');
+
+                        insurance(eBaDataLayer.bound[0].dep_country, eBaDataLayer.language)
+
             linkDangerous(isMobile);
+            changeClassPagmentbox();
             break;
         case "CONF":
 
 
             updateHTML.remove_content.additional_services();
             goodservice_india.AddData();
+
+            tgBanner.add();
+
+            implibdx.core.updateDom("#fare-review-travellers", function () {
+                document.querySelector('#fare-review-travellers button').remove()
+            }, 1000, 3);
+
             sendProCode();
             subscribe.sbbAdd();
 
             if (chkSite()) {
-                sendEmail.jdCentral.send();
-                sendEmail.lineVillage.send();
-                sendEmail.SG_Halloween.send();
-                sendEmail.Samitivej.send();
-                sendEmail.Brusselsvoucher.send();
-                sendEmail.Anantaravoucher.send();
-                sendEmail.kyotobus.send();
             }
 
 
-            chkSite() ? fbpixel_SE.add() : console.log("fbpixel_SE");
 
             xbagSet.set();
             removePinkbanner('#PinkBanner_3');
 
             runWidget(eBaDataLayer.external_id.substring(0,2));
             pinkbanner_remove();
-            chkSite() ? DMP_ControlTag_kxct.add() : console.log('DMP_ControlTag_kxct');
-            chkSite() ? DMP_ControlTag_kxint.add() : console.log('DMP_ControlTag_kxint');
 
             break;
 
@@ -3076,23 +3114,19 @@ var startFNJS = function () {
             (eBaDataLayer.language == "GB" || eBaDataLayer.language == "FR") ? xbagSet.set() : console.log("xbagSet");
             removeXbag.remove(removeXbag.check())
 
-            chkSite() ? DMP_ControlTag_kxct.add() : console.log('DMP_ControlTag_kxct');
-            chkSite() ? DMP_ControlTag_kxint.add() : console.log('DMP_ControlTag_kxint');
-            break;
+                        break;
         case "MDFSR":
 
             console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code)
+            _hideMEA();
+            xeBag();
             updateHTML.extraService('divdiv.catalogServices-teaser-SIT', 'divdiv.catalogServices-teaser-MEA', 'divdiv.catalogServices-teaser-BAG', 'divdiv.div.catalogServices-teasers-container');
-            chkSite() ? DMP_ControlTag_kxct.add() : console.log('DMP_ControlTag_kxct');
-            chkSite() ? DMP_ControlTag_kxint.add() : console.log('DMP_ControlTag_kxint');
             break;
     }
 
-    implibdx.core.updateDom("footer#main-layout-bottom", function () {
         console.log('ALL PAGE');
         chkSite() ? iNetasia_Tealium.add() : iNetasia_Tealium_qa.add();
 
-    }, 1000, 6);
 
 }
 

@@ -216,7 +216,7 @@ var addScript = function (objName, elmID, updateID, fn) {
     var anchor = document.getElementById(elmID);
 
     implibdx.core.updateDom(updateID, function () {
-        try{
+        try {
             for (var x in objNamescript[objName]) {
                 // console.log(objNamescript[objName][x].paramData,objNamescript[objName][x].txt)
                 // anchor.append( createEM.create(objNamescript[objName][x].tag,(objNamescript[objName][x].paramData)?pathData(objNamescript[objName][x].paramData,objNamescript[objName][x].txt):objNamescript[objName][x].txt,objNamescript[objName][x].case) )
@@ -229,102 +229,43 @@ var addScript = function (objName, elmID, updateID, fn) {
                         objNamescript[objName][x].case))
             }
             fn;
-        }catch{
-            console.log('Err--- Addscript'+objName);
+        } catch{
+            console.log('Err--- Addscript' + objName);
 
         }
-        
+
     }, 1000, 5);
 }
 
 var iNetasia_Tealium = {
     add: function add() {
-      implibdx.core.updateDom("footer#main-layout-bottom", function () {
-        var addTo = document.getElementById('main-layout-bottom');
-        var createAttr = document.createElement("script");
-        var txtNode = '';
-        createAttr.setAttribute('type', 'text/javascript');
-        var content = "utag_cfg_ovrd={},a=\"//tags.tiqcdn.com/utag/thai-airways/main/prod/utag.js\",b=document,c=\"script\",d=b.createElement(c),d.src=a,d.type=\"text/java\"+c,d.async=!0,d.onerror=function(){utag_cfg_ovrd.path=\"//tags.tiqcdn.cn/utag/thai-airways/main/prod/\",a=\"//tags.tiqcdn.cn/utag/thai-airways/main/prod/utag.js\",b=document,c=\"script\",d=b.createElement(c),d.src=a,d.type=\"text/java\"+c,d.async=!0,a=b.getElementsByTagName(c)[0],a.parentNode.insertBefore(d,a)},a=b.getElementsByTagName(c)[0],a.parentNode.insertBefore(d,a);";
-        txtNode = document.createTextNode(content);
-        createAttr.appendChild(txtNode);
-        addTo.appendChild(createAttr);
-      }, 1000, 6);
-    }
-  };
-
-  var iNetasia_Tealium_qa = {
-    add: function add() {
-      implibdx.core.updateDom("footer#main-layout-bottom", function () {
-        var addTo = document.getElementById('main-layout-bottom');
-        var createAttr = document.createElement("script");
-        var txtNode = '';
-        createAttr.setAttribute('type', 'text/javascript');
-        var content = "utag_cfg_ovrd={},a=\"//tags.tiqcdn.com/utag/thai-airways/main/qa/utag.js\",b=document,c=\"script\",d=b.createElement(c),d.src=a,d.type=\"text/java\"+c,d.async=!0,d.onerror=function(){utag_cfg_ovrd.path=\"//tags.tiqcdn.cn/utag/thai-airways/main/prod/\",a=\"//tags.tiqcdn.cn/utag/thai-airways/main/prod/utag.js\",b=document,c=\"script\",d=b.createElement(c),d.src=a,d.type=\"text/java\"+c,d.async=!0,a=b.getElementsByTagName(c)[0],a.parentNode.insertBefore(d,a)},a=b.getElementsByTagName(c)[0],a.parentNode.insertBefore(d,a);";
-        txtNode = document.createTextNode(content);
-        createAttr.appendChild(txtNode);
-        addTo.appendChild(createAttr);
-      }, 1000, 6);
-    }
-  };
-
-var fbpixel_SE = {
-    add: function () {
-        // console.log('fbpixel_SE');
         implibdx.core.updateDom("footer#main-layout-bottom", function () {
-            if ((/\b^[SE_]{3}/).test(eBaDataLayer.external_id) === true) {
-                let addTo = document.getElementById('main-layout-bottom');
-                let createAttr = document.createElement("script");
-                let txtNode = ''
-                let content = ''
-                let lang = eBaDataLayer.language;
-                let exID = eBaDataLayer.external_id;
-                let pnr = (eBaDataLayer.page_code == "CONF") ? modpnr(eBaDataLayer.pnr_nbr) : "";
-                let currency = eBaDataLayer.currency;
-
-                if (eBaDataLayer.page_code == "CONF") {
-                    content = "!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n; n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '270700370143865');fbq('track', 'PageView');fbq('track', 'Purchase', { content_name: '" + pnr + "', value:'" + eBaDataLayer.total_price + "',currency: '" + eBaDataLayer.currency + "' })";
-                } else if (eBaDataLayer.page_code == "FPOW") {
-                    content = "!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n; n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '270700370143865');fbq('track', 'PageView');";
-                } else if (eBaDataLayer.page_code == "PURC") {
-                    content = "!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n; n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '270700370143865');fbq('track', 'PageView');fbq('track', 'AddToCart', { value: " + eBaDataLayer.total_price + ",currency:'" + eBaDataLayer.currency + "'})";
-                }
-                // console.log(content);
-                txtNode = document.createTextNode(content)
-                createAttr.appendChild(txtNode);
-                addTo.appendChild(createAttr);
-            } else console.log('fbpixel_SE');
-        }, 1000, 6);
-    }
-}
-
-
-var spa_allsite = {
-    add: function () {
-        // console.log('fbpixel_SE');
-        implibdx.core.updateDom("footer#main-layout-bottom", function () {
-            // if( (/\b^[SE_]{3}/).test(eBaDataLayer.external_id) === true){
-            let addTo = document.getElementById('main-layout-bottom');
-            let createAttr = document.createElement("script");
-            let txtNode = ''
-            let content = ''
-            let price = eBaDataLayer.total_price;
-            // let lang = eBaDataLayer.language;
-            // let exID = eBaDataLayer.external_id;
-            //let pnr = (eBaDataLayer.page_code == "CONF")?modpnr(eBaDataLayer.pnr_nbr):"";
-            let currency = eBaDataLayer.currency;
-
-            if (eBaDataLayer.page_code == "CONF") {
-                content = "!function(f,b,e,v,n,t,s)  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?  n.callMethod.apply(n,arguments):n.queue.push(arguments)};  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';  n.queue=[];t=b.createElement(e);t.async=!0;  t.src=v;s=b.getElementsByTagName(e)[0];  s.parentNode.insertBefore(t,s)}(window, document,'script',  'https://connect.facebook.net/en_US/fbevents.js');  fbq('init', '369060826977725');  fbq('track', 'PageView');fbq('track', 'Purchase', { value: '" + price + "',currency: '" + currency + "'});";
-            } else {
-                content = "!function(f,b,e,v,n,t,s)  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?  n.callMethod.apply(n,arguments):n.queue.push(arguments)};  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';  n.queue=[];t=b.createElement(e);t.async=!0;  t.src=v;s=b.getElementsByTagName(e)[0];  s.parentNode.insertBefore(t,s)}(window, document,'script',  'https://connect.facebook.net/en_US/fbevents.js');  fbq('init', '369060826977725');  fbq('track', 'PageView');";
-            }
-            txtNode = document.createTextNode(content)
+            var addTo = document.getElementById('main-layout-bottom');
+            var createAttr = document.createElement("script");
+            var txtNode = '';
+            createAttr.setAttribute('type', 'text/javascript');
+            var content = "utag_cfg_ovrd={},a=\"//tags.tiqcdn.com/utag/thai-airways/main/prod/utag.js\",b=document,c=\"script\",d=b.createElement(c),d.src=a,d.type=\"text/java\"+c,d.async=!0,d.onerror=function(){utag_cfg_ovrd.path=\"//tags.tiqcdn.cn/utag/thai-airways/main/prod/\",a=\"//tags.tiqcdn.cn/utag/thai-airways/main/prod/utag.js\",b=document,c=\"script\",d=b.createElement(c),d.src=a,d.type=\"text/java\"+c,d.async=!0,a=b.getElementsByTagName(c)[0],a.parentNode.insertBefore(d,a)},a=b.getElementsByTagName(c)[0],a.parentNode.insertBefore(d,a);";
+            txtNode = document.createTextNode(content);
             createAttr.appendChild(txtNode);
             addTo.appendChild(createAttr);
-            // }else console.log('fbpixel_SE');
-        }, 1000, 6);
+        }, 1000, 4);
     }
-}
+};
+
+var iNetasia_Tealium_qa = {
+    add: function add() {
+        implibdx.core.updateDom("footer#main-layout-bottom", function () {
+            var addTo = document.getElementById('main-layout-bottom');
+            var createAttr = document.createElement("script");
+            var txtNode = '';
+            createAttr.setAttribute('type', 'text/javascript');
+            var content = "utag_cfg_ovrd={},a=\"//tags.tiqcdn.com/utag/thai-airways/main/qa/utag.js\",b=document,c=\"script\",d=b.createElement(c),d.src=a,d.type=\"text/java\"+c,d.async=!0,d.onerror=function(){utag_cfg_ovrd.path=\"//tags.tiqcdn.cn/utag/thai-airways/main/prod/\",a=\"//tags.tiqcdn.cn/utag/thai-airways/main/prod/utag.js\",b=document,c=\"script\",d=b.createElement(c),d.src=a,d.type=\"text/java\"+c,d.async=!0,a=b.getElementsByTagName(c)[0],a.parentNode.insertBefore(d,a)},a=b.getElementsByTagName(c)[0],a.parentNode.insertBefore(d,a);";
+            txtNode = document.createTextNode(content);
+            createAttr.appendChild(txtNode);
+            addTo.appendChild(createAttr);
+        }, 1000, 4);
+    }
+};
 
 var knorex = { // Knorex require by S9M
     add: function () {
@@ -364,71 +305,7 @@ var knorex = { // Knorex require by S9M
         }, 1000, 5);
     }
 }
-var skyscanner = { // skyscanner
-    add: function () {
 
-        implibdx.core.updateDom("footer#main-layout-bottom", function () {
-            if (dataTransfer["EXTERNAL_ID#4"] === "SKYSCANNER") {
-                let addTo = document.getElementById('main-layout-bottom');
-                let txt_code = '';
-                let cost = eBaDataLayer.total_price;
-                let ord = modpnr(eBaDataLayer.pnr_nbr);
-                let createAttr = document.createElement("img");
-                createAttr.src = 'https://pubads.g.doubleclick.net/activity;xsp=4380767;qty=1;cost=' + cost + ';ord=' + ord + '?';
-                addTo.appendChild(createAttr);
-            }
-        }, 1000, 5);
-    }
-}
-
-// var fbpixel_acom = {
-//     add:function(){
-//         // console.log('fbpixel_acom');
-//         implibdx.core.updateDom("footer#main-layout-bottom",function(){
-//            // if( (/\b^[SE_]{3}/).test(eBaDataLayer.external_id) === true){
-//                 let addTo = document.getElementById('main-layout-bottom');
-//                 let createAttr =document.createElement("script");
-//                 let txtNode = ''
-//                 let content = ''
-//                 let lang = eBaDataLayer.language;
-//                 let exID = eBaDataLayer.external_id;
-//                // let pnr = (eBaDataLayer.page_code == "CONF")?modpnr(eBaDataLayer.pnr_nbr):"";
-//                 let currency = eBaDataLayer.currency;
-
-//                 if(eBaDataLayer.page_code == "CONF"){
-//                     content  = "!function(f,b,e,v,n,t,s) {if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)}(window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '624510897705215'); fbq('track', 'PageView');fbq('track', 'Purchase', {currency: '"+eBaDataLayer.currency+"', value: "+eBaDataLayer.total_price+"});";
-//                     // console.log('ACOM_CONF')
-//                 }else{
-//                     content  = "!function(f,b,e,v,n,t,s) {if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)}(window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '624510897705215'); fbq('track', 'PageView');";
-//                     // console.log('ACOM')
-
-//                 }
-//                 // console.log(content);
-//                 txtNode = document.createTextNode(content)
-//                 createAttr.appendChild(txtNode);
-//                 addTo.appendChild(createAttr);
-//            // }else console.log('fbpixel_SE');
-//         },1000,6);
-//     }
-// }
-
-
-
-var tripadvisor = { // tripadvisor
-    add: function () {
-
-        implibdx.core.updateDom("footer#main-layout-bottom", function () {
-            let addTo = document.getElementById('main-layout-bottom');
-            let txt_code = '';
-            let cost = eBaDataLayer.total_price;
-            let ord = modpnr(eBaDataLayer.pnr_nbr);
-            let createAttr = document.createElement("img");
-            createAttr.src = 'https://pubads.g.doubleclick.net/activity;xsp=4371151;qty=1;cost' + cost + ';ord=' + ord + '?';
-            // console.log(createAttr)
-            addTo.appendChild(createAttr);
-        }, 1000, 5);
-    }
-}
 
 
 var pathData = function (obj, url) {
@@ -443,154 +320,7 @@ var pathData = function (obj, url) {
     return url + jQuery.param(path);
 }
 
-// function Addwebtrends(){
-//     if (eBaDataLayer.page_code == "CONF") {
-//         implibdx.core.updateDom("footer#main-layout-bottom", function(){
-//             $("#datatransferForm>input").serializeArray().forEach(datatransferForm);
-//             $("#main-layout-bottom").append(webtrendsCreate.createElements("script",webtrendsCreate.add(""),"0"));
-//             $("#main-layout-bottom").append(webtrendsCreate.createElements("script","https://www.thaiairways.com/static/common/js/webtrends.load.js","1"));
-//             $("#main-layout-bottom").append(webtrendsCreate.createElements("noscript","<img alt='dcsimg' id='dcsimg' width='1' height='1' src='//statse.webtrendslive.com/dcs0s1to5100004va4434tphe_5i8v/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=10.2.55&amp;dcssip=www.thaiairways.com'>","0"));
-//         },1000,3);
-//     }else if(eBaDataLayer.page_code == "RTPL"){
-//         $("#main-layout-bottom").append(webtrendsCreate.createElements("script","https://www.thaiairways.com/static/common/js/webtrends.load.js","1"));
-//         $("#main-layout-bottom").append(webtrendsCreate.createElements("noscript","<img alt='dcsimg' id='dcsimg' width='1' height='1' src='//statse.webtrendslive.com/dcs0s1to5100004va4434tphe_5i8v/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=10.2.55&amp;dcssip=www.thaiairways.com'>","0"));
-//     }
-// }
-// var twCreate = {
-//     createElements:function(elm,txt,n){
-//         var addTo = document.getElementById("main-layout-bottom");
-//         var createScr = document.createElement(elm);
-//         var txt_Code = "";
-//         this.content = txt;
-//         if(n == "1"){
-//             createScr.src = this.content;
-//         }else{
-//             txt_Code = document.createTextNode(this.content);
-//             createScr.appendChild(txt_Code);
-//         }
-//         return createScr;
-//     },
-//     add : function(name){
-//         var twLoad ="";
 
-//         if(eBaDataLayer.page_code == "CONF"){
-//             return  twLoad = "window.webtrendsAsyncLoad = function(dcs){"+twCreate.dcs_TW+";}";}
-//         if(eBaDataLayer.page_code == "RTPL"){
-//             return twLoad = "window.webtrendsAsyncLoad = function(dcs){"+twCreate.dcs_ad(name)+"}";}
-
-//     },
-//     bound : function(){
-//         var res = eBaDataLayer.bound[0].route;
-//         $.each(eBaDataLayer.bound,function(index,value){
-//             if(index != 0){
-//                 res += "-"+value.route;
-//             }
-//         })
-//         return res;
-//     },
-//     dcs_ad : function(name){
-//         this.proName = name;
-//         if(this.proName != ""){
-//             var Name_ad = name.split("/");
-//             var ad = "dcs.WT.ad=\"";
-//             for(var i = 0; i< Name_ad.length; i++){
-//                 if(checkEXP(Name_ad[i]) == true) ad += bannerTG[Name_ad[i]].ad+";";
-//                 else ad += "";
-//             }
-//             return ad+"\"";
-//         }else{
-//             return "";
-//         }
-
-//     },
-//     dcs_TW :"dcs.WT.totalamount = eBaDataLayer.total_price;dcs.WT.currcode = eBaDataLayer.currency;dcs.WT.paytype = eBaDataLayer.payment_method;dcs.WT.site = eBaDataLayer.site_code;dcs.WT.bookfromcity = eBaDataLayer.bound[0].dep_city;dcs.WT.booktocity = eBaDataLayer.bound[0].arr_city;dcs.WT.triptype = eBaDataLayer.trip_type;dcs.WT.rloc = eBaDataLayer.pnr_number;dcs.WT.thaicountry = eBaDataLayer.market;dcs.WT.bcabin = dataTransfer[\"AIR#1_ITINERARY#1_SEGMENT#1_CABIN#1\"];dcs.WT.ceco = dataTransfer[\"AIR#1_PNR#1_RBD#1\"];dcs.WT.flight_numbers = eBaDataLayer.bound[0].flight_numbers;dcs.WT.route = twCreate.bound();dcs.WT.office_id = eBaDataLayer.office_id;dcs.WT.external_id = eBaDataLayer.external_id;dcs.WT.depdate = eBaDataLayer.bound[0].dep_date;dcs.WT.bookconfirm  = \"Confirmed\""
-// }
-// var webtrendsCreate = {
-//     createElements:function(elm,txt,n){
-//         var addTo = document.getElementById("main-layout-bottom");
-//         var createScr = document.createElement(elm);
-//         var txt_Code = "";
-//         this.content = txt;
-//         if(n == "1"){
-//             createScr.src = this.content;
-//         }else{
-//             txt_Code = document.createTextNode(this.content);
-//             createScr.appendChild(txt_Code);
-//         }
-//         return createScr;
-//     },
-//     add : function(name){
-//         var twLoad ="";
-
-//         if(eBaDataLayer.page_code == "CONF"){
-//             return  twLoad = "window.webtrendsAsyncLoad = function(dcs){"+twCreate.dcs_TW+";}";}
-//         if(eBaDataLayer.page_code == "RTPL"){
-//             return twLoad = "window.webtrendsAsyncLoad = function(dcs){"+twCreate.dcs_ad(name)+"}";}
-
-//     },
-//     bound : function(){
-//         var res = eBaDataLayer.bound[0].route;
-//         $.each(eBaDataLayer.bound,function(index,value){
-//             if(index != 0){
-//                 res += "-"+value.route;
-//             }
-//         })
-//         return res;
-//     },
-//     dcs_ad : function(name){
-//         this.proName = name;
-//         if(this.proName != ""){
-//             var Name_ad = name.split("/");
-//             var ad = "dcs.WT.ad=\"";
-//             for(var i = 0; i< Name_ad.length; i++){
-//                 if(checkEXP(Name_ad[i]) == true) ad += bannerTG[Name_ad[i]].ad+";";
-//                 else ad += "";
-//             }
-//             return ad+"\"";
-//         }else{
-//             return "";
-//         }
-
-//     },
-//     dcs_TW :"dcs.WT.totalamount = eBaDataLayer.total_price;dcs.WT.currcode = eBaDataLayer.currency;dcs.WT.paytype = eBaDataLayer.payment_method;dcs.WT.site = eBaDataLayer.site_code;dcs.WT.bookfromcity = eBaDataLayer.bound[0].dep_city;dcs.WT.booktocity = eBaDataLayer.bound[0].arr_city;dcs.WT.triptype = eBaDataLayer.trip_type;dcs.WT.rloc = eBaDataLayer.pnr_number;dcs.WT.thaicountry = eBaDataLayer.market;dcs.WT.bcabin = dataTransfer[\"AIR#1_ITINERARY#1_SEGMENT#1_CABIN#1\"];dcs.WT.ceco = dataTransfer[\"AIR#1_PNR#1_RBD#1\"];dcs.WT.flight_numbers = eBaDataLayer.bound[0].flight_numbers;dcs.WT.route = twCreate.bound();dcs.WT.office_id = eBaDataLayer.office_id;dcs.WT.external_id = eBaDataLayer.external_id;dcs.WT.depdate = eBaDataLayer.bound[0].dep_date;dcs.WT.bookconfirm  = \"Confirmed\""
-// }
-
-function acom_adddata() {
-    window.uetq = window.uetq || [];
-    window.uetq.push({ 'gv': eBaDataLayer.total_price, 'gc': eBaDataLayer.currency });
-    console.log(window.uetq.push({ 'gv': eBaDataLayer.total_price, 'gc': eBaDataLayer.currency }))
-}
-
-/*----------------------------Widget-----------------------------------------*/
-
-// var wt_Takeme ={
-//     add:function(){
-//         console.log('---------------------->takemetour');
-//         let anchor = document.getElementById("main-layout-bottom");
-//         let createAttr =document.createElement("script");
-//         let city = eBaDataLayer.city_search_in;
-
-//         if((eBaDataLayer.page_code == 'CONF'|| eBaDataLayer.page_code == "RTPL") && (eBaDataLayer.city_search_in == 'BKK'|| eBaDataLayer.city_search_in == 'CNX'|| eBaDataLayer.city_search_in == 'CEI'|| eBaDataLayer.city_search_in == 'DMK'|| eBaDataLayer.city_search_in == 'HDY'|| eBaDataLayer.city_search_in == 'KKC'|| eBaDataLayer.city_search_in == 'USM'|| eBaDataLayer.city_search_in == 'KBV'|| eBaDataLayer.city_search_in == 'LPT'|| eBaDataLayer.city_search_in == 'HGN'|| eBaDataLayer.city_search_in == 'NAW'|| eBaDataLayer.city_search_in == 'HKT'|| eBaDataLayer.city_search_in == 'THS'|| eBaDataLayer.city_search_in == 'URT'|| eBaDataLayer.city_search_in == 'TDX'|| eBaDataLayer.city_search_in == 'UBP'|| eBaDataLayer.city_search_in == 'UTH')){
-//             wt_Takeme.createEM();
-//             createAttr.src = 'https://dlyn4t8knt1qo.cloudfront.net/thaiairways/main.v2.js';
-//             implibdx.core.updateDom("footer#main-layout-bottom",function(){
-//                 anchor.appendChild(createAttr);
-//                 setTimeout(function(){ wt_Takeme.runWidget(city); }, 4000);
-//             },1000,5);
-//         }
-//     },
-//     createEM:function(){
-//         let anchor = document.getElementById("reservation-details");
-//         let createEMTag = document.createElement("section");
-//         createEMTag.setAttribute('id','takemetour-widget');
-//         anchor.after(createEMTag);
-//     },
-//     runWidget:function(city){
-//         implibdx.core.updateDom("footer#main-layout-bottom",function(){
-//             window.tmtWidget.initWidget(city);
-//         },1000,7);
-//     }
-// }
 
 var wt_booking = {
     add: function () {
@@ -605,7 +335,7 @@ var wt_booking = {
             createAttr.setAttribute('data-container', 'b_container');
             createAttr.setAttribute('data-size', '1050x280');
             createAttr.setAttribute('data-tpncy', 'false');
-            createAttr.src = 'https://aff.bstatic.com/static/affiliate_base/js/booking_sp_widget.js?iata=' + check.depCity() + '&lang=' + eBaDataLayer.language + '&iata_orr=1&checkin=' + check.chkdate(eBaDataLayer.bound[0].arr_date) + '&checkout=' + check.trip_type(eBaDataLayer.trip_type);
+            createAttr.src = 'https://aff.bstatic.com/static/affiliate_base/js/booking_sp_widget.js?iata=' + eBaDataLayer.bound[0].arr_airport + '&lang=' + eBaDataLayer.language + '&iata_orr=1&checkin=' + check.chkdate(eBaDataLayer.bound[0].arr_date) + '&checkout=' + check.trip_type(eBaDataLayer.trip_type);
             // console.log(createAttr.src);
             anchor.appendChild(createAttr);
 
@@ -698,7 +428,7 @@ var rentalCar = {
     createFrame: function () {
         let arrDate = eBaDataLayer.bound[0].arr_date.split('/');
         let depDate = (!eBaDataLayer.bound[1] !== true ? eBaDataLayer.bound[1].dep_date.split('/') : arrDate);
-        let langx = (eBaDataLayer.language == "CN") ? "ZS" : eBaDataLayer.language == 'GB'? "EN":eBaDataLayer.language;
+        let langx = (eBaDataLayer.language == "CN") ? "ZS" : eBaDataLayer.language == 'GB' ? "EN" : eBaDataLayer.language;
 
         let frame = document.createElement("iframe");
 
@@ -717,290 +447,8 @@ var rentalCar = {
 }
 
 
-// var mastercard = function(){
-
-//     let toDayDate = new Date();
-//     let startDate = new Date().setFullYear("2018","06","23");
-//     let endData = new Date().setFullYear("2018","09","31");
-
-//     implibdx.core.updateDom("div.TGINSBannerMenu", function() {
-//         if(toDayDate >= startDate && dataTransfer["EXTERNAL_ID#4"] == "mastercard" && eBaDataLayer.bound[0].arr_airport == 'SIN' && ( startDate <= toDayDate && toDayDate <= endData) ){
-//             $.ajax({
-//                 type: 'POST',
-//                 url: 'https://www.thaiairways.com/app/form/mastercard/',
-//                 data: {pnr:eBaDataLayer.pnr_number,firstname:eBaDataLayer.passengerList[0].first_name,lastname:eBaDataLayer.passengerList[0].last_name,email:eBaDataLayer.contact_information.email},
-//             }).done(function(res){
-//                 console.log(res.success)
-//             })
-//         }
-//     },1000,3);
-// }
-
-// var couponBrussels = function(){
-
-//     let toDayDate = new Date();
-//     let startDate = new Date().setFullYear("2018","06","20");
-//     let dataRoute = "";
-//     for(k in eBaDataLayer.bound){
-//         dataRoute += eBaDataLayer.bound[k].route+'-';
-//     }
-
-//     implibdx.core.updateDom("div.TGINSBannerMenu", function() {
-//         if(toDayDate >= startDate && ((/[BRU]{3}/).test(dataRoute) === true) && eBaDataLayer.page_code == "CONF" && ((/[BE_]{3}/).test(eBaDataLayer.external_id) === false) && ((/(PLCC)|(CON)/).test(dataTransfer['PAYMENTTYPE']) !== true) )  {
-//             $.ajax({
-//                 type: 'POST',
-//                 url: 'https://www.thaiairways.com/app/form/api/postdata/',
-//                 data: {pnr:eBaDataLayer.pnr_number,firstname:eBaDataLayer.passengerList[0].first_name,lastname:eBaDataLayer.passengerList[0].last_name,email:eBaDataLayer.contact_information.email},
-//             }).done(function(res){
-//                 console.log(res.success)
-//             })
-//         }else console.log('unsend...');
-//     },1000,3);
-// }
-
-// var couponChina = function(){
-//     let toDayDate = new Date();
-//     const startDate = new Date().setFullYear("2018","08","10");
-//     const endData = new Date().setFullYear("2018","09","31");
-//     let dataRoute = "";
-
-//     let data = "";
-//     const RBD_BC = /[C|D|J|Z]/;
-//     const RBD_EC = /[Y|B|M|Q|H|T|K|S|G|V|W|L]/;
-//     for(k in eBaDataLayer.bound){
-//         dataRoute += eBaDataLayer.bound[k].route+'-';
-//     }
-//     if(checkRBD(RBD_BC,dataTransfer["AIR#1_PNR#1_RBD#1"])){
-//         data = {
-//             pnr: eBaDataLayer.pnr_number,
-//             firstname: eBaDataLayer.passengerList[0].first_name,
-//             lastname: eBaDataLayer.passengerList[0].last_name,
-//             email: eBaDataLayer.contact_information.email,
-//             state:"Business",
-//             project:"KingPower e-voucher - China"
-//         }
-//     }else if(checkRBD(RBD_EC,dataTransfer["AIR#1_PNR#1_RBD#1"])){
-//         data = {
-//             pnr: eBaDataLayer.pnr_number,
-//             firstname: eBaDataLayer.passengerList[0].first_name,
-//             lastname: eBaDataLayer.passengerList[0].last_name,
-//             email: eBaDataLayer.contact_information.email,
-//             state:"Economy",
-//             project:"KingPower e-voucher - China"
-//         }
-//     }
-
-//     implibdx.core.updateDom("div.TGINSBannerMenu", function() {
-//         if( (toDayDate >= startDate && toDayDate <= endData) && ((/(PLCC)|(CON)/).test(dataTransfer['PAYMENTTYPE']) !== true) && ((/[BKK|CNX|HKT]{3}/).test(dataRoute) === true) && eBaDataLayer.page_code == "CONF" && ((/[CN_]{3}/).test(eBaDataLayer.external_id) === true) && data != null) {
-//             $.ajax({
-//                 type: 'POST',
-//                 url: 'https://www.thaiairways.com/app/form/api/postdataamds/',
-//                 data: data,
-//             }).done(function(res){
-//                 console.log(res.success)
-//             })
-//         }else console.log('err:senddata')
-//     },1000,3);
-// }
-
-// var sotw = {
-//     chkDate:function(){
-//         const expStart = setDatef(["2018","08","15"]),expEnd =setDatef(["2018","11","31"]), expBuy = setDatef(["2018","10","15"])
-//         console.log(expStart,expEnd,expBuy)
-//         // this.expStart = expStart;
-//         // this.expEnd = expEnd;
-//         this.dOut = (eBaDataLayer.bound[0].dep_date).split("/");
-//         this.dIn = (eBaDataLayer.bound[1].dep_date).split("/");
-//         this.today = new Date();
-//         this.sDate = new Date().setFullYear("2018","07","15");
-//         this.nDate = new Date().setFullYear("2018","08","31");
-
-//         const eBaDateOut =  setDatef([this.dOut[2],this.dOut[1]-1,this.dOut[0]]);
-//         const eBaDateIn =  setDatef([this.dIn[2],this.dIn[1]-1,this.dIn[0]]);
-
-//         if(expStart <= this.today && this.today <= expBuy){//check Sales period
-//             if( expStart <= eBaDateOut && eBaDateOut <= expEnd){//Departure period
-//                 sotw.createOBJ();
-//                 return true;
-//             }else{
-//                 console.log('err:in/out');
-//                 return false;
-//             }
-//         }else {
-//             console.log('err:today');
-//             return false;
-//         }
-
-//         // if(expStart <=  eBaDateOut &&  eBaDateOut <= expEnd && expStart <=  eBaDateIn &&  eBaDateIn <= expEnd){
-
-//         //     // if(this.today >= this.sDate && this.today <= this.nDate){
-//         //         sotw.createOBJ();
-//         //         return true;
-//         //     // }else{
-//         //         // console.log("surpriseontheways date")
-//         //         // return false;
-//         //     // }
-//         // }else{
-//         //     return false;
-//         // }
-//     },
-//     senddata:function(){
-//         implibdx.core.updateDom("div.TGINSBannerMenu", function() {
-//             if(sotw.chkDate() === true && eBaDataLayer.page_code === "CONF" && ((/\b^[TH_]{3}/).test(eBaDataLayer.external_id) === true ) && dataTransfer.PAYMENTTYPE == "EXT" && chkSite() === true && eBaDataLayer.bound[0].dep_country == 'TH' && ((/(PLCC)|(CON)/).test(dataTransfer['PAYMENTTYPE']) !== true) ){
-//             // if(sotw.chkDate() === true && eBaDataLayer.page_code === "CONF"){
-
-//                 chkSite()?console.log("surpriseontheways"):console.log(this.obj);
-//                 $.ajax({
-//                     type : 'POST',
-//                     url : 'https://www.thaiairways.com/app/form/save_report',
-//                     data : sotw.obj,
-//                     dataType : 'json'
-//                 }).done(function(result){
-//                     console.log(result.success);
-//                 }).error(function(e){
-//                     console.log(e.statusText)
-//                 });
-//             }else console.log('error : senddata')
-//         },1000,6);
-//     },
-//     createOBJ:function(){
-//         var create_sotw = {};
-//         create_sotw.data1 = dataTransfer['PNR#1_TITLECODE#1'];
-//         create_sotw.data2 = eBaDataLayer.passengerList[0].first_name;
-//         create_sotw.data3 = eBaDataLayer.passengerList[0].last_name;
-//         create_sotw.data4 = eBaDataLayer.trip_type;
-//         create_sotw.data5 = eBaDataLayer.contact_information.email;
-//         create_sotw.data6 = eBaDataLayer.pnr_number;
-//         create_sotw.data7 = xBound(eBaDataLayer.bound);
-//         create_sotw.data18 = eBaDataLayer.page_code;
-//         create_sotw.data19 = subscribe.check_site();
-//         create_sotw.data20 = "surpriseontheways";
-//         sotw.obj = create_sotw;
-//     }
-// }
 
 var eMailTrigger = {
-    // dusit: {
-    //     send: function() {
-    //         // eMailTrigger.obj.project = "surprise-dusit"; eMailTrigger.dusit.condition.dateStart
-
-    //         if (eMailTrigger.chkEXP(["2018", "10", "24"], ["2019", "00", "20"], ["2019", "00", "20"], ["2018", "10", "24"], "surprise-dusit", "NO") === true && eBaDataLayer.page_code == "CONF" && dataTransfer.PAYMENTTYPE == "EXT") {
-    //             implibdx.core.updateDom("div.TGINSBannerMenu", function() {
-    //                 chkSite() ? console.log("surprise-dusit") : console.log(eMailTrigger.obj);
-    //                 if (eMailTrigger.chkCountry(eMailTrigger.dusit.condition_country, 'eBaDataLayer', /(BLOCATIONCOUNTRYNAME)$/) === true) {
-    //                     $.ajax({
-    //                         type: 'POST',
-    //                         url: 'https://www.thaiairways.com/app/form/api/postdataamds/',
-    //                         data: eMailTrigger.obj,
-    //                         dataType: 'json'
-    //                     }).done(function(result) {
-    //                         console.log(result.success);
-    //                     }).error(function(e) {
-    //                         console.log(e.statusText)
-    //                     });
-
-    //                 }
-    //             }, 1000, 6);
-    //         } else console.log('error : senddata')
-    //     },
-    //     condition_country: ["BKK", "CNX", "CEI", "DMK", "HDY", "KKC", "USM", "KBV", "LPT", "HGN", "NAW", "HKT", "THS", "URT", "TDX", "UBP", "UTH", "PEK", "CTU", "CAN", "HKG", "KMG", "PVG", "TPE", "XMN", "CSX", "CKG", "KHH", "CGO", "CAI", "MLE", "MNL", "DXB", "ATL", "ORD", "DFW", "HNL", "IAH", "LAX", "MIA", "JFK", "SFO", "SJC", "SEA", "IAD", "HAN", "SGN", "DAD", "PQC"]
-    // },
-    // ukBlackFriday: {
-    //     send: function() {
-    //         if (eMailTrigger.chkEXP(["2018", "10", "23"], ["2018", "10", "26"], ["2019", "05", "30"], ["2019", "04", "01"], "UK-BlackFriday", "YES") === true && eBaDataLayer.page_code == "CONF" && eBaDataLayer.bound["0"].dep_airport == "LHR") {
-    //             if (eMailTrigger.chkCountry(eMailTrigger.ukBlackFriday.condition_country, 'eBaDataLayer', /(BLOCATIONCOUNTRYNAME)$/) === true && dataTransfer["EXTERNAL_ID#4"] === "UK00022") {
-    //                 implibdx.core.updateDom("div.TGINSBannerMenu", function() {
-
-    //                     $.ajax({
-    //                         type: 'POST',
-    //                         url: 'https://www.thaiairways.com/app/form/api/postdatacheck/',
-    //                         data: eMailTrigger.obj,
-    //                         dataType: 'json'
-    //                     }).done(function(result) {
-    //                         console.log(result.success);
-    //                     }).error(function(e) {
-    //                         console.log(e.statusText)
-    //                     });
-    //                     chkSite() ? console.log('OK-BlackFriday') : console.log('UK-BlackFriday', eMailTrigger.obj);
-
-
-    //                 }, 1000, 6);
-    //             }
-    //         } else console.log('error : senddata');
-    //     },
-    //     condition_country: ["BKK", "CNX", "KBV", "HKT", "RGN", "VTE", "PNH", "HAN", "HGN", "KUL", "SIN", "DPS", "JKT", "MNL", "CAN", "HKG", "KMG", "CTU", "XMN", "TPE", "CCU", "DAC", "KTM", "CMB", "MAA", "BLR", "HYD", "DEL", "BOM", "PEK", "PVG", "TYO", "NRT", "HND", "KIX", "NGO", "FUK", "CTS", "ICN", "PUS", "BNE", "MEL", "PER", "SYD", "AKL"]
-    // },
-    // lineVillage: {
-    //     send: function () {
-    //         if (eMailTrigger.chkEXP(["2019", "05", "04"], ["2019", "06", "15"], ["2019", "07", "31"], ["2019", "06", "04"], "HK-Line_Village", "NO") === true && eBaDataLayer.page_code == "CONF" && dataTransfer.PAYMENTTYPE == "EXT") {
-    //             implibdx.core.updateDom("div.TGINSBannerMenu", function () {
-    //                 chkSite() ? console.log("HK-Line_Village") : console.log(eMailTrigger.obj);
-    //                 // if (eMailTrigger.chkCountry(eMailTrigger.lineVillage.condition_country, 'eBaDataLayer', /(BLOCATIONCOUNTRYNAME)$/) === true) {
-    //                 if (eMailTrigger.chkAirportArr(eBaDataLayer.bound, eMailTrigger.lineVillage.conditionArrAirport) === true && eBaDataLayer.bound[0].dep_airport == "HKG") {
-    //                     $.ajax({
-    //                         type: 'POST',
-    //                         url: 'https://www.thaiairways.com/app/form/postdataamds_trigger',
-    //                         data: eMailTrigger.crOBJ("HK-Line_Village"),
-    //                         dataType: 'json'
-    //                     }).done(function (result) {
-    //                         console.log(result.success);
-    //                     }).error(function (e) {
-    //                         console.log(e.statusText)
-    //                     });
-    //                 }
-    //             }, 1000, 6);
-    //         } else console.log('error : senddata')
-    //     },
-    //     conditionArrAirport: ["BKK"] /*<--- destination*/
-    // },
-    // jdCentral: {
-    //     send: () => {
-    //         if (eMailTrigger.chkEXP(["2019", "06", "15"], ["2019", "07", "15"], "", "", "JD-Central", "NO") === true && eBaDataLayer.page_code == "CONF" && dataTransfer.PAYMENTTYPE == "EXT") {
-    //             implibdx.core.updateDom("div.TGINSBannerMenu", function () {
-    //                 chkSite() ? console.log("JD-Centrale") : console.log(eMailTrigger.obj);
-    //                 // if (eMailTrigger.chkCountry(eMailTrigger.lineVillage.condition_country, 'eBaDataLayer', /(BLOCATIONCOUNTRYNAME)$/) === true) {
-    //                 // if(eMailTrigger.chkAirportDep(eBaDataLayer.bound,eMailTrigger.lineVillage.conditionArrAirport) === true && eBaDataLayer.bound[0].dep_airport == "HKG"){
-    //                 if (eBaDataLayer.bound[0].dep_airport == "BKK") {
-    //                     $.ajax({
-    //                         type: 'POST',
-    //                         url: 'https://www.thaiairways.com/app/form/api/postdataamds/',
-    //                         data: eMailTrigger.crOBJ("JD-Central"),
-    //                         dataType: 'json'
-    //                     }).done(function (result) {
-    //                         console.log(result.success);
-    //                     }).error(function (e) {
-    //                         console.log(e.statusText)
-    //                     });
-    //                 }
-    //             }, 1000, 6);
-    //         } else console.log('error : senddata')
-    //     },
-    //     conditionArrAirport: ['BKK'] /*<------------- Departure*/
-    // },
-    // SG_Halloween: {
-    //     send: () => {
-    //         if (eMailTrigger.chkEXP(["2019", "08", "02"], ["2019", "09", "31"], ["2019","09","31"], ["2019","08","02"], "SG_Halloween", "NO") === true && eBaDataLayer.page_code == "CONF" && dataTransfer.PAYMENTTYPE == "EXT") {
-    //             implibdx.core.updateDom("div.TGINSBannerMenu", function () {
-    //                 chkSite() ? console.log("JD-Centrale") : console.log(eMailTrigger.obj);
-    //                 // if (eMailTrigger.chkCountry(eMailTrigger.lineVillage.condition_country, 'eBaDataLayer', /(BLOCATIONCOUNTRYNAME)$/) === true) {
-    //                 // if(eMailTrigger.chkAirportDep(eBaDataLayer.bound,eMailTrigger.lineVillage.conditionArrAirport) === true && eBaDataLayer.bound[0].dep_airport == "HKG"){
-    //                 if (eBaDataLayer.bound[0].dep_airport == "BKK" && eBaDataLayer.bound[0].arr_airport == "SIN" && dataTransfer["EXTERNAL_ID#4"] == "HHN9"){
-    //                     $.ajax({
-    //                         type: 'POST',
-    //                         url: 'https://www.thaiairways.com/app/form/api/postdataamds/',
-    //                         data: eMailTrigger.crOBJ("SG_Halloween"),
-    //                         dataType: 'json'
-    //                     }).done(function (result) {
-    //                         console.log(result.success);
-    //                     }).error(function (e) {
-    //                         console.log(e.statusText)
-    //                     });
-    //                 }
-    //             }, 1000, 6);
-    //         } else console.log('error : senddata')
-    //     },
-    //     conditionArrAirport: ['BKK'] /*<------------- Departure*/
-    // },
     createOBJ: function () {
         const cOBJ = {
             pnr: eBaDataLayer.pnr_number,
@@ -1093,7 +541,7 @@ const objTagScript = {
             start: ['2019', '02', '01'],
             end: ['2019', '11', '31']
         },
-        typetag:'fbpixel'
+        typetag: 'fbpixel'
     },
     fbpixel_AT: {
         desElement_ID: 'main-layout-bottom',
@@ -1109,7 +557,7 @@ const objTagScript = {
             start: ['2019', '02', '12'],
             end: ['2019', '11', '31']
         },
-        typetag:'fbpixel'
+        typetag: 'fbpixel'
     },
     pixel_SG: { // done on tea
         desElement_ID: 'main-layout-bottom',
@@ -1122,7 +570,7 @@ const objTagScript = {
             start: ['2019', '02', '12'],
             end: ['2019', '11', '31']
         },
-        typetag:'pixel'
+        typetag: 'pixel'
     }
 }
 
@@ -1139,10 +587,10 @@ function addScriptTG(nameOBJ) {
         let dataBooking = eBaDataLayer.page_code === 'CONF' || eBaDataLayer.page_code === 'PURC' ? "fbq('track', '" + pix_pageCode + "'," + objDataBooking() + ")" : "";
         st2.forEach((item) => {
             createAttr = document.createElement(item)
-            if(obj['typetag'] == 'fbpixel'){
+            if (obj['typetag'] == 'fbpixel') {
                 txtNode = document.createTextNode(obj['txtScript'][item]['txt'] + ((item === 'script') ? dataBooking : ''))
                 createAttr.appendChild(txtNode)
-            }else{
+            } else {
                 createAttr.setAttribute('async', 'async');
                 createAttr.src = obj['txtScript'][item]['txt'];
             }
@@ -1151,22 +599,16 @@ function addScriptTG(nameOBJ) {
     }
 }
 
-// const objDataBooking = () => {
-//     return JSON.stringify({
-//         connect_name: eBaDataLayer.page_code === 'CONF' ? modpnr(eBaDataLayer.pnr_nbr) : "",
-//         varlue: eBaDataLayer.page_code === 'CONF' || eBaDataLayer.page_code === 'PURC' ? eBaDataLayer.total_price : "",
-//         currency: eBaDataLayer.currency
-//     })
-// }
+
 const objDataBooking = () => JSON.stringify({
     connect_name: eBaDataLayer.page_code === 'CONF' ? modpnr(eBaDataLayer.pnr_nbr) : "",
     value: eBaDataLayer.page_code === 'CONF' || eBaDataLayer.page_code === 'PURC' ? eBaDataLayer.total_price : "",
     currency: eBaDataLayer.currency
 })
 const objSearch = () => datasearch = {
-    location_code : eBaDataLayer['search']["flights"].map( x => x.departure.location_code+'-'+x.arrival.location_code).toString(),
-    destination: eBaDataLayer.trip_type !== "RT"?eBaDataLayer['search']["flights"].map( x => x.arrival.location_code).slice(-1).toString():eBaDataLayer['search']["flights"].map( x => x.arrival.location_code)[0],
-    origin:eBaDataLayer['search']["flights"].map( x => x.departure.location_code)[0]
+    location_code: eBaDataLayer['search']["flights"].map(x => x.departure.location_code + '-' + x.arrival.location_code).toString(),
+    destination: eBaDataLayer.trip_type !== "RT" ? eBaDataLayer['search']["flights"].map(x => x.arrival.location_code).slice(-1).toString() : eBaDataLayer['search']["flights"].map(x => x.arrival.location_code)[0],
+    origin: eBaDataLayer['search']["flights"].map(x => x.departure.location_code)[0]
 }
 
 const sendEmail = {
@@ -1280,12 +722,12 @@ const sendEmail = {
         },
         conditionArrAirport: ['BKK']
     },
-    Anantaravoucher:{
+    Anantaravoucher: {
         send: function send() {
             if (eMailTrigger.chkEXP(["2019", "10", "7"], ["2019", "10", "30"], ["2019", "11", "19"], ["2019", "10", "7"], "Anantaravoucher", "NO") === true && eBaDataLayer.page_code == "CONF" && dataTransfer.PAYMENTTYPE == "EXT") {
                 implibdx.core.updateDom("div.TGINSBannerMenu", function () {
-                    const isFirstBus = eBaDataLayer.bound.map(x => x.flights[0].cabin).find(k => /F|B/.test(k))?true:false;
-                    if (eBaDataLayer.bound[0].dep_country == "AU" && eBaDataLayer.bound[1].dep_city == "BKK" && isFirstBus == true && dataTransfer["EXTERNAL_ID#4"] === "TGANANTARA" && (eBaDataLayer.trip_type == 'RT'|| eBaDataLayer.trip_type == 'OW')){
+                    const isFirstBus = eBaDataLayer.bound.map(x => x.flights[0].cabin).find(k => /F|B/.test(k)) ? true : false;
+                    if (eBaDataLayer.bound[0].dep_country == "AU" && eBaDataLayer.bound[1].dep_city == "BKK" && isFirstBus == true && dataTransfer["EXTERNAL_ID#4"] === "TGANANTARA" && (eBaDataLayer.trip_type == 'RT' || eBaDataLayer.trip_type == 'OW')) {
                         $.ajax({
                             type: 'POST',
                             url: 'https://www.thaiairways.com/app/form/api/postdataamds/',
@@ -1302,11 +744,11 @@ const sendEmail = {
         },
         conditionArrAirport: ['BKK']
     },
-    kyotobus:{
+    kyotobus: {
         send: function send() {
             if (eMailTrigger.chkEXP(["2019", "10", "7"], ["2020", "2", "31"], ["2020", "2", "31"], ["2019", "10", "7"], "Anantaravoucher", "NO") === true && eBaDataLayer.page_code == "CONF" && dataTransfer.PAYMENTTYPE == "EXT") {
                 implibdx.core.updateDom("div.TGINSBannerMenu", function () {
-                    if (eBaDataLayer.bound[0].dep_airport == "BKK" && eBaDataLayer.bound[1].dep_airport == "NGO" && eBaDataLayer.trip_type == 'RT'){
+                    if (eBaDataLayer.bound[0].dep_airport == "BKK" && eBaDataLayer.bound[1].dep_airport == "NGO" && eBaDataLayer.trip_type == 'RT') {
                         $.ajax({
                             type: 'POST',
                             url: urlSendemail.all_send,
@@ -1324,11 +766,169 @@ const sendEmail = {
         conditionArrAirport: ['BKK']
     }
 }
-const urlSendemail ={
-    all_send:"https://www.thaiairways.com/app/form/api/postdataamds/",
-    limit_send:"https://www.thaiairways.com/app/form/api/mastercard/",
-    limit_cont_send:"https://www.thaiairways.com/app/form/postdataamds_trigger"
+const urlSendemail = {
+    all_send: "https://www.thaiairways.com/app/form/api/postdataamds/",
+    limit_send: "https://www.thaiairways.com/app/form/api/mastercard/",
+    limit_cont_send: "https://www.thaiairways.com/app/form/postdataamds_trigger"
 }
 const arrDom = ["CNX", "CEI", "DMK", "HDY", "KKC", "USM", "KBV", "LPT", "HGN", "NAW", "HKT", "THS", "URT", "TDX", "UBP"];
 const isDom = (city) => { return arrDom.find(key => (key == city)) ? true : false }
 const arrAirport = (airport) => eBaDataLayer.search.flights.map(k => k.arrival.location_code).find(k => (k == airport)) ? true : false;
+
+
+//----- Err 18-19 DEC 19
+const hidepaynow = () => {
+    implibdx.core.updateDom("div#reservation-menu", function () {
+        if ((/BKK-ARN/).test(eBaDataLayer.bound[0].route) == true) {
+            $('#reservation-menu').addClass('xARR');
+            $('.pay-now-btn').remove();
+        } else {
+            $('.pay-now-btn').css('display', 'block');
+        }
+    }, 1000, 4);
+}
+const hidemodflight = () => { // <-- Pls. Remove this script after NOV 2020
+    const errDateE = [new Date(2019, 11, 18), new Date(2019, 11, 20)]; //new Date(eBaDataLayer.pnr_creation_date);
+    const bDate = new Date(eBaDataLayer.pnr_creation_date);
+    const errDate = bDate >= errDateE[0] && bDate < errDateE[1]
+    const errClass = eBaDataLayer.bound.map(x => x.flights).map(x => x[0].cabin == 'B').every(x => x);
+    implibdx.core.updateDom("div#fare-review-bounds", function () {
+        if ((/BKK-ARN/).test(eBaDataLayer.bound[0].route) == true && errDate && errClass) {
+            $('div#fare-review-bounds button').remove();
+        }
+    }, 1000, 4);
+}
+// ------- Hide Meal // 08 Jan 2020
+const _hideMEA = () => {
+    if (eBaDataLayer.bound.every(x => x.dep_country == 'TH') &&  eBaDataLayer.bound[0].arr_country == 'TH') {
+        implibdx.core.updateDom(".catalogServices-teasers-container", function () {
+            $("#tpl7_MEA").css('display', 'none');
+            $("div.catalogServices-teaser-column-MEA").css('display', 'none');
+            $("div.catalogServices-column-MEA").css('display', 'none');
+
+        }, 1000, 4);
+    }
+}
+// ------ New line in Terms Condition on PURC // 17JAN2020
+const isLang = () => {
+    return eBaDataLayer.language == "GB" ? "en" : eBaDataLayer.language.toLowerCase();;
+}
+let _fareCondi = {
+    CN: "",
+    DE: "",
+    ES: "",
+    FR: "",
+    GB: "I acknowledge after review the refund policy for ",
+    IT: "",
+    JP: "",
+    KO: "",
+    RU: "",
+    TH: "",
+    TW: "",
+    SE: ""
+}
+const fare_condi_purc = (lang) => {
+    implibdx.core.updateDom(".purchase-conditions", function () {
+        let _fareCondiLang = _fareCondi[lang] !== "" ? _fareCondi[lang] : _fareCondi["GB"];
+        let fareCondi = document.getElementById('fare_condi');
+        let boxCondi = $("div[id$=termsAndConditions] ul>li").length !== 0 ? $("div[id$=termsAndConditions] ul>li") : $(".checkbox");
+        let _tripsummaty_fare = "";
+        let extIconlink = `<i class="icon icon-external-link" aria-hidden="true" title="Open new window"></i>`;
+        let _purchase_fare_condi = Object.keys(boxCondi[0].children).filter(x => (/(Purchase conditions)|(Fare Conditions)/).test(boxCondi[0].children[x].text));
+        $("#link_dangerous").on("click", () => {
+            $('#button-tripsummary-baggage-policy').click()
+        })
+        if (typeof eBaDataLayer.bound[0].selected_ff_code !== "undefined") {
+            eBaDataLayer.bound.map(x => _tripsummaty_fare += `<a href="https://www.thaiairways.com/booking/flexpricer/` + isLang() + '/' + x.selected_ff_code + `.html" target="_blank">` + x.selected_ff_name + extIconlink + `</a> `);
+        }
+        if ($("div[id$=termsAndConditions] ul>li").length !== 0) {
+            // _purchase_fare_condi.map( x => x)
+            // gg.map( x => dd[0].children[x].outerHTML)
+            _purchase_fare_condi.map(x => _tripsummaty_fare += boxCondi[0].children[x].outerHTML);
+            fareCondi.innerHTML = _fareCondiLang + "" + _tripsummaty_fare;
+            fareCondi.classList.remove("hide");
+        } else {
+            boxCondi.append('<ul><li>' + _fareCondiLang + "" + _tripsummaty_fare + "</li></ul>")
+        }
+
+
+
+
+    }, 1000, 4);
+}
+
+
+// ----- check box insurance on PURC // 17JAN2020
+const xcheckbox_cf = (dep_country) => {
+    try {
+        //         if(dep_country == "FR" || dep_country == "IT"){
+        $("#consent_ins").html('sdasdasdasdasdasdasdasd');
+        $("#consent_ins").appendTo($('.insurance-radio-selection'));
+        $("#consent_ins").removeClass($('ins_hide'));
+        //         }
+    } catch (error) {
+        console.log('no checkbox');
+    }
+}
+
+// --- Hide services-table-footer - FARE
+const services_tablefooter = (city) => {
+    if (city == "TWD") {
+        implibdx.core.updateDom(".availability-container", function () {
+            $(".availability-bound ").addClass('tw_city');
+        }, 1000, 4);
+    }
+}
+
+// --- identification doc
+const iden_doc_apim = (ex4) => {
+    let _idenDoc = document.getElementsByName('PSPT_DocumentType')[0];
+    if (ex4 = 'STU') {
+        _idenDoc.options[0].remove()
+        _idenDoc.setAttribute('disabled', 'disabled')
+    }
+}
+
+/* ----- test -----  */
+const testobj = {
+    namePri:{
+        conditions:{
+            date_dep:new Date(['2020','01','25']), 
+            date_arr:new Date(['2020','11','25']), 
+            sale_start:new Date(['2020','02','25']), // *
+            sale_end:new Date(['2020','11','25']), // *
+            city_trav:"BKK-CDG", // *
+            flight_dep:["TG610"] ,
+            maket:new RegExp(/^(TH)/) // *
+        }
+    }
+}
+const chk_conditions = ({conditions}) =>{
+    let toDay = new Date();
+    let _Trvel = eBaDataLayer.bound.map(x => new Date(x.dep_date.slice(6)+x.dep_date.slice(2,6)+x.dep_date.slice(0,2)) )
+    // let isMaket = conditions.maket !== null && typeof conditions.maket !== "undefined" ? conditions.maket.test(eBaDataLayer.maket):false;
+    // let flightDep = conditions.flight_dep !== null && typeof conditions.flight_dep !== "undefined"? eBaDataLayer.bound.find( x => conditions.flight_dep.find(k => k === x.flight_numbers) )?true:false:true
+    // let isSale = toDay <= conditions.sale_start && toDay <= conditions.sale_end;
+    // let isRoute = eBaDataLayer.bound.find(x=>x.route == testobj.namePri.conditions.city_trav)?true:false;
+    
+    let obj ={
+        isRoute:eBaDataLayer.bound.find(x=>x.route == testobj.namePri.conditions.city_trav)?true:false,
+        isSale:toDay <= conditions.sale_start && toDay <= conditions.sale_end,
+        flightDep:conditions.flight_dep !== null && typeof conditions.flight_dep !== "undefined"? eBaDataLayer.bound.find( x => conditions.flight_dep.find(k => k === x.flight_numbers) )?true:false:true,
+        isMaket:conditions.maket !== null && typeof conditions.maket !== "undefined" ? conditions.maket.test(eBaDataLayer.maket):false
+    }
+    return obj;
+}
+
+
+
+
+/* 
+check: ({ start, end, except_maket, is_page, chk_bound }) => {
+		let nowDate = new Date();
+		let excMaket = except_maket !== null ? except_maket.test(eBaDataLayer.market) !== true : true;
+		let isPage = is_page.find(x => x === eBaDataLayer.page_code) ? true : false;
+		let chkOpt = chk_bound !== null? Object.keys(chk_bound).map( key => chk_bound[key].test(eBaDataLayer.bound.map(x => x[key]).toString()))[0]:true;
+		return (nowDate >= start && nowDate <= end && excMaket && isPage && chkOpt) ? true : false;
+	}
+*/

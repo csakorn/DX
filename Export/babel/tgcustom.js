@@ -156,6 +156,12 @@ function remove_linkPolicy() {
   }, 1000, 5);
 }
 
+var hide_MEA = function hide_MEA(isDom) {
+  if (isDom) {
+    $("#tpl7_MEA").css('display', 'none');
+  }
+};
+
 var startFNJS = function startFNJS() {
   switch (eBaDataLayer.page_code) {
     case "FPOW":
@@ -180,10 +186,12 @@ var startFNJS = function startFNJS() {
 
     case "ALPI":
       console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code);
+      hide_MEA(eBaDataLayer.external_id == "TH_DOMESTIC");
       break;
 
     case "APIM":
       console.log("eBaDataLayer.page_code = " + eBaDataLayer.page_code);
+      hide_MEA(eBaDataLayer.external_id == "TH_DOMESTIC");
       break;
 
     case "AAS":
